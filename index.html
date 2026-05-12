@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en-GB" class="dark">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Power-Up Talent | Strategic Talent Acquisition for the UK Electrical Sector</title>
+    <meta name="description" content="The UK's premier strategic talent partner for electrical wholesale. Specialist headhunting, market mapping, and operational alignment for branch and regional leadership." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://poweruptalent.co.uk/" />
+    <meta property="og:title" content="Power-Up Talent | Strategic Talent Partner" />
+    <meta property="og:description" content="Elite consultancy-led headhunting for the UK electrical wholesale community. We specialise in identifying passive high-performers." />
+    <meta property="og:image" content="https://picsum.photos/seed/powerup-og/1200/630" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#FFC107", 
+                        "primary-dark": "#E5AD06",
+                        "background-dark": "#050505", 
+                        "navy-deep": "#0B1120",
+                        "slate-grey": "#334155",
+                        "card-dark": "#0A0A0A", 
+                        "border-dark": "#1A1A1A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Space Grotesk", "sans-serif"],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-out forwards',
+                        'slide-up': 'slideUp 0.8s ease-out forwards',
+                        'shimmer': 'shimmer 5s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        shimmer: {
+                            '0%': { backgroundPosition: '-200% 0' },
+                            '100%': { backgroundPosition: '200% 0' }
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        @layer base {
+            html { scroll-behavior: smooth; }
+            body { @apply bg-background-dark text-white antialiased selection:bg-primary selection:text-black; }
+            h1, h2, h3, h4 { @apply font-display tracking-tighter; }
+        }
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 50; opacity: 0.03;
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuCpJ8acLS6yRpKY5Q1ZUw39imICTUwcVXhO8LfFJGVf5-wrqMC1T8dFd847rnSmlQiUkNR0buMzaWAOQ8i5eU4ewflasM4qxZt2v-gypjpSLwjgaUy9NhZxfwyF9wpRBXmLTdangoEcomcZcV822x7YkGlJw-HJ7Nz6A77zzUk7m_wR8-LfKMrSspu9cSfGiD_56BbvJrHOn2pKR944ub2lIqLDIatzODjpNp0DthvHEBy7V_uhk-4MxSIoNccOpceIKcDg1VjYKWl2);
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 60s linear infinite; }
+        .animate-marquee:hover { animation-play-state: paused; }
+        
+        .custom-scrollbar::-webkit-scrollbar { width: 8px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { @apply bg-slate-grey/20 rounded-full; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { @apply bg-slate-grey/40; }
+
+        .text-glow { text-shadow: 0 0 15px rgba(255, 193, 7, 0.4); }
+        .clip-path-slant { clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="custom-scrollbar">
+    <div id="root"></div>
+    <div class="grain-overlay"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
