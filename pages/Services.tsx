@@ -84,7 +84,7 @@ const Services: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {SERVICES.map((pillar, i) => (
-              <div key={pillar.id} className="bg-white border border-slate-200 rounded-sm hover:shadow-2xl transition-all duration-700 group flex flex-col overflow-hidden shadow-sm">
+              <div id={pillar.id} key={pillar.id} className="bg-white border border-slate-200 rounded-sm hover:shadow-2xl transition-all duration-700 group flex flex-col overflow-hidden shadow-sm scroll-m-32">
                 <div className="h-64 overflow-hidden relative">
                    <img 
                     src={pillar.image} 
@@ -131,9 +131,9 @@ const Services: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
              {[
-               { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982124/Gemini_Generated_Image_vrx46xvrx46xvrx4_yq2wbd.png', title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
-               { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982118/Gemini_Generated_Image_ff6ffcff6ffcff6f_vi2vbq.png', title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
-               { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982110/Gemini_Generated_Image_mo30smmo30smmo30_hy1imr.png', title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
+               { img: '/images/electrical_executive_1778586578289.png', title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
+               { img: '/images/electrical_warehouse_hero_1778586599378.png', title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
+               { img: '/images/electrical_trade_counter_1778586696903.png', title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
              ].map((item, i) => (
                <div key={i} className="bg-slate-50 border border-slate-100 rounded-sm hover:shadow-2xl transition-all group overflow-hidden">
                   <div className="h-48 overflow-hidden relative">

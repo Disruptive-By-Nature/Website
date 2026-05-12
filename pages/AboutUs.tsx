@@ -80,7 +80,7 @@ const AboutUs: React.FC = () => {
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-slate-100 transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
               <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg"
+                src="/images/electrical_trade_counter_1778586696903.png"
                 referrerPolicy="no-referrer"
                 loading="lazy"
                 alt="UK Electrical Sector Consultancy Team" 
@@ -114,7 +114,7 @@ const AboutUs: React.FC = () => {
              transition={{ duration: 0.6, delay: 0.1 }}
            >
               <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133031/Gemini_Generated_Image_9k1c5e9k1c5e9k1c_1_ovnor8.png"
+                src="/images/electrical_executive_1778586578289.png"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-5 transition-opacity duration-700"
                 alt="Headhunting-First"
@@ -134,7 +134,7 @@ const AboutUs: React.FC = () => {
              transition={{ duration: 0.6, delay: 0.2 }}
            >
               <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133010/Gemini_Generated_Image_xjon5bxjon5bxjon_1_xtzsqm.png"
+                src="/images/electrical_trade_counter.png"
                 referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-5 transition-opacity duration-700"
                 alt="Trade Literacy"
@@ -152,7 +152,7 @@ const AboutUs: React.FC = () => {
       {/* 4. Our Commitment */}
       <section className="py-32 md:py-48 px-6 bg-navy-deep text-white border-y border-white/5 relative overflow-hidden">
         <img 
-          src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133006/Gemini_Generated_Image_5h80k15h80k15h80_1_tzolog.png"
+          src="/images/electrical_warehouse_hero_1778586599378.png"
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
           alt="Commitment to Talent Background"
@@ -256,7 +256,7 @@ const AboutUs: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
              <img 
-               src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg"
+               src="/images/electrical_executive_1778586578289.png"
                referrerPolicy="no-referrer"
                loading="lazy"
                alt="Technical Sector Intelligence" 
