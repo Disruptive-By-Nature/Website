@@ -49,42 +49,42 @@ export const TESTIMONIALS: Testimonial[] = [
 export const SERVICES: Service[] = [
   {
     id: "elite-recruitment",
-    name: "Elite Executive Search",
+    name: "Elite Recruitment",
     tagline: "Headhunting passive high-performers.",
-    description: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors, using precise, AI-driven market mapping.",
+    description: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors using AI-driven mapping.",
     features: [
       "Confidential direct outreach",
       "Passive talent mapping",
       "Technical DNA vetting",
       "Absolute discretion protocols"
     ],
-    image: "/images/electrical_executive_1778586578289.png"
+    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png"
   },
   {
     id: "strategic-recruitment",
-    name: "Strategic Leadership Recruitment",
+    name: "Strategic Recruitment",
     tagline: "Aligning leaders with commercial goals.",
-    description: "Executive search specifically for Branch Managers and Regional Directors who possess the commercial acumen to drive your bottom line, protect margins, and manage complex trade counter networks.",
+    description: "Executive search specifically for Branch Managers and Regional Directors who possess the commercial acumen to drive your bottom line and manage complex trade counters.",
     features: [
       "Executive search & selection",
       "Succession planning",
       "Operational leadership alignment",
       "Competency-based interviewing"
     ],
-    image: "/images/electrical_trade_counter_1778586696903.png"
+    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png"
   },
   {
     id: "growth-partnerships",
-    name: "Growth & Scale Partnerships",
+    name: "Growth Partnerships",
     tagline: "Scaling with operational intelligence.",
-    description: "Long-term collaboration for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across major UK electrical and industrial logistics hubs.",
+    description: "Long-term collaboration for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across major UK logistics hubs.",
     features: [
-      "Branch launch talent acquisition",
-      "Local market intelligence",
+      "Branch launch support",
+      "Local market mapping",
       "Multi-hire management",
       "Strategic retention modelling"
     ],
-    image: "/images/electrical_warehouse_hero_1778586599378.png"
+    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg"
   }
 ];
 

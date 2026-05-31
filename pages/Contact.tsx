@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
@@ -57,16 +56,11 @@ const Contact: React.FC = () => {
       <div className="relative py-40 md:py-60 px-6 border-b border-white/5 overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-background-dark/50 via-background-dark/80 to-background-dark"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.15)_0%,transparent_50%)]"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,193,7,0.15)_0%,transparent_50%)]"></div>
         </div>
         
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-screen-xl mx-auto relative z-10 text-center"
-        >
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-[10px] font-bold uppercase tracking-[0.5em] mb-12">
+        <div className="max-w-screen-xl mx-auto relative z-10 text-center animate-slide-up">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 text-[10px] font-bold uppercase tracking-[0.5em] mb-12">
             UK Sector Coverage
           </div>
           <h1 className="text-6xl md:text-[10rem] font-display font-bold mb-8 tracking-tighter leading-none text-white uppercase text-glow">
@@ -75,24 +69,18 @@ const Contact: React.FC = () => {
           <p className="text-slate-400 text-lg md:text-2xl font-light max-w-2xl mx-auto leading-relaxed">
             Strategic briefing for clients and elite submissions for sector professionals.
           </p>
-        </motion.div>
+        </div>
       </div>
 
       <section className="max-w-screen-xl mx-auto px-6 -mt-20 md:-mt-32 relative z-20 pb-40">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/10 shadow-2xl overflow-hidden border border-white/5"
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/10 shadow-2xl overflow-hidden border border-white/5">
           
           {/* Left: Strategic Briefing (Clients) */}
           <div className="lg:col-span-6 bg-card-dark p-8 md:p-16 lg:p-20 relative overflow-hidden border-r border-white/5">
             <div className="relative z-10">
               <div className="flex items-center gap-6 mb-16">
                 <div className="w-16 h-16 bg-primary flex items-center justify-center rounded-sm shadow-2xl">
-                  <span className="material-symbols-outlined text-navy-deep font-bold text-4xl">business_center</span>
+                  <span className="material-symbols-outlined text-black font-bold text-4xl">business_center</span>
                 </div>
                 <div>
                   <h2 className="text-3xl font-display font-bold uppercase tracking-tight">Strategic Briefing</h2>
@@ -119,7 +107,7 @@ const Contact: React.FC = () => {
                     <span className="ml-auto">{clientForm.overview.length}/{MAX_OVERVIEW_CHARS}</span>
                   </div>
                 </div>
-                <button type="submit" className="w-full bg-primary text-navy-deep font-bold py-8 rounded-sm text-xs uppercase tracking-[0.5em] hover:bg-white hover:text-navy-deep transition-all flex items-center justify-center gap-4 shadow-[0_10px_30px_rgba(212,175,55,0.2)] hover:shadow-primary/40 group">
+                <button type="submit" className="w-full bg-primary text-black font-bold py-8 rounded-sm text-xs uppercase tracking-[0.5em] hover:bg-white transition-all flex items-center justify-center gap-4 shadow-2xl group">
                   Request Sync <span className="material-symbols-outlined text-xl group-hover:translate-x-2 transition-transform">send</span>
                 </button>
               </form>
@@ -130,7 +118,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-6 bg-black/40 backdrop-blur-3xl p-8 md:p-16 lg:p-20 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-6 mb-16">
-                <div className="w-16 h-16 bg-white/5 flex items-center justify-center rounded-sm border border-white/10">
+                <div className="w-16 h-16 bg-white/10 flex items-center justify-center rounded-sm border border-white/20">
                   <span className="material-symbols-outlined text-primary font-bold text-4xl">person_pin</span>
                 </div>
                 <div>
@@ -159,7 +147,7 @@ const Contact: React.FC = () => {
                     onDragOver={handleDragOver} 
                     onDragLeave={handleDragLeave} 
                     onDrop={handleDrop} 
-                    className={`relative border-2 border-dashed rounded-sm p-12 flex flex-col items-center justify-center transition-all cursor-pointer group ${isDragging ? 'border-primary bg-primary/10' : 'border-white/10 bg-black/20 hover:border-primary/30'}`}
+                    className={`relative border-2 border-dashed rounded-sm p-12 flex flex-col items-center justify-center transition-all cursor-pointer group ${isDragging ? 'border-primary bg-primary/10' : 'border-white/10 bg-black/20 hover:border-primary/50'}`}
                   >
                     <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" />
                     <span className="material-symbols-outlined text-primary text-5xl mb-4 group-hover:scale-110 transition-transform">cloud_upload</span>
@@ -167,7 +155,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
 
-                <button type="submit" className="w-full border border-white/20 text-white font-bold py-8 rounded-sm text-xs uppercase tracking-[0.5em] hover:bg-white hover:text-navy-deep transition-all flex items-center justify-center gap-4 group">
+                <button type="submit" className="w-full border border-white/20 text-white font-bold py-8 rounded-sm text-xs uppercase tracking-[0.5em] hover:bg-white hover:text-black transition-all flex items-center justify-center gap-4 group">
                   Submit to Hub <span className="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">bolt</span>
                 </button>
               </form>
@@ -175,7 +163,7 @@ const Contact: React.FC = () => {
 
             <div className="mt-16 pt-12 border-t border-white/5 space-y-8">
                <div className="flex items-center gap-6 group">
-                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-navy-deep transition-all">
+                <div className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-black transition-all">
                   <span className="material-symbols-outlined">alternate_email</span>
                 </div>
                 <div>
@@ -185,7 +173,7 @@ const Contact: React.FC = () => {
               </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </section>
     </div>
   );
