@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@google/genai": "^1.44.0",
+    "firebase": "^12.14.0",
     "framer-motion": "^12.35.1",
     "motion": "^12.35.1",
     "react": "^19.2.4",

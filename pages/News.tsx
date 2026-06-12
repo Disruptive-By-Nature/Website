@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { GoogleGenAI, Type } from "@google/genai";
 import SEO from '../components/SEO';
+// @ts-ignore
+import heroImg from '../src/assets/images/news_hero_1780507443923.png';
 
 interface NewsItem {
   title: string;
@@ -87,8 +89,19 @@ const News: React.FC = () => {
         keywords="Electrical Wholesale News, UK Electrical Industry Updates, Fire Safety Legislation News, Electrical Wholesale Market Trends"
         canonical="https://poweruptalent.co.uk/news"
       />
-      <section className="bg-background-dark py-20 px-6 border-b border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,193,7,0.1)_0%,transparent_70%)] opacity-30"></div>
+      <section className="bg-navy-deep py-24 md:py-48 border-b border-white/5 relative overflow-hidden">
+        {/* Background Hero Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="UK Electrical Wholesale Industry News & Regulatory Updates"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,193,7,0.1)_0%,transparent_70%)] opacity-30"></div>
+        </div>
+        
         <div className="max-w-screen-xl mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.4em] mb-8">
             UK Sector Intelligence

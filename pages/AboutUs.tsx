@@ -3,6 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+// @ts-ignore
+import heroImg from '../src/assets/images/about_us_hero_1780507427486.png';
 
 const AboutUs: React.FC = () => {
   const fadeInUp = {
@@ -29,11 +31,20 @@ const AboutUs: React.FC = () => {
       />
       
       {/* 1. Header */}
-      <section className="relative max-w-screen-xl mx-auto px-6 mb-32 text-center py-20 md:py-40">
-        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.1)_0%,transparent_100%)]"></div>
+      <section className="relative w-full border-b border-white/10 overflow-hidden bg-navy-deep py-24 md:py-48 mb-32 flex items-center justify-center">
+        {/* Background Hero Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="UK Electrical Wholesale Executive Search & Headhunting"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
         </div>
-        <div className="relative z-10">
+        
+        <div className="relative z-10 px-6 max-w-screen-xl mx-auto text-center">
           <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-12 animate-fade-in">
             UK Sector Intelligence Partners
           </div>
@@ -239,7 +250,7 @@ const AboutUs: React.FC = () => {
             </h2>
             <div className="space-y-8">
               <p className="text-slate-500 text-xl md:text-2xl font-light leading-relaxed">
-                Our purpose is to specialised recruitment by combining the precision of AI with the irreplaceable nuance of sector grit. We believe that hiring should be fast, fair, and focused on identifying the elite high-performers.
+                Our purpose is to specialise recruitment by combining the precision of AI with the irreplaceable nuance of sector grit. We believe that hiring should be fast, fair, and focused on identifying the elite high-performers.
               </p>
               <div className="pl-8 border-l-4 border-primary">
                  <p className="text-2xl font-display font-bold text-navy-deep italic uppercase">

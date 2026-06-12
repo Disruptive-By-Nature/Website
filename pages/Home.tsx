@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import { METRICS, TESTIMONIALS, SERVICES, INSIGHTS } from '../constants';
 import Counter from '../components/Counter';
 import SEO from '../components/SEO';
+// @ts-ignore
+import heroImg from '../src/assets/images/uk_electrical_wholesale_hero_1780507084507.png';
 
 const Home: React.FC = () => {
   return (
     <div className="overflow-x-hidden pt-16 md:pt-20 bg-background-dark">
       <SEO 
         title="Power-Up Talent | Elite Electrical Wholesale Headhunters & Executive Search"
-        description="Power-Up Talent are elite headhunters specializing in the UK electrical wholesale industry. We bridge operational grit with board-level strategy to secure the sector's best leadership talent."
+        description="Power-Up Talent are elite headhunters specialising in the UK electrical wholesale industry. We bridge operational grit with board-level strategy to secure the sector's best leadership talent."
         keywords="Electrical Wholesale Headhunters, Elite Executive Search, UK Electrical Sector Recruitment, Wholesale Branch Manager Recruitment, Electrical Specialist Search, Power-Up Talent"
         canonical="https://poweruptalent.co.uk/"
         structuredData={{
@@ -18,7 +20,7 @@ const Home: React.FC = () => {
           "@type": "RecruitmentAgency",
           "name": "Power-Up Talent",
           "url": "https://poweruptalent.co.uk/",
-          "description": "Elite headhunters specializing in the UK electrical wholesale industry.",
+          "description": "Elite headhunters specialising in the UK electrical wholesale industry.",
           "areaServed": "United Kingdom",
           "knowsAbout": [
             "Electrical Wholesale Executive Search",
@@ -32,24 +34,13 @@ const Home: React.FC = () => {
       <section className="relative min-h-[90vh] md:min-h-screen flex items-center overflow-hidden bg-navy-deep">
         {/* Refined Background Layers */}
         <div className="absolute inset-0 z-0 pointer-events-none">
-          {/* Background Video Loop */}
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            preload="auto"
-            className="absolute inset-0 w-full h-full object-cover object-center opacity-[0.25] grayscale mix-blend-overlay"
-          >
-            <source src="https://player.vimeo.com/external/494252666.sd.mp4?s=729737051612c35d542b1035c463b66c35743924&profile_id=165&oauth2_token_id=57447761" type="video/mp4" />
-            {/* Fallback Image */}
-            <img 
-              src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133010/Gemini_Generated_Image_xjon5bxjon5bxjon_1_xtzsqm.png"
-              className="absolute inset-0 w-full h-full object-cover opacity-[0.3] mix-blend-screen"
-              referrerPolicy="no-referrer"
-              alt="Professional UK Electrical Wholesale Operations"
-            />
-          </video>
+          {/* Elite UK Electrical Wholesale Hero Image */}
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="Elite UK Electrical Wholesale Operations & Executive Recruitment"
+          />
           
           {/* Atmospheric Overlays */}
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>

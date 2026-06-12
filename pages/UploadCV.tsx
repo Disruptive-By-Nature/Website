@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+// @ts-ignore
+import heroImg from '../src/assets/images/upload_cv_hero_1780507458123.png';
 
 const UploadCV: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
@@ -27,9 +29,20 @@ const UploadCV: React.FC = () => {
         keywords="Upload CV Electrical Wholesale, Electrical Wholesale Career Hub, Submit CV Power-Up Talent, Electrical Wholesale Executive Jobs"
         canonical="https://poweruptalent.co.uk/upload-cv"
       />
-      {/* Header - No Background Images */}
-      <section className="relative py-32 md:py-48 px-6 text-center overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background-dark"></div>
+      {/* Header - Custom Background Image */}
+      <section className="relative py-32 md:py-48 px-6 text-center overflow-hidden border-b border-white/5 bg-navy-deep">
+        {/* Background Hero Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="UK Electrical Wholesale Recruitment Executive Submission Hub"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
+        </div>
+
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-12">
             Secure Career Hub

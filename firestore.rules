@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // catch-all safety net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidBrochureRequest(data) {
+      return data.keys().hasAll(['name', 'email', 'company', 'roleInterest', 'createdAt'])
+        && data.keys().size() == 5
+        && data.name is string && data.name.size() > 0 && data.name.size() <= 128
+        && data.email is string && data.email.size() > 5 && data.email.size() <= 128
+        && data.company is string && data.company.size() > 0 && data.company.size() <= 128
+        && data.roleInterest is string && data.roleInterest.size() > 0 && data.roleInterest.size() <= 128
+        && data.createdAt == request.time;
+    }
+
+    match /brochure_requests/{requestId} {
+      // Secure creation for prospective clients (anonymous/incoming guests can request)
+      allow create: if isValidId(requestId) && isValidBrochureRequest(incoming());
+      
+      // Lead retrieval restricted to authorized team members
+      allow read, list: if isSignedIn();
+    }
+  }
+}

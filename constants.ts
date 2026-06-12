@@ -1,4 +1,4 @@
-import { Milestone, Metric, Testimonial, Service, BlogPost } from './types';
+import { Milestone, Metric, Testimonial, Service, BlogPost, FAQItem } from './types';
 
 export const METRICS: Metric[] = [
   { value: "25,000+", label: "Market-mapped professionals" },
@@ -43,6 +43,25 @@ export const TESTIMONIALS: Testimonial[] = [
     name: "Sarah Jenkins",
     role: "Operations Manager",
     quote: "The only headhunters I've worked with who actually understand the technical requirements of the trade counter environment."
+  }
+];
+
+export const FAQ_ITEMS: FAQItem[] = [
+  {
+    question: "Do you only recruit for electrical wholesale roles?",
+    answer: "We specialise solely in the UK Electrical Wholesale Industry, focusing on supporting wholesale companies with branch managers, regional directors, and executive leadership roles. We also have deep expertise in connected sectors like Fire & Security and Lighting."
+  },
+  {
+    question: "How do you source passive talent?",
+    answer: "We utilise AI-driven market mapping and direct outreach to identify high-performing talent who aren't actively searching for jobs. Our approach is consultative and focused on finding the top 1% of the market."
+  },
+  {
+    question: "Can you help with branch launches?",
+    answer: "Yes, our 'Growth Partnerships' service is specifically designed for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across the UK."
+  },
+  {
+    question: "What is your approach to candidate discretion?",
+    answer: "Absolute discretion is at the core of our methodology. We understand the sensitivity of executive searches and ensure that both client and candidate confidentiality is maintained throughout the process."
   }
 ];
 

@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { INSIGHTS } from '../constants';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+// @ts-ignore
+import heroImg from '../src/assets/images/insights_hero_1780507487336.png';
 
 const Insights: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = React.useState<string>('All');
@@ -15,25 +17,43 @@ const Insights: React.FC = () => {
     : INSIGHTS.filter(post => post.category === selectedCategory);
 
   return (
-    <div className="pt-24 md:pt-32 pb-20 bg-background-dark min-h-screen">
+    <div className="pb-20 bg-background-dark min-h-screen">
       <SEO 
         title="Industry Insights | Elite Executive Search & Electrical Wholesale Trends | Power-Up Talent"
         description="Expert executive search opinions, electrical wholesale market trends, and talent strategies for the UK sector. Stay informed with Power-Up Talent."
         keywords="Electrical Wholesale Talent Insights, UK Electrical Sector Market Trends, Executive Search Electrical Wholesale, Talent Strategies Electrical Wholesale, Electrical Wholesale Market Intelligence"
         canonical="https://poweruptalent.co.uk/insights"
       />
-      <div className="max-w-screen-xl mx-auto px-6">
-        <div className="mb-20">
+      
+      {/* Header section with Custom background image */}
+      <div className="relative py-40 md:py-60 px-6 border-b border-white/5 overflow-hidden bg-navy-deep mb-20">
+        {/* Background Hero Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="UK Electrical Wholesale Recruitment Insights & Market Intelligence"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
+        </div>
+        
+        <div className="max-w-screen-xl mx-auto relative z-10 text-center animate-slide-up">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
             Industry Intelligence
           </div>
-          <h1 className="text-5xl md:text-8xl font-display font-bold text-white tracking-tighter uppercase leading-none mb-8">
+          <h1 className="text-6xl md:text-[10rem] font-display font-bold text-white tracking-tighter uppercase leading-none mb-8">
             Industry <span className="text-primary italic">Insights.</span>
           </h1>
-          <p className="text-slate-400 text-xl md:text-2xl font-light max-w-3xl leading-relaxed mb-12">
+          <p className="text-slate-400 text-lg md:text-2xl font-light max-w-3xl leading-relaxed mx-auto">
             Expert opinions, market trends, and talent strategies for the UK electrical wholesale sector.
           </p>
+        </div>
+      </div>
 
+      <div className="max-w-screen-xl mx-auto px-6">
+        <div className="mb-20">
           {/* Filter Mechanism */}
           <div className="flex flex-wrap gap-3">
             {categories.map(category => (

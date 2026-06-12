@@ -1,8 +1,13 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SERVICES, TESTIMONIALS } from '../constants';
+import { motion } from 'motion/react';
+import { SERVICES, TESTIMONIALS, FAQ_ITEMS } from '../constants';
 import SEO from '../components/SEO';
+import FAQAccordion from '../components/FAQAccordion';
+import BrochureRequestForm from '../components/BrochureRequestForm';
+// @ts-ignore
+import heroImg from '../src/assets/images/services_hero_1780507411826.png';
 
 const Services: React.FC = () => {
   return (
@@ -14,8 +19,19 @@ const Services: React.FC = () => {
         canonical="https://poweruptalent.co.uk/services"
       />
       {/* 1. Header */}
-      <header className="bg-navy-deep py-40 md:py-60 px-6 text-center border-b border-white/10 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,193,7,0.15)_0%,transparent_70%)]"></div>
+      <header className="py-40 md:py-60 px-6 text-center border-b border-white/10 relative overflow-hidden bg-navy-deep">
+        {/* Background Hero Image */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <img 
+            src={heroImg}
+            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
+            referrerPolicy="no-referrer"
+            alt="UK Electrical Wholesale Recruitment Services Methodology"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
+        </div>
+
         <div className="max-w-4xl mx-auto relative z-10 animate-fade-in">
           <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-12">
             Strategic Methodology
@@ -84,7 +100,11 @@ const Services: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {SERVICES.map((pillar, i) => (
-              <div key={pillar.id} className="bg-white border border-slate-200 rounded-sm hover:shadow-2xl transition-all duration-700 group flex flex-col overflow-hidden shadow-sm">
+              <motion.div 
+                key={pillar.id} 
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white border border-slate-200 rounded-sm hover:shadow-2xl transition-all duration-700 group flex flex-col overflow-hidden shadow-sm"
+              >
                 <div className="h-64 overflow-hidden relative">
                    <img 
                     src={pillar.image} 
@@ -114,7 +134,7 @@ const Services: React.FC = () => {
                     ))}
                   </ul>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -194,7 +214,29 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* 6. Reviews */}
+      {/* 5.5. Brochure Request Section */}
+      <section className="py-24 px-6 bg-white border-b border-slate-100 relative">
+        <div className="max-w-screen-xl mx-auto">
+          <BrochureRequestForm />
+        </div>
+      </section>
+
+      {/* 6. FAQ Section */}
+      <section className="py-32 px-6 bg-slate-50 border-b border-slate-100">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-slate-900 tracking-tight uppercase mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-500 font-light">
+              Clear answers to the most common questions from our clients and candidates.
+            </p>
+          </div>
+          <FAQAccordion items={FAQ_ITEMS} />
+        </div>
+      </section>
+
+      {/* 7. Reviews */}
       <section className="py-32 bg-slate-50 overflow-hidden text-center border-b border-slate-100">
         <div className="max-w-screen-xl mx-auto px-6 mb-20">
           <h2 className="text-3xl md:text-7xl font-display font-bold text-slate-900 tracking-tighter uppercase leading-none">Industry Voices</h2>
