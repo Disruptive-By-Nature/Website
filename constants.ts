@@ -1,29 +1,108 @@
 import { Milestone, Metric, Testimonial, Service, BlogPost, FAQItem } from './types';
 
-export const METRICS: Metric[] = [
-  { value: "25,000+", label: "Market-mapped professionals" },
-  { value: "98%", label: "Placement retention rate" },
-  { value: "30+ Years", label: "Combined sector leadership" },
-  { value: "28 Days", label: "Average placement" }
+export const ROLES_PLACED: string[] = [
+  "Branch Manager",
+  "Regional Director",
+  "National Sales Manager",
+  "Operations Director",
+  "Trade Counter Manager",
+  "Area Sales Manager",
+  "Procurement Director",
+  "General Manager",
+  "Commercial Director",
+  "Head of Wholesale",
+  "Depot Manager",
+  "Group Sales Director",
 ];
+
+export const PROCESS_STEPS = [
+  {
+    step: "01",
+    title: "Client Brief",
+    description: "We take a deep-dive brief to understand your exact operational needs, culture, and the commercial outcomes you require from the hire.",
+    icon: "description"
+  },
+  {
+    step: "02",
+    title: "Market Mapping",
+    description: "Our AI-driven intelligence platform maps the entire UK passive talent pool — identifying the right people currently delivering results for your competitors.",
+    icon: "hub"
+  },
+  {
+    step: "03",
+    title: "Confidential Approach",
+    description: "We make discreet, personal contact with target candidates. No job boards. No adverts. Absolute confidentiality for both parties throughout.",
+    icon: "person_search"
+  },
+  {
+    step: "04",
+    title: "Technical Vetting",
+    description: "Every candidate is rigorously assessed for trade counter literacy, commercial acumen, and cultural fit — by consultants who have worked in the sector.",
+    icon: "verified"
+  },
+  {
+    step: "05",
+    title: "Placement & Support",
+    description: "We manage the offer process and provide post-placement support, including career development resources to ensure long-term success for all parties.",
+    icon: "handshake"
+  }
+];
+
+export const GUARANTEES = [
+  {
+    icon: "lock",
+    title: "Total Confidentiality",
+    description: "Strict NDAs protect both client and candidate at every stage. We never disclose who we are briefed by."
+  },
+  {
+    icon: "schedule",
+    title: "28-Day Placement",
+    description: "Our average time from brief to shortlist is 28 days. We move quickly because opportunity in wholesale doesn't wait."
+  },
+  {
+    icon: "refresh",
+    title: "Replacement Guarantee",
+    description: "If a placed candidate leaves within the agreed guarantee period, we re-recruit at no additional cost."
+  },
+  {
+    icon: "workspace_premium",
+    title: "Top 1% Only",
+    description: "We only present candidates who meet our rigorous vetting criteria — those who are already delivering exceptional results."
+  }
+];
+
+export const METRICS: Metric[] = [
+  { value: "25,000+", label: "Professionals market-mapped" },
+  { value: "98%", label: "12-month placement retention" },
+  { value: "30+", label: "Years combined sector experience" },
+  { value: "28", label: "Average days to shortlist" }
+];
+
+
 
 export const MILESTONES: Milestone[] = [
   {
     year: "2018",
     title: "Operational Origins",
-    description: "Built on deep-rooted experience within UK electrical wholesale operations.",
+    description: "Founded on decades of first-hand experience working within UK electrical wholesale operations — we know the industry from the inside.",
     icon: "engineering"
   },
   {
     year: "2020",
     title: "Strategic Market Mapping",
-    description: "Establishing the UK's most comprehensive database of passive industry talent.",
-    icon: "map"
+    description: "Built the UK's most comprehensive passive talent database — 25,000+ electrical wholesale professionals mapped and profiled.",
+    icon: "hub"
+  },
+  {
+    year: "2023",
+    title: "AI-Driven Intelligence",
+    description: "Integrated proprietary AI sourcing tools to identify passive high-performers with greater precision and speed than any competitor.",
+    icon: "data_object"
   },
   {
     year: "2024",
-    title: "Consultancy Evolution",
-    description: "Transitioning to a full-service strategic talent partner for national wholesalers.",
+    title: "National Expansion",
+    description: "Became the trusted talent partner for major national wholesalers and regional buying groups across the entire UK.",
     icon: "partner_exchange"
   }
 ];
@@ -32,17 +111,26 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Thomas Wilson",
     role: "Regional Director",
-    quote: "Power-Up Talent doesn't just fill vacancies; they provide market intelligence that allows us to outmanoeuvre the competition."
+    company: "National Electrical Wholesaler",
+    quote: "Power-Up Talent don't just fill vacancies — they provide market intelligence that allows us to outmanoeuvre the competition. They found us a Regional Director we didn't know existed."
   },
   {
     name: "Michael Roberts",
     role: "Managing Director",
-    quote: "Their grasp of operational alignment ensured our new branch launch was staffed with a high-performing leadership team from day one."
+    company: "Independent Buying Group",
+    quote: "Their grasp of operational alignment ensured our new branch launch was staffed with a high-performing leadership team from day one. Worth every penny of the fee."
   },
   {
     name: "Sarah Jenkins",
     role: "Operations Manager",
-    quote: "The only headhunters I've worked with who actually understand the technical requirements of the trade counter environment."
+    company: "UK Electrical Distributor",
+    quote: "The only headhunters I've worked with who actually understand the technical requirements of the trade counter environment. They speak our language."
+  },
+  {
+    name: "David Hargreaves",
+    role: "CEO",
+    company: "Wholesale Distribution Group",
+    quote: "We'd used three other agencies and got nowhere. Power-Up placed a calibre of Branch Manager we didn't think existed in our region — within four weeks."
   }
 ];
 

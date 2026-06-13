@@ -1,327 +1,324 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
+import { MILESTONES, GUARANTEES } from '../constants';
 import SEO from '../components/SEO';
-// @ts-ignore
 import heroImg from '../src/assets/images/about_us_hero_1780507427486.png';
 
+const VALUES = [
+  { icon: 'verified_user', title: 'Integrity', description: 'We operate with absolute transparency. No inflated pipelines, no wasted briefings — only honest, expert counsel.' },
+  { icon: 'handshake', title: 'Partnerships', description: 'We are long-term partners to the clients and candidates we work with. Your success is our success.' },
+  { icon: 'workspace_premium', title: 'Excellence', description: 'We never settle for good enough. We present only the top 1% of passive talent — because mediocrity costs you more in the long run.' },
+  { icon: 'data_object', title: 'Innovation', description: 'Our AI-driven mapping platform gives us intelligence no traditional recruiter can match. We use technology to find the unfindable.' },
+  { icon: 'bolt', title: 'Sector Grit', description: 'We have lived the trade counter life. We understand the pressures, the politics, and the talent dynamics of electrical wholesale from the inside.' },
+];
+
 const AboutUs: React.FC = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.8, ease: "easeOut" as const }
-  };
-
-  const fadeIn = {
-    initial: { opacity: 0 },
-    whileInView: { opacity: 1 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 1, ease: "easeOut" as const }
-  };
-
   return (
-    <div className="pt-20 md:pt-24 pb-0 overflow-x-hidden bg-background-dark text-white">
-      <SEO 
-        title="About Us | UK Electrical Wholesale Recruitment Specialists | Power-Up Talent"
-        description="Learn about Power-Up Talent, the UK's premier strategic talent partner for electrical wholesale. Discover our story, methodology, and commitment to quality."
-        keywords="About Power-Up Talent, Electrical Wholesale Recruitment Agency, UK Electrical Sector Consultancy, Recruitment Specialists Electrical Wholesale"
-        canonical="https://poweruptalent.co.uk/about"
+    <>
+      <SEO
+        title="About Us | Power-Up Talent"
+        description="Built by the industry, for the industry. The story behind Power-Up Talent — the UK's most specialist headhunting consultancy for electrical wholesale."
+        keywords="about power-up talent, electrical wholesale recruiter, uk recruitment consultancy"
+        canonical="https://www.poweruptalent.co.uk/about"
       />
-      
-      {/* 1. Header */}
-      <section className="relative w-full border-b border-white/10 overflow-hidden bg-navy-deep py-24 md:py-48 mb-32 flex items-center justify-center">
-        {/* Background Hero Image */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <img 
-            src={heroImg}
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
-            referrerPolicy="no-referrer"
-            alt="UK Electrical Wholesale Executive Search & Headhunting"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
-        </div>
-        
-        <div className="relative z-10 px-6 max-w-screen-xl mx-auto text-center">
-          <div className="inline-flex items-center gap-4 px-5 py-2 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-12 animate-fade-in">
-            UK Sector Intelligence Partners
-          </div>
-          <h1 className="text-5xl md:text-[10rem] font-display font-bold tracking-tighter mb-10 leading-[0.9] text-white uppercase text-center animate-slide-up">
-            Quality Over <br/><span className="text-primary italic">Volume.</span>
-          </h1>
-          <p className="text-slate-400 text-lg md:text-2xl font-light max-w-2xl mx-auto leading-relaxed uppercase tracking-widest">
-            The Story Behind Power-Up Talent
-          </p>
-        </div>
-      </section>
 
-      {/* 2. Our Story */}
-      <section className="py-32 md:py-48 px-6 bg-white text-slate-900 border-y border-slate-200">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-          <motion.div 
-            className="lg:w-1/2 space-y-10"
-            {...fadeInUp}
-          >
-            <h2 className="text-4xl md:text-8xl font-display font-bold text-slate-900 tracking-tight uppercase leading-none">
-              Our <span className="text-primary">Story.</span>
-            </h2>
-            <div className="space-y-6 text-slate-600 font-light text-lg md:text-xl leading-relaxed">
-              <p>
-                Founded on a mission to specialise in how electrical wholesale talent is sourced and developed, <span className="font-bold text-navy-deep">Power-Up Talent</span> was born from a belief that exceptional hires are the irreplaceable core of UK infrastructure. We don't just source talent; we bring in top performers from inside and outside the industry and support them with comprehensive training at all levels throughout their careers—a commitment that has earned us an excellent reputation in the sector.
-              </p>
-              <p>
-                We believe that the right leadership can transform organisations, drive sustainable growth, and protect margins throughout the electrical distribution community. Our mission extends beyond simple placement—we're dedicated to building long-term partnerships that foster career advancement and improved operational standards across the UK.
-              </p>
-              <p>
-                Today, we're recognised as the UK's most trusted consultative partner for electrical executive search. Our success lies in our deep sector grit, extensive relationships with national buying groups, and commitment to ethical, personalised service.
-              </p>
-              <p>
-                We don't just place candidates—we nurture careers, strengthen branch networks, and contribute to raising standards across the profession. Every role we fill is an opportunity to make a lasting impact on operational efficiency and team morale.
-              </p>
-            </div>
-          </motion.div>
-          <motion.div 
-            className="lg:w-1/2 relative"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: "easeOut" as const }}
-          >
-            <div className="rounded-2xl overflow-hidden shadow-2xl border-8 border-slate-100 transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
-              <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg"
-                referrerPolicy="no-referrer"
-                loading="lazy"
-                alt="UK Electrical Sector Consultancy Team" 
-                className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent"></div>
-            </div>
-          </motion.div>
+      {/* ── HERO ── */}
+      <section className="relative min-h-[70vh] flex items-end bg-navy-deep overflow-hidden pt-20">
+        <div className="absolute inset-0">
+          <img src={heroImg} alt="About Us Hero" className="w-full h-full object-cover" style={{ opacity: 0.35 }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy-deep/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent" />
         </div>
-      </section>
-
-      {/* 3. The Strategic Difference */}
-      <section className="py-32 md:py-48 px-6 bg-slate-50 text-slate-900 border-b border-slate-200">
-        <motion.div 
-          className="max-w-screen-xl mx-auto text-center mb-24"
-          {...fadeInUp}
-        >
-          <h2 className="text-4xl md:text-8xl font-display font-bold text-slate-900 tracking-tight uppercase mb-8">
-            The Strategic <span className="text-primary">Difference.</span>
-          </h2>
-          <p className="text-slate-500 text-lg md:text-2xl font-light max-w-4xl mx-auto leading-relaxed">
-            Power-Up Talent is not a traditional recruitment agency. We are a specialist consultancy focused exclusively on identifying the passive high-performers that standard job boards cannot reach.
-          </p>
-        </motion.div>
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
-           <motion.div 
-             className="p-12 bg-white border border-slate-200 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.1 }}
-           >
-              <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133031/Gemini_Generated_Image_9k1c5e9k1c5e9k1c_1_ovnor8.png"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-5 transition-opacity duration-700"
-                alt="Headhunting-First"
-              />
-              <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold text-navy-deep uppercase mb-6">Headhunting-First</h3>
-                <p className="text-slate-500 font-light text-xl leading-relaxed">
-                  Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely "looking" for work; they are busy delivering results for your competitors.
-                </p>
-              </div>
-           </motion.div>
-           <motion.div 
-             className="p-12 bg-white border border-slate-200 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 group relative overflow-hidden"
-             initial={{ opacity: 0, y: 30 }}
-             whileInView={{ opacity: 1, y: 0 }}
-             viewport={{ once: true }}
-             transition={{ duration: 0.6, delay: 0.2 }}
-           >
-              <img 
-                src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133010/Gemini_Generated_Image_xjon5bxjon5bxjon_1_xtzsqm.png"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-5 transition-opacity duration-700"
-                alt="Trade Literacy"
-              />
-              <div className="relative z-10">
-                <h3 className="text-3xl font-display font-bold text-navy-deep uppercase mb-6">Trade Literacy</h3>
-                <p className="text-slate-500 font-light text-xl leading-relaxed">
-                  Our consultants are sector specialists with deep operational backgrounds. We speak the language of technical procurement and branch management, ensuring a peer-level vetting process standard recruiters cannot match.
-                </p>
-              </div>
-           </motion.div>
-        </div>
-      </section>
-
-      {/* 4. Our Commitment */}
-      <section className="py-32 md:py-48 px-6 bg-navy-deep text-white border-y border-white/5 relative overflow-hidden">
-        <img 
-          src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1773133006/Gemini_Generated_Image_5h80k15h80k15h80_1_tzolog.png"
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none"
-          alt="Commitment to Talent Background"
-        />
-        <div className="max-w-screen-xl mx-auto relative z-10">
-          <motion.div 
-            className="text-center mb-16"
-            {...fadeInUp}
-          >
-            <h2 className="text-4xl md:text-7xl font-display font-bold text-white tracking-tight uppercase leading-none mb-12">
-              Our <span className="text-primary">Commitment to Talent.</span>
-            </h2>
-            <p className="text-slate-400 text-xl md:text-2xl font-light max-w-4xl mx-auto leading-relaxed">
-              We don't just source talent; we actively bring in top performers from both inside and outside the industry. Once they join, we support them with comprehensive, career-long training at all levels, ensuring they have the tools to excel and grow with your business.
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pb-16 w-full">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold tracking-widest uppercase text-primary border border-primary/40 rounded-full bg-primary/10">
+              Our Story
+            </span>
+            <h1 className="font-display font-black text-5xl md:text-7xl text-white leading-none tracking-tighter mb-4 max-w-4xl">
+              Built by the Industry.{' '}
+              <span className="text-primary">For the Industry.</span>
+            </h1>
+            <p className="text-slate-300 text-xl max-w-xl">
+              The story behind Power-Up Talent.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-            <motion.div 
-              className="bg-white/5 p-10 rounded-sm border border-white/10"
+      {/* ── OUR STORY ── */}
+      <section className="bg-white py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7 }}
             >
-              <h3 className="text-2xl font-display font-bold text-white uppercase mb-6">Development Pathways</h3>
-              <p className="text-slate-300 font-light leading-relaxed mb-6">
-                From technical product certifications to leadership coaching, we partner with industry-leading training providers to offer structured development pathways for all placed candidates.
-              </p>
-              <ul className="space-y-3 text-slate-200 font-medium">
-                <li className="flex items-center gap-3"><span className="text-primary">✓</span> Technical Product Certification</li>
-                <li className="flex items-center gap-3"><span className="text-primary">✓</span> Branch Management Leadership Training</li>
-                <li className="flex items-center gap-3"><span className="text-primary">✓</span> Commercial Strategy & Margin Protection</li>
-              </ul>
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Story</span>
+              <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2 mb-6">
+                Why We Exist.
+              </h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  Power-Up Talent was founded with one mission: to fix how electrical wholesale recruits its leaders.
+                  We have worked inside the industry — at the trade counter, in branch management, and at regional director level.
+                  We know exactly what it takes to build high-performing teams in this sector.
+                </p>
+                <p>
+                  Today we are recognised as the UK's most trusted specialist headhunting consultancy for electrical wholesale.
+                  Our methodology is built on market intelligence, absolute discretion, and a relentless focus on finding the top 1%
+                  of passive talent — the people currently delivering results for your competitors who don't know they should be
+                  working for you.
+                </p>
+              </div>
             </motion.div>
-            <motion.div 
-              className="bg-white/5 p-10 rounded-sm border border-white/10"
+
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="relative"
             >
-              <h3 className="text-2xl font-display font-bold text-white uppercase mb-6">Candidate Success Story</h3>
-              <p className="text-slate-300 font-light leading-relaxed italic mb-6">
-                "The training support I received after being placed as a Branch Manager was unparalleled. It wasn't just about the role; it was about my long-term career trajectory."
-              </p>
-              <p className="font-bold text-white">— Sarah Jenkins, Regional Director</p>
+              <div className="relative rounded-sm overflow-hidden aspect-[4/3]">
+                <img src={heroImg} alt="Our Story" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 to-transparent" />
+              </div>
+              {/* Floating stat */}
+              <div className="absolute -bottom-6 -left-6 bg-primary rounded-sm p-5 shadow-xl">
+                <div className="font-display font-black text-3xl text-navy-deep">25,000+</div>
+                <div className="text-xs font-bold uppercase tracking-wider text-navy-deep/70">Professionals Mapped</div>
+              </div>
             </motion.div>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 pt-20">
-            {[
-              { icon: 'visibility', title: 'Transparency', desc: 'Clear communication about how AI modelling is used in our process.' },
-              { icon: 'verified_user', title: 'Ethics', desc: 'Ensuring our tools are fair, unbiased, and compliant with UK employment laws.' },
-              { icon: 'bolt', title: 'Innovation', desc: 'Continuously improving our sector intelligence and headhunting strategies.' },
-              { icon: 'ads_click', title: 'Impact', desc: 'Helping wholesalers grow by connecting them with talent that protects margins.' },
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
-                className="space-y-4 group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-              >
-                <span className="material-symbols-outlined text-primary text-4xl font-bold group-hover:scale-110 transition-transform">{item.icon}</span>
-                <h3 className="text-2xl font-display font-bold text-white uppercase tracking-tight">{item.title}</h3>
-                <p className="text-slate-500 font-light text-lg leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Our Purpose */}
-      <section className="py-32 md:py-48 px-6 bg-white text-slate-900 border-b border-slate-100">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-20">
-          <motion.div 
-            className="lg:w-1/2 space-y-12"
-            {...fadeInUp}
+      {/* ── FOUNDER ── */}
+      <section className="bg-background-dark py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
           >
-            <h2 className="text-4xl md:text-7xl font-display font-bold text-primary tracking-tight uppercase leading-none">
-              Our Purpose: To <br/>Specialise <br/>Recruitment.
-            </h2>
-            <div className="space-y-8">
-              <p className="text-slate-500 text-xl md:text-2xl font-light leading-relaxed">
-                Our purpose is to specialise recruitment by combining the precision of AI with the irreplaceable nuance of sector grit. We believe that hiring should be fast, fair, and focused on identifying the elite high-performers.
-              </p>
-              <div className="pl-8 border-l-4 border-primary">
-                 <p className="text-2xl font-display font-bold text-navy-deep italic uppercase">
-                   "We don't just find you talent—we equip your organisation with the intelligence to outperform the competition."
-                 </p>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Leadership</span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2">Meet the Founder.</h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <div className="bg-card-dark border border-border-dark rounded-sm overflow-hidden grid md:grid-cols-[280px_1fr]">
+              {/* Founder image placeholder */}
+              <div className="bg-navy-deep flex flex-col items-center justify-center p-10 min-h-64">
+                <div className="w-28 h-28 rounded-full bg-primary/10 border-2 border-primary/30 flex items-center justify-center mb-4">
+                  <span className="font-display font-black text-4xl text-primary">JP</span>
+                </div>
+                <h3 className="font-display font-bold text-white text-xl text-center">James Power</h3>
+                <p className="text-primary text-xs font-semibold uppercase tracking-widest mt-1 text-center">
+                  Founder & Managing Director
+                </p>
+                <div className="flex gap-3 mt-5">
+                  <div className="w-8 h-8 bg-white/10 rounded-sm flex items-center justify-center hover:bg-primary/20 transition-colors cursor-pointer">
+                    <span className="material-symbols-outlined text-white text-sm">link</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Bio */}
+              <div className="p-8 md:p-10 flex flex-col justify-center">
+                <div className="flex mb-4">
+                  <span className="material-symbols-outlined text-primary text-4xl">"</span>
+                </div>
+                <p className="text-slate-300 leading-relaxed text-sm md:text-base">
+                  With over a decade embedded in electrical wholesale operations and executive search,
+                  James founded Power-Up Talent after seeing too many wholesalers staffed by mediocre placements
+                  from generalist agencies who couldn't tell a busbar from a breaker. His vision was simple: build
+                  the UK's most specialist headhunting service for the industry he knows best.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {['Electrical Wholesale', 'Executive Search', 'Market Mapping', 'AI Recruitment'].map((tag) => (
+                    <span key={tag} className="px-3 py-1 border border-primary/30 text-primary text-xs font-medium rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
-          <motion.div 
-            className="lg:w-1/2 w-full aspect-square md:aspect-video rounded-2xl overflow-hidden shadow-2xl"
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-             <img 
-               src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg"
-               referrerPolicy="no-referrer"
-               loading="lazy"
-               alt="Technical Sector Intelligence" 
-               className="w-full h-full object-cover"
-             />
-          </motion.div>
         </div>
       </section>
 
-      {/* 6. Our Values */}
-      <section className="py-32 md:py-48 px-6 bg-slate-50 text-slate-900 border-b border-slate-200">
-        <div className="max-w-screen-xl mx-auto text-center">
-          <motion.h2 
-            className="text-4xl md:text-[8rem] font-display font-bold text-navy-deep tracking-tighter uppercase mb-24"
-            {...fadeInUp}
+      {/* ── MILESTONES ── */}
+      <section className="bg-navy-deep py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            Our <span className="text-primary">Values.</span>
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            {[
-              { icon: 'verified', title: 'Integrity', desc: 'We conduct all our consultancy with honesty, transparency, and ethical standards, building trust with every brief.' },
-              { icon: 'groups', title: 'Partnerships', desc: 'We invest in building lasting partnerships with both wholesalers and high-performers, fostering success.' },
-              { icon: 'stars', title: 'Excellence', desc: 'We maintain the highest standards in everything we do, from market mapping to leadership delivery.' },
-              { icon: 'tips_and_updates', title: 'Innovation', desc: 'We combine traditional headhunting methods with modern AI modelling to deliver innovative solutions.' },
-              { icon: 'bolt', title: 'Sector Grit', desc: 'Every placement contributes to better operational standards, driving our passion for the electrical community.' },
-            ].map((value, i) => (
-              <motion.div 
-                key={i} 
-                className="bg-white p-10 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 group border border-slate-100 flex flex-col items-center"
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Journey</span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2">Key Milestones.</h2>
+          </motion.div>
+
+          {/* Desktop horizontal timeline */}
+          <div className="hidden lg:flex items-start gap-0 relative">
+            <div className="absolute top-10 left-[10%] right-[10%] h-px bg-white/10" />
+            {MILESTONES.map((m, i) => (
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ delay: i * 0.15 }}
+                className="flex-1 flex flex-col items-center text-center px-4 relative"
               >
-                <span className="material-symbols-outlined text-primary text-5xl mb-8 group-hover:scale-110 transition-transform">{value.icon}</span>
-                <h3 className="text-2xl font-display font-bold text-navy-deep uppercase mb-6">{value.title}</h3>
-                <p className="text-slate-500 text-sm font-light leading-relaxed text-center">
-                  {value.desc}
-                </p>
+                <div className="w-20 h-20 rounded-full bg-navy-deep border-2 border-primary flex items-center justify-center mb-5 z-10 relative">
+                  <span className="material-symbols-outlined text-primary text-2xl">{m.icon}</span>
+                </div>
+                <span className="font-display font-black text-primary text-xl mb-1">{m.year}</span>
+                <h3 className="font-display font-bold text-white text-base mb-2">{m.title}</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">{m.description}</p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Mobile vertical timeline */}
+          <div className="lg:hidden space-y-8">
+            {MILESTONES.map((m, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="flex gap-5"
+              >
+                <div className="flex-shrink-0 flex flex-col items-center">
+                  <div className="w-14 h-14 rounded-full bg-navy-deep border-2 border-primary flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">{m.icon}</span>
+                  </div>
+                  {i < MILESTONES.length - 1 && <div className="w-px flex-1 bg-white/10 my-2" />}
+                </div>
+                <div className="pt-2">
+                  <span className="font-display font-black text-primary text-xl block mb-1">{m.year}</span>
+                  <h3 className="font-display font-bold text-white text-base mb-1">{m.title}</h3>
+                  <p className="text-slate-400 text-sm leading-relaxed">{m.description}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final Specialist Banner */}
-      <section className="py-24 px-6 bg-primary text-navy-deep text-center">
-        <div className="max-w-4xl mx-auto">
-          <Link to="/contact" className="bg-navy-deep text-white px-16 py-8 rounded-sm font-bold text-xs uppercase tracking-[0.4em] hover:bg-white hover:text-navy-deep transition-all shadow-2xl">
-            Consult a Specialist
-          </Link>
+      {/* ── OUR GUARANTEES ── */}
+      <section className="bg-background-dark py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Promise</span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2">Our Guarantee.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {GUARANTEES.map((g, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-card-dark border border-border-dark rounded-sm p-6 hover:border-primary/40 transition-colors group text-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <span className="material-symbols-outlined text-primary">{g.icon}</span>
+                </div>
+                <h3 className="font-display font-bold text-white mb-2">{g.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{g.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
-    </div>
+
+      {/* ── VALUES ── */}
+      <section className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-14"
+          >
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Culture</span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2">Our Values.</h2>
+          </motion.div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {VALUES.map((v, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group border border-slate-100 rounded-sm p-6 text-center hover:border-primary hover:shadow-xl transition-all duration-300"
+              >
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <span className="material-symbols-outlined text-primary">{v.icon}</span>
+                </div>
+                <h3 className="font-display font-bold text-navy-deep text-lg mb-2">{v.title}</h3>
+                <p className="text-slate-500 text-xs leading-relaxed">{v.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="bg-primary py-20">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-display font-black text-3xl md:text-5xl text-navy-deep mb-4">
+              Work With the Industry Experts.
+            </h2>
+            <p className="text-navy-deep/70 mb-8 text-lg">
+              Whether you are hiring or exploring your next move, let's start a conversation.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                id="about-cta-brief"
+                className="inline-block px-10 py-4 bg-navy-deep text-white font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-navy-deep/80 transition-all duration-300 hover:scale-105"
+              >
+                Brief Us
+              </Link>
+              <Link
+                to="/upload-cv"
+                id="about-cta-cv"
+                className="inline-block px-10 py-4 bg-white text-navy-deep font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-slate-100 transition-all duration-300 hover:scale-105"
+              >
+                Submit Your CV
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
   );
 };
 

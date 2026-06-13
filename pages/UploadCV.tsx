@@ -1,121 +1,211 @@
-
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
+﻿import React, { useState, useRef, DragEvent } from "react";
+import SEO from "../components/SEO";
 // @ts-ignore
-import heroImg from '../src/assets/images/upload_cv_hero_1780507458123.png';
+import heroImg from "../src/assets/images/upload_cv_hero_1780507458123.png";
 
 const UploadCV: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
+  const [fileName, setFileName] = useState<string | null>(null);
+  const [gdprConsent, setGdprConsent] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleDragOver = (e: React.DragEvent) => {
-    e.preventDefault();
-    setIsDragging(true);
-  };
-
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
-
-  const handleDrop = (e: React.DragEvent) => {
+  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file) setFileName(file.name);
   };
+
+  const nextSteps = [
+    { step: "01", title: "Your CV is reviewed", desc: "A senior consultant reviews your profile within 48 hours. We assess your experience against our live client briefs and passive talent pool." },
+    { step: "02", title: "Confidential consultation", desc: "If there is a match, we arrange a private call to fully understand your career goals, salary expectations, and requirements." },
+    { step: "03", title: "Discreet representation", desc: "We represent you exclusively to the right employers — only with your explicit consent. Your current employer will never know." },
+  ];
+
+  const advantages = [
+    { icon: "lock", label: "Total Discretion — NDAs as standard" },
+    { icon: "visibility_off", label: "60%+ of our roles are never advertised" },
+    { icon: "support_agent", label: "Career-long support & guidance" },
+    { icon: "factory", label: "Deep electrical wholesale sector expertise" },
+  ];
 
   return (
-    <div className="pt-24 pb-0 bg-background-dark min-h-screen text-white">
-      <SEO 
-        title="Upload Your CV | Join the Elite Electrical Wholesale Hub | Power-Up Talent"
-        description="Submit your CV to Power-Up Talent's executive hub. Join our network of elite electrical wholesale professionals and gain access to hidden market roles."
-        keywords="Upload CV Electrical Wholesale, Electrical Wholesale Career Hub, Submit CV Power-Up Talent, Electrical Wholesale Executive Jobs"
+    <div className="pt-20 bg-background-dark min-h-screen text-white">
+      <SEO
+        title="Submit Your CV | Join the Power-Up Talent Network | Electrical Wholesale"
+        description="Join the Power-Up Talent passive candidate network. We represent senior electrical wholesale professionals discreetly to the right employers. 100% confidential."
+        keywords="Upload CV Electrical Wholesale, Branch Manager Jobs UK, Regional Director Headhunted, Passive Candidate Network"
         canonical="https://poweruptalent.co.uk/upload-cv"
       />
-      {/* Header - Custom Background Image */}
-      <section className="relative py-32 md:py-48 px-6 text-center overflow-hidden border-b border-white/5 bg-navy-deep">
-        {/* Background Hero Image */}
+
+      {/* Hero */}
+      <header className="py-32 md:py-48 px-6 text-center border-b border-white/8 relative overflow-hidden bg-navy-deep">
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <img 
-            src={heroImg}
-            className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
-            referrerPolicy="no-referrer"
-            alt="UK Electrical Wholesale Recruitment Executive Submission Hub"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.05)_0%,transparent_100%)]"></div>
+          <img src={heroImg} className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale mix-blend-overlay" alt="Join Power-Up Talent Network" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-navy-deep/20 to-navy-deep/80"></div>
         </div>
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-[0.5em] mb-12">
-            Secure Career Hub
+        <div className="max-w-3xl mx-auto relative z-10">
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-semibold uppercase tracking-[0.4em] mb-10">
+            <span className="material-symbols-outlined text-sm">lock</span>
+            Strictly Confidential
           </div>
-          <h1 className="text-5xl md:text-[9rem] font-display font-bold mb-8 tracking-tighter leading-none text-white uppercase text-glow">
-            Join the <br/><span className="text-primary italic">Elite</span> Hub.
+          <h1 className="text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
+            Join Our Passive<br /><span className="text-gradient">Talent Network.</span>
           </h1>
+          <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+            We never post your details publicly. We represent you discreetly to the right employers, at the right time — and only with your explicit consent.
+          </p>
         </div>
-      </section>
+      </header>
 
-      <section className="max-w-screen-xl mx-auto px-6 -mt-20 md:-mt-32 relative z-20 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-white/5 border border-white/5 overflow-hidden shadow-2xl">
-          
-          {/* Left: Form */}
-          <div className="lg:col-span-7 bg-card-dark p-8 md:p-16 lg:p-24">
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 uppercase tracking-tight">Executive Submission</h2>
-              <div className="h-1 w-20 bg-primary"></div>
+      {/* Main Content */}
+      <section className="py-16 md:py-24 px-6">
+        <div className="max-w-screen-xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+            {/* Left: Expanded Form */}
+            <div className="lg:col-span-7">
+              <div className="bg-navy-deep border border-white/8 rounded-sm p-8 md:p-12">
+                <div className="mb-10">
+                  <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] block mb-3">Candidate Registration</span>
+                  <h2 className="text-2xl md:text-4xl font-display font-black uppercase tracking-tight mb-2">Tell Us About You.</h2>
+                  <div className="h-0.5 w-16 bg-primary mt-4"></div>
+                </div>
+
+                <form action="mailto:poweruptalent@gmail.com" method="get" encType="text/plain" className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Full Name *</label>
+                      <input name="name" type="text" placeholder="Your full name" required className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Email Address *</label>
+                      <input name="email" type="email" placeholder="your@email.com" required className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Phone Number</label>
+                      <input name="phone" type="tel" placeholder="+44 7700 000000" className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Current Job Title *</label>
+                      <input name="current_title" type="text" placeholder="e.g. Branch Manager" required className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Current Employer *</label>
+                      <input name="employer" type="text" placeholder="Company name" required className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Location / Region *</label>
+                      <input name="location" type="text" placeholder="e.g. West Midlands" required className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Target Salary Range</label>
+                    <select name="salary" className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all appearance-none">
+                      <option value="">Select a range</option>
+                      <option>Under £30,000</option>
+                      <option>£30,000 – £40,000</option>
+                      <option>£40,000 – £55,000</option>
+                      <option>£55,000 – £70,000</option>
+                      <option>£70,000 – £90,000</option>
+                      <option>£90,000+</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">What Are You Looking for Next?</label>
+                    <textarea name="goals" rows={4} placeholder="Describe your ideal next role, the type of organisation you would like to join, and any specific goals or requirements..." className="w-full bg-black/40 border border-white/8 rounded-sm px-5 py-4 text-sm text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700 resize-none"></textarea>
+                  </div>
+
+                  {/* CV Upload */}
+                  <div className="space-y-2">
+                    <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Upload Your CV</label>
+                    <div
+                      className={`border-2 border-dashed rounded-sm p-10 text-center transition-all cursor-pointer ${isDragging ? "border-primary bg-primary/10" : "border-white/15 hover:border-white/30 hover:bg-white/5"}`}
+                      onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                      onDragLeave={() => setIsDragging(false)}
+                      onDrop={handleDrop}
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <span className="material-symbols-outlined text-4xl text-slate-500 block mb-3">upload_file</span>
+                      {fileName ? (
+                        <p className="text-primary font-semibold text-sm">{fileName}</p>
+                      ) : (
+                        <>
+                          <p className="text-slate-300 font-medium text-sm mb-1">Drag and drop your CV here</p>
+                          <p className="text-slate-600 text-xs">or click to browse — PDF, DOC, DOCX accepted</p>
+                        </>
+                      )}
+                      <input ref={fileInputRef} type="file" accept=".pdf,.doc,.docx" className="hidden" onChange={(e) => { const f = e.target.files?.[0]; if (f) setFileName(f.name); }} />
+                    </div>
+                    <p className="text-slate-600 text-xs">Your CV is only shared with employers with your explicit consent.</p>
+                  </div>
+
+                  {/* GDPR */}
+                  <div className="flex items-start gap-4">
+                    <input type="checkbox" id="gdpr" checked={gdprConsent} onChange={(e) => setGdprConsent(e.target.checked)} className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" />
+                    <label htmlFor="gdpr" className="text-slate-400 text-sm font-light leading-relaxed cursor-pointer">
+                      I consent to Power-Up Talent storing my details and contacting me regarding relevant executive opportunities within the electrical wholesale sector.
+                      <span className="text-primary"> Privacy Policy.</span>
+                    </label>
+                  </div>
+
+                  <button type="submit" className="w-full bg-primary text-navy-deep py-4 rounded-sm font-bold text-sm uppercase tracking-[0.2em] shadow-[0_12px_30px_rgba(255,193,7,0.2)] hover:bg-white transition-all flex items-center justify-center gap-3 group active:scale-[0.98]">
+                    Join the Network
+                    <span className="material-symbols-outlined text-lg group-hover:rotate-12 transition-transform">bolt</span>
+                  </button>
+                </form>
+              </div>
             </div>
 
-            <form className="space-y-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div className="space-y-4">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em] ml-1">Full Name</label>
-                  <input type="text" placeholder="e.g. David Smith" className="w-full bg-black/50 border border-white/10 rounded-sm p-6 text-base text-white focus:border-primary outline-none transition-all placeholder:text-slate-800 focus:bg-black" />
-                </div>
-                <div className="space-y-4">
-                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em] ml-1">Work Email</label>
-                  <input type="email" placeholder="david@example.com" className="w-full bg-black/50 border border-white/10 rounded-sm p-6 text-base text-white focus:border-primary outline-none transition-all placeholder:text-slate-800 focus:bg-black" />
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.4em] ml-1">Your CV (Confidential)</label>
-                <div onDragOver={handleDragOver} onDragLeave={handleDragLeave} onDrop={handleDrop} className={`relative border-2 border-dashed rounded-sm p-12 md:p-20 flex flex-col items-center justify-center transition-all cursor-pointer group ${isDragging ? 'border-primary bg-primary/5' : 'border-white/5 bg-black/30 hover:border-primary/50 hover:bg-white/[0.01]'}`}>
-                  <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" />
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined text-4xl text-primary font-bold">upload_file</span>
-                  </div>
-                  <p className="text-xl font-display font-bold text-white mb-2 uppercase tracking-tight">
-                    Drop your <span className="text-primary italic">Professional File</span>
-                  </p>
-                </div>
-              </div>
-
-              <button type="submit" className="w-full bg-primary text-black py-8 rounded-sm font-bold text-xs uppercase tracking-[0.5em] shadow-2xl shadow-primary/30 hover:bg-white transition-all flex items-center justify-center gap-4 group active:scale-[0.98]">
-                Submit to Hub <span className="material-symbols-outlined text-xl group-hover:rotate-12 transition-transform">bolt</span>
-              </button>
-            </form>
-          </div>
-
-          {/* Right: The Advantage */}
-          <div className="lg:col-span-5 bg-black/80 p-8 md:p-16 lg:p-24 flex flex-col backdrop-blur-3xl border-l border-white/5 relative overflow-hidden">
-            <div className="relative z-10 space-y-16">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-display font-bold mb-8 uppercase tracking-tight text-primary">The Hub Advantage</h3>
-                <ul className="space-y-10">
-                  {[
-                    { icon: 'lock', title: 'Total Discretion', desc: 'Strict NDAs protect your current employment status.' },
-                    { icon: 'visibility_off', title: 'Hidden Market Access', desc: 'Over 60% of executive roles are never publicly advertised.' },
-                    { icon: 'school', title: 'Career-Long Training', desc: 'We support top performers with comprehensive training at all levels throughout their careers.' },
-                  ].map((item, i) => (
-                    <li key={i} className="flex gap-6 items-start group">
-                      <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center shrink-0 border border-white/10 group-hover:bg-primary/20 transition-colors">
-                        <span className="material-symbols-outlined text-primary text-2xl">{item.icon}</span>
-                      </div>
+            {/* Right: What Happens Next */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <div className="bg-navy-deep border border-white/8 rounded-sm p-8">
+                <h3 className="text-xl font-display font-black uppercase tracking-tight mb-8">
+                  What Happens Next?
+                  <div className="h-0.5 w-12 bg-primary mt-3"></div>
+                </h3>
+                <div className="space-y-8">
+                  {nextSteps.map((step, i) => (
+                    <div key={i} className="flex gap-5">
+                      <span className="text-primary font-black text-2xl font-display shrink-0 w-10 leading-none">{step.step}</span>
                       <div>
-                        <h4 className="text-white font-bold text-lg mb-2 uppercase tracking-tight leading-none">{item.title}</h4>
-                        <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
+                        <h4 className="font-bold text-white text-base mb-2">{step.title}</h4>
+                        <p className="text-slate-400 text-sm font-light leading-relaxed">{step.desc}</p>
                       </div>
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
+              </div>
+
+              {/* Advantages */}
+              <div className="bg-primary/10 border border-primary/20 rounded-sm p-8">
+                <h3 className="text-lg font-display font-black uppercase tracking-tight mb-6 text-primary">Why Join Our Network?</h3>
+                <div className="space-y-4">
+                  {advantages.map((adv, i) => (
+                    <div key={i} className="flex items-center gap-4">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center shrink-0">
+                        <span className="material-symbols-outlined text-primary text-lg">{adv.icon}</span>
+                      </div>
+                      <span className="text-slate-200 text-sm font-light">{adv.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Quote */}
+              <div className="bg-navy-deep border border-white/8 rounded-sm p-8">
+                <p className="text-slate-300 text-sm font-light italic leading-relaxed mb-4">
+                  "Power-Up found me a role I didn't know existed. The process was completely discreet and they understood exactly what I was looking for."
+                </p>
+                <p className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Area Sales Manager — UK Electrical Wholesaler</p>
               </div>
             </div>
           </div>
