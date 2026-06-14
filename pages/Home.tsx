@@ -146,61 +146,39 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3.5: WHY US (Operational Intelligence & Commitment) */}
+      {/* SECTION 3.5: WHY US */}
       <section className="bg-navy-deep py-24 text-white border-y border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,193,7,0.04)_0%,transparent_60%)]"></div>
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-screen-xl mx-auto px-6 relative z-10">
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Sector Intelligence</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">Why Us.</h2>
+            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Our Edge</span>
+            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none mb-4">Why Us.</h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
               We understand the reality of the trade counter and the commercial demands of board-level wholesale leadership.
             </p>
           </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
-            <motion.div 
-              className="p-10 bg-card-dark border border-white/5 rounded-sm flex flex-col justify-between"
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div>
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 text-[9px] font-bold uppercase tracking-widest rounded-full mb-6">Operational DNA Only</span>
-                <h3 className="text-2xl font-display font-black uppercase text-white mb-4">"Trade Literacy" Consulting</h3>
-                <p className="text-slate-300 font-light leading-relaxed text-base">
-                  We understand why your Branch Manager needs technical pricing experience. We don't recruit from a generic script; we recruit from decades of operational sector grit.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              className="p-10 bg-card-dark border border-white/5 rounded-sm flex flex-col justify-between"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <div>
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 text-[9px] font-bold uppercase tracking-widest rounded-full mb-6">Operational ROI</span>
-                <h3 className="text-2xl font-display font-black uppercase text-white mb-4">Strategic Operational Alignment</h3>
-                <p className="text-slate-300 font-light leading-relaxed text-base">
-                  We ensure that every candidate identified aligns with your specific commercial objectives, securing immediate return on your talent investment.
-                </p>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { icon: "handyman", title: "Technical Grit", desc: "We have worked in the industry. We understand trade counter operations, branch P&L, and what high-performance looks like at every level from depot manager to group director." },
+              { icon: "ads_click", title: "Tailored Solutions", desc: "No two mandates are the same. We build bespoke search campaigns around your specific brief — the role, the culture, the commercial outcome you need to achieve." },
+              { icon: "group", title: "Network & Trust", desc: "25,000+ professionals mapped. Relationships built over a decade. When we approach a candidate, they answer — because we have a reputation for representing only the best roles." }
+            ].map((item, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="border border-white/8 rounded-sm p-10 hover:bg-white/5 transition-all duration-300 group"
+              >
+                <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-sm flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors">
+                  <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
+                </div>
+                <h3 className="text-xl font-display font-black uppercase tracking-tight mb-4 text-white">{item.title}</h3>
+                <p className="text-slate-400 text-sm font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
-
-          <motion.div 
-            className="bg-card-dark p-10 rounded-sm border border-white/5 text-center max-w-4xl mx-auto"
-            {...fadeInUp}
-          >
-            <h4 className="font-display font-bold text-lg text-primary uppercase tracking-wider mb-4">Our Commitment to Talent</h4>
-            <p className="text-slate-300 font-light leading-relaxed max-w-3xl mx-auto text-sm">
-              We don't just source talent; we actively bring in top performers from both inside and outside the industry. Once they join, we support them with comprehensive, career-long training at all levels, ensuring they have the tools to excel and protect margins.
-            </p>
-          </motion.div>
         </div>
       </section>
 

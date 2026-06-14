@@ -1,18 +1,33 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { SERVICES, TESTIMONIALS, FAQ_ITEMS, PROCESS_STEPS, GUARANTEES, ROLES_PLACED } from "../constants";
+import { TESTIMONIALS, FAQ_ITEMS, GUARANTEES } from "../constants";
 import SEO from "../components/SEO";
 import FAQAccordion from "../components/FAQAccordion";
 // @ts-ignore
 import heroImg from "../src/assets/images/services_hero_1780507411826.png";
 
 const Services: React.FC = () => {
-  const whyUs = [
-    { icon: "handyman", title: "Technical Grit", desc: "We have worked in the industry. We understand trade counter operations, branch P&L, and what high-performance looks like at every level from depot manager to group director." },
-    { icon: "ads_click", title: "Tailored Solutions", desc: "No two mandates are the same. We build bespoke search campaigns around your specific brief — the role, the culture, the commercial outcome you need to achieve." },
-    { icon: "group", title: "Network & Trust", desc: "25,000+ professionals mapped. Relationships built over a decade. When we approach a candidate, they answer — because we have a reputation for representing only the best roles." },
-  ];
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const slideInLeft = {
+    initial: { opacity: 0, x: -50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
+
+  const slideInRight = {
+    initial: { opacity: 0, x: 50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8, ease: "easeOut" }
+  };
 
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white overflow-x-hidden">
@@ -43,124 +58,220 @@ const Services: React.FC = () => {
         </div>
       </header>
 
-      {/* Why Power-Up */}
-      <section className="py-24 md:py-32 px-6 bg-navy-deep border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Our Edge</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none mb-4">Why Power-Up Talent?</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyUs.map((item, i) => (
-              <div key={i} className="border border-white/8 rounded-sm p-10 hover:bg-white/5 transition-all duration-300 group">
-                <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-sm flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
-                </div>
-                <h3 className="text-xl font-display font-black uppercase tracking-tight mb-4 text-white">{item.title}</h3>
-                <p className="text-slate-400 text-sm font-light leading-relaxed">{item.desc}</p>
+      {/* DETAILED SERVICES SECTIONS */}
+      {/* 1. Elite Recruitment */}
+      <section className="py-24 md:py-32 px-6 bg-background-dark border-b border-white/5 relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-1/2 h-full bg-navy-deep/30 transform skew-x-12 translate-x-32" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <motion.div className="flex-1" {...slideInLeft}>
+              <span className="text-primary font-black text-6xl font-display mb-4 opacity-20 block">01</span>
+              <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-white mb-4">Elite Recruitment</h2>
+              <p className="text-primary text-sm font-semibold uppercase tracking-[0.2em] mb-8">Executive & Retained Search</p>
+              
+              <div className="space-y-6 text-slate-400 font-light leading-relaxed text-lg mb-10">
+                <p>
+                  When you are hiring at the board, regional, or director level, generic recruitment methodologies fail. The leaders capable of transforming your P&L are not actively looking for work; they are securely employed and delivering results for your competitors.
+                </p>
+                <p>
+                  Our Elite Recruitment service is a true executive search solution. We conduct comprehensive market mapping, approaching passive candidates with precision and absolute discretion. This retained model guarantees that our resources are fully dedicated to filling your most critical leadership vacuums.
+                </p>
               </div>
-            ))}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Board-Level Appointments",
+                  "Regional Directors",
+                  "Head of Procurement",
+                  "Operations Directors",
+                  "Discrete Market Mapping",
+                  "Retained Exclusivity"
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+                    <span className="text-sm font-medium text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div className="flex-1 w-full" {...slideInRight}>
+              <div className="aspect-[4/5] md:aspect-square bg-card-dark rounded-sm border border-white/10 overflow-hidden relative group">
+                <img src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png" alt="Elite Recruitment" className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 right-10">
+                  <Link to="/services/elite-recruitment" className="inline-flex items-center justify-between w-full p-4 bg-primary text-navy-deep font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
+                    Explore Service <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Process Steps */}
-      <section className="py-24 md:py-32 px-6 bg-white text-slate-900 border-b border-slate-100">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">How We Work</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none mb-4">Our Process.</h2>
-            <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">A precise, five-stage methodology that finds the passive high-performers no one else can reach.</p>
-          </div>
-
-          {/* Desktop Timeline */}
-          <div className="hidden md:grid grid-cols-5 gap-6 relative">
-            <div className="absolute top-10 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-primary/80 via-primary/40 to-primary/80"></div>
-            {PROCESS_STEPS.map((step, i) => (
-              <div key={i} className="flex flex-col items-center text-center relative">
-                <div className="w-20 h-20 bg-navy-deep rounded-full flex items-center justify-center border-4 border-primary shadow-[0_0_30px_rgba(255,193,7,0.2)] relative z-10 mb-6 group-hover:scale-110 transition-transform">
-                  <span className="material-symbols-outlined text-primary text-3xl">{step.icon}</span>
-                </div>
-                <span className="text-primary font-display font-black text-3xl mb-2">{step.step}</span>
-                <h3 className="font-display font-black text-slate-900 text-lg uppercase tracking-tight mb-3">{step.title}</h3>
-                <p className="text-slate-500 text-xs font-light leading-relaxed">{step.description}</p>
+      {/* 2. Strategic Recruitment */}
+      <section className="py-24 md:py-32 px-6 bg-navy-deep border-b border-white/5 relative overflow-hidden">
+        <div className="absolute left-0 top-0 w-1/2 h-full bg-background-dark/30 transform -skew-x-12 -translate-x-32" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row-reverse gap-16 items-center">
+            <motion.div className="flex-1" {...slideInRight}>
+              <span className="text-primary font-black text-6xl font-display mb-4 opacity-20 block">02</span>
+              <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-white mb-4">Strategic Recruitment</h2>
+              <p className="text-primary text-sm font-semibold uppercase tracking-[0.2em] mb-8">Branch & Management Focus</p>
+              
+              <div className="space-y-6 text-slate-400 font-light leading-relaxed text-lg mb-10">
+                <p>
+                  The branch is the battleground of electrical wholesale. The difference between an average Branch Manager and a great one is measured in millions of pounds of protected margin.
+                </p>
+                <p>
+                  Our Strategic Recruitment service is designed to find management-level professionals who possess technical grit and operational literacy. We dive deep into candidate networks to secure professionals who understand stock profiling, trade counter dynamics, and regional P&L management. We don't just fill seats; we place revenue generators.
+                </p>
               </div>
-            ))}
-          </div>
 
-          {/* Mobile Timeline */}
-          <div className="md:hidden space-y-8">
-            {PROCESS_STEPS.map((step, i) => (
-              <div key={i} className="flex gap-6 items-start">
-                <div className="w-14 h-14 bg-navy-deep rounded-full flex items-center justify-center border-2 border-primary shadow-[0_0_20px_rgba(255,193,7,0.15)] shrink-0">
-                  <span className="material-symbols-outlined text-primary text-2xl">{step.icon}</span>
-                </div>
-                <div className="pt-1">
-                  <span className="text-primary font-black text-lg font-display block mb-1">{step.step}</span>
-                  <h3 className="font-display font-black text-slate-900 uppercase tracking-tight mb-2">{step.title}</h3>
-                  <p className="text-slate-500 text-sm font-light leading-relaxed">{step.description}</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "Branch Managers",
+                  "Profit Centre Managers",
+                  "Senior Sales Managers",
+                  "Technical Design Leads",
+                  "Passive Candidate Sourcing",
+                  "Competitor Analysis"
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+                    <span className="text-sm font-medium text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div className="flex-1 w-full" {...slideInLeft}>
+              <div className="aspect-[4/5] md:aspect-square bg-card-dark rounded-sm border border-white/10 overflow-hidden relative group">
+                <img src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg" alt="Strategic Recruitment" className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 right-10">
+                  <Link to="/services/strategic-recruitment" className="inline-flex items-center justify-between w-full p-4 bg-primary text-navy-deep font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
+                    Explore Service <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
                 </div>
               </div>
-            ))}
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Services Cards */}
-      <section className="py-24 md:py-32 px-6 bg-background-dark border-b border-white/5">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Service Lines</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none">Our Services.</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {SERVICES.map((service, i) => (
-              <motion.div key={service.id} whileHover={{ y: -4 }} className="bg-navy-deep border border-white/8 rounded-sm p-10 hover:border-primary/30 transition-all duration-300 flex flex-col">
-                <span className="text-primary font-black text-5xl font-display mb-6 opacity-25">0{i + 1}</span>
-                <h3 className="text-xl font-display font-black text-white uppercase tracking-tight mb-2">{service.name}</h3>
-                <p className="text-primary text-xs font-semibold uppercase tracking-[0.15em] mb-4">{service.tagline}</p>
-                <p className="text-slate-400 text-sm font-light leading-relaxed mb-8 flex-grow">{service.description}</p>
-                <Link 
-                  to={`/services/${service.id}`}
-                  className="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-8 hover:underline w-fit"
-                >
-                  View Service Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
-                <ul className="space-y-2 border-t border-white/8 pt-6">
-                  {service.features.map((f, fi) => (
-                    <li key={fi} className="flex items-center gap-3 text-xs text-slate-400 font-medium">
-                      <span className="w-1.5 h-1.5 bg-primary rounded-full shrink-0"></span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+      {/* 3. Growth Partnerships */}
+      <section className="py-24 md:py-32 px-6 bg-background-dark border-b border-white/5 relative overflow-hidden">
+        <div className="absolute right-0 top-0 w-1/2 h-full bg-navy-deep/30 transform skew-x-12 translate-x-32" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="flex flex-col md:flex-row gap-16 items-center">
+            <motion.div className="flex-1" {...slideInLeft}>
+              <span className="text-primary font-black text-6xl font-display mb-4 opacity-20 block">03</span>
+              <h2 className="text-4xl md:text-5xl font-display font-black uppercase tracking-tight text-white mb-4">Growth Partnerships</h2>
+              <p className="text-primary text-sm font-semibold uppercase tracking-[0.2em] mb-8">Multi-Hire & National Expansion</p>
+              
+              <div className="space-y-6 text-slate-400 font-light leading-relaxed text-lg mb-10">
+                <p>
+                  Scaling a business rapidly requires a coordinated talent acquisition strategy. Whether you are opening a new region, acquiring a competitor, or rolling out multiple branches nationwide, piecemeal recruitment will stall your momentum.
+                </p>
+                <p>
+                  Our Growth Partnerships operate as an extension of your business. We provide dedicated resource allocation, hybrid deployment models, and embedded talent mapping to execute high-volume, high-quality management placements on strict timelines. We ensure your expansion is powered by the right people from day one.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "New Branch Rollouts",
+                  "National Expansion Teams",
+                  "Dedicated Account Manager",
+                  "Volume Management Placements",
+                  "Employer Branding Support",
+                  "Embedded Talent Mapping"
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-center gap-3">
+                    <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
+                    <span className="text-sm font-medium text-slate-300">{feature}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+            
+            <motion.div className="flex-1 w-full" {...slideInRight}>
+              <div className="aspect-[4/5] md:aspect-square bg-card-dark rounded-sm border border-white/10 overflow-hidden relative group">
+                <img src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png" alt="Growth Partnerships" className="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/40 to-transparent"></div>
+                <div className="absolute bottom-10 left-10 right-10">
+                  <Link to="/services/growth-partnerships" className="inline-flex items-center justify-between w-full p-4 bg-primary text-navy-deep font-bold text-sm uppercase tracking-widest rounded-sm hover:bg-white transition-colors">
+                    Explore Service <span className="material-symbols-outlined">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Roles We Cover */}
-      <section className="py-24 md:py-32 px-6 bg-white text-slate-900 border-b border-slate-100">
-        <div className="max-w-screen-xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Scope</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none mb-4">Roles We Cover.</h2>
-            <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto">If your role exists in UK electrical wholesale at a management level or above, we can find the right person for it.</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-            {ROLES_PLACED.map((role, i) => (
-              <div key={i} className="border border-slate-200 rounded-sm px-6 py-5 hover:border-primary hover:bg-primary/5 transition-all duration-200 group">
-                <span className="material-symbols-outlined text-slate-300 group-hover:text-primary text-lg block mb-2 transition-colors">verified</span>
-                <span className="text-slate-700 group-hover:text-slate-900 font-semibold text-sm leading-tight">{role}</span>
+      {/* Why Power-Up (Moved from Home page: Operational Intelligence & Commitment) */}
+      <section className="bg-navy-deep py-24 md:py-32 text-white border-y border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,193,7,0.04)_0%,transparent_60%)]"></div>
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <motion.div className="text-center mb-16" {...fadeInUp}>
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Sector Intelligence</span>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">Why Power-Up Talent?</h2>
+            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+              We understand the reality of the trade counter and the commercial demands of board-level wholesale leadership.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch mb-16">
+            <motion.div 
+              className="p-10 bg-card-dark border border-white/5 rounded-sm flex flex-col justify-between hover:border-primary/30 transition-all duration-300"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div>
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 text-[9px] font-bold uppercase tracking-widest rounded-full mb-6">Operational DNA Only</span>
+                <h3 className="text-2xl font-display font-black uppercase text-white mb-4">"Trade Literacy" Consulting</h3>
+                <p className="text-slate-300 font-light leading-relaxed text-base">
+                  We understand why your Branch Manager needs technical pricing experience. We don't recruit from a generic script; we recruit from decades of operational sector grit.
+                </p>
               </div>
-            ))}
+            </motion.div>
+
+            <motion.div 
+              className="p-10 bg-card-dark border border-white/5 rounded-sm flex flex-col justify-between hover:border-primary/30 transition-all duration-300"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <div>
+                <span className="inline-block px-3 py-1 bg-primary/10 text-primary border border-primary/20 text-[9px] font-bold uppercase tracking-widest rounded-full mb-6">Operational ROI</span>
+                <h3 className="text-2xl font-display font-black uppercase text-white mb-4">Strategic Operational Alignment</h3>
+                <p className="text-slate-300 font-light leading-relaxed text-base">
+                  We ensure that every candidate identified aligns with your specific commercial objectives, securing immediate return on your talent investment.
+                </p>
+              </div>
+            </motion.div>
           </div>
+
+          <motion.div 
+            className="bg-card-dark p-10 rounded-sm border border-white/5 text-center max-w-4xl mx-auto hover:border-primary/30 transition-all duration-300"
+            {...fadeInUp}
+          >
+            <h4 className="font-display font-bold text-lg text-primary uppercase tracking-wider mb-4">Our Commitment to Talent</h4>
+            <p className="text-slate-300 font-light leading-relaxed max-w-3xl mx-auto text-sm">
+              We don't just source talent; we actively bring in top performers from both inside and outside the industry. Once they join, we support them with comprehensive, career-long training at all levels, ensuring they have the tools to excel and protect margins.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Guarantees */}
-      <section className="py-24 md:py-32 px-6 bg-navy-deep border-b border-white/5">
+      <section className="py-24 md:py-32 px-6 bg-background-dark border-b border-white/5">
         <div className="max-w-screen-xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Our Promise</span>
@@ -181,7 +292,7 @@ const Services: React.FC = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 md:py-32 px-6 bg-background-dark border-b border-white/5">
+      <section className="py-24 md:py-32 px-6 bg-navy-deep border-b border-white/5">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">FAQ</span>
