@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 const LinkedInIcon = () => (
@@ -52,9 +52,9 @@ const Footer: React.FC = () => {
               <span className="w-3 h-px bg-primary"></span>For Employers
             </h6>
             <div className="flex flex-col gap-3">
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services">Our Services</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services">Roles We Fill</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/contact">Submit a Brief</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/elite-recruitment">Elite Recruitment</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/strategic-recruitment">Strategic Leadership</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/growth-partnerships">Growth Partnerships</Link>
               <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/about">About Us</Link>
             </div>
           </div>

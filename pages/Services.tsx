@@ -120,6 +120,12 @@ const Services: React.FC = () => {
                 <h3 className="text-xl font-display font-black text-white uppercase tracking-tight mb-2">{service.name}</h3>
                 <p className="text-primary text-xs font-semibold uppercase tracking-[0.15em] mb-4">{service.tagline}</p>
                 <p className="text-slate-400 text-sm font-light leading-relaxed mb-8 flex-grow">{service.description}</p>
+                <Link 
+                  to={`/services/${service.id}`}
+                  className="inline-flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-8 hover:underline w-fit"
+                >
+                  View Service Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
                 <ul className="space-y-2 border-t border-white/8 pt-6">
                   {service.features.map((f, fi) => (
                     <li key={fi} className="flex items-center gap-3 text-xs text-slate-400 font-medium">

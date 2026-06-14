@@ -252,6 +252,51 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
+      {/* ── OUR PURPOSE ── */}
+      <section className="bg-white py-20 text-slate-900 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <motion.div 
+              className="lg:col-span-7 space-y-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Purpose</span>
+              <h2 className="font-display font-black text-4xl md:text-6xl text-navy-deep leading-tight uppercase tracking-tight">
+                To Specialise <br/><span className="text-primary-dark italic">Recruitment.</span>
+              </h2>
+              <p className="text-slate-600 text-lg leading-relaxed font-light">
+                Our purpose is to specialise recruitment by combining the precision of AI-driven market intelligence with the irreplaceable nuance of sector experience. We believe that hiring should be fast, fair, and focused on identifying the elite high-performers.
+              </p>
+              <div className="pl-6 border-l-4 border-primary space-y-2">
+                 <p className="text-xl font-display font-bold text-navy-deep italic uppercase leading-snug">
+                   "We don't just find you talent—we equip your organisation with the intelligence to outperform the competition."
+                 </p>
+              </div>
+            </motion.div>
+            <motion.div 
+              className="lg:col-span-5 relative"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="rounded-sm overflow-hidden shadow-2xl border-4 border-slate-100">
+                <img 
+                  src="https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png"
+                  referrerPolicy="no-referrer"
+                  loading="lazy"
+                  alt="Technical Sector Intelligence" 
+                  className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* ── VALUES ── */}
       <section className="bg-white py-20">
         <div className="max-w-7xl mx-auto px-6">

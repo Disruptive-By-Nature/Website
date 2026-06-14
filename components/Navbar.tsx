@@ -1,4 +1,4 @@
-﻿
+
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -17,9 +17,9 @@ const Navbar: React.FC = () => {
   useEffect(() => { setIsOpen(false); }, [location.pathname]);
 
   const serviceLinks = [
-    { name: "Elite Recruitment", path: "/services", desc: "Headhunting passive high-performers" },
-    { name: "Strategic Recruitment", path: "/services", desc: "Executive search for senior leaders" },
-    { name: "Growth Partnerships", path: "/services", desc: "Support for branch rollouts & scale" },
+    { name: "Elite Recruitment", path: "/services/elite-recruitment", desc: "Headhunting passive high-performers" },
+    { name: "Strategic Recruitment", path: "/services/strategic-recruitment", desc: "Executive search for senior leaders" },
+    { name: "Growth Partnerships", path: "/services/growth-partnerships", desc: "Support for branch rollouts & scale" },
   ];
 
   const links = [
