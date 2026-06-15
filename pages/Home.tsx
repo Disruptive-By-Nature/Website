@@ -1,32 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { METRICS, TESTIMONIALS, SERVICES, ROLES_PLACED } from '../constants';
-import Counter from '../components/Counter';
 import SEO from '../components/SEO';
 import heroImg from '../src/assets/images/uk_electrical_wholesale_hero_1780507084507.png';
 
-const comparisonRows = [
-  { feature: 'Sourcing Method', left: 'Job boards & adverts', right: 'Direct headhunting only' },
-  { feature: 'Specialism', left: 'Any sector, any role', right: 'Electrical wholesale only' },
-  { feature: 'Consultants', left: 'Junior generalist recruiters', right: 'Sector veterans & specialists' },
-  { feature: 'Vetting', left: 'CV sifting from applicants', right: 'Rigorous technical vetting' },
-  { feature: 'Approach', left: 'Reactive — wait for applications', right: 'Proactive passive talent mapping' },
-  { feature: 'Delivery', left: 'Unpredictable timelines', right: '28-day average placement' },
-];
-
-const transformItems = [
-  { icon: 'schedule', title: 'Accelerated Hiring', stat: '50% Lead Time Reduction', desc: 'Secure critical leaders quickly before buying group windows shift.' },
-  { icon: 'person_search', title: 'Precision Hires', stat: 'Predictive Success', desc: 'Operational modelling ensures candidates align with branch margin protection goals.' },
-  { icon: 'currency_pound', title: 'Operational ROI', stat: '30% Cost-Per-Hire Lower', desc: 'Efficiency through technical headhunting rather than generic CV skimming.' },
-  { icon: 'diversity_3', title: 'Balanced Teams', stat: 'Unbiased Sourcing', desc: 'Building inclusive, high-performing cultures across national branch networks.' },
-  { icon: 'trending_up', title: 'Scalability', stat: 'Hybrid Deployment', desc: 'Agile support for rapid branch rollouts and regional restructuring.' },
-  { icon: 'analytics', title: 'Sector Intel', stat: 'Real-Time Mapping', desc: 'Live data on competitor procurement leads and regional salary benchmarks.' },
-];
-
 const Home: React.FC = () => {
-  const doubled = [...ROLES_PLACED, ...ROLES_PLACED];
-  const doubledTestimonials = [...TESTIMONIALS, ...TESTIMONIALS];
+  const location = useLocation();
+
+  // Client Lead Magnet Form State
+  const [clientForm, setClientForm] = useState({ name: '', company: '', role: '', email: '' });
+  const [clientStatus, setClientStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  // Candidate Lead Magnet Form State
+  const [candidateForm, setCandidateForm] = useState({ name: '', role: '', region: '', email: '' });
+  const [candidateStatus, setCandidateStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+
+  // Candidate Talent Network Form State
+  const [networkForm, setNetworkForm] = useState({ role: '', employer: '', region: '', ote: '', targetRole: '' });
+  const [networkStatus, setNetworkStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -35,493 +26,740 @@ const Home: React.FC = () => {
     transition: { duration: 0.8, ease: "easeOut" as const }
   };
 
+  // Scroll to section based on query param ?scroll=section-id
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const scrollId = params.get('scroll');
+    if (scrollId) {
+      setTimeout(() => {
+        const el = document.getElementById(scrollId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 150);
+    }
+  }, [location]);
+
+  const handleClientSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setClientStatus('submitting');
+    setTimeout(() => {
+      setClientStatus('success');
+      // Trigger simulated TXT/PDF download for the Salary Guide
+      const blob = new Blob(["Power-Up Talent 2026 Salary & Compensation Guide\nFor UK Electrical Wholesale Leaders"], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'PowerUp_Talent_Salary_Guide_2026.txt';
+      downloadLink.click();
+      URL.revokeObjectURL(url);
+    }, 1500);
+  };
+
+  const handleCandidateSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCandidateStatus('submitting');
+    setTimeout(() => {
+      setCandidateStatus('success');
+      // Trigger simulated TXT/PDF download for candidate earnings guide
+      const blob = new Blob(["How Top Branch Managers Maximise Earnings in Electrical Wholesale\nA Strategic Guide by Power-Up Talent"], { type: "text/plain" });
+      const url = URL.createObjectURL(blob);
+      const downloadLink = document.createElement('a');
+      downloadLink.href = url;
+      downloadLink.download = 'Maximise_Earnings_Guide_PowerUp.txt';
+      downloadLink.click();
+      URL.revokeObjectURL(url);
+    }, 1500);
+  };
+
+  const handleNetworkSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setNetworkStatus('submitting');
+    setTimeout(() => {
+      setNetworkStatus('success');
+    }, 1500);
+  };
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <SEO
-        title="Power-Up Talent | The UK's Only Electrical Wholesale Headhunters"
-        description="We find the elite leaders working for your competitors and bring them to you. No job boards. No adverts. Pure headhunting for UK electrical wholesale."
-        keywords="electrical wholesale headhunter, uk recruitment, wholesale talent, power-up talent"
-        canonical="https://power-up-talent.app/"
+        title="Elite Headhunters for UK Electrical Wholesale | Power-Up Talent"
+        description="We discreetly lift top-performing branch managers, area sales and commercial leaders from your competitors – and place them in your business within 4–6 weeks."
+        keywords="electrical wholesale headhunter, uk recruitment, branch manager recruiter, executive search electrical wholesale"
+        canonical="https://power-up-talent-web.web.app/"
       />
 
-      {/* SECTION 1: HERO */}
-      <section className="relative min-h-screen flex items-center justify-center bg-background-dark overflow-hidden pt-20">
-        <div className="absolute inset-0">
-          <img
-            src={heroImg}
-            alt="UK Electrical Wholesale"
-            className="w-full h-full object-cover"
-            style={{ opacity: 0.24 }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-background-dark/60 via-background-dark/40 to-background-dark" />
+      {/* ── 1. HERO SECTION (Split layout) ── */}
+      <section className="relative min-h-screen flex items-center bg-background-dark overflow-hidden pt-24 pb-16">
+        <div className="absolute inset-0 z-0 opacity-10">
+          <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-background-dark" />
+          <div className="w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,193,7,0.15)_0%,transparent_70%)]" />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9 }}
-          >
-            <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-primary border border-primary/40 rounded-full bg-primary/10">
-              Specialist Headhunting · UK Electrical Wholesale
-            </span>
-            <h1 className="font-display font-black text-5xl md:text-7xl lg:text-8xl text-white leading-none tracking-tighter mb-6 max-w-5xl mx-auto">
-              The UK&apos;s Only Electrical Wholesale{' '}
-              <span className="text-primary">Headhunters.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-              We find the elite leaders working for your competitors — and bring them to you.
-              No job boards. No adverts. Pure headhunting.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                id="hero-brief-us"
-                className="inline-block px-8 py-4 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-primary-dark transition-all duration-300 hover:scale-105 shadow-lg shadow-primary/30"
-              >
-                Brief Us
-              </Link>
-              <Link
-                to="/upload-cv"
-                id="hero-submit-cv"
-                className="inline-block px-8 py-4 border border-white/30 text-white font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:border-primary hover:text-primary transition-all duration-300 backdrop-blur-sm"
-              >
-                Submit Your CV
-              </Link>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="absolute bottom-10 left-1/2 -translate-x-1/2"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-          >
-            <span className="material-symbols-outlined text-primary/60 text-3xl">expand_more</span>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 2: ROLES TICKER */}
-      <section className="bg-primary text-navy-deep py-4 overflow-hidden">
-        <div className="flex items-center gap-4 mb-1">
-          <span className="pl-6 font-display font-black uppercase tracking-widest text-sm whitespace-nowrap shrink-0">
-            We Place:
-          </span>
-          <span className="text-navy-deep/40 font-bold">|</span>
-        </div>
-        <div className="overflow-hidden">
-          <div className="animate-marquee-slow">
-            {doubled.map((role, i) => (
-              <span key={i} className="flex items-center gap-3 mx-6 font-display font-bold text-sm uppercase tracking-widest whitespace-nowrap">
-                <span className="material-symbols-outlined text-base text-navy-deep/70">bolt</span>
-                {role}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Column (Copy + CTAs) */}
+            <motion.div
+              className="lg:col-span-7 space-y-6 text-left"
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" as const }}
+            >
+              <span className="inline-block px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase text-primary border border-primary/30 rounded-full bg-primary/10">
+                Specialist Headhunting · UK Electrical Wholesale
               </span>
-            ))}
+              <h1 className="font-display font-black text-4xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight uppercase">
+                Elite Headhunters <br />
+                for the UK <br />
+                <span className="text-gradient">Electrical Wholesale</span> Market
+              </h1>
+              <p className="text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed font-light">
+                We discreetly lift top‑performing branch managers, area sales and commercial leaders from your competitors – and place them in your business within 4–6 weeks.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <a
+                  href="https://calendly.com/power-up-talent/strategy-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="hero-book-call"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-white transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-primary/20"
+                >
+                  Book a 15‑Minute Hiring Strategy Call
+                </a>
+                <button
+                  onClick={() => scrollToSection('results')}
+                  id="hero-scroll-results"
+                  className="inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:border-primary hover:text-primary transition-all duration-300 backdrop-blur-sm"
+                >
+                  See Recent Senior Placements
+                </button>
+              </div>
+
+              <div className="pt-6 border-t border-white/5">
+                <p className="text-xs text-slate-500 font-medium tracking-wider uppercase flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                  Trusted by national and independent electrical wholesalers across the UK.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right Column (Trade branch image) */}
+            <motion.div
+              className="lg:col-span-5 relative"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.9, ease: "easeOut" as const }}
+            >
+              <div className="relative rounded-sm overflow-hidden aspect-[4/3] border border-white/10 group shadow-2xl shadow-black">
+                <img
+                  src={heroImg}
+                  alt="UK Electrical Wholesale Branch"
+                  className="w-full h-full object-cover grayscale contrast-[1.1] brightness-[0.8] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-750 ease-out"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 bg-black/60 backdrop-blur-md border border-white/5 p-4 rounded-sm">
+                  <p className="text-[10px] uppercase tracking-widest text-primary font-bold">Industry Focus</p>
+                  <p className="text-white text-xs font-light mt-0.5">Direct competitor branch mapping & executive target profiling.</p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3: METRICS */}
-      <section className="bg-background-dark py-24">
+      {/* ── 2. PROOF & CREDIBILITY STRIP ── */}
+      <section className="bg-slate-100 py-12 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-border-dark border border-border-dark rounded-sm overflow-hidden">
-            {METRICS.map((metric, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card-dark p-8 md:p-12 flex flex-col items-center justify-center text-center"
-              >
-                <div className="font-display font-black text-4xl md:text-5xl text-primary mb-2">
-                  <Counter value={metric.value} />
-                </div>
-                <div className="text-slate-400 text-sm uppercase tracking-widest font-medium">
-                  {metric.label}
-                </div>
-              </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
+            <div className="space-y-1">
+              <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">14 Days</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Average time-to-shortlist</span>
+            </div>
+            <div className="space-y-1 border-y md:border-y-0 md:border-x border-slate-200 py-6 md:py-0">
+              <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">92%</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Retained searches filled from first shortlist</span>
+            </div>
+            <div className="space-y-1">
+              <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">89%</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Placed managers in role after 12 months</span>
+            </div>
+          </div>
+
+          <div className="mt-10 pt-8 border-t border-slate-200 text-center">
+            <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-4">Leading UK Wholesalers We Map</p>
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-16 opacity-30 select-none">
+              <span className="font-display font-black tracking-widest text-lg md:text-xl text-navy-deep">EDMUNDSON</span>
+              <span className="font-display font-black tracking-widest text-lg md:text-xl text-navy-deep">REXEL</span>
+              <span className="font-display font-black tracking-widest text-lg md:text-xl text-navy-deep">CEF</span>
+              <span className="font-display font-black tracking-widest text-lg md:text-xl text-navy-deep">YESSS</span>
+              <span className="font-display font-black tracking-widest text-lg md:text-xl text-navy-deep">STEWEYS</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 3.5: WHY US */}
-      <section className="bg-navy-deep py-24 text-white border-y border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,193,7,0.04)_0%,transparent_60%)]"></div>
-        <div className="max-w-screen-xl mx-auto px-6 relative z-10">
+      {/* ── 3. WHY ELECTRICAL WHOLESALE NEEDS A SPECIALIST ── */}
+      <section className="bg-background-dark py-24 text-white relative">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: Copy */}
+            <motion.div className="lg:col-span-6 space-y-6" {...fadeInUp}>
+              <span className="text-primary font-bold text-xs uppercase tracking-widest block">Niche Specialisation</span>
+              <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight leading-[1.1]">
+                Built Exclusively for Electrical Wholesale
+              </h2>
+              <p className="text-slate-400 text-sm md:text-base font-light leading-relaxed">
+                Generalist recruiters and broad engineering agencies spread their attention across dozens of sectors such as manufacturing, construction, fire & security and wider trades. We operate as a boutique search partner dedicated to the electrical wholesale market, so every mandate benefits from deep sector knowledge and live competitor intelligence.
+              </p>
+              <div className="h-px bg-white/10 w-24"></div>
+            </motion.div>
+
+            {/* Right: Key Bullets */}
+            <div className="lg:col-span-6 space-y-6">
+              {[
+                {
+                  title: "Exclusively Wholesale & Distribution",
+                  desc: "We only partner with electrical wholesalers and specialist distributors across the UK – not generic engineering, not all trades."
+                },
+                {
+                  title: "Commercial & Leadership Scope",
+                  desc: "We focus on commercial and leadership hires: Branch Managers, Area Sales Managers, Key Account Managers, Regional/Commercial Directors."
+                },
+                {
+                  title: "We Speak Your Language",
+                  desc: "We understand the metrics that matter – margins, supplier rebates, stock turn, trade counter flow, project business, and contractor relationships."
+                }
+              ].map((bullet, idx) => (
+                <motion.div
+                  key={idx}
+                  className="bg-card-dark border border-white/5 p-6 rounded-sm flex gap-4 hover:border-primary/30 transition-all duration-300"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.6 }}
+                >
+                  <div className="w-8 h-8 rounded-sm bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                    <span className="material-symbols-outlined text-primary text-lg">bolt</span>
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-base uppercase text-white tracking-wide mb-1">{bullet.title}</h3>
+                    <p className="text-slate-400 text-xs font-light leading-relaxed">{bullet.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. HOW OUR HEADHUNTING PROCESS WORKS ── */}
+      <section id="search-process" className="bg-navy-deep py-24 text-white border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
-            <span className="text-primary font-bold text-[10px] uppercase tracking-[0.4em] block mb-4">Our Edge</span>
-            <h2 className="text-3xl md:text-6xl font-display font-black uppercase tracking-tight leading-none mb-4">Why Us.</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              We understand the reality of the trade counter and the commercial demands of board-level wholesale leadership.
+            <span className="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Methodology</span>
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
+              Our 5‑Step Search Method
+            </h2>
+            <p className="text-slate-400 text-sm max-w-2xl mx-auto font-light leading-relaxed mt-3">
+              We go far beyond standard job ads and databases to map competitor branches and discreetly approach top performers.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {[
-              { icon: "handyman", title: "Technical Grit", desc: "We have worked in the industry. We understand trade counter operations, branch P&L, and what high-performance looks like at every level from depot manager to group director." },
-              { icon: "ads_click", title: "Tailored Solutions", desc: "No two mandates are the same. We build bespoke search campaigns around your specific brief — the role, the culture, the commercial outcome you need to achieve." },
-              { icon: "group", title: "Network & Trust", desc: "25,000+ professionals mapped. Relationships built over a decade. When we approach a candidate, they answer — because we have a reputation for representing only the best roles." }
-            ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              {
+                num: "01",
+                icon: "rule",
+                title: "Define Success Profile",
+                desc: "We clarify the commercial outcome first – branch P&L, GP targets, growth expectations – then design the ideal candidate profile around that."
+              },
+              {
+                num: "02",
+                icon: "map",
+                title: "Map Competitor Market",
+                desc: "We identify competitor branches, high‑performing territories and adjacent markets, building a longlist of off‑market talent who will never apply to job ads."
+              },
+              {
+                num: "03",
+                icon: "vpn_key",
+                title: "Confidential Outreach",
+                desc: "We approach top performers discreetly, benchmark track records and test motivation before they ever reach your desk."
+              },
+              {
+                num: "04",
+                icon: "reviews",
+                title: "Shortlist & Interviews",
+                desc: "We present 3–5 fully‑qualified candidates with structured scorecards focused on revenue, margin and leadership behaviours."
+              },
+              {
+                num: "05",
+                icon: "handshake",
+                title: "Offer & Resignation",
+                desc: "We manage delicate resignations, counter‑offers and first‑90‑day expectations to maximise retention and impact."
+              }
+            ].map((step, idx) => (
+              <motion.div
+                key={idx}
+                className="bg-background-dark border border-white/5 p-6 rounded-sm flex flex-col hover:border-primary/50 transition-all duration-300 text-center relative group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="border border-white/8 rounded-sm p-10 hover:bg-white/5 transition-all duration-300 group"
+                transition={{ delay: idx * 0.1, duration: 0.6 }}
               >
-                <div className="w-14 h-14 bg-primary/10 border border-primary/20 rounded-sm flex items-center justify-center mb-8 group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
+                <span className="absolute top-4 right-4 text-xs font-display font-black text-white/10 group-hover:text-primary/20 transition-colors">
+                  {step.num}
+                </span>
+                <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                  <span className="material-symbols-outlined text-primary text-xl">{step.icon}</span>
                 </div>
-                <h3 className="text-xl font-display font-black uppercase tracking-tight mb-4 text-white">{item.title}</h3>
-                <p className="text-slate-400 text-sm font-light leading-relaxed">{item.desc}</p>
+                <h3 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-3">{step.title}</h3>
+                <p className="text-slate-400 text-xs font-light leading-relaxed flex-grow">{step.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTION 4: OUR SERVICES */}
-      <section className="bg-white py-24">
+      {/* ── 5. RESULTS WE DELIVER (Case Studies) ── */}
+      <section id="results" className="bg-background-dark py-24 text-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Services</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2 mb-4">What We Do.</h2>
-            <p className="text-slate-500 text-lg max-w-xl">
-              Specialist headhunting services for the UK electrical wholesale industry.
+          <motion.div className="text-center mb-16" {...fadeInUp}>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Track Record</span>
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
+              Real Results for UK Electrical Wholesalers
+            </h2>
+            <p className="text-slate-400 text-sm max-w-xl mx-auto font-light mt-3">
+              Proven commercial impact driven by bespoke, direct competitor headhunting campaigns.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {SERVICES.map((service, i) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Branch Manager – £4.5m Turnover Branch",
+                region: "North West",
+                client: "National electrical wholesaler (region anonymised)",
+                challenge: "Flat revenue for 3 years despite strong local demand; previous branch manager weak on external sales.",
+                search: "Market‑mapped 4 competitors, headhunted 18 target profiles, delivered 4‑person shortlist in 21 days.",
+                outcome: "+23% branch revenue and +2.1 pts GP margin within 12 months."
+              },
+              {
+                title: "Area Sales Manager – Key Accounts",
+                region: "Midlands",
+                client: "Independent buying group partner",
+                challenge: "Stagnating sales pipelines and lack of penetration in lucrative industrial contracting segment.",
+                search: "Competitor branch mapping, identified 12 key account managers, engaged 7, presented 3 finalist scorecards.",
+                outcome: "£1.2m new account revenue secured in first 9 months of placement."
+              },
+              {
+                title: "Regional Commercial Director",
+                region: "South East Network",
+                client: "National electrical distributor",
+                challenge: "Restructuring of 14 branch network required a commercially aggressive leader to protect buying group margins.",
+                search: "Direct executive mapping of tier-1 competitors, headhunted 5 regional leaders, placed candidate in 6 weeks.",
+                outcome: "Stabilised regional GP margins at 21.8% and decreased branch staff churn by 18%."
+              }
+            ].map((cs, idx) => (
               <motion.div
-                key={service.id}
+                key={idx}
+                className="bg-card-dark border border-white/5 rounded-sm p-8 flex flex-col justify-between hover:border-primary/30 transition-all duration-300 hover:shadow-2xl"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="group border border-slate-100 rounded-sm p-8 hover:border-primary hover:shadow-xl transition-all duration-300 flex flex-col bg-slate-50/50"
+                transition={{ delay: idx * 0.15, duration: 0.8 }}
               >
-                <div className="text-4xl font-display font-black text-primary/20 group-hover:text-primary/40 transition-colors mb-4">
-                  0{i + 1}
+                <div>
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 border border-primary/20 rounded-sm">
+                      {cs.region}
+                    </span>
+                    <span className="text-slate-600 text-xs font-semibold">{cs.client}</span>
+                  </div>
+                  <h3 className="font-display font-black text-lg text-white uppercase tracking-tight mb-4">
+                    {cs.title}
+                  </h3>
+                  <div className="space-y-4 text-xs font-light">
+                    <div>
+                      <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Challenge:</strong>
+                      <p className="text-slate-400 leading-relaxed">{cs.challenge}</p>
+                    </div>
+                    <div>
+                      <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Search Brief:</strong>
+                      <p className="text-slate-400 leading-relaxed">{cs.search}</p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display font-bold text-xl text-navy-deep mb-1">{service.name}</h3>
-                <p className="text-primary font-semibold text-sm mb-3">{service.tagline}</p>
-                <p className="text-slate-500 text-sm leading-relaxed mb-6 flex-grow">{service.description}</p>
-                
-                <Link
-                  to={`/services/${service.id}`}
-                  className="inline-flex items-center gap-2 text-navy-deep font-bold text-xs uppercase tracking-wider mb-6 hover:text-primary transition-colors w-fit"
-                >
-                  View Details <span className="material-symbols-outlined text-sm">arrow_forward</span>
-                </Link>
-
-                <ul className="space-y-2 border-t border-slate-200/60 pt-4">
-                  {service.features.map((f, fi) => (
-                    <li key={fi} className="flex items-center gap-2 text-xs text-slate-600">
-                      <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
-                      {f}
-                    </li>
-                  ))}
-                </ul>
+                <div className="mt-8 pt-6 border-t border-white/5">
+                  <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Quantified Outcome:</strong>
+                  <p className="text-white font-medium text-sm leading-relaxed">{cs.outcome}</p>
+                </div>
               </motion.div>
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="text-center mt-12">
             <Link
-              to="/services"
-              id="services-learn-more"
-              className="inline-block px-8 py-3 border-2 border-navy-deep text-navy-deep font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-navy-deep hover:text-white transition-all duration-300"
+              to="/contact?ref=results"
+              className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-primary text-primary font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-primary hover:text-navy-deep transition-all duration-300"
             >
-              See Full Services
+              View More Search Stories
             </Link>
           </div>
         </div>
       </section>
 
-      {/* SECTION 4.5: HYBRID ADVANCED SOURCING */}
-      <section className="py-24 bg-background-dark text-white border-y border-white/5 relative overflow-hidden">
+      {/* ── 6. WHO WE WORK WITH (Client segment) ── */}
+      <section id="clients" className="bg-navy-deep py-24 text-white border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Sourcing Method</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">
-              The Hybrid Advantage.
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <motion.div
+              className="lg:col-span-5 space-y-6"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-primary font-bold text-xs uppercase tracking-widest block">Client Partnerships</span>
+              <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight leading-[1.1]">
+                For Branch, Regional and Sales Leaders
+              </h2>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                We partner with national and independent electrical wholesalers across the UK who want to upgrade their sales and leadership talent, not just “fill a vacancy”.
+              </p>
+              <div className="pt-4">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-white transition-all shadow-lg"
+                >
+                  Discuss a Live or Upcoming Role
+                </Link>
+              </div>
+            </motion.div>
+
+            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                {
+                  title: "Branch Managers",
+                  desc: "Looking to stabilise local depot teams, improve stock turn, and capture external trade counter GP margin."
+                },
+                {
+                  title: "Regional / Area Managers",
+                  desc: "Tasked with building high-performing territory sales teams, launching new branches, or restructuring logistics hubs."
+                },
+                {
+                  title: "Sales / Commercial Directors",
+                  desc: "Planning group-level strategic hiring programs, mapping regional competitor heads, and negotiating OTE packages."
+                }
+              ].map((segment, idx) => (
+                <div key={idx} className="bg-background-dark border border-white/5 p-6 rounded-sm flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+                  <div className="space-y-4">
+                    <span className="font-display font-black text-xl text-primary block">0{idx + 1}</span>
+                    <h3 className="font-display font-bold text-sm uppercase text-white tracking-wider">{segment.title}</h3>
+                    <p className="text-slate-400 text-xs font-light leading-relaxed">{segment.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. FOR CANDIDATES (Elite talent positioning) ── */}
+      <section id="candidates" className="bg-background-dark py-24 text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            {/* Left: Bullet Points */}
+            <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-3 gap-6 order-2 lg:order-1">
+              {[
+                {
+                  title: "Confidential Introductions",
+                  desc: "We present you to leading wholesalers without public job postings, ensuring your search is 100% private."
+                },
+                {
+                  title: "Increase Responsibility & OTE",
+                  desc: "We target mandates offering greater regional autonomy, larger P&L networks, and high-reward profit-share schemes."
+                },
+                {
+                  title: "Negotiation & Progression Guidance",
+                  desc: "Bespoke advice on basic salary structures, car allowances, branch GP overrides, and long-term equity options."
+                }
+              ].map((bullet, idx) => (
+                <div key={idx} className="bg-card-dark border border-white/5 p-6 rounded-sm flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-4">security</span>
+                  <div>
+                    <h3 className="font-display font-bold text-xs uppercase text-white tracking-wider mb-2">{bullet.title}</h3>
+                    <p className="text-slate-400 text-[11px] font-light leading-relaxed">{bullet.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Right: Pitch & Network Form */}
+            <motion.div
+              className="lg:col-span-6 space-y-6 order-1 lg:order-2"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-primary font-bold text-xs uppercase tracking-widest block">Confidential Network</span>
+              <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight leading-[1.1]">
+                For High‑Performing Wholesale Professionals
+              </h2>
+              <p className="text-slate-400 text-sm font-light leading-relaxed">
+                We work with experienced professionals in branch management, field sales and commercial leadership who are consistently over‑target and ready for their next challenge.
+              </p>
+              <div className="pt-2">
+                <button
+                  onClick={() => scrollToSection('lead-magnets')}
+                  className="inline-flex items-center justify-center px-8 py-4 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-white transition-all shadow-lg"
+                >
+                  Join Our Confidential Talent Network
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. LEAD MAGNET SECTION (Dual Guide Downloads) ── */}
+      <section id="lead-magnets" className="bg-navy-deep py-24 text-white border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div className="text-center mb-16" {...fadeInUp}>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Industry Intelligence</span>
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
+              Exclusive Wholesale Industry Guides
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              We blend the precision of AI-driven market mapping with the irreplaceable technical instinct of industry veterans.
+            <p className="text-slate-400 text-sm max-w-xl mx-auto font-light mt-3">
+              Enter your details below to instantly access our strategic guides designed for employers and candidates.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: 'manage_search', title: 'Market Intelligence', desc: 'We map the UK market to understand competitor margin strategies and leadership DNA.' },
-              { icon: 'data_object', title: 'Proprietary Sourcing', desc: 'Our AI models scan passive high-performers, bypassing job boards to find leaders who deliver results.' },
-              { icon: 'person_search', title: 'Operational Vetting', desc: 'Our consultants vet every candidate for trade counter literacy and commercial sharp-mindedness.' },
-              { icon: 'target', title: 'Cultural & ROI Fit', desc: 'We ensure candidates align with your organizational culture and drive immediate operational ROI.' }
-            ].map((step, i) => (
-              <div key={i} className="bg-card-dark border border-white/5 rounded-sm p-8 text-center flex flex-col group hover:border-primary/50 transition-all duration-500 min-h-[300px]">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 group-hover:bg-primary/20 transition-all duration-500 mx-auto mb-6">
-                  <span className="material-symbols-outlined text-primary text-2xl group-hover:scale-110 transition-transform">{step.icon}</span>
-                </div>
-                <h3 className="font-display font-bold text-lg text-white uppercase tracking-tight mb-4">{step.title}</h3>
-                <p className="text-slate-400 font-light text-xs leading-relaxed">
-                  {step.desc}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left Column: For Clients (Salary Guide) */}
+            <div className="bg-background-dark border border-white/5 p-8 md:p-10 rounded-sm">
+              <div className="mb-8">
+                <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] block mb-2">For Employers</span>
+                <h3 className="text-xl md:text-2xl font-display font-black uppercase text-white tracking-tight">
+                  2026 Salary & Compensation Guide
+                </h3>
+                <p className="text-slate-400 text-xs font-light leading-relaxed mt-2">
+                  UK Electrical Wholesale Sales & Branch Leadership benchmarking report.
                 </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* SECTION 5: THE STRATEGIC DIFFERENCE (with Comparison Table) */}
-      <section className="bg-navy-deep py-24 text-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Methodology Difference</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">The Strategic Difference.</h2>
-            <p className="text-slate-400 text-lg font-light max-w-2xl mx-auto">
-              Power-Up Talent is not a traditional recruitment agency. We are a specialist consultancy focused exclusively on identifying the passive high-performers that standard job boards cannot reach.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <motion.div 
-              className="p-8 bg-card-dark border border-white/5 rounded-sm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-            >
-              <h3 className="text-xl font-display font-bold text-primary uppercase mb-4">Headhunting-First</h3>
-              <p className="text-slate-400 font-light text-sm leading-relaxed">
-                Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely &quot;looking&quot; for work; they are busy delivering results for your competitors.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="p-8 bg-card-dark border border-white/5 rounded-sm"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-            >
-              <h3 className="text-xl font-display font-bold text-primary uppercase mb-4">Trade Literacy</h3>
-              <p className="text-slate-400 font-light text-sm leading-relaxed">
-                Our consultants are sector specialists with deep operational backgrounds. We speak the language of technical procurement and branch management, ensuring a peer-level vetting process.
-              </p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-0 mb-2">
-            <div className="col-span-1" />
-            <div className="col-span-1 text-center py-3 px-4 bg-white/5 rounded-t-sm border-b border-white/10">
-              <span className="text-slate-400 text-xs font-bold uppercase tracking-widest">Generic Agency</span>
-            </div>
-            <div className="col-span-1 text-center py-3 px-4 bg-primary/10 rounded-t-sm border-b border-primary/30">
-              <span className="text-primary text-xs font-bold uppercase tracking-widest">Power-Up Talent</span>
-            </div>
-          </div>
-
-          <div className="rounded-sm overflow-hidden border border-white/10">
-            {comparisonRows.map((row, i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-3 gap-0 border-b border-white/5 last:border-0 ${i % 2 === 0 ? 'bg-white/[0.02]' : ''}`}
-              >
-                <div className="col-span-1 px-4 py-4 flex items-center text-slate-400 font-bold text-xs uppercase tracking-wider border-r border-white/5 bg-black/10">
-                  {row.feature}
-                </div>
-                <div className="col-span-1 px-4 py-4 flex items-center gap-2 bg-white/[0.01]">
-                  <span className="material-symbols-outlined text-red-400 text-lg flex-shrink-0">close</span>
-                  <span className="text-slate-300 text-sm">{row.left}</span>
-                </div>
-                <div className="col-span-1 px-4 py-4 flex items-center gap-2 bg-primary/5">
-                  <span className="material-symbols-outlined text-primary text-lg flex-shrink-0">check</span>
-                  <span className="text-white text-sm font-medium">{row.right}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5.5: HOW WE TRANSFORM BUSINESS */}
-      <section className="py-24 bg-white text-slate-900 border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Commercial Value</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2 mb-4">
-              How We Transform Your Business.
-            </h2>
-            <p className="text-slate-500 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              Measurable results that drive profitability, margin protection, and sustainable growth for your business.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {transformItems.map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-slate-50 border border-slate-200 rounded-sm p-8 hover:shadow-xl transition-all duration-300 flex gap-6"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 border border-primary/20">
-                  <span className="material-symbols-outlined text-primary text-2xl">{item.icon}</span>
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-lg text-navy-deep uppercase tracking-tight mb-1">{item.title}</h3>
-                  <p className="text-primary font-bold text-xs uppercase tracking-wider mb-2">{item.stat}</p>
-                  <p className="text-slate-500 font-light text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5.8: INDUSTRY EXPERT (SECTOR EXPERTISE) */}
-      <section className="py-24 bg-background-dark text-white border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Sector Leadership</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">
-              Industry Experts.
-            </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              Our consultants have worked in the electrical wholesale industry for decades. We speak your language.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png', title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
-              { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg', title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
-              { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png', title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
-            ].map((sector, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="bg-card-dark border border-white/5 rounded-sm overflow-hidden group hover:border-primary/50 transition-all duration-500"
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img
-                    src={sector.img}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    alt={sector.title}
-                  />
-                  <div className="absolute inset-0 bg-navy-deep/20 group-hover:bg-transparent transition-colors" />
-                </div>
-                <div className="p-8">
-                  <h3 className="font-display font-bold text-xl text-white uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">
-                    {sector.title}
-                  </h3>
-                  <p className="text-slate-400 font-light text-sm leading-relaxed">
-                    {sector.desc}
+              {clientStatus === 'success' ? (
+                <motion.div
+                  className="bg-primary/10 border border-primary/20 p-8 rounded-sm text-center space-y-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                >
+                  <span className="material-symbols-outlined text-primary text-5xl">task_alt</span>
+                  <h4 className="font-display font-bold text-lg text-white uppercase tracking-wider">Salary Guide Downloaded</h4>
+                  <p className="text-slate-300 text-xs font-light max-w-xs mx-auto">
+                    The text file should have downloaded automatically. Check your downloads directory, or request a secondary email copy.
                   </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+                  <button
+                    onClick={() => setClientStatus('idle')}
+                    className="text-xs text-primary font-bold uppercase tracking-wider hover:underline"
+                  >
+                    Download Again
+                  </button>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleClientSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Your Name *</label>
+                      <input
+                        type="text"
+                        required
+                        value={clientForm.name}
+                        onChange={(e) => setClientForm({ ...clientForm, name: e.target.value })}
+                        placeholder="Full name"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Company *</label>
+                      <input
+                        type="text"
+                        required
+                        value={clientForm.company}
+                        onChange={(e) => setClientForm({ ...clientForm, company: e.target.value })}
+                        placeholder="Company name"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                  </div>
 
-      {/* SECTION 6: TESTIMONIALS */}
-      <section className="bg-white py-24 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-12">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Client Stories</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2">What Our Clients Say.</h2>
-          </motion.div>
-        </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Your Role *</label>
+                      <input
+                        type="text"
+                        required
+                        value={clientForm.role}
+                        onChange={(e) => setClientForm({ ...clientForm, role: e.target.value })}
+                        placeholder="e.g. Sales Director"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Work Email *</label>
+                      <input
+                        type="email"
+                        required
+                        value={clientForm.email}
+                        onChange={(e) => setClientForm({ ...clientForm, email: e.target.value })}
+                        placeholder="work@company.co.uk"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                  </div>
 
-        <div className="overflow-hidden">
-          <div className="animate-marquee">
-            {doubledTestimonials.map((t, i) => (
-              <div
-                key={i}
-                className="flex-shrink-0 w-80 md:w-96 bg-slate-50 border border-slate-100 rounded-sm p-6 mx-4"
-              >
-                <div className="flex mb-3">
-                  {[...Array(5)].map((_, si) => (
-                    <span key={si} className="material-symbols-outlined text-primary text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed mb-4 italic">&ldquo;{t.quote}&rdquo;</p>
-                <div>
-                  <p className="font-bold text-navy-deep text-sm">{t.name}</p>
-                  <p className="text-xs text-slate-500">{t.role} &middot; {t.company}</p>
-                </div>
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={clientStatus === 'submitting'}
+                      className="w-full bg-primary text-navy-deep py-3.5 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      {clientStatus === 'submitting' ? 'Generating Guide...' : 'Download Salary Guide'}
+                      <span className="material-symbols-outlined text-sm">download</span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
+
+            {/* Right Column: For Candidates (Earnings Guide) */}
+            <div className="bg-background-dark border border-white/5 p-8 md:p-10 rounded-sm">
+              <div className="mb-8">
+                <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] block mb-2">For Candidates</span>
+                <h3 className="text-xl md:text-2xl font-display font-black uppercase text-white tracking-tight">
+                  Maximising Wholesale Earnings
+                </h3>
+                <p className="text-slate-400 text-xs font-light leading-relaxed mt-2">
+                  Guide on basic salary negotiation, GP override structures, and commercial bonus agreements.
+                </p>
               </div>
-            ))}
+
+              {candidateStatus === 'success' ? (
+                <motion.div
+                  className="bg-primary/10 border border-primary/20 p-8 rounded-sm text-center space-y-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                >
+                  <span className="material-symbols-outlined text-primary text-5xl">task_alt</span>
+                  <h4 className="font-display font-bold text-lg text-white uppercase tracking-wider">Earnings Guide Downloaded</h4>
+                  <p className="text-slate-300 text-xs font-light max-w-xs mx-auto">
+                    The guide download has been triggered. Check your browser folder or request a secondary email copy.
+                  </p>
+                  <button
+                    onClick={() => setCandidateStatus('idle')}
+                    className="text-xs text-primary font-bold uppercase tracking-wider hover:underline"
+                  >
+                    Download Again
+                  </button>
+                </motion.div>
+              ) : (
+                <form onSubmit={handleCandidateSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Your Name *</label>
+                      <input
+                        type="text"
+                        required
+                        value={candidateForm.name}
+                        onChange={(e) => setCandidateForm({ ...candidateForm, name: e.target.value })}
+                        placeholder="Full name"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Current Role *</label>
+                      <input
+                        type="text"
+                        required
+                        value={candidateForm.role}
+                        onChange={(e) => setCandidateForm({ ...candidateForm, role: e.target.value })}
+                        placeholder="e.g. Branch Manager"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Region *</label>
+                      <input
+                        type="text"
+                        required
+                        value={candidateForm.region}
+                        onChange={(e) => setCandidateForm({ ...candidateForm, region: e.target.value })}
+                        placeholder="e.g. North West"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Personal Email *</label>
+                      <input
+                        type="email"
+                        required
+                        value={candidateForm.email}
+                        onChange={(e) => setCandidateForm({ ...candidateForm, email: e.target.value })}
+                        placeholder="personal@email.com"
+                        className="w-full bg-black/40 border border-white/8 rounded-sm px-4 py-3 text-xs text-white focus:border-primary focus:bg-black/60 outline-none transition-all placeholder:text-slate-700"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="pt-2">
+                    <button
+                      type="submit"
+                      disabled={candidateStatus === 'submitting'}
+                      className="w-full bg-primary text-navy-deep py-3.5 rounded-sm font-bold text-xs uppercase tracking-widest hover:bg-white transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                      {candidateStatus === 'submitting' ? 'Generating Guide...' : 'Download Earnings Guide'}
+                      <span className="material-symbols-outlined text-sm">download</span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* SECTION 7: DUAL CTA BANNER */}
-      <section className="bg-primary py-20">
-        <div className="max-w-5xl mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="font-display font-black text-3xl md:text-5xl text-navy-deep mb-4">
-              Ready to Outperform the Competition?
+      {/* ── 9. ABOUT & CREDIBILITY ── */}
+      <section className="bg-background-dark py-24 text-white relative">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.div className="space-y-6" {...fadeInUp}>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest block">About Power-Up Talent</span>
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
+              Why Power-Up Talent Exists
             </h2>
-            <p className="text-navy-deep/70 mb-10 text-lg">
-              Whether you&apos;re hiring or looking for your next move &mdash; let&apos;s talk.
+            <div className="h-0.5 w-16 bg-primary mx-auto mt-4 mb-8"></div>
+            <p className="text-slate-300 text-sm md:text-base font-light leading-relaxed max-w-3xl mx-auto">
+              Power-Up Talent was built out of frustration with generalist recruitment agencies who lack technical sector grit. When generic trade recruiters are trying to fill positions for contractors, electricians, fire & security installers, and wholesale branch managers all in the same week, their attention is divided. 
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <p className="text-slate-300 text-sm md:text-base font-light leading-relaxed max-w-3xl mx-auto">
+              We operate exclusively as a boutique executive search partner for the UK electrical wholesale sector. Founded by a veteran who has worked at the counter and in regional boardrooms, we speak the literal language of margins, supplier rebates, stock valuation, and buying groups. We connect the elite 1% of passive wholesale leaders directly to national and independent branch networks.
+            </p>
+            <div className="pt-6">
               <Link
-                to="/contact"
-                id="cta-brief-us"
-                className="inline-block px-10 py-4 bg-navy-deep text-white font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-navy-deep/80 transition-all duration-300 hover:scale-105"
+                to="/about"
+                className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-white transition-all duration-300"
               >
-                Brief Us &mdash; I&apos;m Hiring
-              </Link>
-              <Link
-                to="/upload-cv"
-                id="cta-submit-cv"
-                className="inline-block px-10 py-4 bg-white text-navy-deep font-bold font-display uppercase tracking-widest text-sm rounded-sm hover:bg-slate-100 transition-all duration-300 hover:scale-105"
-              >
-                Submit Your CV
+                Meet Your Headhunter
               </Link>
             </div>
           </motion.div>

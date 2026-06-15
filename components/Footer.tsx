@@ -27,8 +27,8 @@ const Footer: React.FC = () => {
       {/* Main footer */}
       <div className="max-w-screen-xl mx-auto px-6 pt-16 pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
-          {/* Brand */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          {/* Brand & Address */}
+          <div className="lg:col-span-5 flex flex-col gap-6">
             <Link to="/" className="flex flex-col group w-fit">
               <div className="flex items-center gap-0">
                 <span className="font-display font-black text-3xl tracking-tight uppercase text-white">P</span>
@@ -37,62 +37,52 @@ const Footer: React.FC = () => {
               </div>
               <span className="text-[8px] tracking-[0.1em] text-primary/80 font-semibold uppercase leading-none mt-1">Electrical Wholesale Headhunters</span>
             </Link>
-            <p className="text-slate-500 text-sm font-light leading-relaxed max-w-xs">
-              The UK's only specialist headhunting firm focused exclusively on the electrical wholesale industry. We find passive high-performers your competitors don't know are available.
+            <p className="text-slate-500 text-sm font-light leading-relaxed max-w-sm">
+              The UK's only boutique search partner focused exclusively on identifying and securing passive commercial and leadership talent for the electrical wholesale market.
             </p>
-            <div className="flex gap-3">
-              <div className="text-[8px] font-bold uppercase tracking-[0.15em] border border-white/10 px-3 py-1.5 text-slate-500 rounded-sm">REC Member</div>
-              <div className="text-[8px] font-bold uppercase tracking-[0.15em] border border-white/10 px-3 py-1.5 text-slate-500 rounded-sm">ISO Certified</div>
+            <div className="text-xs text-slate-500 font-light space-y-1">
+              <p className="font-semibold text-slate-400">Registered Office:</p>
+              <p>Power-Up Talent Ltd</p>
+              <p>128 City Road, London, EC1V 2NX</p>
+              <p>Registered in England & Wales &middot; Company No. 14590332</p>
             </div>
           </div>
 
-          {/* For Employers */}
-          <div className="lg:col-span-2">
+          {/* Quick Links */}
+          <div className="lg:col-span-4 lg:col-start-7">
             <h6 className="text-[10px] font-bold text-primary uppercase tracking-[0.25em] mb-6 flex items-center gap-2">
-              <span className="w-3 h-px bg-primary"></span>For Employers
+              <span className="w-3 h-px bg-primary"></span>Quick Links
             </h6>
-            <div className="flex flex-col gap-3">
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/elite-recruitment">Elite Recruitment</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/strategic-recruitment">Strategic Leadership</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/services/growth-partnerships">Growth Partnerships</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/about">About Us</Link>
+            <div className="grid grid-cols-2 gap-x-8 gap-y-3">
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/">Home</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/?scroll=clients">Clients</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/?scroll=candidates">Candidates</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/?scroll=search-process">Search Process</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/?scroll=results">Results</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/about">About</Link>
+              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/contact">Contact</Link>
             </div>
           </div>
 
-          {/* For Candidates */}
-          <div className="lg:col-span-2">
+          {/* Contact Details */}
+          <div className="lg:col-span-3">
             <h6 className="text-[10px] font-bold text-primary uppercase tracking-[0.25em] mb-6 flex items-center gap-2">
-              <span className="w-3 h-px bg-primary"></span>For Candidates
+              <span className="w-3 h-px bg-primary"></span>Contact Details
             </h6>
-            <div className="flex flex-col gap-3">
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/upload-cv">Submit Your CV</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/insights">Industry Insights</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/about">Why Power-Up</Link>
-            </div>
-          </div>
-
-          {/* Company */}
-          <div className="lg:col-span-2">
-            <h6 className="text-[10px] font-bold text-primary uppercase tracking-[0.25em] mb-6 flex items-center gap-2">
-              <span className="w-3 h-px bg-primary"></span>Company
-            </h6>
-            <div className="flex flex-col gap-3">
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/about">Our Story</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/insights">News & Insights</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/privacy">Privacy Policy</Link>
-              <Link className="text-slate-400 hover:text-white text-sm font-light transition-all hover:translate-x-1" to="/terms">Terms of Service</Link>
-            </div>
-          </div>
-
-          {/* Contact */}
-          <div className="lg:col-span-2">
-            <h6 className="text-[10px] font-bold text-primary uppercase tracking-[0.25em] mb-6 flex items-center gap-2">
-              <span className="w-3 h-px bg-primary"></span>Get In Touch
-            </h6>
-            <div className="flex flex-col gap-3">
-              <a href="mailto:poweruptalent@gmail.com" className="text-slate-400 hover:text-white text-sm font-light transition-all break-all">poweruptalent@gmail.com</a>
-              <p className="text-slate-600 text-xs font-light">United Kingdom</p>
-              <p className="text-slate-600 text-xs font-light">Electrical Wholesale Specialists</p>
+            <div className="flex flex-col gap-4">
+              <div>
+                <p className="text-[9px] uppercase tracking-wider text-slate-500 font-bold mb-1">Email</p>
+                <a href="mailto:poweruptalent@gmail.com" className="text-slate-300 hover:text-white text-sm font-light break-all">poweruptalent@gmail.com</a>
+              </div>
+              <div>
+                <p className="text-[9px] uppercase tracking-wider text-slate-500 font-bold mb-1">Phone</p>
+                <a href="tel:+442079460192" className="text-slate-300 hover:text-white text-sm font-light">+44 (0) 20 7946 0192</a>
+              </div>
+              <div className="flex gap-3 pt-2">
+                <a href="https://www.linkedin.com/company/power-up-talent" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" aria-label="LinkedIn">
+                  <LinkedInIcon />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -100,20 +90,12 @@ const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-slate-600 text-xs font-light tracking-wide">
-            © {new Date().getFullYear()} Power-Up Talent Ltd. All rights reserved. Registered in England & Wales.
+            © {new Date().getFullYear()} Power-Up Talent Ltd. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/privacy">Privacy</Link>
-            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/terms">Terms</Link>
-            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/cookies">Cookies</Link>
-            <div className="flex gap-3">
-              <a href="mailto:poweruptalent@gmail.com" className="w-9 h-9 border border-white/10 rounded-sm flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all group" aria-label="Email">
-                <span className="material-symbols-outlined text-lg group-hover:scale-110">mail</span>
-              </a>
-              <a href="https://www.linkedin.com/company/power-up-talent" target="_blank" rel="noopener noreferrer" className="w-9 h-9 border border-white/10 rounded-sm flex items-center justify-center text-slate-500 hover:text-primary hover:border-primary transition-all" aria-label="LinkedIn">
-                <LinkedInIcon />
-              </a>
-            </div>
+            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/privacy">Privacy Policy</Link>
+            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/terms">Terms of Service</Link>
+            <Link className="text-slate-600 hover:text-primary text-xs transition-all" to="/cookies">Cookie Policy</Link>
           </div>
         </div>
       </div>
