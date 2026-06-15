@@ -232,22 +232,33 @@ const AboutUs: React.FC = () => {
             <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2">Our Guarantee.</h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {GUARANTEES.map((g, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card-dark border border-border-dark rounded-sm p-6 hover:border-primary/40 transition-colors group text-center"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-primary">{g.icon}</span>
-                </div>
-                <h3 className="font-display font-bold text-white mb-2">{g.title}</h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{g.description}</p>
-              </motion.div>
-            ))}
+            {GUARANTEES.map((g, i) => {
+              // Different background layouts/styles for each guarantee box
+              const styles = [
+                "glass-card",
+                "bg-card-dark border border-white/5",
+                "dossier-card",
+                "glass-card-featured border-primary/30"
+              ];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`${styles[i % styles.length]} p-6 rounded-sm text-center flex flex-col justify-between min-h-[250px] group`}
+                >
+                  <div>
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                      <span className="material-symbols-outlined text-primary">{g.icon}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-white mb-2">{g.title}</h3>
+                  </div>
+                  <p className="text-slate-400 text-xs font-light leading-relaxed">{g.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -310,22 +321,32 @@ const AboutUs: React.FC = () => {
             <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mt-2">Our Values.</h2>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {VALUES.map((v, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group border border-slate-100 rounded-sm p-6 text-center hover:border-primary hover:shadow-xl transition-all duration-300"
-              >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-primary">{v.icon}</span>
-                </div>
-                <h3 className="font-display font-bold text-navy-deep text-lg mb-2">{v.title}</h3>
-                <p className="text-slate-500 text-xs leading-relaxed">{v.description}</p>
-              </motion.div>
-            ))}
+            {VALUES.map((v, i) => {
+              // Diverse card backgrounds for light page background
+              const styles = [
+                "bg-white border border-slate-200/80 shadow-sm",
+                "bg-slate-50 border border-slate-100",
+                "bg-white border-t-4 border-t-primary border-x border-b border-slate-200 shadow-md scale-105 z-10",
+                "bg-slate-50 border border-slate-100",
+                "bg-white border border-slate-200/80 shadow-sm"
+              ];
+              return (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className={`${styles[i % styles.length]} rounded-sm p-6 text-center hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group`}
+                >
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                    <span className="material-symbols-outlined text-primary">{v.icon}</span>
+                  </div>
+                  <h3 className="font-display font-bold text-navy-deep text-lg mb-2">{v.title}</h3>
+                  <p className="text-slate-500 text-xs leading-relaxed">{v.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -100,7 +100,7 @@ const Home: React.FC = () => {
       <section className="relative min-h-screen flex items-center bg-background-dark overflow-hidden pt-24 pb-16">
         <div className="absolute inset-0 z-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-background-dark" />
-          <div className="w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,193,7,0.15)_0%,transparent_70%)]" />
+          <div className="w-full h-full bg-[radial-gradient(circle_at_center,rgba(255,193,7,0.2)_0%,transparent_70%)]" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -181,15 +181,15 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center items-center">
             <div className="space-y-1">
               <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">14 Days</span>
-              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Average time-to-shortlist</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold font-display">Average time-to-shortlist</span>
             </div>
             <div className="space-y-1 border-y md:border-y-0 md:border-x border-slate-200 py-6 md:py-0">
               <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">92%</span>
-              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Retained searches filled from first shortlist</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold font-display">Retained searches filled from first shortlist</span>
             </div>
             <div className="space-y-1">
               <span className="block font-display font-black text-4xl lg:text-5xl text-navy-deep">89%</span>
-              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold">Placed managers in role after 12 months</span>
+              <span className="block text-xs uppercase tracking-wider text-slate-500 font-bold font-display">Placed managers in role after 12 months</span>
             </div>
           </div>
 
@@ -222,25 +222,28 @@ const Home: React.FC = () => {
               <div className="h-px bg-white/10 w-24"></div>
             </motion.div>
 
-            {/* Right: Key Bullets */}
+            {/* Right: Key Bullets (Diverse Box Background Layouts) */}
             <div className="lg:col-span-6 space-y-6">
               {[
                 {
                   title: "Exclusively Wholesale & Distribution",
-                  desc: "We only partner with electrical wholesalers and specialist distributors across the UK – not generic engineering, not all trades."
+                  desc: "We only partner with electrical wholesalers and specialist distributors across the UK – not generic engineering, not all trades.",
+                  style: "glass-card border-l-4 border-primary p-6 rounded-sm flex gap-4"
                 },
                 {
                   title: "Commercial & Leadership Scope",
-                  desc: "We focus on commercial and leadership hires: Branch Managers, Area Sales Managers, Key Account Managers, Regional/Commercial Directors."
+                  desc: "We focus on commercial and leadership hires: Branch Managers, Area Sales Managers, Key Account Managers, Regional/Commercial Directors.",
+                  style: "bg-gradient-to-br from-[#060B16] to-[#020408] border border-white/5 p-6 rounded-sm flex gap-4 hover:border-primary/20 transition-all duration-300"
                 },
                 {
                   title: "We Speak Your Language",
-                  desc: "We understand the metrics that matter – margins, supplier rebates, stock turn, trade counter flow, project business, and contractor relationships."
+                  desc: "We understand the metrics that matter – margins, supplier rebates, stock turn, trade counter flow, project business, and contractor relationships.",
+                  style: "dossier-card p-6 rounded-sm flex gap-4"
                 }
               ].map((bullet, idx) => (
                 <motion.div
                   key={idx}
-                  className="bg-card-dark border border-white/5 p-6 rounded-sm flex gap-4 hover:border-primary/30 transition-all duration-300"
+                  className={bullet.style}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -260,10 +263,10 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 4. HOW OUR HEADHUNTING PROCESS WORKS ── */}
-      <section id="search-process" className="bg-navy-deep py-24 text-white border-y border-white/5">
+      {/* ── 4. HOW OUR HEADHUNTING PROCESS WORKS (Staggered Wave Layout) ── */}
+      <section id="search-process" className="bg-navy-deep py-28 text-white border-y border-white/5 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div className="text-center mb-16" {...fadeInUp}>
+          <motion.div className="text-center mb-24" {...fadeInUp}>
             <span className="text-primary font-bold text-xs uppercase tracking-widest block mb-2">Our Methodology</span>
             <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
               Our 5‑Step Search Method
@@ -273,62 +276,70 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+          {/* Staggered wave timeline cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-8 pt-6">
             {[
               {
                 num: "01",
                 icon: "rule",
                 title: "Define Success Profile",
-                desc: "We clarify the commercial outcome first – branch P&L, GP targets, growth expectations – then design the ideal candidate profile around that."
+                desc: "We clarify the commercial outcome first – branch P&L, GP targets, growth expectations – then design the ideal candidate profile around that.",
+                style: "glass-card lg:translate-y-4"
               },
               {
                 num: "02",
                 icon: "map",
                 title: "Map Competitor Market",
-                desc: "We identify competitor branches, high‑performing territories and adjacent markets, building a longlist of off‑market talent who will never apply to job ads."
+                desc: "We identify competitor branches, high‑performing territories and adjacent markets, building a longlist of off‑market talent who will never apply to job ads.",
+                style: "bg-card-dark border border-white/5 lg:-translate-y-4"
               },
               {
                 num: "03",
                 icon: "vpn_key",
                 title: "Confidential Outreach",
-                desc: "We approach top performers discreetly, benchmark track records and test motivation before they ever reach your desk."
+                desc: "We approach top performers discreetly, benchmark track records and test motivation before they ever reach your desk.",
+                style: "glass-card lg:translate-y-4"
               },
               {
                 num: "04",
                 icon: "reviews",
                 title: "Shortlist & Interviews",
-                desc: "We present 3–5 fully‑qualified candidates with structured scorecards focused on revenue, margin and leadership behaviours."
+                desc: "We present 3–5 fully‑qualified candidates with structured scorecards focused on revenue, margin and leadership behaviours.",
+                style: "bg-card-dark border border-white/5 lg:-translate-y-4"
               },
               {
                 num: "05",
                 icon: "handshake",
                 title: "Offer & Resignation",
-                desc: "We manage delicate resignations, counter‑offers and first‑90‑day expectations to maximise retention and impact."
+                desc: "We manage delicate resignations, counter‑offers and first‑90‑day expectations to maximise retention and impact.",
+                style: "glass-card lg:translate-y-4"
               }
             ].map((step, idx) => (
               <motion.div
                 key={idx}
-                className="bg-background-dark border border-white/5 p-6 rounded-sm flex flex-col hover:border-primary/50 transition-all duration-300 text-center relative group"
-                initial={{ opacity: 0, y: 20 }}
+                className={`${step.style} p-6 rounded-sm flex flex-col hover:border-primary/50 transition-all duration-300 text-center relative group min-h-[280px] justify-between shadow-lg`}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.6 }}
+                transition={{ delay: idx * 0.1, duration: 0.7 }}
               >
-                <span className="absolute top-4 right-4 text-xs font-display font-black text-white/10 group-hover:text-primary/20 transition-colors">
-                  {step.num}
-                </span>
-                <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
-                  <span className="material-symbols-outlined text-primary text-xl">{step.icon}</span>
+                <div>
+                  <span className="absolute top-4 right-4 text-xs font-display font-black text-white/10 group-hover:text-primary/20 transition-colors">
+                    {step.num}
+                  </span>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
+                    <span className="material-symbols-outlined text-primary text-xl">{step.icon}</span>
+                  </div>
+                  <h3 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-3">{step.title}</h3>
                 </div>
-                <h3 className="font-display font-bold text-sm text-white uppercase tracking-wider mb-3">{step.title}</h3>
-                <p className="text-slate-400 text-xs font-light leading-relaxed flex-grow">{step.desc}</p>
+                <p className="text-slate-400 text-xs font-light leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── 5. RESULTS WE DELIVER (Case Studies) ── */}
+      {/* ── 5. RESULTS WE DELIVER (Asymmetric Case Studies) ── */}
       <section id="results" className="bg-background-dark py-24 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
@@ -341,71 +352,114 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Branch Manager – £4.5m Turnover Branch",
-                region: "North West",
-                client: "National electrical wholesaler (region anonymised)",
-                challenge: "Flat revenue for 3 years despite strong local demand; previous branch manager weak on external sales.",
-                search: "Market‑mapped 4 competitors, headhunted 18 target profiles, delivered 4‑person shortlist in 21 days.",
-                outcome: "+23% branch revenue and +2.1 pts GP margin within 12 months."
-              },
-              {
-                title: "Area Sales Manager – Key Accounts",
-                region: "Midlands",
-                client: "Independent buying group partner",
-                challenge: "Stagnating sales pipelines and lack of penetration in lucrative industrial contracting segment.",
-                search: "Competitor branch mapping, identified 12 key account managers, engaged 7, presented 3 finalist scorecards.",
-                outcome: "£1.2m new account revenue secured in first 9 months of placement."
-              },
-              {
-                title: "Regional Commercial Director",
-                region: "South East Network",
-                client: "National electrical distributor",
-                challenge: "Restructuring of 14 branch network required a commercially aggressive leader to protect buying group margins.",
-                search: "Direct executive mapping of tier-1 competitors, headhunted 5 regional leaders, placed candidate in 6 weeks.",
-                outcome: "Stabilised regional GP margins at 21.8% and decreased branch staff churn by 18%."
-              }
-            ].map((cs, idx) => (
-              <motion.div
-                key={idx}
-                className="bg-card-dark border border-white/5 rounded-sm p-8 flex flex-col justify-between hover:border-primary/30 transition-all duration-300 hover:shadow-2xl"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.15, duration: 0.8 }}
-              >
-                <div>
-                  <div className="flex justify-between items-start mb-6">
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 border border-primary/20 rounded-sm">
-                      {cs.region}
-                    </span>
-                    <span className="text-slate-600 text-xs font-semibold">{cs.client}</span>
+          {/* Asymmetric Case Studies layout: middle card is featured and larger */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Case Study 1 */}
+            <motion.div
+              className="glass-card rounded-sm p-8 flex flex-col justify-between hover:shadow-2xl min-h-[440px]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.8 }}
+            >
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 border border-primary/20 rounded-sm">
+                    North West
+                  </span>
+                  <span className="text-slate-600 text-xs font-semibold">National Wholesaler</span>
+                </div>
+                <h3 className="font-display font-black text-lg text-white uppercase tracking-tight mb-4">
+                  Branch Manager – £4.5m Turnover Branch
+                </h3>
+                <div className="space-y-4 text-xs font-light">
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Challenge:</strong>
+                    <p className="text-slate-400 leading-relaxed">Flat revenue for 3 years despite strong local demand; previous branch manager weak on external sales.</p>
                   </div>
-                  <h3 className="font-display font-black text-lg text-white uppercase tracking-tight mb-4">
-                    {cs.title}
-                  </h3>
-                  <div className="space-y-4 text-xs font-light">
-                    <div>
-                      <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Challenge:</strong>
-                      <p className="text-slate-400 leading-relaxed">{cs.challenge}</p>
-                    </div>
-                    <div>
-                      <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Search Brief:</strong>
-                      <p className="text-slate-400 leading-relaxed">{cs.search}</p>
-                    </div>
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Search Brief:</strong>
+                    <p className="text-slate-400 leading-relaxed">Market‑mapped 4 competitors, headhunted 18 target profiles, delivered 4‑person shortlist in 21 days.</p>
                   </div>
                 </div>
-                <div className="mt-8 pt-6 border-t border-white/5">
-                  <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Quantified Outcome:</strong>
-                  <p className="text-white font-medium text-sm leading-relaxed">{cs.outcome}</p>
+              </div>
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Quantified Outcome:</strong>
+                <p className="text-white font-medium text-sm leading-relaxed">+23% branch revenue and +2.1 pts GP margin within 12 months.</p>
+              </div>
+            </motion.div>
+
+            {/* Case Study 2 (FEATURED CARD - Glass Card Featured) */}
+            <motion.div
+              className="glass-card-featured rounded-sm p-10 flex flex-col justify-between lg:scale-105 min-h-[480px] relative overflow-hidden"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+            >
+              <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <span className="featured-badge">Featured Search</span>
+                  <span className="text-primary text-xs font-bold font-display">Midlands</span>
                 </div>
-              </motion.div>
-            ))}
+                <h3 className="font-display font-black text-xl text-white uppercase tracking-tight mb-4 text-gradient">
+                  Area Sales Manager – Key Accounts
+                </h3>
+                <div className="space-y-4 text-xs font-light">
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Challenge:</strong>
+                    <p className="text-slate-300 leading-relaxed">Stagnating sales pipelines and lack of penetration in lucrative industrial contracting segment.</p>
+                  </div>
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Search Brief:</strong>
+                    <p className="text-slate-300 leading-relaxed">Competitor branch mapping, identified 12 key account managers, engaged 7, presented 3 finalist scorecards.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 pt-6 border-t border-primary/20">
+                <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Quantified Outcome:</strong>
+                <p className="text-white font-bold text-base leading-relaxed text-glow">£1.2m new account revenue secured in first 9 months of placement.</p>
+              </div>
+            </motion.div>
+
+            {/* Case Study 3 */}
+            <motion.div
+              className="glass-card rounded-sm p-8 flex flex-col justify-between hover:shadow-2xl min-h-[440px]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3, duration: 0.8 }}
+            >
+              <div>
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary px-2 py-1 bg-primary/10 border border-primary/20 rounded-sm">
+                    South East
+                  </span>
+                  <span className="text-slate-600 text-xs font-semibold">National Distributor</span>
+                </div>
+                <h3 className="font-display font-black text-lg text-white uppercase tracking-tight mb-4">
+                  Regional Commercial Director
+                </h3>
+                <div className="space-y-4 text-xs font-light">
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Challenge:</strong>
+                    <p className="text-slate-400 leading-relaxed">Restructuring of 14 branch network required a commercially aggressive leader to protect buying group margins.</p>
+                  </div>
+                  <div>
+                    <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Search Brief:</strong>
+                    <p className="text-slate-400 leading-relaxed">Direct executive mapping of tier-1 competitors, headhunted 5 regional leaders, placed candidate in 6 weeks.</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 pt-6 border-t border-white/5">
+                <strong className="block text-primary uppercase tracking-wider text-[9px] mb-1 font-bold">Quantified Outcome:</strong>
+                <p className="text-white font-medium text-sm leading-relaxed">Stabilised regional GP margins at 21.8% and decreased branch staff churn by 18%.</p>
+              </div>
+            </motion.div>
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link
               to="/contact?ref=results"
               className="inline-flex items-center gap-2 px-8 py-3.5 border-2 border-primary text-primary font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-primary hover:text-navy-deep transition-all duration-300"
@@ -416,7 +470,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 6. WHO WE WORK WITH (Client segment) ── */}
+      {/* ── 6. WHO WE WORK WITH (Client segment - Different bk Gradients) ── */}
       <section id="clients" className="bg-navy-deep py-24 text-white border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -444,26 +498,30 @@ const Home: React.FC = () => {
               </div>
             </motion.div>
 
+            {/* Diverse background gradients for client segment cards */}
             <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
                   title: "Branch Managers",
-                  desc: "Looking to stabilise local depot teams, improve stock turn, and capture external trade counter GP margin."
+                  desc: "Looking to stabilise local depot teams, improve stock turn, and capture external trade counter GP margin.",
+                  gradient: "bg-gradient-to-br from-[#0b1224] to-[#040711] border-l-2 border-primary"
                 },
                 {
                   title: "Regional / Area Managers",
-                  desc: "Tasked with building high-performing territory sales teams, launching new branches, or restructuring logistics hubs."
+                  desc: "Tasked with building high-performing territory sales teams, launching new branches, or restructuring logistics hubs.",
+                  gradient: "bg-gradient-to-br from-[#0c0d12] to-[#161d2f] border-t-2 border-primary"
                 },
                 {
                   title: "Sales / Commercial Directors",
-                  desc: "Planning group-level strategic hiring programs, mapping regional competitor heads, and negotiating OTE packages."
+                  desc: "Planning group-level strategic hiring programs, mapping regional competitor heads, and negotiating OTE packages.",
+                  gradient: "bg-gradient-to-br from-[#030303] to-[#1a233d] border-r-2 border-primary"
                 }
               ].map((segment, idx) => (
-                <div key={idx} className="bg-background-dark border border-white/5 p-6 rounded-sm flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
+                <div key={idx} className={`${segment.gradient} p-6 rounded-sm flex flex-col justify-between hover:scale-[1.03] transition-all duration-300 min-h-[220px]`}>
                   <div className="space-y-4">
                     <span className="font-display font-black text-xl text-primary block">0{idx + 1}</span>
                     <h3 className="font-display font-bold text-sm uppercase text-white tracking-wider">{segment.title}</h3>
-                    <p className="text-slate-400 text-xs font-light leading-relaxed">{segment.desc}</p>
+                    <p className="text-slate-300 text-xs font-light leading-relaxed">{segment.desc}</p>
                   </div>
                 </div>
               ))}
@@ -472,28 +530,31 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 7. FOR CANDIDATES (Elite talent positioning) ── */}
+      {/* ── 7. FOR CANDIDATES (Dossier Layout Style Cards) ── */}
       <section id="candidates" className="bg-background-dark py-24 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: Bullet Points */}
+            {/* Left: Bullet Points (styled as dossier cards with offset corners) */}
             <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-3 gap-6 order-2 lg:order-1">
               {[
                 {
                   title: "Confidential Introductions",
-                  desc: "We present you to leading wholesalers without public job postings, ensuring your search is 100% private."
+                  desc: "We present you to leading wholesalers without public job postings, ensuring your search is 100% private.",
+                  icon: "security"
                 },
                 {
                   title: "Increase Responsibility & OTE",
-                  desc: "We target mandates offering greater regional autonomy, larger P&L networks, and high-reward profit-share schemes."
+                  desc: "We target mandates offering greater regional autonomy, larger P&L networks, and high-reward profit-share schemes.",
+                  icon: "payments"
                 },
                 {
-                  title: "Negotiation & Progression Guidance",
-                  desc: "Bespoke advice on basic salary structures, car allowances, branch GP overrides, and long-term equity options."
+                  title: "Negotiation & Packages",
+                  desc: "Bespoke advice on basic salary structures, car allowances, branch GP overrides, and long-term equity options.",
+                  icon: "trending_up"
                 }
               ].map((bullet, idx) => (
-                <div key={idx} className="bg-card-dark border border-white/5 p-6 rounded-sm flex flex-col justify-between hover:border-primary/20 transition-all duration-300">
-                  <span className="material-symbols-outlined text-primary text-2xl mb-4">security</span>
+                <div key={idx} className="dossier-card p-6 rounded-tr-xl rounded-bl-xl flex flex-col justify-between min-h-[240px]">
+                  <span className="material-symbols-outlined text-primary text-2xl mb-4">{bullet.icon}</span>
                   <div>
                     <h3 className="font-display font-bold text-xs uppercase text-white tracking-wider mb-2">{bullet.title}</h3>
                     <p className="text-slate-400 text-[11px] font-light leading-relaxed">{bullet.desc}</p>
@@ -530,7 +591,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 8. LEAD MAGNET SECTION (Dual Guide Downloads) ── */}
+      {/* ── 8. LEAD MAGNET SECTION (Contrasting guide boxes) ── */}
       <section id="lead-magnets" className="bg-navy-deep py-24 text-white border-y border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div className="text-center mb-16" {...fadeInUp}>
@@ -543,15 +604,16 @@ const Home: React.FC = () => {
             </p>
           </motion.div>
 
+          {/* Contrasting guide cards: featured gold card vs translucent glass card */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Left Column: For Clients (Salary Guide) */}
-            <div className="bg-background-dark border border-white/5 p-8 md:p-10 rounded-sm">
+            {/* Left Column: For Clients (Featured Gold/Navy card) */}
+            <div className="glass-card-featured p-8 md:p-10 rounded-sm border-primary/30">
               <div className="mb-8">
                 <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] block mb-2">For Employers</span>
                 <h3 className="text-xl md:text-2xl font-display font-black uppercase text-white tracking-tight">
                   2026 Salary & Compensation Guide
                 </h3>
-                <p className="text-slate-400 text-xs font-light leading-relaxed mt-2">
+                <p className="text-slate-300 text-xs font-light leading-relaxed mt-2">
                   UK Electrical Wholesale Sales & Branch Leadership benchmarking report.
                 </p>
               </div>
@@ -578,7 +640,7 @@ const Home: React.FC = () => {
                 <form onSubmit={handleClientSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Your Name *</label>
+                      <label className="text-[9px] uppercase tracking-widest text-slate-400 font-semibold">Your Name *</label>
                       <input
                         type="text"
                         required
@@ -589,7 +651,7 @@ const Home: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Company *</label>
+                      <label className="text-[9px] uppercase tracking-widest text-slate-400 font-semibold">Company *</label>
                       <input
                         type="text"
                         required
@@ -603,7 +665,7 @@ const Home: React.FC = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Your Role *</label>
+                      <label className="text-[9px] uppercase tracking-widest text-slate-400 font-semibold">Your Role *</label>
                       <input
                         type="text"
                         required
@@ -614,7 +676,7 @@ const Home: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[9px] uppercase tracking-widest text-slate-500 font-semibold">Work Email *</label>
+                      <label className="text-[9px] uppercase tracking-widest text-slate-400 font-semibold">Work Email *</label>
                       <input
                         type="email"
                         required
@@ -640,8 +702,8 @@ const Home: React.FC = () => {
               )}
             </div>
 
-            {/* Right Column: For Candidates (Earnings Guide) */}
-            <div className="bg-background-dark border border-white/5 p-8 md:p-10 rounded-sm">
+            {/* Right Column: For Candidates (Translucent glass card) */}
+            <div className="glass-card p-8 md:p-10 rounded-sm">
               <div className="mb-8">
                 <span className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] block mb-2">For Candidates</span>
                 <h3 className="text-xl md:text-2xl font-display font-black uppercase text-white tracking-tight">
@@ -739,22 +801,28 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ── 9. ABOUT & CREDIBILITY ── */}
+      {/* ── 9. ABOUT & CREDIBILITY (Wide glassmorphic card layout) ── */}
       <section className="bg-background-dark py-24 text-white relative">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.div className="space-y-6" {...fadeInUp}>
+        <div className="max-w-5xl mx-auto px-6">
+          <motion.div 
+            className="glass-card-featured p-10 md:p-16 rounded-sm text-center relative overflow-hidden border-primary/20"
+            {...fadeInUp}
+          >
+            <div className="absolute top-0 left-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl pointer-events-none" />
             <span className="text-primary font-bold text-xs uppercase tracking-widest block">About Power-Up Talent</span>
-            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-display font-black uppercase tracking-tight mt-2">
               Why Power-Up Talent Exists
             </h2>
             <div className="h-0.5 w-16 bg-primary mx-auto mt-4 mb-8"></div>
-            <p className="text-slate-300 text-sm md:text-base font-light leading-relaxed max-w-3xl mx-auto">
-              Power-Up Talent was built out of frustration with generalist recruitment agencies who lack technical sector grit. When generic trade recruiters are trying to fill positions for contractors, electricians, fire & security installers, and wholesale branch managers all in the same week, their attention is divided. 
-            </p>
-            <p className="text-slate-300 text-sm md:text-base font-light leading-relaxed max-w-3xl mx-auto">
-              We operate exclusively as a boutique executive search partner for the UK electrical wholesale sector. Founded by a veteran who has worked at the counter and in regional boardrooms, we speak the literal language of margins, supplier rebates, stock valuation, and buying groups. We connect the elite 1% of passive wholesale leaders directly to national and independent branch networks.
-            </p>
-            <div className="pt-6">
+            <div className="space-y-6 max-w-3xl mx-auto text-slate-300 text-sm md:text-base font-light leading-relaxed">
+              <p>
+                Power-Up Talent was built out of frustration with generalist recruitment agencies who lack technical sector grit. When generic trade recruiters are trying to fill positions for contractors, electricians, fire & security installers, and wholesale branch managers all in the same week, their attention is divided. 
+              </p>
+              <p>
+                We operate exclusively as a boutique executive search partner for the UK electrical wholesale sector. Founded by a veteran who has worked at the counter and in regional boardrooms, we speak the literal language of margins, supplier rebates, stock valuation, and buying groups. We connect the elite 1% of passive wholesale leaders directly to national and independent branch networks.
+              </p>
+            </div>
+            <div className="pt-8">
               <Link
                 to="/about"
                 className="inline-flex items-center gap-2 px-8 py-3.5 bg-primary text-navy-deep font-bold font-display uppercase tracking-widest text-xs rounded-sm hover:bg-white transition-all duration-300"
