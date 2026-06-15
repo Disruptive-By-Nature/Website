@@ -16,6 +16,7 @@ import BlogPostDetail from './pages/BlogPostDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import ChatwootWidget from './components/ChatwootWidget';
 
 const App: React.FC = () => {
   return (
@@ -43,6 +44,9 @@ const App: React.FC = () => {
         
         {/* Persistent AI Chatbot */}
         <Chatbot />
+        
+        {/* Omnichannel Customer Support Widget */}
+        <ChatwootWidget />
       </div>
     </Router>
   );

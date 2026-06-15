@@ -1,11 +1,13 @@
-﻿import React, { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import TypebotEmbed from "../components/TypebotEmbed";
 // @ts-ignore
 import heroImg from "../src/assets/images/contact_hero_1780507471862.png";
 
 const Contact: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [useConversational, setUseConversational] = useState(false);
 
   const faqs = [
     { q: "How quickly can you start?", a: "We begin market mapping within 48 hours of receiving your brief. You will have an initial shortlist within 28 days." },
@@ -56,12 +58,32 @@ const Contact: React.FC = () => {
                   <div className="h-0.5 w-16 bg-primary mt-4"></div>
                 </div>
 
-                <form
-                  action="mailto:poweruptalent@gmail.com"
-                  method="get"
-                  encType="text/plain"
-                  className="space-y-6"
-                >
+                <div className="flex gap-4 mb-8 bg-black/40 p-2 rounded-sm border border-white/5">
+                  <button 
+                    type="button"
+                    onClick={() => setUseConversational(false)} 
+                    className={`flex-1 py-3 text-xs font-bold uppercase tracking-[0.15em] transition-all rounded-sm ${!useConversational ? 'bg-primary text-navy-deep' : 'text-slate-400 hover:text-white'}`}
+                  >
+                    Standard Form
+                  </button>
+                  <button 
+                    type="button"
+                    onClick={() => setUseConversational(true)} 
+                    className={`flex-1 py-3 text-xs font-bold uppercase tracking-[0.15em] transition-all rounded-sm ${useConversational ? 'bg-primary text-navy-deep' : 'text-slate-400 hover:text-white'}`}
+                  >
+                    Conversational AI
+                  </button>
+                </div>
+
+                {useConversational ? (
+                  <TypebotEmbed typebot="powerup-employer-brief" height="500px" />
+                ) : (
+                  <form
+                    action="mailto:poweruptalent@gmail.com"
+                    method="get"
+                    encType="text/plain"
+                    className="space-y-6"
+                  >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Full Name *</label>
@@ -107,7 +129,8 @@ const Contact: React.FC = () => {
                     </button>
                     <p className="text-slate-600 text-xs font-light text-center mt-4">All enquiries are treated with strict confidentiality. We operate under NDA.</p>
                   </div>
-                </form>
+                  </form>
+                )}
               </div>
             </div>
 
