@@ -1,4 +1,20 @@
 import { Milestone, Metric, Testimonial, Service, BlogPost, FAQItem } from './types';
+import eliteImg from './src/assets/images/chess_pawns.png';
+import strategicImg from './src/assets/images/glowing_person.png';
+import growthImg from './src/assets/images/network_nodes.png';
+import tradeCounterImg from './src/assets/images/talent_compass.png';
+import lightingShowroomImg from './src/assets/images/lighting_showroom.jpg';
+import evChargingStationImg from './src/assets/images/ev_charging_station.png';
+import smartUtilityMeterImg from './src/assets/images/smart_utility_meter.png';
+import commercialSolarPanelsImg from './src/assets/images/commercial_solar_panels.png';
+import buildingComplianceDocsImg from './src/assets/images/building_compliance_docs.png';
+import fuseBoardImg from './src/assets/images/fuse_board.png';
+import fireSecurityImg from './src/assets/images/fire_security.png';
+import emergencyExitImg from './src/assets/images/emergency_exit.png';
+import warehouseForkliftImg from './src/assets/images/warehouse_forklift.jpg';
+import tradeCounterPhotoImg from './src/assets/images/trade_counter.jpg';
+import laptopWarehouseImg from './src/assets/images/laptop_warehouse.jpg';
+import officeCollaborationImg from './src/assets/images/office_collaboration.jpg';
 
 export const ROLES_PLACED: string[] = [
   "Branch Manager",
@@ -78,8 +94,6 @@ export const METRICS: Metric[] = [
   { value: "28", label: "Average days to shortlist" }
 ];
 
-
-
 export const MILESTONES: Milestone[] = [
   {
     year: "2018",
@@ -156,7 +170,8 @@ export const FAQ_ITEMS: FAQItem[] = [
 export const SERVICES: Service[] = [
   {
     id: "elite-recruitment",
-    name: "Elite Recruitment",
+    name: "Headhunters",
+    icon: "person_search",
     tagline: "Headhunting passive high-performers.",
     description: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors using AI-driven mapping.",
     features: [
@@ -165,385 +180,207 @@ export const SERVICES: Service[] = [
       "Technical DNA vetting",
       "Absolute discretion protocols"
     ],
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png"
+    image: eliteImg
   },
   {
     id: "strategic-recruitment",
     name: "Strategic Recruitment",
-    tagline: "Aligning leaders with commercial goals.",
-    description: "Executive search specifically for Branch Managers and Regional Directors who possess the commercial acumen to drive your bottom line and manage complex trade counters.",
+    icon: "leaderboard",
+    tagline: "Local Market Mapping & Competitor Target Recruitment.",
+    description: "We co-design a tailored hiring strategy with you, mapping out the local market and analysing your competitors to source and recruit the absolute best candidates in the market. Unlike executive-only search, we deploy this elite model to hire for all role tiers across your operations—from senior directors to business development reps and counter staff.",
     features: [
-      "Executive search & selection",
-      "Succession planning",
-      "Operational leadership alignment",
-      "Competency-based interviewing"
+      "Competitor and local market mapping",
+      "Co-designed recruitment strategy",
+      "Hiring for all roles and tiers",
+      "Active competitor talent sourcing"
     ],
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png"
+    image: strategicImg
   },
   {
     id: "growth-partnerships",
     name: "Growth Partnerships",
-    tagline: "Scaling with operational intelligence.",
-    description: "Long-term collaboration for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across major UK logistics hubs.",
+    icon: "handshake",
+    tagline: "Recruitment Process Outsourcing (RPO) Models.",
+    description: "We operate as an extension of your in-house HR and management team, handling all or part of your permanent recruitment. Our RPO models include End-to-End lifecycle management, Project-based support for sudden spikes or branch rollouts, and Modular selective sourcing/branding. This allows wholesalers to scale hiring rapidly, leverage AI and analytics, and reduce talent acquisition costs.",
     features: [
-      "Branch launch support",
-      "Local market mapping",
-      "Multi-hire management",
-      "Strategic retention modelling"
+      "End-to-End RPO lifecycle management",
+      "Project-based spike & launch support",
+      "Modular selective sourcing & screening",
+      "Advanced AI sourcing and talent analytics"
     ],
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg"
+    image: growthImg
   }
 ];
 
 export const INSIGHTS: BlogPost[] = [
   {
-    id: "uk-electrical-wholesale-trends-2026",
-    title: "UK Electrical Wholesale: 5 Trends Shaping 2026",
-    excerpt: "From digital transformation to sustainable supply chains, here's what's driving the UK electrical wholesale market this year.",
-    content: `The UK electrical wholesale sector is undergoing a period of unprecedented change. As we move further into 2026, several key trends are emerging that will define the winners and losers in this competitive landscape.
+    id: "why-stock-availability-is-now-a-margin-issue",
+    title: "Why Stock Availability Is Now a Margin Issue in Electrical Wholesale",
+    excerpt: "Stock availability affects more than service levels — it directly impacts margin, customer loyalty and branch performance in electrical wholesale.",
+    content: `In electrical wholesale, stock availability has always mattered, but the stakes are now much higher. Customers expect fast turnaround, accurate availability and reliable delivery, and if a branch cannot provide those, buyers will often move quickly to a competitor. That makes stock management not just an operational issue, but a commercial one.
 
-### 1. Digital Transformation at the Counter
-The traditional trade counter is evolving. Wholesalers are increasingly adopting omnichannel strategies, blending physical expertise with seamless digital ordering and inventory management.
+Margin pressure is often linked to stock decisions that seem minor in the moment. Over-ordering ties up cash and creates markdown risk, while under-ordering leads to lost sales and frustrated customers. The most effective wholesalers are increasingly using data to understand movement by branch, category and seasonality, rather than relying on instinct alone.
 
-### 2. Sustainability and the Circular Economy
-ESG (Environmental, Social, and Governance) is no longer a buzzword. Wholesalers are being pressured to provide more sustainable product options and demonstrate greener operations.
+Availability also influences customer perception. A wholesaler that consistently has the right product in the right place becomes the default supplier, even when pricing is not the lowest. That loyalty is especially important in a market where contractors are under pressure and do not have time to chase multiple suppliers for one order.
 
-### 3. The Rise of Smart Infrastructure
-Demand for EV charging, smart home tech, and energy-efficient industrial solutions is skyrocketing. This requires a more technically literate workforce than ever before.
-
-### 4. Supply Chain Resilience
-After years of volatility, wholesalers are investing in more robust, data-driven supply chain models to ensure availability and protect margins.
-
-### 5. Talent as a Competitive Advantage
-In a tight labour market, the ability to attract, train, and retain top-tier talent is the ultimate differentiator.`,
-    date: "March 15, 2026",
-    author: "James Power",
-    category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png",
-    readTime: "6 min read"
-  },
-  {
-    id: "attracting-top-performers-outside-industry",
-    title: "Why You Should Hire Outside the Electrical Industry",
-    excerpt: "Discover how bringing in top performers from other sectors can inject fresh perspective and drive innovation in your branch network.",
-    content: `The electrical wholesale industry has a long tradition of promoting from within. While sector experience is invaluable, there is a growing case for looking outside the industry to find the next generation of leaders.
-
-### Why hire from outside?
-
-*   **Fresh Perspectives:** Candidates from high-pressure retail or logistics backgrounds often bring new ideas for operational efficiency and customer service.
-*   **Transferable Skills:** Leadership, commercial acumen, and strategic thinking are universal. A top performer in one sector is likely to be a top performer in another.
-*   **Bridging the Skills Gap:** As the industry becomes more technical and digital, skills from the tech or data sectors are becoming increasingly relevant.
-
-At Power-Up Talent, we specialise in identifying these high-performers and supporting them with the industry-specific training they need to succeed.`,
-    date: "February 28, 2026",
-    author: "Sarah Jenkins",
-    category: "Talent Strategy",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg",
-    readTime: "4 min read"
-  },
-  {
-    id: "margin-protection-in-volatile-market",
-    title: "Protecting Your Margins: A Guide for Branch Managers",
-    excerpt: "In a market defined by price volatility, how can branch managers protect their bottom line without sacrificing customer loyalty?",
-    content: `Margin protection is the lifeblood of any successful electrical wholesaler. However, in a market where material costs can fluctuate daily, maintaining healthy margins is easier said than done.
-
-### Key strategies for margin protection:
-
-*   **Value-Added Selling:** Move away from price-based competition by focusing on technical expertise, availability, and reliability.
-*   **Inventory Optimisation:** Use data to ensure you're stocking the right products at the right time, reducing the need for costly emergency orders.
-*   **Customer Segmentation:** Understand which customers are truly profitable and tailor your service levels accordingly.
-*   **Staff Training:** Ensure your team understands the commercial impact of discounting and has the confidence to sell on value.
-
-The best branch managers are those who combine technical grit with a sharp commercial mind.`,
-    date: "January 12, 2026",
-    author: "Michael Roberts",
+The challenge is that stock strategy is no longer about depth alone. It is about range discipline, supplier reliability, lead times and understanding what local customers actually buy. Branches that get this right protect margin while improving service, which is a difficult balance but a powerful competitive advantage.`,
+    date: "June 21, 2026",
+    author: "Sector Specialist",
     category: "Operational Excellence",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg",
-    readTime: "5 min read"
-  },
-  {
-    id: "the-future-of-branch-management",
-    title: "The Future of Branch Management: Leadership in 2026",
-    excerpt: "What does it take to lead a successful electrical wholesale branch in today's fast-paced environment?",
-    content: `Branch management is no longer just about managing inventory and staff. It's about leading a commercial hub that delivers value to customers and profitability to the business.
-
-### The Evolving Role of the Branch Manager
-
-The modern branch manager is a hybrid leader, combining technical knowledge with commercial acumen and digital literacy.
-
-### Key Leadership Traits for 2026
-
-*   **Data-Driven Decision Making:** Using real-time data to manage inventory, pricing, and customer service.
-*   **People Development:** Creating a culture of continuous learning and development.
-*   **Customer-Centricity:** Focusing on delivering exceptional customer experiences, not just selling products.
-
-Leading a branch in 2026 requires a proactive, strategic approach to management.`,
-    date: "March 5, 2026",
-    author: "Michael Roberts",
-    category: "Leadership",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png",
-    readTime: "5 min read"
-  },
-  {
-    id: "navigating-the-skills-shortage",
-    title: "Navigating the Skills Shortage in Electrical Wholesale",
-    excerpt: "How wholesalers can overcome the industry-wide skills shortage and build a resilient workforce.",
-    content: `The skills shortage is one of the biggest challenges facing the electrical wholesale industry. Finding and retaining talent with the right technical and commercial skills is increasingly difficult.
-
-### Strategies to Overcome the Shortage
-
-*   **Invest in Training:** Develop your own talent through structured training and development programmes.
-*   **Broaden Your Search:** Look outside the industry for candidates with transferable skills.
-*   **Improve Your Employer Brand:** Make your company an attractive place to work by offering competitive benefits, clear career progression, and a positive culture.
-
-Building a resilient workforce requires a long-term, strategic approach to talent acquisition and development.`,
-    date: "February 15, 2026",
-    author: "James Power",
-    category: "Talent Strategy",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916348/713aeba2-3f10-4512-95b7-defca1b268a2_vggzr3.jpg",
-    readTime: "6 min read"
-  },
-  {
-    id: "impact-of-smart-metering",
-    title: "The Impact of Smart Metering on UK Wholesale",
-    excerpt: "How the rollout of smart meters is creating new opportunities for electrical wholesalers.",
-    content: `The UK's smart meter rollout is more than just a utility upgrade; it's a significant driver of demand for electrical components and expertise.
-
-### Opportunities for Wholesalers:
-
-*   **Increased Demand for Components:** Smart meters require a range of associated products, from cabling to installation tools.
-*   **Technical Expertise:** Wholesalers who can provide technical advice on smart meter integration are becoming essential partners for contractors.
-*   **New Revenue Streams:** Smart metering opens doors to broader energy management solutions.
-
-Wholesalers that position themselves as experts in smart infrastructure will be well-placed to capitalise on this ongoing trend.`,
-    date: "March 10, 2026",
-    author: "James Power",
-    category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg",
+    image: warehouseForkliftImg,
     readTime: "4 min read"
   },
   {
-    id: "navigating-2026-building-regulations",
-    title: "Navigating the 2026 UK Building Regulations",
-    excerpt: "A guide to understanding the latest changes in UK building regulations and their impact on electrical wholesale.",
-    content: `Keeping up with building regulations is a constant challenge for the electrical industry. The 2026 updates bring new requirements for energy efficiency and safety.
+    id: "why-the-trade-counter-still-matters",
+    title: "Why the Trade Counter Still Matters in Electrical Wholesale",
+    excerpt: "The trade counter remains a critical part of electrical wholesale, even as digital ordering and click-and-collect continue to grow.",
+    content: `The trade counter is still one of the most important touchpoints in electrical wholesale. Even as more ordering moves online, many customers still want face-to-face support when they are under pressure, comparing products, checking availability or solving a last-minute issue on site. The trade counter is where service quality becomes visible.
 
-### Key Areas of Impact:
+What has changed is the expectation placed on counter staff. They are no longer just taking orders; they are expected to recommend alternatives, manage urgency and know enough about product applications to guide the customer correctly. In many branches, the counter is the difference between a one-off transaction and a long-term relationship.
 
-*   **Energy Efficiency Standards:** New buildings must meet stricter energy performance criteria, driving demand for high-efficiency components.
-*   **Safety Requirements:** Updated regulations focus on fire safety and electrical installation standards.
-*   **Compliance Support:** Wholesalers who can help contractors navigate these regulations provide immense value.
+Digital ordering has not reduced the importance of the counter — it has raised the bar. Customers now expect faster service, cleaner processes and better product knowledge, because they can already see stock and pricing online before walking in. Branches that combine speed with expertise tend to win more repeat business.
 
-Staying informed and providing compliant product solutions is key to supporting your customers through these regulatory shifts.`,
-    date: "March 8, 2026",
-    author: "Sarah Jenkins",
+The trade counter also acts as a listening post for the whole business. It provides direct feedback on customer demand, competitor behaviour and local market trends. Wholesalers that treat the counter as a strategic asset, rather than just a transactional function, often gain a sharper view of what is happening in the market.`,
+    date: "June 21, 2026",
+    author: "Sector Specialist",
+    category: "Operational Excellence",
+    image: tradeCounterPhotoImg,
+    readTime: "4 min read"
+  },
+  {
+    id: "product-knowledge-remains-a-competitive-advantage",
+    title: "Product Knowledge Remains a Competitive Advantage in Electrical Wholesale",
+    excerpt: "In a crowded market, deep product knowledge helps wholesalers win trust, protect margin and support customers better.",
+    content: `In a sector with thousands of product lines, product knowledge remains a major commercial advantage. Customers do not only want a supplier; they want someone who can help them choose the right solution quickly, confidently and without unnecessary delay. That is especially true when projects are technically complex or time-sensitive.
+
+Strong product knowledge allows wholesalers to sell value rather than just price. A well-informed counter or sales person can recommend a better alternative, identify compatibility issues early and reduce the risk of returns or site problems. That creates trust, which is often more valuable than a slightly lower price from a competitor.
+
+The pace of change in the industry also makes knowledge more important. New categories such as EV charging, smart controls and energy-efficient lighting continue to evolve, and customers increasingly expect wholesalers to understand them. Businesses that train their teams properly are better equipped to support this shift.
+
+There is also a retention angle. Customers who feel they are dealing with knowledgeable people are more likely to stay loyal, even in difficult trading conditions. In electrical wholesale, expertise is not just a support function — it is part of the sales proposition.`,
+    date: "June 21, 2026",
+    author: "Sector Specialist",
+    category: "Talent Strategy",
+    image: laptopWarehouseImg,
+    readTime: "4 min read"
+  },
+  {
+    id: "how-local-competition-shapes-branch-performance",
+    title: "How Local Competition Shapes Electrical Wholesale Branch Performance",
+    excerpt: "Branch performance in electrical wholesale is heavily influenced by local competition, customer behaviour and regional trading patterns.",
+    content: `Electrical wholesale is a local game as much as a national one. Two branches within the same group can perform very differently depending on the strength of nearby competitors, the quality of local relationships and the type of work happening in the area. Regional dynamics matter far more than many outside the industry realise.
+
+Some locations are driven by strong contractor networks, active housing development or commercial refurbishment activity. Others may be more dependent on industrial work, public sector projects or a small number of large accounts. That means one-size-fits-all strategies rarely work well at branch level.
+
+Local competitors also influence behaviour in subtle ways. If a rival branch is known for speed, stock depth or strong account management, customers will quickly notice. Once those expectations are set in a local market, branches have to work harder to win back share and defend loyalty.
+
+Understanding regional behaviour helps explain why branch managers matter so much. They are not just managing a location; they are interpreting a local market, shaping relationships and reacting to competitor moves in real time. In a market like electrical wholesale, local execution often matters more than corporate messaging.`,
+    date: "June 21, 2026",
+    author: "Sector Specialist",
+    category: "Market Trends",
+    image: officeCollaborationImg,
+    readTime: "4 min read"
+  },
+  {
+    id: "how-customer-expectations-are-changing",
+    title: "How Customer Expectations Are Changing in Electrical Wholesale",
+    excerpt: "Electrical wholesale customers now expect faster service, more visibility and better communication across the entire buying journey.",
+    content: `Customer expectations in electrical wholesale have shifted significantly. Buyers now want faster responses, clearer product visibility, better communication and fewer mistakes. That applies whether they are collecting from the trade counter, ordering online or calling for support on a live job.
+
+The modern customer experience is shaped by comparison with other sectors. Contractors and installers are used to real-time updates, next-day delivery and easy digital ordering in many parts of their working lives. When a wholesaler falls short on those basics, it becomes much easier for the customer to look elsewhere.
+
+Communication is a major part of this shift. Customers value branches that confirm stock quickly, suggest alternatives without delay and follow through reliably. In many cases, the quality of communication matters just as much as the price itself, because missed information can cause project delays and frustration on site.
+
+This change is pushing wholesalers to become more organised and more service-led. Businesses that invest in customer experience, branch responsiveness and consistent processes are better placed to keep accounts long term. In a market where trust and convenience drive repeat business, service is no longer a soft skill — it is a commercial requirement.`,
+    date: "June 21, 2026",
+    author: "Sector Specialist",
+    category: "Market Trends",
+    image: evChargingStationImg,
+    readTime: "4 min read"
+  },
+  {
+    id: "digital-transformation-uk-electrical-wholesale",
+    title: "Digital Transformation in UK Electrical Wholesale",
+    excerpt: "The UK electrical wholesale sector is in the middle of a fundamental digital shift, with technology reshaping everything from stock control to customer experience.",
+    content: `The UK electrical wholesale sector is in the middle of a fundamental digital shift, with technology reshaping everything from stock control to customer experience. Estimates put the value of the electrical wholesale market at around £4.28 billion in 2024, and a large majority of wholesalers report that modern digital tools have materially improved how they operate. This is not just about installing a new ERP; it is about redesigning processes around data, automation and omnichannel service.
+
+Recent surveys suggest that roughly 87% of British electrical wholesalers feel they work more effectively after adopting new technology, highlighting the scale of transformation already under way. Early adopters report tangible benefits such as lower operating costs, faster reaction to market changes and better visibility of margins across branches. As customers become used to online ordering, real‑time stock data and click‑and‑collect from other sectors, trade counters that still rely purely on manual workflows risk looking increasingly dated.
+
+Digital change is also about competition. Market analysis shows that broader UK electricals retail has been through a period of weak growth, with small declines in 2023 and only marginal improvement forecast for 2024 before a stronger upswing from 2025 onwards. In that context, wholesalers that use data to optimise pricing, rationalise stock and intelligently target customers are better positioned to defend margin when demand is soft and scale rapidly when it recovers. Over time, digital maturity becomes a structural advantage rather than a side project.
+
+Finally, digital tools are starting to intersect with workforce challenges. Automation of routine tasks creates headroom for branch and sales teams to focus on higher‑value work such as solution selling and project support. At the same time, new systems demand staff who are comfortable with CRM platforms, analytics dashboards and online customer interaction. This shift means wholesalers need to think as hard about digital skills as they do about product knowledge when recruiting and developing their people.`,
+    date: "June 16, 2026",
+    author: "Sector Specialist",
+    category: "Operational Excellence",
+    image: fuseBoardImg,
+    readTime: "5 min read"
+  },
+  {
+    id: "skills-shortages-apprenticeships-talent-pipeline",
+    title: "Skills Shortages and Apprenticeships: The Pressure on the Talent Pipeline",
+    excerpt: "A persistent shortage of skilled labour is now the single biggest constraint on growth across the UK electrotechnical and building services sector, and that pressure flows directly into electrical wholesale.",
+    content: `A persistent shortage of skilled labour is now the single biggest constraint on growth across the UK electrotechnical and building services sector, and that pressure flows directly into electrical wholesale. Industry surveys show that for more than 12 consecutive quarters, the lack of qualified electricians has been cited as the top barrier to expansion, with over a third of firms pointing to this issue. When contractors cannot recruit, their order books slow down—and wholesalers feel the impact through reduced demand, tougher price competition and more volatile volumes.
+
+The skills gap is not limited to fully qualified tradespeople. Research by one leading certification body found that over half of electrical businesses that tried to recruit technical staff in 2024 described the process as “very difficult”. Administrative complexity and the challenge of sourcing suitable apprentices were repeatedly flagged as obstacles, alongside concerns about training costs and the readiness of young people entering the sector. These frictions delay hiring, increase workloads for existing staff and encourage some firms to defer growth plans.
+
+Apprenticeships are widely viewed as the most effective way to rebuild the talent pipeline, yet the numbers are still falling short. Analysis from training providers suggests the industry needs around 10,500 new electrical apprentices each year simply to maintain the workforce, but recent data indicates only about 7,540 starts annually, leaving a significant shortfall. Other studies highlight that fewer than 10% of learners completing classroom‑based electrical courses progress into apprenticeships within a year, leaving many interested candidates unable to find a route into work.
+
+Parallel research on engineering construction shows similar patterns, with surveys identifying double‑digit percentage gaps between current staffing and required tradespeople, and particularly acute shortages in electricians. Commentators warn that if current trends continue, the overall number of electricians could fall by more than a quarter over two decades, just as demand for electrification and infrastructure upgrades accelerates. For wholesalers, this means planning for a world where skilled labour is structurally scarce: supporting apprenticeships, investing in training, and designing roles that make the best use of limited expert time.`,
+    date: "June 17, 2026",
+    author: "Sector Specialist",
+    category: "Talent Strategy",
+    image: fireSecurityImg,
+    readTime: "6 min read"
+  },
+  {
+    id: "energy-efficiency-lighting-net-zero-demand",
+    title: "Energy Efficiency, Lighting and Net‑Zero: How Demand Is Changing",
+    excerpt: "Energy efficiency and sustainability have moved from 'nice to have' topics to central drivers of demand in electrical wholesale, particularly in lighting and controls.",
+    content: `Energy efficiency and sustainability have moved from “nice to have” topics to central drivers of demand in electrical wholesale, particularly in lighting and controls. Trade commentary notes that lighting remains one of the largest areas of interest for readers of specialist electrical wholesale publications, reflecting both regulatory change and commercial opportunity. As businesses and local authorities pursue long‑term energy security and carbon reduction, large‑scale lighting upgrades and retrofit projects are becoming more common.
+
+Commercial and public sector clients are increasingly prioritising high‑efficiency LED solutions for offices, warehouses and external spaces. Modern luminaires often offer lifetimes exceeding 50,000 hours, reducing maintenance cycles as well as energy consumption. This shift changes the sales conversation at the trade counter: instead of focusing purely on unit price, customers and wholesalers are talking about total cost of ownership, payback periods and compliance with building and environmental standards.
+
+Sustainability is also reshaping how stock and obsolete equipment are managed. Industry features highlight initiatives such as reuse hubs for lighting and IT equipment, designed to help businesses avoid sending surplus items to landfill by refurbishing and returning them to productive use. These programmes support corporate ESG goals while opening new value streams for distributors who can facilitate repair, reuse and recycling.
+
+At the same time, product trends in wiring accessories, controls and related categories are reflecting growing expectations for smarter, more integrated solutions. Intelligent dimming, presence detection, and building management interfaces are becoming standard in many commercial schemes, requiring wholesalers to hold deeper technical knowledge and support customers in navigating complex product ranges. As the UK moves further towards net‑zero, the wholesalers that align their ranges, training and advice with these long‑term efficiency trends are likely to see stronger, more resilient demand.`,
+    date: "June 18, 2026",
+    author: "Sector Specialist",
     category: "Compliance",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png",
+    image: emergencyExitImg,
     readTime: "5 min read"
   },
   {
-    id: "ai-in-inventory-management",
-    title: "The Role of AI in Inventory Management",
-    excerpt: "How artificial intelligence is revolutionising inventory management for electrical wholesalers.",
-    content: `Inventory management is a balancing act. Too much stock ties up capital; too little leads to lost sales. AI is changing the game.
+    id: "careers-progression-electrical-wholesaling",
+    title: "Careers and Progression in Electrical Wholesaling",
+    excerpt: "Electrical wholesaling is often overlooked as a career destination, yet the industry offers a broad spectrum of roles and clear progression paths across the electrotechnical supply chain.",
+    content: `Electrical wholesaling is often overlooked as a career destination, yet the industry offers a broad spectrum of roles and clear progression paths across the electrotechnical supply chain. The Electrical Distributors’ Association (EDA), founded in 1914, serves as the main trade body for wholesale distributors of electrotechnical products in the UK and actively promotes the sector as a place to build a long‑term career. Its “Power It Up” campaigns and related materials are used by members and partners to explain how the supply chain works and what opportunities exist.
 
-### How AI is Transforming Inventory:
+Within wholesaling itself, roles span purchasing and procurement, stock and logistics, data and financial management, sales, marketing, merchandising and HR. Many people enter through warehouse, driver or counter positions and progress into internal and external sales, branch management and regional leadership over time. Because wholesalers sit at the intersection of manufacturers and contractors, staff also gain broad exposure to products, installation practices and project delivery, which can later translate into moves into manufacturing, contracting or technical support roles.
 
-*   **Predictive Analytics:** AI models analyse historical data and market trends to forecast demand with high accuracy.
-*   **Automated Reordering:** AI systems can trigger reorders automatically, ensuring stock levels are always optimal.
-*   **Optimised Stock Placement:** AI helps wholesalers place stock in the right branches to meet local demand efficiently.
+Training and professional development infrastructure is well established. The EDA runs product knowledge training programmes specifically targeted at closing skills gaps across the wholesale sector, and this work has been recognised with national awards for its impact. Apprenticeship schemes tailored to electrical distribution are offered through partner training agencies, combining on‑the‑job learning with structured education designed for the industry’s needs. Broader electrotechnical training frameworks, from college qualifications to advanced power network apprenticeships, also underpin career routes into and through the wider electricity sector.
 
-Embracing AI in inventory management is essential for wholesalers looking to improve efficiency and profitability.`,
-    date: "March 1, 2026",
-    author: "Michael Roberts",
-    category: "Operational Excellence",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg",
-    readTime: "6 min read"
-  },
-  {
-    id: "attracting-gen-z-to-electrical-trade",
-    title: "Attracting Gen Z to the Electrical Trade",
-    excerpt: "How to make the electrical wholesale industry an appealing career choice for the next generation.",
-    content: `Attracting Gen Z talent requires a different approach. They value purpose, technology, and clear career progression.
-
-### Strategies for Gen Z Engagement:
-
-*   **Highlight the Impact:** Show how the electrical industry contributes to a greener, smarter future.
-*   **Embrace Technology:** Showcase the digital tools and tech-forward nature of modern wholesale.
-*   **Clear Progression:** Provide structured career paths and opportunities for development.
-
-By aligning our industry's value proposition with the priorities of Gen Z, we can build a strong pipeline of future talent.`,
-    date: "February 20, 2026",
-    author: "Sarah Jenkins",
+For young people considering where to start, guides produced by the EDA and related organisations explain how electrical wholesaling fits into the broader electrotechnical ecosystem and the types of careers available. As the sector plays a larger role in supporting electrification, energy efficiency and digital infrastructure, the long‑term demand for skilled people in wholesaling and distribution is likely to remain strong. That combination of stability, variety and progression makes the industry an increasingly attractive option for those who want to blend commercial work with technical content.`,
+    date: "June 19, 2026",
+    author: "Sector Specialist",
     category: "Talent Strategy",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png",
+    image: tradeCounterImg,
     readTime: "5 min read"
   },
   {
-    id: "future-of-ev-charging-infrastructure",
-    title: "The Future of EV Charging Infrastructure in the UK",
-    excerpt: "Exploring the growth of EV charging and the opportunities it presents for electrical wholesalers.",
-    content: `The rapid adoption of electric vehicles (EVs) is transforming the UK's energy landscape. For electrical wholesalers, this presents a significant opportunity to supply the components and expertise needed for the expanding charging infrastructure.
+    id: "market-outlook-2024-2028-navigating-landscape",
+    title: "Market Outlook 2024–2028: Navigating a Tough but Improving Landscape",
+    excerpt: "The broader UK electricals market has been through a challenging period, shaped by cost‑of‑living pressures, weak housing activity and cautious consumer spending.",
+    content: `The broader UK electricals market has been through a challenging period, shaped by cost‑of‑living pressures, weak housing activity and cautious consumer spending. Analysts report that the sector saw declines over two consecutive years, with a small 0.2% contraction in 2023 as households postponed non‑essential big‑ticket purchases. Forecasts for 2024 point to only modest growth of around 0.4%, with more meaningful expansion expected from 2025 onwards as confidence gradually returns.
 
-### Key Opportunities:
-*   **Product Demand:** Increased demand for charging units, cabling, and protective devices.
-*   **Technical Support:** Contractors need guidance on installation standards and grid connectivity.
-*   **Integrated Solutions:** Opportunities to bundle charging solutions with energy management systems.
+Electrical wholesalers have experienced these dynamics from both sides: squeezed customers facing higher living costs and contractors struggling with their own input inflation and labour shortages. Commentators note that domestic buyers have tended to delay lighting and improvement projects, while commercial and public sector clients push ahead with energy‑efficiency upgrades as part of longer‑term cost‑control and sustainability strategies. This divergence means wholesalers with a strong commercial project footprint may be faring better than those heavily exposed to purely domestic spend.
 
-Wholesalers who invest in knowledge and stock will be essential partners in the EV transition.`,
-    date: "March 12, 2026",
-    author: "James Power",
+At the same time, the sector is being asked to support ambitious national goals around net‑zero, electrification and infrastructure renewal, which implies robust medium‑term demand for electrical products and services. Surveys of electrotechnical and building engineering firms show that order books are often healthy but constrained by the availability of skilled labour and by volatile material pricing. These factors complicate planning for wholesalers, who must manage stock risk while maintaining service levels into projects that may shift timelines or specifications at short notice.
+
+Looking out to 2028, market reports emphasise that while volume growth may be modest in some segments, value growth is likely to be supported by higher‑specification products, digital solutions and sustainability‑driven upgrades. Wholesalers that invest in digital capabilities, specialist product knowledge and strong relationships across contractors, manufacturers and clients are better placed to capture this value. In an environment where structural skills shortages and macroeconomic uncertainty coexist with long‑term electrification trends, the ability to interpret market signals and adjust quickly becomes a core competitive skill for the entire industry.`,
+    date: "June 20, 2026",
+    author: "Sector Specialist",
     category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png",
-    readTime: "5 min read"
-  },
-  {
-    id: "retaining-top-talent-competitive-market",
-    title: "How to Retain Top Talent in a Competitive Market",
-    excerpt: "Practical strategies for keeping your best people engaged and motivated.",
-    content: `Retention is just as important as acquisition. In a competitive market, top talent has options. Keeping them requires a proactive approach.
-
-### Strategies for Retention:
-*   **Competitive Compensation & Benefits:** Ensure your package is market-leading.
-*   **Clear Career Paths:** Provide opportunities for growth and advancement.
-*   **Positive Culture:** Foster an environment where employees feel valued and supported.
-*   **Recognition:** Regularly acknowledge and reward high performance.
-
-Investing in your people is the best investment you can make for your business.`,
-    date: "March 14, 2026",
-    author: "Sarah Jenkins",
-    category: "Talent Strategy",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg",
-    readTime: "5 min read"
-  },
-  {
-    id: "data-analytics-in-branch-performance",
-    title: "The Role of Data Analytics in Branch Performance",
-    excerpt: "How data-driven insights can help branch managers improve efficiency and profitability.",
-    content: `Data is a powerful tool for branch managers. By analysing performance metrics, you can identify areas for improvement and make informed decisions.
-
-### Key Metrics to Analyse:
-*   **Sales Trends:** Identify top-performing products and customer segments.
-*   **Inventory Turnover:** Optimise stock levels to reduce holding costs.
-*   **Customer Acquisition Cost:** Understand the cost of winning new business.
-*   **Operational Efficiency:** Measure the time taken to process orders and deliveries.
-
-Data-driven management is the key to achieving consistent branch performance.`,
-    date: "March 16, 2026",
-    author: "Michael Roberts",
-    category: "Operational Excellence",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg",
+    image: buildingComplianceDocsImg,
     readTime: "6 min read"
-  },
-  {
-    id: "shift-to-renewable-energy-solutions",
-    title: "Navigating the Shift to Renewable Energy Solutions",
-    excerpt: "How electrical wholesalers can support the transition to renewable energy.",
-    content: `The shift towards renewable energy is accelerating. Wholesalers have a crucial role in providing the components and expertise required for solar, wind, and storage solutions.
-
-### Supporting the Transition:
-*   **Product Knowledge:** Develop expertise in renewable technologies.
-*   **Supply Chain Partnerships:** Build relationships with leading renewable energy suppliers.
-*   **Contractor Support:** Provide training and technical support to installers.
-
-The renewable energy sector is a major growth area for the electrical industry.`,
-    date: "March 18, 2026",
-    author: "James Power",
-    category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png",
-    readTime: "5 min read"
-  },
-  {
-    id: "culture-of-continuous-improvement",
-    title: "Building a Culture of Continuous Improvement",
-    excerpt: "Why fostering a culture of improvement is essential for long-term success.",
-    content: `A culture of continuous improvement is the hallmark of a high-performing organisation. It encourages employees to look for better ways of doing things, every single day.
-
-### Fostering Improvement:
-*   **Encourage Feedback:** Create channels for employees to share ideas.
-*   **Empower Employees:** Give your team the authority to make improvements.
-*   **Celebrate Success:** Recognise and reward efforts to improve processes.
-*   **Learn from Failure:** View mistakes as opportunities to learn and grow.
-
-Continuous improvement is not a destination; it's a journey.`,
-    date: "March 20, 2026",
-    author: "Sarah Jenkins",
-    category: "Leadership",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916348/713aeba2-3f10-4512-95b7-defca1b268a2_vggzr3.jpg",
-    readTime: "4 min read"
-  },
-  {
-    id: "sustainable-supply-chains-uk-perspective",
-    title: "Sustainable Supply Chains: A UK Perspective",
-    excerpt: "Why sustainability is becoming a critical component of supply chain management in the UK.",
-    content: `Sustainability is no longer optional. For UK electrical wholesalers, it's a strategic imperative that influences everything from supplier selection to customer relationships.
-
-### The Sustainability Shift:
-
-*   **Supplier Audits:** Wholesalers are increasingly vetting suppliers based on their environmental and social credentials.
-*   **Logistics Efficiency:** Optimising delivery routes and vehicle fleets to reduce carbon footprints.
-*   **Product Lifecycle:** Promoting products that are durable, repairable, and recyclable.
-
-Building a sustainable supply chain is not just good for the planet; it's good for business, enhancing reputation and operational efficiency.`,
-    date: "February 10, 2026",
-    author: "James Power",
-    category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916348/713aeba2-3f10-4512-95b7-defca1b268a2_vggzr3.jpg",
-    readTime: "7 min read"
-  },
-  {
-    id: "impact-of-iot-on-warehouse-efficiency",
-    title: "The Impact of IoT on Warehouse Efficiency",
-    excerpt: "Exploring how Internet of Things (IoT) devices are streamlining warehouse operations and reducing errors.",
-    content: "The adoption of IoT devices in warehouses is transforming operational efficiency. By tracking inventory in real-time, monitoring equipment health, and automating routine tasks, wholesalers can significantly reduce errors and improve throughput. This technology is becoming a standard for competitive operations.",
-    date: "March 22, 2026",
-    author: "Michael Roberts",
-    category: "Operational Excellence",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg",
-    readTime: "5 min read"
-  },
-  {
-    id: "attracting-talent-employer-branding",
-    title: "Attracting Talent: The Power of Employer Branding",
-    excerpt: "Why a strong employer brand is essential for attracting top talent in a competitive market.",
-    content: "In a tight labour market, your employer brand is your most powerful recruitment tool. It's not just about salary; it's about the culture, values, and opportunities you offer. Building a strong brand requires authenticity and a commitment to your employees' growth.",
-    date: "March 25, 2026",
-    author: "Sarah Jenkins",
-    category: "Talent Strategy",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916341/530b2ac7-e334-4b7e-b4b4-6c3c996cda80_x6fcac.jpg",
-    readTime: "4 min read"
-  },
-  {
-    id: "navigating-supply-chain-disruptions",
-    title: "Navigating Supply Chain Disruptions",
-    excerpt: "Practical advice for wholesalers to build more resilient supply chains in an uncertain global market.",
-    content: "Supply chain disruptions have become the new normal. To stay ahead, wholesalers must diversify their supplier base, invest in data-driven forecasting, and maintain strategic buffer stocks. Resilience is no longer a luxury; it's a necessity.",
-    date: "March 28, 2026",
-    author: "James Power",
-    category: "Market Trends",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png",
-    readTime: "6 min read"
-  },
-  {
-    id: "role-of-mentorship-in-branch-leadership",
-    title: "The Role of Mentorship in Branch Leadership",
-    excerpt: "How mentorship programmes can develop the next generation of branch managers.",
-    content: "Mentorship is a powerful tool for leadership development. By pairing experienced branch managers with high-potential employees, wholesalers can accelerate the development of future leaders and ensure a smooth transition of knowledge and culture.",
-    date: "March 30, 2026",
-    author: "Michael Roberts",
-    category: "Leadership",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png",
-    readTime: "5 min read"
-  },
-  {
-    id: "new-safety-standards-ev-installations",
-    title: "Understanding the New Safety Standards for EV Installations",
-    excerpt: "A breakdown of the latest safety standards for EV charging installations and what they mean for your business.",
-    content: "As EV charging infrastructure expands, safety standards are becoming increasingly stringent. Wholesalers must ensure they are stocking compliant products and providing contractors with the necessary technical guidance to meet these new requirements.",
-    date: "April 2, 2026",
-    author: "Sarah Jenkins",
-    category: "Compliance",
-    image: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916348/713aeba2-3f10-4512-95b7-defca1b268a2_vggzr3.jpg",
-    readTime: "5 min read"
   }
 ];

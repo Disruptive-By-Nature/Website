@@ -3,7 +3,29 @@ import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
 import TypebotEmbed from "../components/TypebotEmbed";
 // @ts-ignore
-import heroImg from "../src/assets/images/contact_hero_1780507471862.png";
+import heroImg from "../src/assets/images/glowing_person.png";
+
+const contactStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://poweruptalent.co.uk/contact#webpage",
+      "url": "https://poweruptalent.co.uk/contact",
+      "name": "Contact Power-Up Talent",
+      "description": "Brief Power-Up Talent on your next executive hire. UK's specialist headhunters for the electrical wholesale industry. Confidential, fast, and precise.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+44-20-8123-4567",
+          "email": "poweruptalent@gmail.com",
+          "contactType": "customer service",
+          "areaServed": "GB"
+        }
+      ]
+    }
+  ]
+};
 
 const Contact: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -22,6 +44,7 @@ const Contact: React.FC = () => {
         description="Brief Power-Up Talent on your next executive hire. UK's specialist headhunters for the electrical wholesale industry. Confidential, fast, and precise."
         keywords="Contact Power-Up Talent, Electrical Wholesale Recruitment Brief, Headhunter Enquiry UK"
         canonical="https://poweruptalent.co.uk/contact"
+        structuredData={contactStructuredData}
       />
 
       {/* Hero */}
@@ -35,7 +58,7 @@ const Contact: React.FC = () => {
           <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-semibold uppercase tracking-[0.4em] mb-10">
             Confidential Consultation
           </div>
-          <h1 className="text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
             Start a<br /><span className="text-gradient">Conversation.</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">

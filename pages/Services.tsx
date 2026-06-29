@@ -7,6 +7,53 @@ import heroMainImg from '../src/assets/images/hero_main.png';
 import heroTeamImg from '../src/assets/images/hero_team.png';
 import heroContactImg from '../src/assets/images/hero_contact.png';
 
+const servicesStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://poweruptalent.co.uk/#service-provider",
+      "name": "Power-Up Talent",
+      "url": "https://poweruptalent.co.uk",
+      "logo": "https://poweruptalent.co.uk/assets/images/logo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poweruptalent.co.uk/services#recruitment",
+      "name": "Elite Recruitment",
+      "provider": {
+        "@id": "https://poweruptalent.co.uk/#service-provider"
+      },
+      "description": "Our core headhunting service specialising in identifying and securing the top 1% of passive talent currently delivering results for competitors.",
+      "areaServed": "GB"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poweruptalent.co.uk/services#executive-search",
+      "name": "Strategic Recruitment / Executive Search",
+      "provider": {
+        "@id": "https://poweruptalent.co.uk/#service-provider"
+      },
+      "description": "Executive search specifically for Branch Managers and Regional Directors who possess the commercial acumen to drive your bottom line.",
+      "areaServed": "GB"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://poweruptalent.co.uk/services#partnerships",
+      "name": "Growth Partnerships",
+      "provider": {
+        "@id": "https://poweruptalent.co.uk/#service-provider"
+      },
+      "description": "Long-term collaboration for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across major UK logistics hubs.",
+      "areaServed": "GB"
+    }
+  ]
+};
+
 const Services: React.FC = () => {
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -21,7 +68,8 @@ const Services: React.FC = () => {
         title="Recruitment Services for Electrical Wholesale | Power-Up Talent"
         description="Elite recruitment, strategic search and growth partnerships for the UK electrical wholesale sector. Specialist headhunting that delivers results."
         keywords="electrical wholesale recruitment, headhunting services, executive search, branch manager recruitment"
-        canonical="https://power-up-talent-web.web.app/#/services"
+        canonical="https://poweruptalent.co.uk/services"
+        structuredData={servicesStructuredData}
       />
 
       {/* ── HERO ── */}
@@ -40,8 +88,8 @@ const Services: React.FC = () => {
             <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-5 flex items-center gap-2">
               <span className="w-6 h-px bg-primary"></span>Our Services
             </p>
-            <h1 className="font-display font-black text-5xl md:text-6xl text-white leading-tight mb-6">
-              <span className="text-gradient italic">Elite</span><br/>Recruitment
+            <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white leading-tight mb-6">
+              <span className="text-gradient italic">Elite</span><br/>Headhunters
             </h1>
             <p className="text-slate-300 font-light text-lg max-w-xl mb-8">
               We headhunt and place exceptional sales, leadership and technical talent that drives real commercial impact for electrical wholesalers.
@@ -60,24 +108,69 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* ── SERVICE FEATURES BAR ── */}
-      <section className="bg-navy-deep border-y border-white/5">
-        <div className="max-w-screen-xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { icon: "person_search", title: "Targeted Headhunting", desc: "We proactively identify and engage high-performing professionals who aren't actively looking." },
-              { icon: "electric_bolt", title: "Industry Specialists", desc: "We only recruit in electrical wholesale — we know the market, the people and the businesses." },
-              { icon: "verified", title: "Proven Track Record", desc: "Hundreds of successful placements across the UK with outstanding results for our clients." },
-              { icon: "visibility_off", title: "Confidential & Discreet", desc: "We operate with complete discretion to protect your business and your opportunities." },
-            ].map((f, i) => (
-              <motion.div key={i} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.1 }} className="flex gap-4">
-                <span className="material-symbols-outlined text-primary text-2xl mt-0.5 shrink-0" style={{ fontVariationSettings: "'FILL' 1" }}>{f.icon}</span>
-                <div>
-                  <h3 className="font-display font-bold text-sm text-white mb-1">{f.title}</h3>
-                  <p className="text-slate-400 text-xs font-light leading-relaxed">{f.desc}</p>
+      {/* ── WHY POWER-UP TALENT ── */}
+      <section className="bg-navy-deep py-24 border-b border-white/5">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="text-center mb-16 max-w-4xl mx-auto">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-4">Unrivalled Industry Specialism</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-white mb-6 uppercase">
+              WHY POWER-UP TALENT?
+            </h2>
+            <p className="text-slate-400 text-base leading-relaxed font-light">
+              What sets us apart is our profound expertise in the UK electrical wholesale landscape. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of margin protection, procurement cycles, and local trade counter management.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <motion.div
+              {...fadeInUp}
+              className="glass-card border border-white/5 rounded-xl p-10 text-center flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-8 bg-white/5 text-primary border border-white/10 shadow-lg">
+                  <span className="material-symbols-outlined text-2xl">rocket_launch</span>
                 </div>
-              </motion.div>
-            ))}
+                <h3 className="font-display font-bold text-base text-white uppercase tracking-wider mb-4">TECHNICAL GRIT</h3>
+                <p className="text-slate-400 leading-relaxed text-sm font-light">
+                  Our team consists of seasoned professionals who speak the language of the trade counter. We understand Rexel pricing models, Edmundson structures, and the nuances of independent buying groups.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.1 }}
+              className="glass-card-featured border-primary/50 rounded-xl p-10 text-center flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-8 bg-primary text-navy-deep shadow-lg">
+                  <span className="material-symbols-outlined text-2xl">settings</span>
+                </div>
+                <h3 className="font-display font-bold text-base text-white uppercase tracking-wider mb-4">TAILORED SOLUTIONS</h3>
+                <p className="text-slate-400 leading-relaxed text-sm font-light">
+                  We recognise that a Branch Manager in the M4 corridor faces different pressures than one in the North. Our talent solutions are geographically informed and operationally specific.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              {...fadeInUp}
+              transition={{ ...fadeInUp.transition, delay: 0.2 }}
+              className="glass-card border border-white/5 rounded-xl p-10 text-center flex flex-col justify-between"
+            >
+              <div>
+                <div className="w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-8 bg-white/5 text-primary border border-white/10 shadow-lg">
+                  <span className="material-symbols-outlined text-2xl">hub</span>
+                </div>
+                <h3 className="font-display font-bold text-base text-white uppercase tracking-wider mb-4">NETWORK & TRUST</h3>
+                <p className="text-slate-400 leading-relaxed text-sm font-light">
+                  Join our elite network of passive high-performers. We act as your trusted consultative partner, ensuring absolute discretion for both clients and leadership candidates.
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -90,7 +183,7 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
             <motion.div {...fadeInUp}>
               <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-4 flex items-center gap-2">
-                <span className="w-6 h-px bg-primary"></span>Elite Recruitment
+                <span className="w-6 h-px bg-primary"></span>Headhunters
               </p>
               <h2 className="font-display font-black text-3xl md:text-4xl text-white leading-tight mb-6">
                 The Best Talent Isn't Applying.<br/><span className="text-gradient">We Find Them.</span>
@@ -159,24 +252,6 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* ── STATS BAR ── */}
-      <section className="bg-primary/95">
-        <div className="max-w-screen-xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "20+", label: "Years Industry Experience" },
-              { value: "500+", label: "Successful Placements" },
-              { value: "90%", label: "Retention Rate after 12 Months" },
-              { value: "UK-Wide", label: "Coverage" },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="font-display font-black text-2xl md:text-3xl text-navy-deep">{s.value}</div>
-                <div className="text-xs text-navy-deep/70 font-medium mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ══════════════════════════════════════════════════════════
           SERVICE 2 — STRATEGIC RECRUITMENT
@@ -194,7 +269,7 @@ const Services: React.FC = () => {
                 Strategic<br/><span className="text-gradient">Recruitment</span>
               </h2>
               <p className="text-slate-300 font-light text-base max-w-2xl mx-auto mb-8">
-                We go beyond filling roles — we build high-performing teams aligned with your business strategy and long-term growth objectives.
+                We co-design a tailored strategy with you, mapping out the local competitor landscape to identify and recruit the absolute best candidates in the market. We headhunt for all role tiers across your entire operation, not just executive leadership.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="https://powercrm-daa67.web.app/" target="_blank" rel="noopener noreferrer"
@@ -212,7 +287,7 @@ const Services: React.FC = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               { icon: "target", title: "Aligned With Your Goals", desc: "We align every search with your business objectives and growth strategy." },
-              { icon: "groups_3", title: "Leadership Focused", desc: "We find exceptional leaders who inspire teams and drive commercial success." },
+              { icon: "groups_3", title: "Leadership Focused", desc: "We find exceptional talent who inspire teams and drive commercial success." },
               { icon: "monitoring", title: "Long-Term Impact", desc: "Every placement is designed to create sustainable value and measurable results." },
             ].map((f, i) => (
               <motion.div key={i} {...fadeInUp} transition={{ ...fadeInUp.transition, delay: i * 0.15 }} className="glass-card rounded-sm p-8 text-center">
@@ -236,10 +311,10 @@ const Services: React.FC = () => {
                 <span className="w-6 h-px bg-primary"></span>Our Services
               </p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-white leading-tight mb-6">
-                Growth<br/><span className="text-gradient">Partnerships</span>
+                Growth<br/><span className="text-gradient">Partnerships (RPO)</span>
               </h2>
               <p className="text-slate-300 font-light text-base max-w-2xl mb-8">
-                More than recruitment. We partner with electrical wholesalers to attract, develop and retain the people who power your growth.
+                Through our Recruitment Process Outsourcing (RPO) model, we act as an extension of your in-house HR team. We manage talent attraction, screening, interviewing, and onboarding. Choose from End-to-End lifecycle management, Project-based spike support, or Modular selective sourcing to scale hiring and reduce costs.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="https://powercrm-daa67.web.app/" target="_blank" rel="noopener noreferrer"
@@ -295,24 +370,6 @@ const Services: React.FC = () => {
         </div>
       </section>
 
-      {/* ── BOTTOM STATS BAR ── */}
-      <section className="bg-primary/95">
-        <div className="max-w-screen-xl mx-auto px-6 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "20+", label: "Years Industry Experience" },
-              { value: "500+", label: "Successful Placements" },
-              { value: "90%", label: "Retention Rate after 12 Months" },
-              { value: "UK-Wide", label: "Coverage" },
-            ].map((s, i) => (
-              <div key={i} className="text-center">
-                <div className="font-display font-black text-2xl md:text-3xl text-navy-deep">{s.value}</div>
-                <div className="text-xs text-navy-deep/70 font-medium mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 };

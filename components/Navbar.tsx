@@ -1,20 +1,15 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logoImg from '../src/assets/images/logo.jpg';
 
 /* ─── dropdown data ─── */
-const clientLinks = [
-  { name: "Hire Top Talent", path: "/services/elite-recruitment", desc: "Headhunting passive high-performers" },
-  { name: "Executive Search", path: "/services/strategic-recruitment", desc: "Senior & leadership appointments" },
-  { name: "Headhunting", path: "/services/growth-partnerships", desc: "Targeted search for key hires" },
-  { name: "Our Process", path: "/services", desc: "How we deliver results" },
+const strategicPillarsLinks = [
+  { name: "Headhunters", path: "/services/elite-recruitment", desc: "Headhunting passive high-performers" },
+  { name: "Strategic Recruitment", path: "/services/strategic-recruitment", desc: "Local competitor mapping and target search" },
+  { name: "Growth Partnerships (RPO)", path: "/services/growth-partnerships", desc: "Outsourced recruitment department" },
 ];
 
-const candidateLinks = [
-  { name: "Available Jobs", path: "/services", desc: "Browse current vacancies" },
-  { name: "Career Advice", path: "/insights", desc: "Industry insights & tips" },
-  { name: "Register Your CV", path: "/upload-cv", desc: "Get on our radar" },
-];
 
 /* ─── LinkedIn SVG (inline to avoid CDN dep) ─── */
 const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -26,12 +21,12 @@ const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
 /* ─── reusable desktop dropdown ─── */
 const DesktopDropdown: React.FC<{
   label: string;
-  items: typeof clientLinks;
+  items: typeof strategicPillarsLinks;
   heading: string;
   isActive: boolean;
 }> = ({ label, items, heading, isActive }) => {
   const [open, setOpen] = useState(false);
-  const timeout = useRef<ReturnType<typeof setTimeout>>();
+  const timeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   const show = () => { clearTimeout(timeout.current); setOpen(true); };
   const hide = () => { timeout.current = setTimeout(() => setOpen(false), 120); };
@@ -75,7 +70,7 @@ const DesktopDropdown: React.FC<{
 /* ─── mobile accordion section ─── */
 const MobileAccordion: React.FC<{
   label: string;
-  items: typeof clientLinks;
+  items: typeof strategicPillarsLinks;
   onNavigate: () => void;
 }> = ({ label, items, onNavigate }) => {
   const [open, setOpen] = useState(false);
@@ -98,7 +93,7 @@ const MobileAccordion: React.FC<{
               key={i}
               to={sub.path}
               onClick={onNavigate}
-              className="text-[13px] uppercase tracking-[0.08em] text-slate-400 hover:text-primary py-2 px-4 rounded-sm transition-colors"
+              className="text-sm uppercase tracking-[0.08em] text-slate-400 hover:text-primary py-3 px-4 rounded-sm transition-colors"
             >
               {sub.name}
             </Link>
@@ -133,8 +128,7 @@ const Navbar: React.FC = () => {
   const plainLinks: { name: string; path: string }[] = [
     { name: "Home", path: "/" },
     { name: "About Us", path: "/about" },
-    { name: "Case Studies", path: "/insights" },
-    { name: "Jobs", path: "/services" },
+    { name: "Information", path: "/insights" },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -170,16 +164,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-screen-xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* LOGO */}
         <Link to="/" className="flex flex-col group py-2 shrink-0" onClick={() => setIsOpen(false)}>
-          <div className="flex items-center gap-0 leading-none">
-            <span className="font-display font-black text-[22px] tracking-tight uppercase text-white">P</span>
-            <span className="material-symbols-outlined text-primary font-black text-[22px] -mx-0.5 group-hover:rotate-12 transition-transform duration-300">
-              power_settings_new
-            </span>
-            <span className="font-display font-black text-[22px] tracking-tight uppercase text-white">WER-UP</span>
-          </div>
-          <span className="font-display font-bold text-[11px] tracking-[0.25em] uppercase text-white/70 leading-none -mt-0.5">
-            Talent
-          </span>
+          <img src={logoImg} alt="Power-Up Talent" className="h-10 w-auto" />
         </Link>
 
         {/* DESKTOP NAV */}
@@ -194,20 +179,12 @@ const Navbar: React.FC = () => {
             Home
           </Link>
 
-          {/* For Clients dropdown */}
+          {/* Strategic Pillars dropdown */}
           <DesktopDropdown
-            label="For Clients"
-            items={clientLinks}
-            heading="Client Services"
-            isActive={location.pathname.startsWith("/services")}
-          />
-
-          {/* For Candidates dropdown */}
-          <DesktopDropdown
-            label="For Candidates"
-            items={candidateLinks}
-            heading="Candidate Resources"
-            isActive={location.pathname === "/upload-cv"}
+            label="Strategic Pillars"
+            items={strategicPillarsLinks}
+            heading="Strategic Pillars"
+            isActive={location.pathname.startsWith("/services/")}
           />
 
           {/* About Us */}
@@ -220,27 +197,17 @@ const Navbar: React.FC = () => {
             About Us
           </Link>
 
-          {/* Case Studies */}
+          {/* Information */}
           <Link
             to="/insights"
             className={`text-[10px] uppercase tracking-[0.14em] font-semibold py-2 border-b-2 transition-all duration-200 ${
               isActive("/insights") ? "text-primary border-primary" : "text-slate-400 hover:text-white border-transparent hover:border-white/20"
             }`}
           >
-            Case Studies
+            Information
           </Link>
 
-          {/* Jobs */}
-          <Link
-            to="/services"
-            className={`text-[10px] uppercase tracking-[0.14em] font-semibold py-2 border-b-2 transition-all duration-200 ${
-              isActive("/services") && !location.pathname.includes("/services/")
-                ? "text-primary border-primary"
-                : "text-slate-400 hover:text-white border-transparent hover:border-white/20"
-            }`}
-          >
-            Jobs
-          </Link>
+
 
           {/* Contact */}
           <Link
@@ -321,11 +288,9 @@ const Navbar: React.FC = () => {
               Home
             </Link>
 
-            {/* For Clients accordion */}
-            <MobileAccordion label="For Clients" items={clientLinks} onNavigate={() => setIsOpen(false)} />
+            {/* Strategic Pillars accordion */}
+            <MobileAccordion label="Strategic Pillars" items={strategicPillarsLinks} onNavigate={() => setIsOpen(false)} />
 
-            {/* For Candidates accordion */}
-            <MobileAccordion label="For Candidates" items={candidateLinks} onNavigate={() => setIsOpen(false)} />
 
             {/* remaining plain links */}
             {plainLinks

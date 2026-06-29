@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { SERVICES } from '../constants';
 import SEO from '../components/SEO';
+import wholesaleImg from '../src/assets/images/fuse_board.png';
+import securityImg from '../src/assets/images/fire_security.png';
+import lightingImg from '../src/assets/images/emergency_exit.png';
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -20,7 +23,7 @@ const ServiceDetail: React.FC = () => {
   };
 
   const transformItems = [
-    { icon: 'schedule', title: 'Accelerated Hiring', stat: '50% Lead Time Reduction', desc: 'Secure critical leaders quickly before buying group windows shift.' },
+    { icon: 'schedule', title: 'Accelerated Hiring', stat: '50% Lead Time Reduction', desc: 'Secure critical talent quickly before buying group windows shift.' },
     { icon: 'person_search', title: 'Precision Hires', stat: 'Predictive Success', desc: 'Operational modelling ensures candidates align with branch margin protection goals.' },
     { icon: 'currency_pound', title: 'Operational ROI', stat: '30% Cost-Per-Hire Lower', desc: 'Efficiency through technical headhunting rather than generic CV skimming.' },
     { icon: 'diversity_3', title: 'Balanced Teams', stat: 'Unbiased Sourcing', desc: 'Building inclusive, high-performing cultures across national branch networks.' },
@@ -29,10 +32,26 @@ const ServiceDetail: React.FC = () => {
   ];
 
   const expertSectors = [
-    { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983186/Gemini_Generated_Image_4xh7434xh7434xh7_ksfi1z.png', title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
-    { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772916308/3cadf2e2-ecc7-4148-932e-0aa74ba4ba7a_mfggyl.jpg', title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
-    { img: 'https://res.cloudinary.com/dtf76y0s7/image/upload/v1772983190/Gemini_Generated_Image_q5yx61q5yx61q5yx_vj21wc.png', title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
+    { img: wholesaleImg, title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
+    { img: securityImg, title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
+    { img: lightingImg, title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
   ];
+
+  const serviceStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `https://poweruptalent.co.uk/services/${service.id}#service`,
+    "name": service.name,
+    "description": service.description,
+    "provider": {
+      "@type": "Organization",
+      "@id": "https://poweruptalent.co.uk/#organization",
+      "name": "Power-Up Talent",
+      "url": "https://poweruptalent.co.uk"
+    },
+    "areaServed": "GB",
+    "serviceType": "Recruitment"
+  };
 
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white overflow-x-hidden">
@@ -40,7 +59,8 @@ const ServiceDetail: React.FC = () => {
         title={`${service.name} | Specialist Electrical Wholesale Headhunting`}
         description={`${service.description} Discover why Power-Up Talent is the UK's leading talent partner for the electrical wholesale sector.`}
         keywords={`electrical wholesale, headhunting, executive search, recruitment, ${service.name.toLowerCase()}`}
-        canonical={`https://power-up-talent.app/services/${service.id}`}
+        canonical={`https://poweruptalent.co.uk/services/${service.id}`}
+        structuredData={serviceStructuredData}
       />
 
       {/* SECTION 1: HERO HEADER */}
@@ -60,6 +80,11 @@ const ServiceDetail: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9 }}
           >
+            <div className="flex justify-center items-center mb-6">
+              <div className="w-20 h-20 rounded-2xl bg-primary/20 border-2 border-primary/50 flex items-center justify-center text-primary shadow-[0_0_30px_rgba(255,193,7,0.3)]">
+                <span className="material-symbols-outlined text-[3rem] font-bold drop-shadow-md">{service.icon}</span>
+              </div>
+            </div>
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-primary border border-primary/30 rounded-full bg-primary/10">
               Strategic Service Pillar
             </span>
@@ -76,7 +101,7 @@ const ServiceDetail: React.FC = () => {
       {/* SECTION 2: SERVICE DETAILS */}
       <section className="py-24 bg-white text-slate-900 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-16">
             
             {/* Description & Detail */}
             <div className="lg:col-span-7 space-y-8">
@@ -89,7 +114,7 @@ const ServiceDetail: React.FC = () => {
               <div className="border-l-4 border-primary pl-6 space-y-4">
                 <p className="text-navy-deep font-bold text-lg uppercase tracking-wide">Methodology & Insight</p>
                 <p className="text-slate-500 font-light leading-relaxed">
-                  We don't search based on simple keyword matches or job titles. We map the entire UK electrical wholesale market to understand which leaders are actively delivering margins, protecting inventory value, and managing complex branch networks.
+                  We don't search based on simple keyword matches or job titles. We map the entire UK electrical wholesale market to understand which talent is actively delivering margins, protecting inventory value, and managing complex branch networks.
                 </p>
               </div>
               <div className="pt-4">
@@ -123,6 +148,12 @@ const ServiceDetail: React.FC = () => {
             </div>
 
           </div>
+
+          {/* Interactive Pillars Deep Dive Tabs */}
+          <div className="border-t border-slate-200 pt-16">
+            <ServiceDeepDive serviceId={service.id} />
+          </div>
+
         </div>
       </section>
 
@@ -241,6 +272,137 @@ const ServiceDetail: React.FC = () => {
           </motion.div>
         </div>
       </section>
+    </div>
+  );
+};
+
+interface ServiceDeepDiveProps {
+  serviceId: string;
+}
+
+const ServiceDeepDive: React.FC<ServiceDeepDiveProps> = ({ serviceId }) => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const getTabs = () => {
+    switch (serviceId) {
+      case 'elite-recruitment':
+        return [
+          {
+            title: 'Passive Sourcing',
+            icon: 'person_search',
+            content: 'We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors. They aren\'t looking at job boards or replying to standard recruiters—they respond to our consultative, direct headhunting approach.'
+          },
+          {
+            title: 'DNA Qualifying',
+            icon: 'verified',
+            content: 'Every headhunted professional undergoes our rigorous technical DNA qualifying process. We assess margin protection capability, procurement cycle knowledge, local distributor dynamics, and cultural alignment before any introduction.'
+          },
+          {
+            title: 'Discretion Protocols',
+            icon: 'lock',
+            content: 'Search integrity is paramount. We operate under strict confidentiality agreements. No names or company associations are shared until mutual interest is established, protecting your brand\'s commercial strategy.'
+          }
+        ];
+      case 'strategic-recruitment':
+        return [
+          {
+            title: 'Local Market Mapping',
+            icon: 'hub',
+            content: 'We collaborate closely with clients to build a custom hiring strategy. This begins with mapping the local geographic market, identifying competitor branches, mapping out local competition, and evaluating talent availability before beginning our direct recruitment search.'
+          },
+          {
+            title: 'All-Tier Sourcing',
+            icon: 'groups',
+            content: 'We believe headhunting shouldn\'t be reserved solely for high-level executive suites. We deploy our strategic recruitment mapping methodology to hire for all role tiers across your entire operation—from entry-level trade counters and internal sales to branch leadership.'
+          },
+          {
+            title: 'Target Sourcing',
+            icon: 'analytics',
+            content: 'By targeting high-performing personnel from direct competitors (national networks like Rexel and Edmundson or independent buying groups), we deliver the absolute best candidates in the market, fully capable of driving trade counter growth.'
+          }
+        ];
+      case 'growth-partnerships':
+        return [
+          {
+            title: 'End-to-End RPO',
+            icon: 'dynamic_feed',
+            content: 'Our comprehensive model where we completely manage the entire hiring lifecycle. Operating as an extension of your in-house HR and recruitment team, we handle talent attraction, screening, interviewing, and onboarding.'
+          },
+          {
+            title: 'Project RPO',
+            icon: 'campaign',
+            content: 'Short-to-medium-term support designed to meet sudden hiring spikes, national restructures, or targeted campaigns (such as launching a new branch network or rolling out a new regional territory).'
+          },
+          {
+            title: 'Modular & Selective RPO',
+            icon: 'widgets',
+            content: 'Support for specific components of the talent acquisition pipeline, such as candidate sourcing, screening, or employer branding, allowing your internal HR team to manage other stages in-house.'
+          },
+          {
+            title: 'Strategic Value & Cost Reduction',
+            icon: 'trending_up',
+            content: 'Partnering with us on an RPO model allows electrical wholesalers to scale hiring quickly, enhance candidate experience, access advanced AI/analytics tools, and reduce overall talent acquisition costs.'
+          }
+        ];
+      default:
+        return [];
+    }
+  };
+
+  const tabs = getTabs();
+
+  if (tabs.length === 0) return null;
+
+  return (
+    <div className="mt-8">
+      <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight mb-8 text-center md:text-left">
+        Service Deep Dive
+      </h3>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {/* Tab Buttons */}
+        <div className="lg:col-span-4 flex flex-col gap-2">
+          {tabs.map((tab, idx) => (
+            <button
+              key={idx}
+              onClick={() => setActiveTab(idx)}
+              className={`flex items-center gap-4 px-6 py-4 rounded-sm font-display font-bold text-xs uppercase tracking-wider text-left transition-all duration-300 ${
+                activeTab === idx
+                  ? 'bg-navy-deep text-white border-l-4 border-primary shadow-md'
+                  : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border-l-4 border-transparent'
+              }`}
+            >
+              <span className={`material-symbols-outlined text-lg ${activeTab === idx ? 'text-primary' : 'text-slate-400'}`}>
+                {tab.icon}
+              </span>
+              {tab.title}
+            </button>
+          ))}
+        </div>
+
+        {/* Tab Content */}
+        <div className="lg:col-span-8 bg-slate-50 border border-slate-200 rounded-sm p-8 min-h-[220px] flex flex-col justify-center relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-bl-full pointer-events-none" />
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, x: 10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-4"
+          >
+            <div className="flex items-center gap-3 text-primary">
+              <span className="material-symbols-outlined text-2xl font-bold">
+                {tabs[activeTab].icon}
+              </span>
+              <h4 className="font-display font-black text-lg text-navy-deep uppercase tracking-wide">
+                {tabs[activeTab].title}
+              </h4>
+            </div>
+            <p className="text-slate-600 text-base leading-relaxed font-light">
+              {tabs[activeTab].content}
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 };

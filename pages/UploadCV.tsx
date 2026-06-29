@@ -4,6 +4,48 @@ import TypebotEmbed from "../components/TypebotEmbed";
 // @ts-ignore
 import heroImg from "../src/assets/images/upload_cv_hero_1780507458123.png";
 
+const uploadCVStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://poweruptalent.co.uk/#organization",
+      "name": "Power-Up Talent",
+      "url": "https://poweruptalent.co.uk"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://poweruptalent.co.uk/upload-cv#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is my CV submission treated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your CV submission is 100% confidential and secure. We are fully GDPR compliant. We will never share or send your CV to any third party or prospective employer without your explicit prior consent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my current employer notified of my search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We operate with strict discretion protocols. We do not contact your current employer, and your details are never published on public boards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens after I upload my CV?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A senior headhunting consultant reviews your profile within 48 hours. If there is a match with our active briefs, we arrange a private call to discuss your career options."
+          }
+        }
+      ]
+    }
+  ]
+};
+
 const UploadCV: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -38,6 +80,7 @@ const UploadCV: React.FC = () => {
         description="Join the Power-Up Talent passive candidate network. We represent senior electrical wholesale professionals discreetly to the right employers. 100% confidential."
         keywords="Upload CV Electrical Wholesale, Branch Manager Jobs UK, Regional Director Headhunted, Passive Candidate Network"
         canonical="https://poweruptalent.co.uk/upload-cv"
+        structuredData={uploadCVStructuredData}
       />
 
       {/* Hero */}
@@ -51,7 +94,7 @@ const UploadCV: React.FC = () => {
             <span className="material-symbols-outlined text-sm">lock</span>
             Strictly Confidential
           </div>
-          <h1 className="text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
             Join Our Passive<br /><span className="text-gradient">Talent Network.</span>
           </h1>
           <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">

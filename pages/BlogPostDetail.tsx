@@ -19,6 +19,30 @@ const BlogPostDetail: React.FC = () => {
     );
   }
 
+  const blogPostStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `https://poweruptalent.co.uk/insights/${post.id}#blogpost`,
+    "headline": post.title,
+    "description": post.excerpt,
+    "datePublished": "2026-06-21",
+    "dateModified": "2026-06-23",
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "@id": "https://poweruptalent.co.uk/#organization",
+      "name": "Power-Up Talent",
+      "url": "https://poweruptalent.co.uk"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://poweruptalent.co.uk/insights/${post.id}`
+    }
+  };
+
   return (
     <div className="pt-24 md:pt-32 pb-20 bg-background-dark min-h-screen">
       <SEO 
@@ -26,6 +50,7 @@ const BlogPostDetail: React.FC = () => {
         description={post.excerpt}
         keywords={`${post.category}, electrical wholesale, recruitment, talent strategy, ${post.title}`}
         canonical={`https://poweruptalent.co.uk/insights/${post.id}`}
+        structuredData={blogPostStructuredData}
       />
       <div className="max-w-screen-xl mx-auto px-6">
         <Link to="/insights" className="inline-flex items-center gap-4 text-slate-400 hover:text-primary transition-colors uppercase tracking-widest font-bold text-xs mb-12 group">

@@ -76,11 +76,11 @@ const AVAILABLE_BROCHURES: Brochure[] = [
     category: "GROWTH & ROLLOUTS",
     pages: "32 Pages",
     author: "Strategic Solutions Group",
-    description: "Frameworks designed specifically for UK Electrical Wholesalers undergoing rapid geographic rollout, branch acquisitions, or restructuring into specialized teams.",
+    description: "Frameworks designed specifically for UK Electrical Wholesalers undergoing rapid geographic rollout, branch acquisitions, or restructuring into specialised teams.",
     outcomes: [
       "Sourcing branch managers to capture early EV, PV & smart tech markets",
       "Fast-track scaling recruitment for regional branch hubs in 90 days",
-      "Retaining localized supplier relations during high-pace counter expansion",
+      "Retaining localised supplier relations during high-pace counter expansion",
       "Co-ordinating cross-geographical trade counter hiring pipelines"
     ],
     docUrl: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982124/Gemini_Generated_Image_vrx46xvrx46xvrx4_yq2wbd.png"
@@ -223,9 +223,9 @@ Thank you for your interest in Power-Up Talent, the UK's premier headhunting and
 As requested, we have compiled the "${activeBrochureTitle}" executive briefing pack.
 
 What's Inside:
-1. Sourcing Intelligence: How we map passive executive leaders across Edmundson, Rexel, CEF, and leading independents.
-2. Sourcing Action plans: Strategies on retaining regional branch hubs and evaluating localized supplier relations.
-3. Market benchmarks: Relevant wage, allowance, and growth metrics tailored for operations directors and HR leaders.
+1. Sourcing Intelligence: How we map passive executive talent across Edmundson, Rexel, CEF, and leading independents.
+2. Sourcing Action plans: Strategies on retaining regional branch hubs and evaluating localised supplier relations.
+3. Market benchmarks: Relevant wage, allowance, and growth metrics tailored for operations directors and HR talent.
 
 You can download your high-resolution copy of our services briefing sheet here:
 https://poweruptalent.co.uk/brochure

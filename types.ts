@@ -26,6 +26,7 @@ export interface Testimonial {
 export interface Service {
   id: string;
   name: string;
+  icon: string;
   tagline: string;
   description: string;
   features: string[];

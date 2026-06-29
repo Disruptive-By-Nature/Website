@@ -15,7 +15,7 @@ const Cookies: React.FC = () => {
         <div className="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 font-light text-lg">
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">1. What are Cookies?</h2>
-            <p>Cookies are small text files stored on your device to improve your browsing experience. We use them to remember your preferences and analyze site traffic for better service delivery.</p>
+            <p>Cookies are small text files stored on your device to improve your browsing experience. We use them to remember your preferences and analyse site traffic for better service delivery.</p>
           </section>
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">2. Essential Cookies</h2>
