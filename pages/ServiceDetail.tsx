@@ -301,55 +301,7 @@ const ServiceDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 4: INDUSTRY EXPERT (SECTOR EXPERTISE) */}
-      <section className="py-24 bg-navy-deep text-white border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">Sector Leadership</span>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-white mt-2 mb-4">
-              Industry Experts.
-            </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              Our consultants have worked across the electrical industry supply chain for decades. We speak your language.
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {expertSectors.map((sector, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12 }}
-                className="bg-card-dark border border-white/5 rounded-sm overflow-hidden group hover:border-primary/50 transition-all duration-500"
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img
-                    src={sector.img}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                    alt={sector.title}
-                  />
-                  <div className="absolute inset-0 bg-navy-deep/20 group-hover:bg-transparent transition-colors" />
-                </div>
-                <div className="p-8">
-                  <h3 className="font-display font-bold text-xl text-white uppercase tracking-tight mb-3 group-hover:text-primary transition-colors">
-                    {sector.title}
-                  </h3>
-                  <p className="text-slate-400 font-light text-sm leading-relaxed">
-                    {sector.desc}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* SECTION 5: FINAL CTA */}
       <section className="bg-primary py-20 text-navy-deep text-center">

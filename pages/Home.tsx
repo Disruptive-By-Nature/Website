@@ -3,6 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
 import heroImg from '../src/assets/images/handshake_hero.jpg';
+import constructionTabImg from '../src/assets/images/construction_tab.jpg';
+import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
+import electricalTabImg from '../src/assets/images/electrical_tab.jpg';
 
 const homeStructuredData = {
   "@context": "https://schema.org",
@@ -70,6 +73,10 @@ const Home: React.FC = () => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const scrollId = params.get('scroll');
+    const spec = params.get('spec');
+    if (spec && ['construction', 'engineering', 'electrical'].includes(spec)) {
+      setActiveSpecialism(spec as any);
+    }
     if (scrollId) {
       setTimeout(() => {
         const el = document.getElementById(scrollId);
@@ -327,134 +334,159 @@ const Home: React.FC = () => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="bg-slate-50 border border-slate-200 rounded-xl p-8 md:p-12 max-w-4xl mx-auto"
+            className="bg-slate-50 border border-slate-200 rounded-xl p-8 md:p-12 max-w-5xl mx-auto"
           >
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary-dark">
-                <span className="material-symbols-outlined font-bold">
-                  {activeSpecialism === 'construction' ? 'construction' : activeSpecialism === 'engineering' ? 'precision_manufacturing' : 'bolt'}
-                </span>
-              </div>
-              <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
-                {activeSpecialism === 'construction' ? 'Construction Sourcing' : activeSpecialism === 'engineering' ? 'Engineering Sourcing' : 'Electrical Sourcing'}
-              </h3>
-            </div>
-            
-            <div className="space-y-6 text-slate-600 font-light text-base md:text-lg leading-relaxed">
-              {activeSpecialism === 'construction' && (
-                <>
-                  <p>
-                    In the UK construction sector, operational delivery and commercial safety are paramount. We connect tier-1 contractors, residential developers, and infrastructure specialists with senior project managers, commercial directors, quantity surveyors, and estimators.
-                  </p>
-                  <p>
-                    Our search-led model maps active projects and competitor teams confidentially to identify individuals who bring a track record of on-time, on-budget delivery and commercial integrity.
-                  </p>
-                </>
-              )}
-              {activeSpecialism === 'engineering' && (
-                <>
-                  <p>
-                    Precision engineering requires rare expertise. Power-Up Talent specializes in mapping and headhunting elite engineering specialists across civil, structural, mechanical, and electrical disciplines.
-                  </p>
-                  <p>
-                    We partner with consultancies, manufacturing innovators, and tech hubs to source technical directors, principal design engineers, R&D leaders, and estimators who possess the technical grit and innovation required to drive complex modern schemes.
-                  </p>
-                </>
-              )}
-              {activeSpecialism === 'electrical' && (
-                <>
-                  <p>
-                    Built on our historic foundations, we cover the full electrical supply chain. We represent specialists in manufacturing (OEMs, switchgear, cabling), wholesale distribution networks, electrical design specification, and large-scale contractor installation.
-                  </p>
-                  <p>
-                    From branch directors to product development engineers, we identify the top 1% of passive talent currently delivering margin protection and operational scale.
-                  </p>
-                </>
-              )}
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+              {/* Text content - 7 cols */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary-dark">
+                    <span className="material-symbols-outlined font-bold">
+                      {activeSpecialism === 'construction' ? 'construction' : activeSpecialism === 'engineering' ? 'precision_manufacturing' : 'bolt'}
+                    </span>
+                  </div>
+                  <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
+                    {activeSpecialism === 'construction' ? 'Construction' : activeSpecialism === 'engineering' ? 'Engineering' : 'Electrical'}
+                  </h3>
+                </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="https://powercrm-daa67.web.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:shadow-md transition-all inline-flex items-center gap-2"
-              >
-                Hire Sector Talent
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-              <Link
-                to="/contact"
-                className="border border-slate-300 text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:border-primary transition-all inline-flex items-center gap-2"
-              >
-                Discovery Call
-                <span className="material-symbols-outlined text-sm">arrow_forward</span>
-              </Link>
+                <div className="text-slate-600 font-light text-base leading-relaxed space-y-6">
+                  {activeSpecialism === 'construction' && (
+                    <>
+                      <p>
+                        We support construction businesses with specialist recruitment and proactive headhunting for commercial, operational, and leadership roles. Our approach focuses on people who can perform in fast-moving, high-pressure environments and contribute from day one.
+                      </p>
+                      
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-3">What we look for</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Proven delivery in construction-led environments.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Strong commercial awareness and stakeholder management.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Talent that can support growth, site performance, and operational standards.</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-2">How we work</h4>
+                        <p>
+                          We map the market, identify high-performing passive talent, and approach candidates with relevance and credibility. That gives you a focused shortlist, not a pile of CVs.
+                        </p>
+                      </div>
+                    </>
+                  )}
+
+                  {activeSpecialism === 'engineering' && (
+                    <>
+                      <p>
+                        We help engineering businesses secure high-calibre talent across technical, commercial, and leadership positions. Whether the need is for specialist capability or strategic leadership, we focus on people who bring real impact.
+                      </p>
+
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-3">What we look for</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Strong technical depth and practical problem-solving.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>The ability to operate in complex, quality-driven environments.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Candidates with the right motivation, fit, and long-term value.</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-2">How we work</h4>
+                        <p>
+                          We do not rely on volume or generic sourcing. We actively headhunt, qualify carefully, and present only candidates who are commercially relevant and credible for the challenge.
+                        </p>
+                      </div>
+                    </>
+                  )}
+
+                  {activeSpecialism === 'electrical' && (
+                    <>
+                      <p>
+                        We are deeply aligned to the electrical sector and understand the nuances of wholesale, distribution, branch management, and commercial performance. Our electrical search work is built around market knowledge, discretion, and access to passive talent.
+                      </p>
+
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-3">What we look for</h4>
+                        <ul className="space-y-2">
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>People with sector credibility and a strong local reputation.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Candidates who understand margin, service, and customer relationships.</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                            <span>Talent that can deliver in branch-led, commercial, and leadership roles.</span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="font-bold text-navy-deep text-sm uppercase tracking-wider mb-2">How we work</h4>
+                        <p>
+                          We combine specialist recruitment, proactive headhunting, talent mapping, and advisory support to secure people who can make a measurable difference.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+
+                <div className="mt-8 flex flex-wrap gap-4">
+                  <a
+                    href="https://powercrm-daa67.web.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-primary text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:shadow-md transition-all inline-flex items-center gap-2"
+                  >
+                    Hire Sector Talent
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </a>
+                  <Link
+                    to="/contact"
+                    className="border border-slate-300 text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:border-primary transition-all inline-flex items-center gap-2"
+                  >
+                    Discovery Call
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </Link>
+                </div>
+              </div>
+
+              {/* Image content - 5 cols */}
+              <div className="lg:col-span-5 h-full flex items-center justify-center">
+                <img
+                  src={
+                    activeSpecialism === 'construction'
+                      ? constructionTabImg
+                      : activeSpecialism === 'engineering'
+                      ? engineeringTabImg
+                      : electricalTabImg
+                  }
+                  alt={activeSpecialism}
+                  className="rounded-lg shadow-xl object-cover w-full h-[320px] lg:h-[400px] border border-slate-200"
+                />
+              </div>
             </div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════════════
-          4. WHY POWER-UP TALENT? (White Background)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="bg-white py-24 text-navy-deep">
-        <div className="max-w-screen-xl mx-auto px-6">
-          <div className="text-center mb-20 max-w-3xl mx-auto">
-            <p className="text-[10px] uppercase tracking-[0.25em] text-primary-dark font-bold mb-4">Unrivalled Industry Specialism</p>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep leading-tight mb-6">
-              WHY POWER-UP TALENT?
-            </h2>
-            <p className="text-slate-600 text-base leading-relaxed font-light">
-              What sets us apart is our profound expertise across the UK electrical supply chain. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of manufacturing operations, distribution models, design specifications, and site installation pressures.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "rocket_launch",
-                title: "TECHNICAL GRIT",
-                desc: "Our team consists of seasoned professionals who understand manufacturing operations, distribution networks, design specification cycles, and contracting delivery.",
-                isFeatured: false
-              },
-              {
-                icon: "settings",
-                title: "TAILORED SOLUTIONS",
-                desc: "We recognise that a Branch Manager in the M4 corridor faces different pressures than one in the North. Our talent solutions are geographically informed and operationally specific.",
-                isFeatured: true
-              },
-              {
-                icon: "groups",
-                title: "NETWORK & TRUST",
-                desc: "Join our elite network of passive high-performers. We act as your trusted consultative partner, ensuring absolute discretion for both clients and leadership candidates.",
-                isFeatured: false
-              }
-            ].map((card, i) => (
-              <motion.div 
-                key={i} 
-                className={`rounded-xl p-10 text-center flex flex-col justify-between transition-all duration-300 border ${
-                  card.isFeatured 
-                    ? 'bg-slate-50 border-primary shadow-lg shadow-primary/10' 
-                    : 'bg-white border-slate-100 shadow-xl shadow-slate-100'
-                }`}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-              >
-                <div>
-                  <div className={`w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md ${
-                    card.isFeatured ? 'bg-primary text-navy-deep' : 'bg-navy-deep text-white'
-                  }`}>
-                    <span className="material-symbols-outlined text-2xl">{card.icon}</span>
-                  </div>
-                  <h3 className="font-display font-bold text-base text-navy-deep uppercase tracking-wider mb-4">{card.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed font-light">{card.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

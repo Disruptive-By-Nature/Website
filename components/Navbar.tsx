@@ -10,6 +10,12 @@ const strategicPillarsLinks = [
   { name: "Growth Partnerships (RPO)", path: "/services/growth-partnerships", desc: "Outsourced recruitment department" },
 ];
 
+const specialismLinks = [
+  { name: "Construction", path: "/?scroll=specialisms&spec=construction", desc: "Commercial & operational construction headhunting" },
+  { name: "Engineering", path: "/?scroll=specialisms&spec=engineering", desc: "Design & technical engineering specialists" },
+  { name: "Electrical", path: "/?scroll=specialisms&spec=electrical", desc: "Wholesale, manufacturing & contracting" },
+];
+
 
 /* ─── LinkedIn SVG (inline to avoid CDN dep) ─── */
 const LinkedInIcon: React.FC<{ className?: string }> = ({ className }) => (
@@ -178,6 +184,14 @@ const Navbar: React.FC = () => {
             isActive={location.pathname.startsWith("/services/")}
           />
 
+          {/* Specialisms dropdown */}
+          <DesktopDropdown
+            label="Specialisms"
+            items={specialismLinks}
+            heading="Our Specialisms"
+            isActive={location.pathname === "/" && location.search.includes("scroll=specialisms")}
+          />
+
           {/* About Us */}
           <Link
             to="/about"
@@ -270,6 +284,9 @@ const Navbar: React.FC = () => {
 
             {/* Strategic Pillars accordion */}
             <MobileAccordion label="Strategic Pillars" items={strategicPillarsLinks} onNavigate={() => setIsOpen(false)} />
+
+            {/* Specialisms accordion */}
+            <MobileAccordion label="Specialisms" items={specialismLinks} onNavigate={() => setIsOpen(false)} />
 
 
             {/* remaining plain links */}
