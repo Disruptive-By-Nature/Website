@@ -164,7 +164,7 @@ const Navbar: React.FC = () => {
       <div className="max-w-screen-xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* LOGO */}
         <Link to="/" className="flex flex-col group py-2 shrink-0" onClick={() => setIsOpen(false)}>
-          <img src={logoImg} alt="Power-Up Talent" className="h-10 w-auto" />
+          <img src={logoImg} alt="Power-Up Talent" className="h-14 w-auto" />
         </Link>
 
         {/* DESKTOP NAV */}

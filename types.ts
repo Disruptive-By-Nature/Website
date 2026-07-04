@@ -29,6 +29,8 @@ export interface Service {
   icon: string;
   tagline: string;
   description: string;
+  operationalScope?: string;
+  methodologyInsight?: string;
   features: string[];
   image: string;
 }

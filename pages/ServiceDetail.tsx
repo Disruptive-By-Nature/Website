@@ -109,12 +109,12 @@ const ServiceDetail: React.FC = () => {
                 Operational Scope
               </h2>
               <p className="text-slate-600 text-lg leading-relaxed font-light">
-                {service.description}
+                {service.operationalScope || service.description}
               </p>
               <div className="border-l-4 border-primary pl-6 space-y-4">
                 <p className="text-navy-deep font-bold text-lg uppercase tracking-wide">Methodology & Insight</p>
                 <p className="text-slate-500 font-light leading-relaxed">
-                  We don't search based on simple keyword matches or job titles. We map the entire UK electrical wholesale market to understand which talent is actively delivering margins, protecting inventory value, and managing complex branch networks.
+                  {service.methodologyInsight || 'We map the entire UK electrical wholesale market to understand which talent is actively delivering results, protecting inventory value, and managing complex branch networks.'}
                 </p>
               </div>
               <div className="pt-4">
@@ -154,6 +154,50 @@ const ServiceDetail: React.FC = () => {
             <ServiceDeepDive serviceId={service.id} />
           </div>
 
+        </div>
+      </section>
+
+      {/* SECTION 2b: THE STRATEGIC DIFFERENCE */}
+      <section className="bg-white py-20 text-navy-deep border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep uppercase tracking-tight mb-4">
+              THE STRATEGIC <span className="text-primary">DIFFERENCE.</span>
+            </h2>
+            <p className="text-slate-500 text-base font-light max-w-2xl mx-auto leading-relaxed">
+              Power-Up Talent is not a traditional recruitment agency. We are a specialist consultancy focused exclusively on identifying the passive high-performers that standard job boards cannot reach.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'HEADHUNTING-FIRST',
+                desc: 'Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely "looking" for work; they are busy delivering results for your competitors.'
+              },
+              {
+                title: 'TRADE LITERACY',
+                desc: 'Our consultants are sector specialists with deep operational backgrounds. We speak the language of technical procurement and branch management, ensuring a peer-level vetting process standard recruiters cannot match.'
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white border border-slate-200 rounded-lg p-10 hover:shadow-md hover:border-primary/30 transition-all duration-300"
+              >
+                <h3 className="font-display font-black text-sm text-navy-deep uppercase tracking-wider mb-3">{item.title}</h3>
+                <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -288,60 +332,70 @@ const ServiceDeepDive: React.FC<ServiceDeepDiveProps> = ({ serviceId }) => {
       case 'elite-recruitment':
         return [
           {
-            title: 'Passive Sourcing',
+            title: 'Passive Talent Mapping',
             icon: 'person_search',
-            content: 'We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors. They aren\'t looking at job boards or replying to standard recruiters—they respond to our consultative, direct headhunting approach.'
+            content: 'We do not rely on job board traffic or generic keyword searches. We map the local market, identify who is genuinely performing in comparable environments, and discreetly approach high-calibre candidates who are rarely active but often open to the right opportunity.'
           },
           {
-            title: 'DNA Qualifying',
-            icon: 'verified',
-            content: 'Every headhunted professional undergoes our rigorous technical DNA qualifying process. We assess margin protection capability, procurement cycle knowledge, local distributor dynamics, and cultural alignment before any introduction.'
-          },
-          {
-            title: 'Discretion Protocols',
+            title: 'Confidential Outreach',
             icon: 'lock',
-            content: 'Search integrity is paramount. We operate under strict confidentiality agreements. No names or company associations are shared until mutual interest is established, protecting your brand\'s commercial strategy.'
+            content: 'Confidentiality is the foundation of our headhunting model. We conduct direct, discreet outreach to passive candidates without exposing your business, your vacancy, or your commercial strategy. No names or company associations are shared until mutual interest is clearly established.'
+          },
+          {
+            title: 'Reputation-Led Shortlisting',
+            icon: 'verified',
+            content: 'We do not shortlist based on CVs alone. Our process is built around local reputation, sector credibility, and track record. If a candidate is known for delivering results in your market, we know about them — and we know how to approach them.'
+          },
+          {
+            title: 'Technical & Commercial Vetting',
+            icon: 'analytics',
+            content: 'Every candidate we introduce has been assessed for technical knowledge, commercial capability, and cultural alignment. We assess margin protection capability, procurement cycle knowledge, local distributor dynamics, and branch management experience before any introduction is made.'
           }
         ];
       case 'strategic-recruitment':
         return [
           {
-            title: 'Local Market Mapping',
+            title: 'Local Market & Competitor Mapping',
             icon: 'hub',
-            content: 'We collaborate closely with clients to build a custom hiring strategy. This begins with mapping the local geographic market, identifying competitor branches, mapping out local competition, and evaluating talent availability before beginning our direct recruitment search.'
+            content: 'We map the local talent landscape, analyse competitor teams, and identify where the strongest candidates are already delivering results. This intelligence forms the foundation of every search we run — ensuring we are targeting the right people in the right locations.'
           },
           {
-            title: 'All-Tier Sourcing',
+            title: 'Co-Designed Hiring Strategy',
             icon: 'groups',
-            content: 'We believe headhunting shouldn\'t be reserved solely for high-level executive suites. We deploy our strategic recruitment mapping methodology to hire for all role tiers across your entire operation—from entry-level trade counters and internal sales to branch leadership.'
+            content: 'We co-design the search with you. We take time to understand your business, define the real brief behind the vacancy, and build a tailored hiring strategy around your growth plans, operational pressure points, and local market conditions.'
           },
           {
-            title: 'Target Sourcing',
-            icon: 'analytics',
-            content: 'By targeting high-performing personnel from direct competitors (national networks like Rexel and Edmundson or independent buying groups), we deliver the absolute best candidates in the market, fully capable of driving trade counter growth.'
+            title: 'All-Tier Search Capability',
+            icon: 'leaderboard',
+            content: 'Unlike executive-only search firms, we apply our elite, insight-led model across all role tiers — from senior leadership and branch management through to business development, internal sales, technical, and trade counter positions.'
+          },
+          {
+            title: 'Insight-Led Qualification',
+            icon: 'verified',
+            content: 'Every candidate we present has been rigorously qualified against the brief. We assess not just skills and experience, but local market fit, commercial alignment, and genuine motivation — so your shortlist is precise, relevant, and ready to progress.'
           }
         ];
       case 'growth-partnerships':
         return [
           {
-            title: 'End-to-End RPO',
+            title: 'End-to-End Recruitment Delivery',
             icon: 'dynamic_feed',
-            content: 'Our comprehensive model where we completely manage the entire hiring lifecycle. Operating as an extension of your in-house HR and recruitment team, we handle talent attraction, screening, interviewing, and onboarding.'
+            content: 'We manage the entire permanent hiring lifecycle on your behalf — from attraction and sourcing through to screening, interview coordination, offer management, and onboarding. You stay focused on the business; we handle the recruitment process from start to finish.'
           },
           {
-            title: 'Project RPO',
+            title: 'Embedded Recruitment Partner',
+            icon: 'groups',
+            content: 'We act as a genuine extension of your internal team. This means operating to your standards, your timelines, and your processes — not a detached agency relationship, but a fully embedded recruitment function that understands your business from the inside.'
+          },
+          {
+            title: 'White-Label or Branded Delivery',
             icon: 'campaign',
-            content: 'Short-to-medium-term support designed to meet sudden hiring spikes, national restructures, or targeted campaigns (such as launching a new branch network or rolling out a new regional territory).'
+            content: 'We can operate as a visible extension of your brand, giving you a seamless outsourced recruitment partner that reflects your standards, messaging, and market identity. Candidates experience your brand throughout — not ours.'
           },
           {
-            title: 'Modular & Selective RPO',
-            icon: 'widgets',
-            content: 'Support for specific components of the talent acquisition pipeline, such as candidate sourcing, screening, or employer branding, allowing your internal HR team to manage other stages in-house.'
-          },
-          {
-            title: 'Strategic Value & Cost Reduction',
+            title: 'Scale Support for Growth & Change',
             icon: 'trending_up',
-            content: 'Partnering with us on an RPO model allows electrical wholesalers to scale hiring quickly, enhance candidate experience, access advanced AI/analytics tools, and reduce overall talent acquisition costs.'
+            content: 'This model is ideal for branch rollouts, multi-hire growth phases, restructuring programmes, or businesses that need consistent recruitment delivery without building a full in-house talent team. We scale up or down to match your requirements at any stage.'
           }
         ];
       default:

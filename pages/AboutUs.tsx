@@ -253,85 +253,56 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* ── SECTION 5: WHY POWER-UP TALENT (VALUES & COMMITMENTS) ── */}
-      <section className="bg-background-dark py-24 border-b border-white/5">
+      {/* ── SECTION 5: OUR VALUES ── */}
+      <section className="bg-white py-24 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-16">
-            
-            {/* Left Column - Our Values */}
-            <motion.div {...fadeInUp} className="space-y-8">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-primary">Core Principles</span>
-                <h3 className="font-display font-black text-2xl md:text-4xl text-white uppercase mt-2">Our Values</h3>
-              </div>
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div className="bg-card-dark p-6 border border-white/5 rounded-lg">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <span className="material-symbols-outlined">favorite</span>
-                  </div>
-                  <h4 className="font-display font-bold text-white uppercase tracking-wide text-sm mb-2">Passion</h4>
-                  <p className="text-slate-400 text-xs font-light leading-relaxed">
-                    We love what we do. Our team is passionate about powering the wholesale sector by matching elite talent.
-                  </p>
-                </div>
-                <div className="bg-card-dark p-6 border border-white/5 rounded-lg">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <span className="material-symbols-outlined">emoji_events</span>
-                  </div>
-                  <h4 className="font-display font-bold text-white uppercase tracking-wide text-sm mb-2">Results</h4>
-                  <p className="text-slate-400 text-xs font-light leading-relaxed">
-                    We focus on search outcomes that drive real margin growth, profitability, and operational success.
-                  </p>
-                </div>
-                <div className="bg-card-dark p-6 border border-white/5 rounded-lg">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <span className="material-symbols-outlined">handshake</span>
-                  </div>
-                  <h4 className="font-display font-bold text-white uppercase tracking-wide text-sm mb-2">Partnerships</h4>
-                  <p className="text-slate-400 text-xs font-light leading-relaxed">
-                    We prioritize long-term, trusted advisory connections over simple transaction counts.
-                  </p>
-                </div>
-                <div className="bg-card-dark p-6 border border-white/5 rounded-lg">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4">
-                    <span className="material-symbols-outlined">gavel</span>
-                  </div>
-                  <h4 className="font-display font-bold text-white uppercase tracking-wide text-sm mb-2">Integrity</h4>
-                  <p className="text-slate-400 text-xs font-light leading-relaxed">
-                    We maintain absolute transparency, advising both candidates and clients with complete honesty.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+          <motion.div {...fadeInUp} className="text-center mb-16">
+            <h2 className="font-display font-black text-4xl md:text-6xl text-navy-deep uppercase tracking-tight">
+              OUR <span className="text-primary">VALUES.</span>
+            </h2>
+          </motion.div>
 
-            {/* Right Column - Our Commitment */}
-            <motion.div {...fadeInUp} className="space-y-8 lg:pl-6">
-              <div>
-                <span className="text-xs font-bold uppercase tracking-widest text-primary">Our Promise</span>
-                <h3 className="font-display font-black text-2xl md:text-4xl text-white uppercase mt-2">Our Commitment</h3>
-              </div>
-              <p className="text-slate-300 font-light leading-relaxed text-sm md:text-base">
-                We commit to introducing only candidate profiles who align with your company's strategic roadmap. We protect your confidential business data with strict security protocols. We also offer a replacement guarantee, ensuring we re-recruit at no additional cost if a match does not work out within the agreed validation period.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-lg border border-white/5">
-                  <span className="material-symbols-outlined text-primary text-2xl">verified_user</span>
-                  <div>
-                    <h5 className="font-bold text-white text-xs uppercase tracking-wider">100% Confidential Sourcing</h5>
-                    <p className="text-slate-400 text-xs font-light mt-0.5">Absolute discretion for sensitive hire mandates.</p>
-                  </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              {
+                icon: 'verified',
+                title: 'INTEGRITY',
+                desc: 'We conduct all our consultancy with honesty, transparency, and ethical standards, building trust with every brief.'
+              },
+              {
+                icon: 'handshake',
+                title: 'PARTNERSHIPS',
+                desc: 'We invest in building lasting partnerships with both wholesalers and high-performers, fostering success.'
+              },
+              {
+                icon: 'star',
+                title: 'EXCELLENCE',
+                desc: 'We maintain the highest standards in everything we do, from market mapping to leadership delivery.'
+              },
+              {
+                icon: 'lightbulb',
+                title: 'INNOVATION',
+                desc: 'We combine traditional headhunting methods with modern AI modelling to deliver innovative solutions.'
+              },
+              {
+                icon: 'bolt',
+                title: 'SECTOR GRIT',
+                desc: 'Every placement contributes to better operational standards, driving our passion for the electrical community.'
+              }
+            ].map((value, i) => (
+              <motion.div
+                key={i}
+                {...fadeInUp}
+                transition={{ ...fadeInUp.transition, delay: i * 0.1 }}
+                className="bg-white border border-slate-200 rounded-lg p-8 text-center shadow-sm hover:shadow-md hover:border-primary/40 transition-all duration-300 flex flex-col items-center"
+              >
+                <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-5">
+                  <span className="material-symbols-outlined text-2xl">{value.icon}</span>
                 </div>
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-lg border border-white/5">
-                  <span className="material-symbols-outlined text-primary text-2xl">published_with_changes</span>
-                  <div>
-                    <h5 className="font-bold text-white text-xs uppercase tracking-wider">Extended Replacement Guarantee</h5>
-                    <p className="text-slate-400 text-xs font-light mt-0.5">Risk-free matching models protecting client investments.</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-
+                <h3 className="font-display font-black text-sm text-navy-deep uppercase tracking-widest mb-3">{value.title}</h3>
+                <p className="text-slate-500 text-xs font-light leading-relaxed text-center">{value.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

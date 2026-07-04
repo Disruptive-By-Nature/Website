@@ -360,11 +360,59 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-
-
       {/* ══════════════════════════════════════════════════════════
-          7. CTA — Final call to action (Dark background)
+          6. THE STRATEGIC DIFFERENCE (White Background)
       ══════════════════════════════════════════════════════════ */}
+      <section className="bg-white py-24 text-navy-deep border-b border-slate-100">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <motion.div
+            {...fadeInUp}
+            className="text-center mb-16 max-w-3xl mx-auto"
+          >
+            <h2 className="font-display font-black text-4xl md:text-6xl text-navy-deep uppercase tracking-tight mb-6">
+              THE STRATEGIC <span className="text-primary">DIFFERENCE.</span>
+            </h2>
+            <p className="text-slate-500 text-base leading-relaxed font-light">
+              Power-Up Talent is not a traditional recruitment agency. We are a specialist consultancy focused exclusively on identifying the passive high-performers that standard job boards cannot reach.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                title: 'HEADHUNTING-FIRST',
+                desc: 'Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely "looking" for work; they are busy delivering results for your competitors.',
+              },
+              {
+                title: 'TRADE LITERACY',
+                desc: 'Our consultants are sector specialists with deep operational backgrounds. We speak the language of technical procurement and branch management, ensuring a peer-level vetting process standard recruiters cannot match.',
+              },
+              {
+                title: 'PASSIVE TALENT NETWORK',
+                desc: 'We have spent years building a deeply mapped network of high-performers who are not visible on job boards. Our relationships run deep — enabling us to make discreet approaches that generate genuine results.',
+              },
+              {
+                title: 'TAILORED TO YOUR BRIEF',
+                desc: 'No two briefs are the same. We take the time to understand your business, your culture, and your precise requirements before we begin — ensuring every candidate we present is a purposeful, well-considered introduction.',
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white border border-slate-200 rounded-lg p-10 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+              >
+                <h3 className="font-display font-black text-base text-navy-deep uppercase tracking-wider mb-4">{item.title}</h3>
+                <p className="text-slate-500 text-sm font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       <section className="bg-background-dark py-24">
         <div className="max-w-screen-xl mx-auto px-6">
           <motion.div

@@ -173,12 +173,14 @@ export const SERVICES: Service[] = [
     name: "Headhunters",
     icon: "person_search",
     tagline: "Headhunting passive high-performers.",
-    description: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors using AI-driven mapping.",
+    description: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across UK electrical wholesale and proactively headhunt proven performers with the track record, local reputation, and commercial credibility to make an immediate impact.",
+    operationalScope: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across UK electrical wholesale and proactively headhunt proven performers with the track record, local reputation, and commercial credibility to make an immediate impact.",
+    methodologyInsight: "We do not rely on job board traffic or generic keyword searches. We map the local market, identify who is genuinely performing in comparable environments, and discreetly approach high-calibre candidates who are rarely active but often open to the right opportunity.",
     features: [
       "Confidential direct outreach",
       "Passive talent mapping",
-      "Technical DNA vetting",
-      "Absolute discretion protocols"
+      "Reputation-led shortlisting",
+      "Technical and commercial vetting"
     ],
     image: eliteImg
   },
@@ -187,12 +189,14 @@ export const SERVICES: Service[] = [
     name: "Strategic Recruitment",
     icon: "leaderboard",
     tagline: "Local Market Mapping & Competitor Target Recruitment.",
-    description: "We co-design a tailored hiring strategy with you, mapping out the local market and analysing your competitors to source and recruit the absolute best candidates in the market. Unlike executive-only search, we deploy this elite model to hire for all role tiers across your operations—from senior directors to business development reps and counter staff.",
+    description: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, local market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best available talent across every level of your operation.",
+    operationalScope: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, local market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best available talent across every level of your operation.",
+    methodologyInsight: "We co-design the search with you, map the local talent landscape, analyse competitor teams, and identify where the strongest candidates are already delivering results. Unlike executive-only search firms, we apply this elite, insight-led model across all role tiers, from senior leadership and branch management through to business development, internal sales, technical, and counter positions.",
     features: [
-      "Competitor and local market mapping",
-      "Co-designed recruitment strategy",
-      "Hiring for all roles and tiers",
-      "Active competitor talent sourcing"
+      "Local market and competitor mapping",
+      "Co-designed hiring strategy",
+      "All-tier search capability",
+      "Insight-led qualification and shortlist design"
     ],
     image: strategicImg
   },
@@ -201,12 +205,14 @@ export const SERVICES: Service[] = [
     name: "Growth Partnerships",
     icon: "handshake",
     tagline: "Recruitment Process Outsourcing (RPO) Models.",
-    description: "We operate as an extension of your in-house HR and management team, handling all or part of your permanent recruitment. Our RPO models include End-to-End lifecycle management, Project-based support for sudden spikes or branch rollouts, and Modular selective sourcing/branding. This allows wholesalers to scale hiring rapidly, leverage AI and analytics, and reduce talent acquisition costs.",
+    description: "Our Growth Partnerships pillar is for businesses that need a dedicated recruitment function embedded into their operation. We act as an extension of your internal team, managing all or part of your permanent hiring across attraction, sourcing, screening, interview coordination, offer management, and onboarding.",
+    operationalScope: "Our Growth Partnerships pillar is for businesses that need a dedicated recruitment function embedded into their operation. We act as an extension of your internal team, managing all or part of your permanent hiring across attraction, sourcing, screening, interview coordination, offer management, and onboarding.",
+    methodologyInsight: "This model is ideal for branch rollouts, multi-hire growth phases, restructuring programmes, or businesses that need consistent recruitment delivery without building a full in-house talent team. We can operate as a visible extension of your brand, giving you a seamless outsourced recruitment partner that reflects your standards, messaging, and market identity.",
     features: [
-      "End-to-End RPO lifecycle management",
-      "Project-based spike & launch support",
-      "Modular selective sourcing & screening",
-      "Advanced AI sourcing and talent analytics"
+      "End-to-end recruitment delivery",
+      "Embedded recruitment partner model",
+      "White-label or branded delivery",
+      "Scale support for growth, rollouts, and change"
     ],
     image: growthImg
   }
