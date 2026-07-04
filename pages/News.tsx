@@ -32,8 +32,8 @@ const News: React.FC = () => {
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: `Search for and provide 10 UNIQUE and CURRENT UK news articles (from late 2024 to 2025) specifically related to the UK electrical wholesale, fire safety, and lighting industry. 
+        model: 'gemini-2.5-flash',
+        contents: `Search for and provide 10 UNIQUE and CURRENT UK news articles (from late 2024 to 2025) specifically related to the UK electrical sector, including manufacturing, distribution, design, specification, and contracting/installation. 
         Focus on regulatory updates (e.g., Part L, Part P, fire safety legislation), market mergers, or technical product shifts.
         
         Required JSON fields:
@@ -84,9 +84,9 @@ const News: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-white">
       <SEO 
-        title="Industry News | UK Electrical Wholesale News | Power-Up Talent"
-        description="Stay updated with the latest UK electrical wholesale industry news, regulatory updates, and market trends."
-        keywords="Electrical Wholesale News, UK Electrical Industry Updates, Fire Safety Legislation News, Electrical Wholesale Market Trends"
+        title="Industry News | UK Electrical Sector News | Power-Up Talent"
+        description="Stay updated with the latest UK electrical industry news, manufacturing updates, distribution trends, and contracting regulations."
+        keywords="Electrical Industry News, UK Electrical Sector Updates, Electrical Contracting News, Manufacturing Distribution Trends"
         canonical="https://poweruptalent.co.uk/news"
       />
       <section className="bg-navy-deep py-24 md:py-48 border-b border-white/5 relative overflow-hidden">
@@ -96,7 +96,7 @@ const News: React.FC = () => {
             src={heroImg}
             className="absolute inset-0 w-full h-full object-cover opacity-[0.24] grayscale mix-blend-overlay object-center"
             referrerPolicy="no-referrer"
-            alt="UK Electrical Wholesale Industry News & Regulatory Updates"
+            alt="UK Electrical Sector Industry News & Regulatory Updates"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/60 via-navy-deep/20 to-navy-deep/70"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,193,7,0.1)_0%,transparent_70%)] opacity-30"></div>

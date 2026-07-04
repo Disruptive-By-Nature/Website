@@ -8,8 +8,8 @@ const Story: React.FC = () => {
     <div className="pt-20 md:pt-24 pb-0 overflow-x-hidden bg-background-dark text-white">
       <SEO 
         title="Our Story | Power-Up Talent"
-        description="Learn about the story behind Power-Up Talent and our mission in the UK electrical wholesale sector."
-        keywords="Our Story, Power-Up Talent, Electrical Wholesale Recruitment Story"
+        description="Learn about the story behind Power-Up Talent and our mission in the UK electrical sector."
+        keywords="Our Story, Power-Up Talent, Electrical Sector Recruitment Story"
         canonical="https://poweruptalent.co.uk/story"
       />
       {/* 1. Hero Header - Clean */}
@@ -30,7 +30,7 @@ const Story: React.FC = () => {
             <h2 className="text-3xl md:text-6xl font-display font-bold text-slate-900 tracking-tight uppercase">The Problem with <br/>"Standard" Recruitment</h2>
             <div className="space-y-6 md:space-y-8 text-slate-600 font-light text-lg md:text-xl leading-relaxed">
               <p>
-                Most recruiters treat electrical wholesale like any other sector. They skim resumes for keywords and hope for the best. But we know the industry does not work that way. 
+                Most recruiters treat the electrical sector like any other industry. They skim resumes for keywords and hope for the best. But we know that manufacturing, distribution, design, and installation require deep, specific technical understanding. 
               </p>
             </div>
           </div>

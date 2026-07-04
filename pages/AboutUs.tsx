@@ -21,7 +21,7 @@ const aboutStructuredData = {
       "@id": "https://poweruptalent.co.uk/about#webpage",
       "url": "https://poweruptalent.co.uk/about",
       "name": "About Power-Up Talent",
-      "description": "We are the UK's leading headhunters and recruitment specialists for the electrical wholesale industry. Discover our story, values and team.",
+      "description": "We are the UK's leading headhunters and recruitment specialists for the electrical industry, spanning manufacturing, distribution, specification, and installation.",
       "publisher": {
         "@type": "Organization",
         "@id": "https://poweruptalent.co.uk/#organization",
@@ -42,15 +42,15 @@ const AboutUs: React.FC = () => {
   const faqs = [
     {
       q: "What sets Power-Up Talent apart from other UK recruiters?",
-      a: "Unlike generalist agencies, we recruit exclusively within the UK electrical wholesale sector. Our consultants speak the trade counter language, understand margin protection (GP), Edmundson/Rexel structures, and maintain a deeply mapped network of passive high-performers that competitors cannot reach."
+      a: "Unlike generalist agencies, we recruit exclusively within the UK electrical sector. Our consultants speak the language of engineering design, manufacturing supply chains, distribution networks, and contracting delivery, maintaining a deeply mapped network of passive high-performers."
     },
     {
       q: "How do you source passive candidates who aren't active on job boards?",
-      a: "80% of top-performing branch managers and sales executives never apply for jobs. We utilise proprietary AI-driven market mapping and discreet, direct outreach protocols to align executive briefs with industry talent, ensuring absolute confidentiality."
+      a: "80% of top-performing project managers, engineers, and sales executives never apply for jobs. We utilise proprietary AI-driven market mapping and discreet, direct outreach protocols to align executive briefs with industry talent, ensuring absolute confidentiality."
     },
     {
-      q: "What specific roles do you recruit for wholesale distributors?",
-      a: "We recruit across all management tiers: Branch Managers, Regional Directors, Procurement and Estimating Specialists, Internal/External Sales Representatives, and C-suite Executive leadership."
+      q: "What specific roles do you recruit for the electrical sector?",
+      a: "We recruit across all management and technical tiers: Product Design & Specification Engineers, Manufacturing Operations Directors, Procurement & Estimating Leads, Branch Managers, Project Contracts Managers, and C-suite Executive leadership."
     },
     {
       q: "What is your placement retention rate?",
@@ -70,8 +70,8 @@ const AboutUs: React.FC = () => {
     <>
       <SEO
         title="About Us | Power-Up Talent"
-        description="We are the UK's leading headhunters and recruitment specialists for the electrical wholesale industry. Discover our story, values and team."
-        keywords="about power-up talent, electrical wholesale recruiter, uk recruitment consultancy, headhunters electrical"
+        description="We are the UK's leading headhunters and recruitment specialists for the electrical industry, spanning manufacturing, distribution, design, and installation."
+        keywords="about power-up talent, electrical industry recruiter, uk recruitment engineering, headhunters electrical"
         canonical="https://poweruptalent.co.uk/about"
         structuredData={aboutStructuredData}
       />
@@ -97,7 +97,7 @@ const AboutUs: React.FC = () => {
           >
             <p className="text-[11px] uppercase tracking-[0.25em] text-primary font-bold mb-5 flex items-center gap-2">
               <span className="w-8 h-px bg-primary"></span>
-              The UK's #1 Recruitment Partner For Electrical Wholesale
+              The UK's #1 Recruitment Partner For The Electrical Sector
             </p>
 
             <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6">
@@ -106,7 +106,7 @@ const AboutUs: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
-              The UK's leading headhunters and recruitment specialists dedicated entirely to the electrical wholesale industry.
+              The UK's leading headhunters and recruitment specialists dedicated entirely to the electrical industry.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -137,10 +137,10 @@ const AboutUs: React.FC = () => {
                 We know that every career move is more than just a job change. It may be driven by professional progression and growth, a change in personal circumstances, or simply a desire for a new challenge.
               </p>
               <p>
-                Change can be complex, and the search for what you truly want can be demanding. That's why we take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical wholesale sector achieve the best possible outcome.
+                Change can be complex, and the search for what you truly want can be demanding. That's why we take the time to listen, offering tailored advice and guidance to ensure both candidates and clients across the electrical sector achieve the best possible outcome.
               </p>
               <p>
-                With a longstanding network and extensive experience within the UK electrical wholesale market, we provide all the benefits of a large, international search firm whilst operating with the personal, bespoke service of a local expert.
+                With a longstanding network and extensive experience within the UK electrical industry, we provide all the benefits of a large, international search firm whilst operating with the personal, bespoke service of a local expert.
               </p>
             </div>
           </motion.div>
@@ -272,7 +272,7 @@ const AboutUs: React.FC = () => {
               {
                 icon: 'handshake',
                 title: 'PARTNERSHIPS',
-                desc: 'We invest in building lasting partnerships with both wholesalers and high-performers, fostering success.'
+                desc: 'We invest in building lasting partnerships with both electrical sector clients and high-performers, fostering success.'
               },
               {
                 icon: 'star',

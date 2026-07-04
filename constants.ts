@@ -19,15 +19,15 @@ import officeCollaborationImg from './src/assets/images/office_collaboration.jpg
 export const ROLES_PLACED: string[] = [
   "Branch Manager",
   "Regional Director",
-  "National Sales Manager",
+  "Product Engineering Lead",
   "Operations Director",
-  "Trade Counter Manager",
+  "Specification Manager",
   "Area Sales Manager",
   "Procurement Director",
-  "General Manager",
+  "Estimating Engineer",
   "Commercial Director",
-  "Head of Wholesale",
-  "Depot Manager",
+  "Contracts Manager",
+  "Electrical Design Engineer",
   "Group Sales Director",
 ];
 
@@ -53,7 +53,7 @@ export const PROCESS_STEPS = [
   {
     step: "04",
     title: "Technical Vetting",
-    description: "Every candidate is rigorously assessed for trade counter literacy, commercial acumen, and cultural fit — by consultants who have worked in the sector.",
+    description: "Every candidate is rigorously qualified for technical literacy, sector-specific competence, and commercial acumen across manufacturing, distribution, design, and installation.",
     icon: "verified"
   },
   {
@@ -98,25 +98,25 @@ export const MILESTONES: Milestone[] = [
   {
     year: "2018",
     title: "Operational Origins",
-    description: "Founded on decades of first-hand experience working within UK electrical wholesale operations — we know the industry from the inside.",
+    description: "Founded on decades of first-hand experience working across UK electrical distribution, manufacturing, and contracting operations.",
     icon: "engineering"
   },
   {
     year: "2020",
     title: "Strategic Market Mapping",
-    description: "Built the UK's most comprehensive passive talent database — 25,000+ electrical wholesale professionals mapped and profiled.",
+    description: "Built the UK's most comprehensive passive talent database — 25,000+ electrical sector professionals mapped and profiled.",
     icon: "hub"
   },
   {
     year: "2023",
-    title: "AI-Driven Intelligence",
-    description: "Integrated proprietary AI sourcing tools to identify passive high-performers with greater precision and speed than any competitor.",
+    title: "AI-Driven Sourcing",
+    description: "Integrated proprietary AI sourcing tools to identify passive high-performers across manufacturing, specification, and contracting.",
     icon: "data_object"
   },
   {
     year: "2024",
     title: "National Expansion",
-    description: "Became the trusted talent partner for major national wholesalers and regional buying groups across the entire UK.",
+    description: "Became the trusted talent partner for major manufacturers, national distributors, specifiers, and electrical contractors across the UK.",
     icon: "partner_exchange"
   }
 ];
@@ -125,41 +125,41 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     name: "Thomas Wilson",
     role: "Regional Director",
-    company: "National Electrical Wholesaler",
+    company: "National Electrical Distributor",
     quote: "Power-Up Talent don't just fill vacancies — they provide market intelligence that allows us to outmanoeuvre the competition. They found us a Regional Director we didn't know existed."
   },
   {
     name: "Michael Roberts",
     role: "Managing Director",
-    company: "Independent Buying Group",
-    quote: "Their grasp of operational alignment ensured our new branch launch was staffed with a high-performing leadership team from day one. Worth every penny of the fee."
+    company: "Leading OEM Electrical Manufacturer",
+    quote: "Their grasp of operational alignment and manufacturing supply chains ensured our new facility launch was staffed with a high-performing leadership team from day one."
   },
   {
     name: "Sarah Jenkins",
-    role: "Operations Manager",
-    company: "UK Electrical Distributor",
-    quote: "The only headhunters I've worked with who actually understand the technical requirements of the trade counter environment. They speak our language."
+    role: "Design Practice Lead",
+    company: "UK Specification & Lighting Consultancy",
+    quote: "The only headhunters I've worked with who actually understand the technical requirements of specification and engineering design. They speak our language."
   },
   {
     name: "David Hargreaves",
-    role: "CEO",
-    company: "Wholesale Distribution Group",
-    quote: "We'd used three other agencies and got nowhere. Power-Up placed a calibre of Branch Manager we didn't think existed in our region — within four weeks."
+    role: "Operations Director",
+    company: "M&E Electrical Contracting Group",
+    quote: "We'd used three other agencies and got nowhere. Power-Up placed a calibre of Project Contracts Manager we didn't think existed in our region — within four weeks."
   }
 ];
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "Do you only recruit for electrical wholesale roles?",
-    answer: "We specialise solely in the UK Electrical Wholesale Industry, focusing on supporting wholesale companies with branch managers, regional directors, and executive leadership roles. We also have deep expertise in connected sectors like Fire & Security and Lighting."
+    question: "Which sectors of the electrical industry do you cover?",
+    answer: "We recruit across the entire UK electrical sector. Our core expertise spans Manufacturing (OEMs, product innovators), Distribution (wholesalers, buying groups), Design & Specification (consultancies, lighting design houses), and Installation & Contracting (M&E contracting firms)."
   },
   {
     question: "How do you source passive talent?",
     answer: "We utilise AI-driven market mapping and direct outreach to identify high-performing talent who aren't actively searching for jobs. Our approach is consultative and focused on finding the top 1% of the market."
   },
   {
-    question: "Can you help with branch launches?",
-    answer: "Yes, our 'Growth Partnerships' service is specifically designed for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across the UK."
+    question: "Can you help with facility launches or project team scale-ups?",
+    answer: "Yes, our 'Growth Partnerships' service is specifically designed for businesses undergoing rapid scale, factory expansions, project team mobilisations, or national restructuring across the UK."
   },
   {
     question: "What is your approach to candidate discretion?",
@@ -173,14 +173,14 @@ export const SERVICES: Service[] = [
     name: "Headhunters",
     icon: "person_search",
     tagline: "Headhunting passive high-performers.",
-    description: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across UK electrical wholesale and proactively headhunt proven performers with the track record, local reputation, and commercial credibility to make an immediate impact.",
-    operationalScope: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across UK electrical wholesale and proactively headhunt proven performers with the track record, local reputation, and commercial credibility to make an immediate impact.",
-    methodologyInsight: "We do not rely on job board traffic or generic keyword searches. We map the local market, identify who is genuinely performing in comparable environments, and discreetly approach high-calibre candidates who are rarely active but often open to the right opportunity.",
+    description: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across the UK electrical supply chain — from manufacturing and distribution to specification and installation — and proactively headhunt proven performers with the track record, local reputation, and sector credibility.",
+    operationalScope: "Our Headhunters pillar is built for businesses that need the strongest people in the market, not just the most available. We leverage long-standing relationships across the UK electrical supply chain — from manufacturing and distribution to specification and installation — and proactively headhunt proven performers with the track record, local reputation, and sector credibility.",
+    methodologyInsight: "We do not rely on job board traffic or generic keyword searches. We map the target market, identify who is genuinely performing in comparable environments, and discreetly approach high-calibre candidates who are rarely active but often open to the right opportunity.",
     features: [
       "Confidential direct outreach",
       "Passive talent mapping",
       "Reputation-led shortlisting",
-      "Technical and commercial vetting"
+      "Technical and sector vetting"
     ],
     image: eliteImg
   },
@@ -189,11 +189,11 @@ export const SERVICES: Service[] = [
     name: "Strategic Recruitment",
     icon: "leaderboard",
     tagline: "Local Market Mapping & Competitor Target Recruitment.",
-    description: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, local market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best available talent across every level of your operation.",
-    operationalScope: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, local market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best available talent across every level of your operation.",
-    methodologyInsight: "We co-design the search with you, map the local talent landscape, analyse competitor teams, and identify where the strongest candidates are already delivering results. Unlike executive-only search firms, we apply this elite, insight-led model across all role tiers, from senior leadership and branch management through to business development, internal sales, technical, and counter positions.",
+    description: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best talent across every level of your operation.",
+    operationalScope: "Our Strategic Recruitment pillar is designed for businesses that need more than recruitment delivery; they need a hiring plan built around growth, market conditions, and operational pressure points. We work with you to understand your business, define the real brief behind the vacancy, and design a tailored hiring strategy that helps you secure the best talent across every level of your operation.",
+    methodologyInsight: "We co-design the search with you, map the target talent landscape, analyse competitor teams, and identify where the strongest candidates are already delivering results. Unlike executive-only search firms, we apply this elite, insight-led model across all role tiers, from senior leadership, manufacturing operations, and design engineering through to project management, estimating, and sales positions.",
     features: [
-      "Local market and competitor mapping",
+      "Target market and competitor mapping",
       "Co-designed hiring strategy",
       "All-tier search capability",
       "Insight-led qualification and shortlist design"
@@ -207,7 +207,7 @@ export const SERVICES: Service[] = [
     tagline: "Recruitment Process Outsourcing (RPO) Models.",
     description: "Our Growth Partnerships pillar is for businesses that need a dedicated recruitment function embedded into their operation. We act as an extension of your internal team, managing all or part of your permanent hiring across attraction, sourcing, screening, interview coordination, offer management, and onboarding.",
     operationalScope: "Our Growth Partnerships pillar is for businesses that need a dedicated recruitment function embedded into their operation. We act as an extension of your internal team, managing all or part of your permanent hiring across attraction, sourcing, screening, interview coordination, offer management, and onboarding.",
-    methodologyInsight: "This model is ideal for branch rollouts, multi-hire growth phases, restructuring programmes, or businesses that need consistent recruitment delivery without building a full in-house talent team. We can operate as a visible extension of your brand, giving you a seamless outsourced recruitment partner that reflects your standards, messaging, and market identity.",
+    methodologyInsight: "This model is ideal for facility expansions, project team scale-ups, branch rollouts, restructuring programmes, or businesses that need consistent recruitment delivery without building a full in-house talent team. We can operate as a visible extension of your brand, giving you a seamless outsourced recruitment partner that reflects your standards, messaging, and market identity.",
     features: [
       "End-to-end recruitment delivery",
       "Embedded recruitment partner model",

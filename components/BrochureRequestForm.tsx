@@ -39,17 +39,17 @@ interface Brochure {
 const AVAILABLE_BROCHURES: Brochure[] = [
   {
     id: "salary-guide",
-    title: "2026/2027 UK Electrical Wholesale Salary & Benefits Report",
+    title: "2026/2027 UK Electrical Sector Salary & Benefits Report",
     subtitle: "P&L-Linked Reward Architecture for Top-Tier Performers",
     category: "EXECUTIVE COMPENSATION",
     pages: "24 Pages",
     author: "Power-Up Intelligence Division",
-    description: "An exhaustive analysis of compensations, branch-manager percentages/commission grids, car allowances, and regional benefits across national electrical distributors and leading UK independents (Edmundson, Rexel, CEF, etc.).",
+    description: "An exhaustive analysis of compensations, engineering/management salary bands, car allowances, and regional benefits across national electrical distributors, manufacturers, specifiers, and contractors.",
     outcomes: [
-      "Branch Manager profit-share bonus modeling",
-      "Company EV and car scheme trends in the trade sector",
-      "Retention strategies for multi-site Regional Managers",
-      "Accurate benchmarks of base salary tiers based on annual trade volume"
+      "Key leadership profit-share bonus modeling",
+      "Company EV and car scheme trends in the electrical sector",
+      "Retention strategies for multi-site and project managers",
+      "Accurate benchmarks of base salary tiers based on commercial scope"
     ],
     docUrl: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982124/Gemini_Generated_Image_vrx46xvrx46xvrx4_yq2wbd.png"
   },

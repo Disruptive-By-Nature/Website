@@ -70,15 +70,15 @@ const UploadCV: React.FC = () => {
     { icon: "lock", label: "Total Discretion — NDAs as standard" },
     { icon: "visibility_off", label: "60%+ of our roles are never advertised" },
     { icon: "support_agent", label: "Career-long support & guidance" },
-    { icon: "factory", label: "Deep electrical wholesale sector expertise" },
+    { icon: "factory", label: "Deep electrical sector expertise (manufacturing, distribution, design, contracting)" },
   ];
 
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white">
       <SEO
-        title="Submit Your CV | Join the Power-Up Talent Network | Electrical Wholesale"
-        description="Join the Power-Up Talent passive candidate network. We represent senior electrical wholesale professionals discreetly to the right employers. 100% confidential."
-        keywords="Upload CV Electrical Wholesale, Branch Manager Jobs UK, Regional Director Headhunted, Passive Candidate Network"
+        title="Submit Your CV | Join the Power-Up Talent Network | Electrical Sector"
+        description="Join the Power-Up Talent passive candidate network. We represent senior electrical sector professionals — across engineering, design, manufacturing, distribution, and contracting — discreetly to the right employers."
+        keywords="Upload CV Electrical Sector, Electrical Engineering Jobs UK, Specification Designer Headhunted, Passive Candidate Network"
         canonical="https://poweruptalent.co.uk/upload-cv"
         structuredData={uploadCVStructuredData}
       />
@@ -217,7 +217,7 @@ const UploadCV: React.FC = () => {
                   <div className="flex items-start gap-4">
                     <input type="checkbox" id="gdpr" checked={gdprConsent} onChange={(e) => setGdprConsent(e.target.checked)} className="mt-1 w-5 h-5 accent-primary cursor-pointer shrink-0" />
                     <label htmlFor="gdpr" className="text-slate-400 text-sm font-light leading-relaxed cursor-pointer">
-                      I consent to Power-Up Talent storing my details and contacting me regarding relevant executive opportunities within the electrical wholesale sector.
+                      I consent to Power-Up Talent storing my details and contacting me regarding relevant opportunities within the UK electrical sector.
                       <span className="text-primary"> Privacy Policy.</span>
                     </label>
                   </div>
@@ -271,7 +271,7 @@ const UploadCV: React.FC = () => {
                 <p className="text-slate-300 text-sm font-light italic leading-relaxed mb-4">
                   "Power-Up found me a role I didn't know existed. The process was completely discreet and they understood exactly what I was looking for."
                 </p>
-                <p className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Area Sales Manager — UK Electrical Wholesaler</p>
+                <p className="text-primary text-xs font-bold uppercase tracking-[0.2em]">Project Contracts Manager — Electrical Contracting Group</p>
               </div>
             </div>
           </div>

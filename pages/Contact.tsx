@@ -13,7 +13,7 @@ const contactStructuredData = {
       "@id": "https://poweruptalent.co.uk/contact#webpage",
       "url": "https://poweruptalent.co.uk/contact",
       "name": "Contact Power-Up Talent",
-      "description": "Brief Power-Up Talent on your next executive hire. UK's specialist headhunters for the electrical wholesale industry. Confidential, fast, and precise.",
+      "description": "Brief Power-Up Talent on your next executive or technical hire. UK's specialist headhunters for the electrical industry. Confidential, fast, and precise.",
       "contactPoint": [
         {
           "@type": "ContactPoint",
@@ -40,9 +40,9 @@ const Contact: React.FC = () => {
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white">
       <SEO
-        title="Contact Us | Brief Power-Up Talent | UK Electrical Wholesale Headhunters"
-        description="Brief Power-Up Talent on your next executive hire. UK's specialist headhunters for the electrical wholesale industry. Confidential, fast, and precise."
-        keywords="Contact Power-Up Talent, Electrical Wholesale Recruitment Brief, Headhunter Enquiry UK"
+        title="Contact Us | Brief Power-Up Talent | UK Electrical Sector Headhunters"
+        description="Brief Power-Up Talent on your next hire. UK's specialist headhunters for the electrical industry — manufacturing, distribution, design, and installation. Confidential, fast, and precise."
+        keywords="Contact Power-Up Talent, Electrical Recruitment Brief, Headhunter Enquiry UK"
         canonical="https://poweruptalent.co.uk/contact"
         structuredData={contactStructuredData}
       />
@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                 <span className="text-primary text-[10px] font-bold uppercase tracking-[0.3em] block mb-4">For Candidates</span>
                 <h3 className="text-xl font-display font-black uppercase tracking-tight mb-3">Looking for Your Next Role?</h3>
                 <p className="text-slate-300 text-sm font-light leading-relaxed mb-6">
-                  Join our passive talent network. We represent senior electrical wholesale professionals to the right employers — discreetly, and only with your consent.
+                  Join our passive talent network. We represent senior electrical sector professionals — across engineering, design, manufacturing, distribution, and contracting — to the right employers — discreetly, and only with your consent.
                 </p>
                 <Link to="/upload-cv" className="inline-flex items-center gap-2 bg-primary text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white transition-all">
                   Submit Your CV

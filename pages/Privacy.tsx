@@ -15,7 +15,7 @@ const Privacy: React.FC = () => {
         <div className="prose prose-invert prose-slate max-w-none space-y-8 text-slate-400 font-light text-lg">
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">1. Data Collection</h2>
-            <p>Power-Up Talent Ltd collects personal data necessary for recruitment and headhunting services in the UK electrical wholesale sector. This includes contact details, employment history, and professional qualifications provided via CV submissions or professional networking platforms.</p>
+            <p>Power-Up Talent Ltd collects personal data necessary for recruitment and headhunting services in the UK electrical sector. This includes contact details, employment history, and professional qualifications provided via CV submissions or professional networking platforms.</p>
           </section>
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">2. Use of Information</h2>

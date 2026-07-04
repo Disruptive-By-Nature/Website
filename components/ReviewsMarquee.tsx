@@ -12,7 +12,7 @@ const REVIEWS_ROW_1: Review[] = [
     quote: "Power-Up Talent's hybrid approach is a game-changer. Their AI found candidates we never would have, and their human touch ensured a perfect cultural fit.",
     name: "David",
     role: "Managing Director",
-    company: "National Wholesaler"
+    company: "National Distributor"
   },
   {
     quote: "We struggled to find a Branch Manager for our flagship Edmundson depot. Power-Up mapped the local market within 7 days and delivered three outstanding profiles.",
@@ -39,10 +39,10 @@ const REVIEWS_ROW_1: Review[] = [
     company: "Independent Buying Group"
   },
   {
-    quote: "They managed to source a senior Procurement Lead who negotiated better terms with our top-tier cable suppliers within weeks of starting.",
+    quote: "They managed to source a senior R&D Engineering Lead who accelerated our switchgear product development timeline by three months.",
     name: "George",
-    role: "Operations Director",
-    company: "Medlock Electrical"
+    role: "Technical Director",
+    company: "OEM Electrical Manufacturer"
   },
   {
     quote: "Power-Up delivered a high-calibre Assistant Branch Manager when our usual recruitment channels failed. Highly recommend their market mapping service.",
@@ -162,10 +162,10 @@ const REVIEWS_ROW_2: Review[] = [
     company: "Elite Electrical Wholesalers"
   },
   {
-    quote: "We needed a candidate who understood EV charging infrastructure sales. Power-Up found a passive specialist who hit the ground running.",
+    quote: "We needed an Estimating Lead who understood EV infrastructure contracts. Power-Up found a passive specialist who hit the ground running.",
     name: "Jeffrey",
-    role: "Business Development Director",
-    company: "UK Wholesaler"
+    role: "Contracts Director",
+    company: "M&E Electrical Contracting Group"
   },
   {
     quote: "They mapped the North West region to find us a Regional Sales Manager. The level of detail in their market mapping was exceptionally impressive.",
@@ -186,10 +186,10 @@ const REVIEWS_ROW_2: Review[] = [
     company: "Electrical Wholesaler"
   },
   {
-    quote: "They found us a National Accounts Manager who brought key relationships with major electrical contractors. A game-changing placement.",
+    quote: "They found us a Senior Electrical Design Engineer who brought key relationships with specification clients. A game-changing placement.",
     name: "Scott",
-    role: "Managing Director",
-    company: "Lighting Specialist"
+    role: "Design Director",
+    company: "Electrical Design Practice"
   },
   {
     quote: "Professional, knowledgeable, and responsive. They are our go-to talent partner for all senior branch and regional roles.",

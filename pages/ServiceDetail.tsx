@@ -3,9 +3,10 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { SERVICES } from '../constants';
 import SEO from '../components/SEO';
-import wholesaleImg from '../src/assets/images/fuse_board.png';
-import securityImg from '../src/assets/images/fire_security.png';
-import lightingImg from '../src/assets/images/emergency_exit.png';
+import manufacturingImg from '../src/assets/images/fuse_board.png';
+import distributionImg from '../src/assets/images/warehouse_forklift.jpg';
+import designImg from '../src/assets/images/building_compliance_docs.png';
+import installationImg from '../src/assets/images/ev_charging_station.png';
 import forgedInIndustryImg from '../src/assets/images/forged_in_industry.jpg';
 
 const ServiceDetail: React.FC = () => {
@@ -24,18 +25,19 @@ const ServiceDetail: React.FC = () => {
   };
 
   const transformItems = [
-    { icon: 'schedule', title: 'Accelerated Hiring', stat: '50% Lead Time Reduction', desc: 'Secure critical talent quickly before buying group windows shift.' },
-    { icon: 'person_search', title: 'Precision Hires', stat: 'Predictive Success', desc: 'Operational modelling ensures candidates align with branch margin protection goals.' },
-    { icon: 'currency_pound', title: 'Operational ROI', stat: '30% Cost-Per-Hire Lower', desc: 'Efficiency through technical headhunting rather than generic CV skimming.' },
-    { icon: 'diversity_3', title: 'Balanced Teams', stat: 'Unbiased Sourcing', desc: 'Building inclusive, high-performing cultures across national branch networks.' },
-    { icon: 'trending_up', title: 'Scalability', stat: 'Hybrid Deployment', desc: 'Agile support for rapid branch rollouts and regional restructuring.' },
+    { icon: 'schedule', title: 'Accelerated Hiring', stat: '50% Lead Time Reduction', desc: 'Secure critical leadership and engineering talent before project or supply windows shift.' },
+    { icon: 'person_search', title: 'Precision Hires', stat: 'Predictive Success', desc: 'Operational vetting ensures candidates align with performance, engineering, or distribution margin goals.' },
+    { icon: 'currency_pound', title: 'Operational ROI', stat: '30% Cost-Per-Hire Lower', desc: 'Sustained profitability through technical headhunting rather than generic CV skimming.' },
+    { icon: 'diversity_3', title: 'Balanced Teams', stat: 'Unbiased Sourcing', desc: 'Building inclusive, high-performing cultures across engineering, manufacturing, and distribution sites.' },
+    { icon: 'trending_up', title: 'Scalability', stat: 'Hybrid Deployment', desc: 'Agile support for rapid site scale-ups, branch rollouts, and project mobilisations.' },
     { icon: 'analytics', title: 'Sector Intel', stat: 'Real-Time Mapping', desc: 'Live data on competitor procurement leads and regional salary benchmarks.' },
   ];
 
   const expertSectors = [
-    { img: wholesaleImg, title: 'Electrical Wholesale', desc: 'Specialised Branch and Regional leadership sourcing for national distributors and independent buying groups.' },
-    { img: securityImg, title: 'Fire & Security', desc: 'Technical experts and management for life-safety systems, fire protection, and secure infrastructure.' },
-    { img: lightingImg, title: 'Lighting & Design', desc: 'Creative and technical procurement leads for high-specification industrial and commercial lighting.' }
+    { img: manufacturingImg, title: 'Manufacturing', desc: 'Sourcing leaders, technical specialists, R&D engineers, and commercial heads for electrical manufacturers (OEMs, switchgear, controls, lighting, cables).' },
+    { img: distributionImg, title: 'Distribution & Wholesale', desc: 'Specialised leadership, buying group management, regional directorships, and branch development for electrical wholesalers and distributors.' },
+    { img: designImg, title: 'Design & Specification', desc: 'Sourcing lighting designers, electrical design engineers, specification managers, and estimating specialists for consultancies and specification houses.' },
+    { img: installationImg, title: 'Installation & Contracting', desc: 'Project managers, contract managers, estimating engineers, and operations directors for small-to-large-scale electrical contractors.' }
   ];
 
   const serviceStructuredData = {
@@ -313,11 +315,11 @@ const ServiceDetail: React.FC = () => {
               Industry Experts.
             </h2>
             <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
-              Our consultants have worked in the electrical wholesale industry for decades. We speak your language.
+              Our consultants have worked across the electrical industry supply chain for decades. We speak your language.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {expertSectors.map((sector, i) => (
               <motion.div
                 key={i}

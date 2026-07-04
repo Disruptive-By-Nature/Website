@@ -7,9 +7,9 @@ const WhyUs: React.FC = () => {
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white">
       <SEO 
-        title="Why Choose Power-Up Talent? | UK Electrical Wholesale Recruitment"
-        description="Discover why Power-Up Talent is the UK's premier strategic talent partner for electrical wholesale. Our operational grit, trade literacy, and strategic alignment set us apart."
-        keywords="Why Choose Power-Up Talent, Electrical Wholesale Recruitment Advantages, UK Electrical Sector Expertise, Operational Grit Recruitment"
+        title="Why Choose Power-Up Talent? | UK Electrical Sector Recruitment"
+        description="Discover why Power-Up Talent is the UK's premier strategic talent partner for the electrical industry. Our operational grit, sector literacy, and strategic alignment set us apart."
+        keywords="Why Choose Power-Up Talent, Electrical Recruitment Advantages, UK Electrical Sector Expertise, Operational Grit Recruitment"
         canonical="https://poweruptalent.co.uk/why-us"
       />
       {/* 1. Hero - Sector Intelligence Focus */}
@@ -29,7 +29,7 @@ const WhyUs: React.FC = () => {
           </h1>
           
           <p className="text-slate-400 text-xl md:text-3xl font-light leading-relaxed max-w-3xl mx-auto text-balance">
-            We understand the reality of the trade counter and the strategic demands of board-level wholesale leadership.
+            We understand the operational realities of manufacturing, distribution, design, and site installation, as well as the demands of executive sector leadership.
           </p>
         </div>
       </header>

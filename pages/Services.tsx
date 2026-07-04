@@ -65,9 +65,9 @@ const Services: React.FC = () => {
   return (
     <>
       <SEO
-        title="Recruitment Services for Electrical Wholesale | Power-Up Talent"
-        description="Elite recruitment, strategic search and growth partnerships for the UK electrical wholesale sector. Specialist headhunting that delivers results."
-        keywords="electrical wholesale recruitment, headhunting services, executive search, branch manager recruitment"
+        title="Recruitment Services for the Electrical Sector | Power-Up Talent"
+        description="Elite recruitment, strategic search and growth partnerships for the UK electrical industry. Specialist headhunting across manufacturing, distribution, design, and contracting."
+        keywords="electrical industry recruitment, headhunting services, executive search, manufacturing recruitment, engineering specification design, electrical contractor recruitment"
         canonical="https://poweruptalent.co.uk/services"
         structuredData={servicesStructuredData}
       />
@@ -92,7 +92,7 @@ const Services: React.FC = () => {
               <span className="text-gradient italic">Elite</span><br/>Headhunters
             </h1>
             <p className="text-slate-300 font-light text-lg max-w-xl mb-8">
-              We headhunt and place exceptional sales, leadership and technical talent that drives real commercial impact for electrical wholesalers.
+              We headhunt and place exceptional sales, engineering, and leadership talent that drives real commercial impact across the electrical sector.
             </p>
             <div className="flex flex-wrap gap-4">
               <a href="https://powercrm-daa67.web.app/" target="_blank" rel="noopener noreferrer"
@@ -117,7 +117,7 @@ const Services: React.FC = () => {
               WHY POWER-UP TALENT?
             </h2>
             <p className="text-slate-400 text-base leading-relaxed font-light">
-              What sets us apart is our profound expertise in the UK electrical wholesale landscape. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of margin protection, procurement cycles, and local trade counter management.
+              What sets us apart is our profound expertise across the UK electrical supply chain. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of manufacturing operations, distribution models, design specifications, and site installation pressures.
             </p>
           </motion.div>
 
@@ -133,7 +133,7 @@ const Services: React.FC = () => {
                 </div>
                 <h3 className="font-display font-bold text-base text-white uppercase tracking-wider mb-4">TECHNICAL GRIT</h3>
                 <p className="text-slate-400 leading-relaxed text-sm font-light">
-                  Our team consists of seasoned professionals who speak the language of the trade counter. We understand Rexel pricing models, Edmundson structures, and the nuances of independent buying groups.
+                  Our team consists of seasoned professionals who understand manufacturing operations, distribution networks, design specification cycles, and contracting delivery.
                 </p>
               </div>
             </motion.div>
@@ -229,7 +229,7 @@ const Services: React.FC = () => {
           <motion.div {...fadeInUp} className="mb-8">
             <h3 className="font-display font-bold text-xl text-white mb-6">Roles We Recruit</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-              {["Branch Managers", "Sales Managers", "Internal Sales Representatives", "Commercial Directors", "Category Managers", "Technical Sales Specialists", "Operations Managers", "Regional Managers"].map((role, i) => (
+              {["Operations Directors", "Electrical Design Engineers", "Project Managers", "Technical Sales Specialists", "Product Engineers", "Contracts Managers", "Estimators", "Regional Directors"].map((role, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-slate-300 font-light">
                   <span className="material-symbols-outlined text-primary text-sm">check_circle</span>
                   {role}

@@ -23,7 +23,7 @@ const Cookies: React.FC = () => {
           </section>
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">3. Performance & Analytics</h2>
-            <p>We use aggregated, anonymous data to understand how users interact with our sector-focused content. This helps us refine our digital experience for the electrical wholesale community.</p>
+            <p>We use aggregated, anonymous data to understand how users interact with our sector-focused content. This helps us refine our digital experience for the UK electrical community.</p>
           </section>
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">4. Managing Preferences</h2>

@@ -43,7 +43,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-4 flex flex-col gap-5">
             <Logo size="lg" />
             <p className="text-slate-400 text-sm font-light leading-relaxed max-w-sm">
-              The UK's #1 Headhunters and recruitment specialists for the electrical wholesale industry.
+              The UK's #1 Headhunters and recruitment specialists for the electrical industry — spanning manufacturing, distribution, design, and installation.
             </p>
 
           </div>

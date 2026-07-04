@@ -12,7 +12,7 @@ const homeStructuredData = {
       "@id": "https://poweruptalent.co.uk/#website",
       "url": "https://poweruptalent.co.uk/",
       "name": "Power-Up Talent",
-      "description": "Elite headhunters and recruitment specialists for the UK electrical wholesale industry."
+      "description": "Elite headhunters and recruitment specialists for the UK electrical industry — manufacturing, distribution, design, and installation."
     },
     {
       "@type": "Organization",
@@ -45,10 +45,12 @@ const homeStructuredData = {
       },
       "areaServed": "GB",
       "knowsAbout": [
-        "Electrical Wholesale",
-        "Headhunting",
-        "Recruitment",
-        "Strategic Talent Sourcing"
+        "Electrical Industry Sourcing",
+        "OEM Manufacturing",
+        "Wholesale Distribution",
+        "Design & Specification",
+        "M&E Contracting & Installation",
+        "Headhunting"
       ]
     }
   ]
@@ -78,9 +80,9 @@ const Home: React.FC = () => {
   return (
     <>
       <SEO
-        title="Elite Headhunters for UK Electrical Wholesale | Power-Up Talent"
-        description="The UK's #1 headhunters for electrical wholesale. We connect elite sales, leadership and technical talent with the UK's most ambitious electrical wholesale businesses."
-        keywords="electrical wholesale headhunter, uk recruitment, branch manager recruiter, executive search electrical wholesale, headhunting"
+        title="Elite Headhunters for the UK Electrical Sector | Power-Up Talent"
+        description="The UK's #1 headhunters for the electrical industry. We connect elite sales, engineering, and leadership talent with ambitious businesses across manufacturing, distribution, design, and installation."
+        keywords="electrical industry headhunter, uk electrical recruitment, manufacturing recruitment, specification design engineering, electrical contractor recruiter, headhunting"
         canonical="https://poweruptalent.co.uk/"
         structuredData={homeStructuredData}
       />
@@ -104,7 +106,7 @@ const Home: React.FC = () => {
           >
             <p className="text-[11px] uppercase tracking-[0.25em] text-primary font-bold mb-5 flex items-center gap-2">
               <span className="w-8 h-px bg-primary"></span>
-              The UK's #1 Recruitment Partner For Electrical Wholesale
+              The UK's #1 Recruitment Partner For The Electrical Sector
             </p>
 
             <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6">
@@ -113,7 +115,7 @@ const Home: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
-              We connect the best sales, leadership and technical talent with the UK's most ambitious electrical wholesale businesses.
+              We connect elite sales, engineering, and leadership talent with the UK's most ambitious manufacturers, distributors, design practices, and contracting firms.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -180,7 +182,7 @@ const Home: React.FC = () => {
               STRATEGIC <span className="text-primary italic">PILLARS.</span>
             </h2>
             <p className="text-slate-400 text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
-              We operate through three specialised methodologies built to target and secure elite talent. We take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical wholesale sector achieve the best possible outcome.
+              We operate through three specialised methodologies built to target and secure elite talent. We take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical sector achieve the best possible outcome.
             </p>
           </div>
 
@@ -262,7 +264,7 @@ const Home: React.FC = () => {
               WHY POWER-UP TALENT?
             </h2>
             <p className="text-slate-600 text-base leading-relaxed font-light">
-              What sets us apart is our profound expertise in the UK electrical wholesale landscape. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of margin protection, procurement cycles, and local trade counter management.
+              What sets us apart is our profound expertise across the UK electrical supply chain. We move beyond generic recruitment to offer specialised talent logic, understanding the irreplaceable importance of manufacturing operations, distribution models, design specifications, and site installation pressures.
             </p>
           </div>
 
@@ -271,7 +273,7 @@ const Home: React.FC = () => {
               {
                 icon: "rocket_launch",
                 title: "TECHNICAL GRIT",
-                desc: "Our team consists of seasoned professionals who speak the language of the trade counter. We understand Rexel pricing models, Edmundson structures, and the nuances of independent buying groups.",
+                desc: "Our team consists of seasoned professionals who understand manufacturing operations, distribution networks, design specification cycles, and contracting delivery.",
                 isFeatured: false
               },
               {
@@ -331,7 +333,7 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { icon: "schedule", title: "Faster Hiring", highlight: "50% Reduction", desc: "Fill critical branch roles efficiently to minimise vacancy loss and retain market share." },
+              { icon: "schedule", title: "Faster Hiring", highlight: "50% Reduction", desc: "Fill critical leadership and technical roles efficiently to minimise vacancy loss and retain market momentum." },
               { icon: "person_search", title: "Better Hires", highlight: "Predictive Vetting", desc: "Deep technical screening ensures candidates possess commercial grit and industry longevity." },
               { icon: "payments", title: "Cost Savings", highlight: "30% Lower CPH", desc: "Reduce cost-per-hire via proactive headhunting instead of expensive, passive agency search." },
               { icon: "groups", title: "Diverse Teams", highlight: "Inclusive Search", desc: "Remove local bias to identify innovative and highly capable sales talent across UK hubs." },
@@ -384,8 +386,8 @@ const Home: React.FC = () => {
                 desc: 'Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely "looking" for work; they are busy delivering results for your competitors.',
               },
               {
-                title: 'TRADE LITERACY',
-                desc: 'Our consultants are sector specialists with deep operational backgrounds. We speak the language of technical procurement and branch management, ensuring a peer-level vetting process standard recruiters cannot match.',
+                title: 'SECTOR LITERACY',
+                desc: 'Our consultants are sector specialists with deep operational backgrounds. We speak the language of engineering design, manufacturing supply chains, distribution networks, and contracting delivery, ensuring a peer-level vetting process.',
               },
               {
                 title: 'PASSIVE TALENT NETWORK',

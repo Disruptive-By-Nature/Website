@@ -31,8 +31,8 @@ const Insights: React.FC = () => {
     <>
       <SEO
         title="Information Hub | Sector Sourcing Intelligence"
-        description="Access modern sector commentary on UK electrical wholesale talent strategies, fire & security compliance, and emergency lighting design guides."
-        keywords="electrical wholesale information, wholesale recruitment guides, emergency lighting compliance, fire safety sourcing"
+        description="Access modern sector commentary on UK electrical industry talent strategies, engineering compliance, and design guides."
+        keywords="electrical industry information, electrical recruitment guides, design engineering compliance, contractor recruitment sourcing"
         canonical="https://poweruptalent.co.uk/insights"
       />
 
@@ -56,7 +56,7 @@ const Insights: React.FC = () => {
               INDUSTRY <span className="text-gradient italic">INTELLIGENCE</span>.
             </h1>
             <p className="text-lg md:text-xl text-slate-300 max-w-2xl leading-relaxed font-light">
-              Specialised market analysis and sector comments engineered exclusively for the UK electrical wholesale landscape.
+              Specialised market analysis and sector comments engineered exclusively for the UK electrical industry.
             </p>
           </motion.div>
         </div>
@@ -69,7 +69,7 @@ const Insights: React.FC = () => {
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Market Insights</span>
             <h2 className="font-display font-black text-3xl md:text-5xl text-white uppercase mt-2">Industry Articles</h2>
             <p className="text-slate-400 text-sm md:text-base font-light mt-4 max-w-2xl mx-auto">
-              Read our latest commentary on UK electrical wholesale talent strategies, market regulations, and operational management guides.
+              Read our latest commentary on UK electrical industry talent strategies, engineering compliance, and operational management guides.
             </p>
           </div>
 

@@ -48,7 +48,7 @@ const BlogPostDetail: React.FC = () => {
       <SEO 
         title={`${post.title} | Power-Up Talent Insights`}
         description={post.excerpt}
-        keywords={`${post.category}, electrical wholesale, recruitment, talent strategy, ${post.title}`}
+        keywords={`${post.category}, electrical sector, recruitment, talent strategy, ${post.title}`}
         canonical={`https://poweruptalent.co.uk/insights/${post.id}`}
         structuredData={blogPostStructuredData}
       />
