@@ -122,7 +122,32 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
-      {/* ── SECTION 2: OUR APPROACH: THE HYBRID ADVANTAGE ── */}
+      {/* ── SECTION 2: WHAT WE DO ── */}
+      <section className="bg-white text-slate-900 py-24 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="space-y-6">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">
+              Our Capabilities
+            </span>
+            <h2 className="font-display font-black text-3xl md:text-5xl text-navy-deep uppercase tracking-tight">
+              What We Do
+            </h2>
+            <div className="space-y-4 text-slate-500 font-light leading-relaxed text-base">
+              <p>
+                We know that every career move is more than just a job change. It may be driven by professional progression and growth, a change in personal circumstances, or simply a desire for a new challenge.
+              </p>
+              <p>
+                Change can be complex, and the search for what you truly want can be demanding. That's why we take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical wholesale sector achieve the best possible outcome.
+              </p>
+              <p>
+                With a longstanding network and extensive experience within the UK electrical wholesale market, we provide all the benefits of a large, international search firm whilst operating with the personal, bespoke service of a local expert.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── SECTION 3: OUR APPROACH: THE HYBRID ADVANTAGE ── */}
       <section className="bg-background-dark py-24 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div {...fadeInUp} className="text-center mb-16 max-w-4xl mx-auto">
@@ -203,31 +228,6 @@ const AboutUs: React.FC = () => {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* ── SECTION 3: WHAT WE DO ── */}
-      <section className="bg-white text-slate-900 py-24 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="space-y-6">
-            <span className="text-xs font-bold uppercase tracking-widest text-primary">
-              Our Capabilities
-            </span>
-            <h2 className="font-display font-black text-3xl md:text-5xl text-navy-deep uppercase tracking-tight">
-              What We Do
-            </h2>
-            <div className="space-y-4 text-slate-500 font-light leading-relaxed text-base">
-              <p>
-                We know that every career move is more than just a job change. It may be driven by professional progression and growth, a change in personal circumstances, or simply a desire for a new challenge.
-              </p>
-              <p>
-                Change can be complex, and the search for what you truly want can be demanding. That's why we take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical wholesale sector achieve the best possible outcome.
-              </p>
-              <p>
-                With a longstanding network and extensive experience within the UK electrical wholesale market, we provide all the benefits of a large, international search firm whilst operating with the personal, bespoke service of a local expert.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </section>
 
