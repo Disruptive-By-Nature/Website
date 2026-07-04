@@ -310,16 +310,16 @@ const AboutUs: React.FC = () => {
       {/* ── SECTION 6: OUR COMMITMENT ── */}
       <section className="bg-navy-deep py-24 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div {...fadeInUp} className="mb-12">
+          <motion.div {...fadeInUp} className="mb-12 text-center">
             <h2 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight mb-6">
               OUR <span className="text-primary">COMMITMENT.</span>
             </h2>
-            <p className="text-slate-300 text-lg font-light leading-relaxed max-w-2xl">
+            <p className="text-slate-300 text-lg font-light leading-relaxed max-w-2xl mx-auto">
               We are committed to a transparent, ethical, and innovative approach that delivers measurable operational impact for your organisation.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-3xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-3xl mx-auto">
             {[
               {
                 icon: 'visibility',
