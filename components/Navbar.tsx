@@ -11,9 +11,9 @@ const strategicPillarsLinks = [
 ];
 
 const specialismLinks = [
-  { name: "Construction", path: "/?scroll=specialisms&spec=construction", desc: "Commercial & operational construction headhunting" },
-  { name: "Engineering", path: "/?scroll=specialisms&spec=engineering", desc: "Design & technical engineering specialists" },
-  { name: "Electrical", path: "/?scroll=specialisms&spec=electrical", desc: "Wholesale, manufacturing & contracting" },
+  { name: "Construction", path: "/specialisms/construction", desc: "Commercial & operational construction headhunting" },
+  { name: "Engineering", path: "/specialisms/engineering", desc: "Design & technical engineering specialists" },
+  { name: "Electrical", path: "/specialisms/electrical", desc: "Wholesale, manufacturing & contracting" },
 ];
 
 
@@ -189,7 +189,7 @@ const Navbar: React.FC = () => {
             label="Specialisms"
             items={specialismLinks}
             heading="Our Specialisms"
-            isActive={location.pathname === "/" && location.search.includes("scroll=specialisms")}
+            isActive={location.pathname.startsWith("/specialisms/")}
           />
 
           {/* About Us */}

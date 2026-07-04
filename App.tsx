@@ -13,6 +13,7 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import Insights from './pages/Insights';
 import BlogPostDetail from './pages/BlogPostDetail';
+import SpecialismDetail from './pages/SpecialismDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
+            <Route path="/specialisms/:id" element={<SpecialismDetail />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/news" element={<News />} />
             <Route path="/upload-cv" element={<UploadCV />} />
