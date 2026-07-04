@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 mb-14">
 
           {/* Column 1 — Brand */}
-          <div className="lg:col-span-4 flex flex-col gap-5">
+          <div className="lg:col-span-3 flex flex-col gap-5">
             <Logo size="lg" />
             <p className="text-slate-400 text-sm font-light leading-relaxed max-w-sm">
               The UK's #1 Headhunters and recruitment specialists for the electrical industry — spanning manufacturing, distribution, design, and installation.
@@ -59,11 +59,13 @@ const Footer: React.FC = () => {
             </nav>
           </div>
 
-          {/* Column 3 — For Candidates */}
+          {/* Column 3 — Specialisms */}
           <div className="lg:col-span-2">
-            <FooterHeading>For Candidates</FooterHeading>
+            <FooterHeading>Specialisms</FooterHeading>
             <nav className="flex flex-col gap-0.5">
-              <FooterLink to="/upload-cv">Register Your CV</FooterLink>
+              <FooterLink to="/specialisms/construction">Construction</FooterLink>
+              <FooterLink to="/specialisms/engineering">Engineering</FooterLink>
+              <FooterLink to="/specialisms/electrical">Electrical</FooterLink>
             </nav>
           </div>
 
@@ -74,6 +76,7 @@ const Footer: React.FC = () => {
               <FooterLink to="/about">About Us</FooterLink>
               <FooterLink to="/insights">Information</FooterLink>
               <FooterLink to="/contact">Contact Us</FooterLink>
+              <FooterLink to="/upload-cv">Register Your CV</FooterLink>
             </nav>
           </div>
 
