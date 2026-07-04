@@ -43,9 +43,9 @@ const Chatbot: React.FC = () => {
 
   const initChat = () => {
     if (!chatInstance.current) {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: "AQ.Ab8RN6LKH8PUuMjsoSdk3BsEwIx9GkaSzRW9Vbeh5yM3W1NNUA" });
       chatInstance.current = ai.chats.create({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.0-flash',
         config: {
           systemInstruction: `You are the lead developer and brand strategist for Power-Up Talent. Your core identity is a "Strategic Partner" for the UK electrical wholesale sector.
 
