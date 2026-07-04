@@ -12,7 +12,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'model', 
-      text: "Welcome to Power-Up Talent. I am your strategic consultancy assistant. How may I assist your organisation with market mapping or executive leadership acquisition today?" 
+      text: "Welcome to Power-Up Talent. We help UK electrical wholesalers hire better through specialist recruitment, proactive headhunting, and search-led hiring support. How can we help today?" 
     }
   ]);
   const [input, setInput] = useState('');
@@ -121,9 +121,9 @@ STRICT GUIDELINES:
   };
 
   return (
-    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] flex flex-col items-end gap-3 md:gap-4">
+    <div className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[100] flex flex-col items-end gap-3 md:gap-4" style={{maxWidth: 'calc(100vw - 2rem)'}}>
       {isOpen && (
-        <div className="w-[92vw] md:w-[450px] h-[600px] md:h-[700px] bg-navy-deep border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden backdrop-blur-2xl animate-fade-in">
+        <div className="w-[min(420px,calc(100vw-2rem))] bg-navy-deep border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden backdrop-blur-2xl animate-fade-in" style={{height: 'min(600px, calc(100dvh - 6rem))', maxHeight: 'calc(100dvh - 6rem)'}}>
           <div className="bg-primary p-4 md:p-6 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-black rounded-xl flex items-center justify-center">
