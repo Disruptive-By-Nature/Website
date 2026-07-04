@@ -46,18 +46,6 @@ const Footer: React.FC = () => {
               The UK's #1 Headhunters and recruitment specialists for the electrical wholesale industry.
             </p>
 
-            {/* LinkedIn */}
-            <div className="flex items-center gap-3 mt-1">
-              <a
-                href="https://www.linkedin.com/company/power-up-talent"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 border border-white/10 rounded-sm flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all duration-200"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon />
-              </a>
-            </div>
           </div>
 
           {/* Column 2 — Strategic Pillars */}

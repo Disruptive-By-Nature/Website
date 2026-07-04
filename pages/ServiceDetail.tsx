@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 import wholesaleImg from '../src/assets/images/fuse_board.png';
 import securityImg from '../src/assets/images/fire_security.png';
 import lightingImg from '../src/assets/images/emergency_exit.png';
-import officeCollaborationImg from '../src/assets/images/office_collaboration.jpg';
+import forgedInIndustryImg from '../src/assets/images/forged_in_industry.jpg';
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -248,8 +248,8 @@ const ServiceDetail: React.FC = () => {
               className="rounded-lg overflow-hidden border border-slate-200 shadow-md"
             >
               <img
-                src={officeCollaborationImg}
-                alt="Two business professionals shaking hands"
+                src={forgedInIndustryImg}
+                alt="Electrical wholesale professional in a branch"
                 className="w-full h-full object-cover"
               />
             </motion.div>

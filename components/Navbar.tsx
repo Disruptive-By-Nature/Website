@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
           : "bg-navy-deep/90 backdrop-blur-md border-b border-white/5"
       }`}
     >
-      {/* ── top utility strip (email + linkedin) ── */}
+      {/* ── top utility strip (email only) ── */}
       <div className="hidden lg:flex max-w-screen-xl mx-auto px-6 h-7 items-center justify-end gap-4 border-b border-white/5 text-[10px]">
         <a
           href="mailto:poweruptalent@gmail.com"
@@ -148,15 +148,6 @@ const Navbar: React.FC = () => {
         >
           <span className="material-symbols-outlined text-[13px]">mail</span>
           poweruptalent@gmail.com
-        </a>
-        <a
-          href="https://www.linkedin.com/company/power-up-talent"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-slate-500 hover:text-primary transition-colors"
-          aria-label="LinkedIn"
-        >
-          <LinkedInIcon className="w-3.5 h-3.5" />
         </a>
       </div>
 
@@ -221,17 +212,6 @@ const Navbar: React.FC = () => {
 
           {/* divider */}
           <div className="w-px h-5 bg-white/10" />
-
-          {/* LinkedIn icon */}
-          <a
-            href="https://www.linkedin.com/company/power-up-talent"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-primary transition-colors"
-            aria-label="LinkedIn"
-          >
-            <LinkedInIcon className="w-4 h-4" />
-          </a>
 
           {/* Email icon */}
           <a
@@ -316,15 +296,6 @@ const Navbar: React.FC = () => {
               >
                 <span className="material-symbols-outlined text-[14px]">mail</span>
                 poweruptalent@gmail.com
-              </a>
-              <a
-                href="https://www.linkedin.com/company/power-up-talent"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-primary transition-colors"
-                aria-label="LinkedIn"
-              >
-                <LinkedInIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
