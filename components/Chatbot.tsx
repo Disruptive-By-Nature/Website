@@ -70,7 +70,7 @@ STRICT GUIDELINES:
 
     try {
       initChat();
-      const response = await chatInstance.current!.sendMessage({ message: `Provide a professional overview of our ${serviceName} service for a Regional Director in the UK electrical wholesale sector.` });
+      const response = await chatInstance.current!.sendMessage({ message: `Provide a professional overview of our ${serviceName} service for a Director or hiring manager in the UK Construction, Engineering, or Electrical sectors.` });
       const botText = response.text || "Apologies, I encountered a connection issue. Please try again.";
       setMessages(prev => [...prev, { role: 'model', text: botText }]);
     } catch (error) {

@@ -55,33 +55,33 @@ const AVAILABLE_BROCHURES: Brochure[] = [
   },
   {
     id: "vetting-blueprint",
-    title: "Branch Manager Vetting Blueprint: 10 Trade Counter Frameworks",
-    subtitle: "Assessing Margin Integrity & P&L Literacy under Fire",
+    title: "Sourcing & Vetting Blueprint: 10 Leadership Vetting Frameworks",
+    subtitle: "Assessing Strategic Vision & Operational Vigor under Fire",
     category: "SOURCING INTELLIGENCE",
     pages: "18 Pages",
     author: "Headhunting Operations Team",
-    description: "Our proprietary guide detailing exactly how we vet active and passive candidates on commercial acumen, wholesale stock turn ratios, supplier rebate mechanisms, and trade counter team leadership.",
+    description: "Our proprietary guide detailing exactly how we vet active and passive candidates on commercial acumen, project delivery timelines, engineering standards, and team leadership.",
     outcomes: [
-      "The 'Trade Counter Margin Check' scenario tests",
-      "Dissecting real versus artificial gross profit gains",
+      "The 'Project Delivery & Risk Management' scenario tests",
+      "Dissecting real versus artificial candidate track records",
       "How to run non-disruptive, highly discrete candidate lookups",
-      "Evaluating local client base migration probability"
+      "Evaluating candidate client-base migration probability"
     ],
     docUrl: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982124/Gemini_Generated_Image_vrx46xvrx46xvrx4_yq2wbd.png"
   },
   {
     id: "rollout-playbook",
-    title: "National Rollout Sourcing Playbook: Scaling Wholesalers post-EV",
-    subtitle: "Sourcing High-Performing Regional and Specialist Branch Teams at Speed",
+    title: "National Growth Sourcing Playbook: Scaling Teams post-EV",
+    subtitle: "Sourcing High-Performing Regional and Specialist Teams at Speed",
     category: "GROWTH & ROLLOUTS",
     pages: "32 Pages",
     author: "Strategic Solutions Group",
-    description: "Frameworks designed specifically for UK Electrical Wholesalers undergoing rapid geographic rollout, branch acquisitions, or restructuring into specialised teams.",
+    description: "Frameworks designed specifically for UK construction, engineering, and electrical businesses undergoing rapid geographic rollout, site acquisitions, or restructuring into specialised teams.",
     outcomes: [
-      "Sourcing branch managers to capture early EV, PV & smart tech markets",
-      "Fast-track scaling recruitment for regional branch hubs in 90 days",
-      "Retaining localised supplier relations during high-pace counter expansion",
-      "Co-ordinating cross-geographical trade counter hiring pipelines"
+      "Sourcing project managers and engineers to capture early EV, PV & smart tech markets",
+      "Fast-track scaling recruitment for regional hubs in 90 days",
+      "Retaining key talent during high-pace expansions",
+      "Co-ordinating cross-geographical project hiring pipelines"
     ],
     docUrl: "https://res.cloudinary.com/dtf76y0s7/image/upload/v1772982124/Gemini_Generated_Image_vrx46xvrx46xvrx4_yq2wbd.png"
   },
@@ -218,14 +218,14 @@ const BrochureRequestForm: React.FC = () => {
       if (accessToken) {
         const bodyContent = `Dear ${formData.name},
 
-Thank you for your interest in Power-Up Talent, the UK's premier headhunting and executive search specialist for the Electrical Wholesale industry.
+Thank you for your interest in Power-Up Talent, the UK's premier headhunting and executive search specialist for the Construction, Engineering, and Electrical sectors.
 
 As requested, we have compiled the "${activeBrochureTitle}" executive briefing pack.
 
 What's Inside:
-1. Sourcing Intelligence: How we map passive executive talent across Edmundson, Rexel, CEF, and leading independents.
-2. Sourcing Action plans: Strategies on retaining regional branch hubs and evaluating localised supplier relations.
-3. Market benchmarks: Relevant wage, allowance, and growth metrics tailored for operations directors and HR talent.
+1. Sourcing Intelligence: How we map passive executive talent and technical specialists across major competitors and regional groups.
+2. Sourcing Action plans: Strategies on retaining project leaders and key operational teams.
+3. Market benchmarks: Relevant wage, allowance, and growth metrics tailored for operations directors, project heads, and HR talent.
 
 You can download your high-resolution copy of our services briefing sheet here:
 https://poweruptalent.co.uk/brochure
@@ -271,7 +271,7 @@ London Executive Search Offices`;
           Branded <span className="text-primary italic font-serif lowercase">of-the-art</span> Sector Guides
         </h2>
         <p className="text-slate-500 font-light leading-relaxed text-lg">
-          We believe in providing the UK Electrical Wholesale industry with peerless, actionable intelligence. Click on any of our comprehensive executive reports below to review what you will receive.
+          We believe in providing the Construction, Engineering, and Electrical sectors with peerless, actionable intelligence. Click on any of our comprehensive executive reports below to review what you will receive.
         </p>
       </div>
 
@@ -418,7 +418,7 @@ London Executive Search Offices`;
                   </div>
                 </div>
                 <p className="text-slate-400 font-light text-sm max-w-xl">
-                  Please provide your corporate details to confirm delivery. Power-Up Talent strictly limits these resources to active electrical wholesale directors, branch executives, and HR leadership.
+                  Please provide your corporate details to confirm delivery. Power-Up Talent strictly limits these resources to active sector directors, branch executives, and HR leadership.
                 </p>
               </div>
 
@@ -467,10 +467,10 @@ London Executive Search Offices`;
                   </div>
 
                   <div className="space-y-3">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Distribution Sector</label>
+                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.3em]">Industry Sector</label>
                     <div className="w-full bg-background-dark/50 border border-white/5 rounded-sm p-5 text-sm text-slate-500 font-medium select-none flex items-center gap-3">
                       <span className="material-symbols-outlined text-primary text-lg">info</span>
-                      UK Electrical Wholesale Specialism
+                      UK Construction, Engineering, and Electrical Specialisms
                     </div>
                   </div>
                 </div>

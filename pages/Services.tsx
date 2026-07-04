@@ -38,7 +38,7 @@ const servicesStructuredData = {
       "provider": {
         "@id": "https://poweruptalent.co.uk/#service-provider"
       },
-      "description": "Executive search specifically for Branch Managers and Regional Directors who possess the commercial acumen to drive your bottom line.",
+      "description": "Executive search specifically for commercial leaders, engineers, and project managers who possess the acumen to drive your bottom line.",
       "areaServed": "GB"
     },
     {
@@ -48,7 +48,7 @@ const servicesStructuredData = {
       "provider": {
         "@id": "https://poweruptalent.co.uk/#service-provider"
       },
-      "description": "Long-term collaboration for wholesalers undergoing rapid scale, branch rollouts, or national restructuring across major UK logistics hubs.",
+      "description": "Long-term collaboration for sector businesses undergoing rapid scale, project mobilisations, or national restructuring across key UK regions.",
       "areaServed": "GB"
     }
   ]

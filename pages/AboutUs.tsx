@@ -339,7 +339,7 @@ const AboutUs: React.FC = () => {
               {
                 icon: 'track_changes',
                 title: 'IMPACT',
-                desc: 'Helping wholesalers grow by connecting them with talent that protects margins.'
+                desc: 'Helping construction, engineering, and electrical businesses grow by connecting them with high-performing talent.'
               }
             ].map((item, i) => (
               <motion.div
