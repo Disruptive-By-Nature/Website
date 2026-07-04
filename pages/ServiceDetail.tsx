@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import wholesaleImg from '../src/assets/images/fuse_board.png';
 import securityImg from '../src/assets/images/fire_security.png';
 import lightingImg from '../src/assets/images/emergency_exit.png';
+import officeCollaborationImg from '../src/assets/images/office_collaboration.jpg';
 
 const ServiceDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -201,7 +202,62 @@ const ServiceDetail: React.FC = () => {
         </div>
       </section>
 
-      {/* SECTION 3: HOW WE TRANSFORM BUSINESS */}
+      {/* SECTION 3: FORGED IN THE INDUSTRY */}
+      <section className="py-24 bg-white text-slate-900 border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep mb-4">
+              Forged in the Industry
+            </h2>
+            <p className="text-slate-500 text-base font-light max-w-2xl mx-auto leading-relaxed">
+              Our story isn't one of chance, but of passion and expertise. We aren't just recruiters; we are industry veterans dedicated to powering the electrical wholesale sector.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-5 text-slate-600 font-light leading-relaxed text-base"
+            >
+              <p>
+                Founded on a mission to transform how talent is sourced and developed, Power-Up Talent was born from a belief that exceptional hires are key to shaping the future of the electrical wholesale industry.
+              </p>
+              <p>
+                We believe that the right leadership can transform organisations, drive sustainable growth, and create lasting value. Our mission extends beyond simple placement — we're dedicated to building long-term partnerships that foster career advancement and raise standards across the sector.
+              </p>
+              <p>
+                Today, we're recognised as one of the UK's most trusted names in electrical wholesale executive search. Our success lies in our deep sector knowledge, extensive relationships, and commitment to ethical, personalised service.
+              </p>
+              <p>
+                We don't just place candidates — we nurture careers, strengthen businesses, and contribute to raising standards across the profession. Every role we fill is an opportunity to make a lasting impact on team morale and business growth.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15 }}
+              className="rounded-lg overflow-hidden border border-slate-200 shadow-md"
+            >
+              <img
+                src={officeCollaborationImg}
+                alt="Two business professionals shaking hands"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 4: HOW WE TRANSFORM BUSINESS */}
       <section className="py-24 bg-slate-50 text-slate-900 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div

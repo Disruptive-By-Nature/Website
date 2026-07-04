@@ -307,8 +307,57 @@ const AboutUs: React.FC = () => {
         </div>
       </section>
 
+      {/* ── SECTION 6: OUR COMMITMENT ── */}
+      <section className="bg-navy-deep py-24 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div {...fadeInUp} className="mb-12">
+            <h2 className="font-display font-black text-4xl md:text-6xl text-white uppercase tracking-tight mb-6">
+              OUR <span className="text-primary">COMMITMENT.</span>
+            </h2>
+            <p className="text-slate-300 text-lg font-light leading-relaxed max-w-2xl">
+              We are committed to a transparent, ethical, and innovative approach that delivers measurable operational impact for your organisation.
+            </p>
+          </motion.div>
 
-      {/* ── SECTION 6: EXPANDED FAQS (Migrated from Home Page) ── */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-3xl">
+            {[
+              {
+                icon: 'visibility',
+                title: 'TRANSPARENCY',
+                desc: 'Clear communication about how AI modelling is used in our process.'
+              },
+              {
+                icon: 'security',
+                title: 'ETHICS',
+                desc: 'Ensuring our tools are fair, unbiased, and compliant with UK employment laws.'
+              },
+              {
+                icon: 'bolt',
+                title: 'INNOVATION',
+                desc: 'Continuously improving our sector intelligence and headhunting strategies.'
+              },
+              {
+                icon: 'track_changes',
+                title: 'IMPACT',
+                desc: 'Helping wholesalers grow by connecting them with talent that protects margins.'
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                {...fadeInUp}
+                transition={{ ...fadeInUp.transition, delay: i * 0.1 }}
+                className="flex flex-col gap-3"
+              >
+                <span className="material-symbols-outlined text-primary text-3xl">{item.icon}</span>
+                <h3 className="font-display font-black text-sm text-white uppercase tracking-widest">{item.title}</h3>
+                <p className="text-slate-400 text-sm font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 7: EXPANDED FAQS (Migrated from Home Page) ── */}
       <section className="bg-background-dark py-24 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
