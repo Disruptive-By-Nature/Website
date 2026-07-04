@@ -115,7 +115,7 @@ const Home: React.FC = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
-              We connect elite sales, engineering, and leadership talent with the UK's most ambitious manufacturers, distributors, design practices, and contracting firms.
+              We connect the UK electrical sector with high-performing sales, technical, and leadership talent.
             </p>
 
             <div className="flex flex-wrap gap-4">

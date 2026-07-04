@@ -73,7 +73,6 @@ const Footer: React.FC = () => {
             <nav className="flex flex-col gap-0.5">
               <FooterLink to="/about">About Us</FooterLink>
               <FooterLink to="/insights">Information</FooterLink>
-              <FooterLink to="/?scroll=testimonials">Testimonials</FooterLink>
               <FooterLink to="/contact">Contact Us</FooterLink>
             </nav>
           </div>
