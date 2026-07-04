@@ -179,95 +179,6 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════════════
-          3. STRATEGIC PILLARS (Enlarged Stand-out Dark Section)
-      ══════════════════════════════════════════════════════════ */}
-      <section className="bg-[#080d1a] py-32 text-white border-b border-white/5 relative overflow-hidden">
-        {/* Subtle background glow effect to draw focus to this backbone section */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
-
-        <div className="max-w-screen-xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-24">
-            <p className="text-xs uppercase tracking-[0.4em] text-primary font-bold mb-4 flex justify-center items-center gap-2">
-              <span className="w-6 h-px bg-primary"></span>
-              OUR CORE SYSTEM
-              <span className="w-6 h-px bg-primary"></span>
-            </p>
-            <h2 className="font-display font-black text-5xl md:text-7xl text-white uppercase tracking-tight leading-none mb-6">
-              STRATEGIC <span className="text-primary italic">PILLARS.</span>
-            </h2>
-            <p className="text-slate-400 text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
-              We operate through three specialised methodologies built to target and secure elite talent. We take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical sector achieve the best possible outcome.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
-            {[
-              {
-                num: "01",
-                title: "HEADHUNTERS",
-                icon: "person_search",
-                desc: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors using AI-driven mapping.",
-                bullets: ["Confidential Direct Outreach", "Passive Talent Mapping", "Technical DNA Vetting", "Absolute Discretion Protocols"],
-                link: "/services/elite-recruitment"
-              },
-              {
-                num: "02",
-                title: "STRATEGIC RECRUITMENT",
-                icon: "leaderboard",
-                desc: "We co-design a tailored strategy with you, mapping out the local competitor market to hire the absolute best talent. We source for all roles across your network, not just senior executives.",
-                bullets: ["Local Competitor Mapping", "All-Tier Active Sourcing", "Co-Designed Hiring Search", "Competency Vetting"],
-                link: "/services/strategic-recruitment"
-              },
-              {
-                num: "03",
-                title: "GROWTH PARTNERSHIPS (RPO)",
-                icon: "handshake",
-                desc: "Recruitment Process Outsourcing (RPO). We operate as an extension of your in-house HR team, managing talent attraction, screening, interviewing, and onboarding.",
-                bullets: ["End-to-End RPO Lifecycle", "Project-Based Spike Support", "Modular Selective Sourcing", "AI & Analytics Sourcing"],
-                link: "/services/growth-partnerships"
-              }
-            ].map((pillar, i) => (
-              <motion.div 
-                key={i} 
-                className="bg-white border-t-4 border-primary p-12 relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(255,193,7,0.15)] transition-all duration-300 flex flex-col justify-between rounded-lg shadow-2xl shadow-black/40"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-              >
-                <div>
-                  <div className="flex justify-center items-center mb-8 pt-4">
-                    <div className="w-24 h-24 rounded-2xl bg-primary/10 border-2 border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-navy-deep group-hover:border-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,193,7,0.15)] group-hover:shadow-[0_0_50px_rgba(255,193,7,0.4)]">
-                      <span className="material-symbols-outlined text-[3.5rem] font-bold drop-shadow-md">{pillar.icon}</span>
-                    </div>
-                  </div>
-                  <h3 className="font-display font-black text-2xl text-navy-deep mb-6 tracking-wide group-hover:text-primary-dark transition-colors">{pillar.title}</h3>
-                  <p className="text-slate-600 text-base leading-relaxed mb-10 min-h-[120px] font-light">{pillar.desc}</p>
-                </div>
-                <div className="pt-8 border-t border-slate-100">
-                  <ul className="space-y-4 mb-8">
-                    {pillar.bullets.map((bullet, j) => (
-                      <li key={j} className="flex items-center gap-3 text-xs uppercase tracking-wider text-slate-500 font-bold">
-                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
-                        {bullet}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link 
-                    to={pillar.link}
-                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-navy-deep transition-colors"
-                  >
-                    Explore Pillar Details
-                    <span className="material-symbols-outlined text-sm">chevron_right</span>
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── SECTION 4: SPECIALISMS OF EXPERTISE (White Background) ── */}
       <section id="specialisms" className="bg-white py-24 text-navy-deep">
         <div className="max-w-screen-xl mx-auto px-6">
@@ -392,6 +303,97 @@ const Home: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+{/* ══════════════════════════════════════════════════════════
+          3. STRATEGIC PILLARS (Enlarged Stand-out Dark Section)
+      ══════════════════════════════════════════════════════════ */}
+      <section className="bg-[#080d1a] py-32 text-white border-b border-white/5 relative overflow-hidden">
+        {/* Subtle background glow effect to draw focus to this backbone section */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div className="max-w-screen-xl mx-auto px-6 relative z-10">
+          <div className="text-center mb-24">
+            <p className="text-xs uppercase tracking-[0.4em] text-primary font-bold mb-4 flex justify-center items-center gap-2">
+              <span className="w-6 h-px bg-primary"></span>
+              OUR CORE SYSTEM
+              <span className="w-6 h-px bg-primary"></span>
+            </p>
+            <h2 className="font-display font-black text-5xl md:text-7xl text-white uppercase tracking-tight leading-none mb-6">
+              STRATEGIC <span className="text-primary italic">PILLARS.</span>
+            </h2>
+            <p className="text-slate-400 text-lg md:text-xl font-light max-w-3xl mx-auto leading-relaxed">
+              We operate through three specialised methodologies built to target and secure elite talent. We take the time to listen, offering tailored advice and guidance to ensure both candidates and clients in the electrical sector achieve the best possible outcome.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch">
+            {[
+              {
+                num: "01",
+                title: "HEADHUNTERS",
+                icon: "person_search",
+                desc: "Our core headhunting service. We specialise in identifying and securing the top 1% of passive talent currently delivering results for your competitors using AI-driven mapping.",
+                bullets: ["Confidential Direct Outreach", "Passive Talent Mapping", "Technical DNA Vetting", "Absolute Discretion Protocols"],
+                link: "/services/elite-recruitment"
+              },
+              {
+                num: "02",
+                title: "STRATEGIC RECRUITMENT",
+                icon: "leaderboard",
+                desc: "We co-design a tailored strategy with you, mapping out the local competitor market to hire the absolute best talent. We source for all roles across your network, not just senior executives.",
+                bullets: ["Local Competitor Mapping", "All-Tier Active Sourcing", "Co-Designed Hiring Search", "Competency Vetting"],
+                link: "/services/strategic-recruitment"
+              },
+              {
+                num: "03",
+                title: "GROWTH PARTNERSHIPS (RPO)",
+                icon: "handshake",
+                desc: "Recruitment Process Outsourcing (RPO). We operate as an extension of your in-house HR team, managing talent attraction, screening, interviewing, and onboarding.",
+                bullets: ["End-to-End RPO Lifecycle", "Project-Based Spike Support", "Modular Selective Sourcing", "AI & Analytics Sourcing"],
+                link: "/services/growth-partnerships"
+              }
+            ].map((pillar, i) => (
+              <motion.div 
+                key={i} 
+                className="bg-white border-t-4 border-primary p-12 relative overflow-hidden group hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(255,193,7,0.15)] transition-all duration-300 flex flex-col justify-between rounded-lg shadow-2xl shadow-black/40"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.15 }}
+              >
+                <div>
+                  <div className="flex justify-center items-center mb-8 pt-4">
+                    <div className="w-24 h-24 rounded-2xl bg-primary/10 border-2 border-primary/30 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-navy-deep group-hover:border-primary transition-all duration-300 shadow-[0_0_30px_rgba(255,193,7,0.15)] group-hover:shadow-[0_0_50px_rgba(255,193,7,0.4)]">
+                      <span className="material-symbols-outlined text-[3.5rem] font-bold drop-shadow-md">{pillar.icon}</span>
+                    </div>
+                  </div>
+                  <h3 className="font-display font-black text-2xl text-navy-deep mb-6 tracking-wide group-hover:text-primary-dark transition-colors">{pillar.title}</h3>
+                  <p className="text-slate-600 text-base leading-relaxed mb-10 min-h-[120px] font-light">{pillar.desc}</p>
+                </div>
+                <div className="pt-8 border-t border-slate-100">
+                  <ul className="space-y-4 mb-8">
+                    {pillar.bullets.map((bullet, j) => (
+                      <li key={j} className="flex items-center gap-3 text-xs uppercase tracking-wider text-slate-500 font-bold">
+                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link 
+                    to={pillar.link}
+                    className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary group-hover:text-navy-deep transition-colors"
+                  >
+                    Explore Pillar Details
+                    <span className="material-symbols-outlined text-sm">chevron_right</span>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      
 
       {/* ══════════════════════════════════════════════════════════
           5. HOW WE TRANSFORM YOUR BUSINESS (Dark Navy Background)
