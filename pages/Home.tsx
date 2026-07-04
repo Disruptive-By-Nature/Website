@@ -58,6 +58,7 @@ const homeStructuredData = {
 
 const Home: React.FC = () => {
   const location = useLocation();
+  const [activeSpecialism, setActiveSpecialism] = useState<'construction' | 'engineering' | 'electrical'>('construction');
 
   const fadeInUp = {
     initial: { opacity: 0, y: 30 },
@@ -106,16 +107,16 @@ const Home: React.FC = () => {
           >
             <p className="text-[11px] uppercase tracking-[0.25em] text-primary font-bold mb-5 flex items-center gap-2">
               <span className="w-8 h-px bg-primary"></span>
-              The UK's #1 Recruitment Partner For The Electrical Sector
+              The UK's #1 Recruitment Partner For Construction, Engineering and Electrical
             </p>
 
             <h1 className="font-display font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] mb-6">
               Elite Headhunters.<br/>
-              <span className="text-gradient">Powerful</span> Placements.
+              <span className="text-gradient">Sector</span> Specialists.
             </h1>
 
             <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
-              We connect the UK electrical sector with high-performing sales, technical, and leadership talent.
+              We headhunt high-performing talent for ambitious employers across Construction, Engineering and Electrical
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -128,6 +129,13 @@ const Home: React.FC = () => {
                 Hire Top Talent
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </a>
+              <Link
+                to="/contact"
+                className="border border-white/20 text-white px-7 py-3.5 rounded-sm font-bold text-[11px] uppercase tracking-[0.12em] hover:border-primary hover:text-primary transition-all duration-300 flex items-center gap-2"
+              >
+                Contact Specialist
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -250,6 +258,140 @@ const Home: React.FC = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── SECTION 4: SPECIALISMS OF EXPERTISE (White Background) ── */}
+      <section id="specialisms" className="bg-white py-24 text-navy-deep">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <p className="text-[10px] uppercase tracking-[0.25em] text-primary-dark font-bold mb-4">Our Core Sectors</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep leading-tight mb-6">
+              SPECIALISMS OF EXPERTISE
+            </h2>
+            <p className="text-slate-600 text-base leading-relaxed font-light">
+              We operate across three core sectors, delivering specialized headhunting, market mapping, and executive search services to connect top-tier talent with ambitious employers.
+            </p>
+          </div>
+
+          {/* Specialism Tab Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                id: "construction",
+                icon: "construction",
+                title: "CONSTRUCTION",
+                desc: "Delivering senior project managers, commercial directors, quantity surveyors, and estimators for major builds."
+              },
+              {
+                id: "engineering",
+                icon: "precision_manufacturing",
+                title: "ENGINEERING",
+                desc: "Sourcing structural, electrical, and mechanical design specialists, R&D engineering leads, and technical directors."
+              },
+              {
+                id: "electrical",
+                icon: "bolt",
+                title: "ELECTRICAL",
+                desc: "Covering OEM manufacturing, switchgear, wholesale distribution, specification, and contracting installation."
+              }
+            ].map((spec) => {
+              const isActive = activeSpecialism === spec.id;
+              return (
+                <div
+                  key={spec.id}
+                  onClick={() => setActiveSpecialism(spec.id as any)}
+                  className={`rounded-xl p-10 text-center flex flex-col justify-between transition-all duration-300 border cursor-pointer select-none ${
+                    isActive
+                      ? 'bg-slate-50 border-primary shadow-lg shadow-primary/20 scale-[1.02]'
+                      : 'bg-white border-slate-100 hover:border-primary/30 shadow-md hover:shadow-lg'
+                  }`}
+                >
+                  <div>
+                    <div className={`w-14 h-14 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md transition-colors ${
+                      isActive ? 'bg-primary text-navy-deep' : 'bg-navy-deep text-white'
+                    }`}>
+                      <span className="material-symbols-outlined text-2xl">{spec.icon}</span>
+                    </div>
+                    <h3 className="font-display font-bold text-base text-navy-deep uppercase tracking-wider mb-4">{spec.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed font-light">{spec.desc}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Active Tab Write-up */}
+          <motion.div
+            key={activeSpecialism}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="bg-slate-50 border border-slate-200 rounded-xl p-8 md:p-12 max-w-4xl mx-auto"
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary-dark">
+                <span className="material-symbols-outlined font-bold">
+                  {activeSpecialism === 'construction' ? 'construction' : activeSpecialism === 'engineering' ? 'precision_manufacturing' : 'bolt'}
+                </span>
+              </div>
+              <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
+                {activeSpecialism === 'construction' ? 'Construction Sourcing' : activeSpecialism === 'engineering' ? 'Engineering Sourcing' : 'Electrical Sourcing'}
+              </h3>
+            </div>
+            
+            <div className="space-y-6 text-slate-600 font-light text-base md:text-lg leading-relaxed">
+              {activeSpecialism === 'construction' && (
+                <>
+                  <p>
+                    In the UK construction sector, operational delivery and commercial safety are paramount. We connect tier-1 contractors, residential developers, and infrastructure specialists with senior project managers, commercial directors, quantity surveyors, and estimators.
+                  </p>
+                  <p>
+                    Our search-led model maps active projects and competitor teams confidentially to identify individuals who bring a track record of on-time, on-budget delivery and commercial integrity.
+                  </p>
+                </>
+              )}
+              {activeSpecialism === 'engineering' && (
+                <>
+                  <p>
+                    Precision engineering requires rare expertise. Power-Up Talent specializes in mapping and headhunting elite engineering specialists across civil, structural, mechanical, and electrical disciplines.
+                  </p>
+                  <p>
+                    We partner with consultancies, manufacturing innovators, and tech hubs to source technical directors, principal design engineers, R&D leaders, and estimators who possess the technical grit and innovation required to drive complex modern schemes.
+                  </p>
+                </>
+              )}
+              {activeSpecialism === 'electrical' && (
+                <>
+                  <p>
+                    Built on our historic foundations, we cover the full electrical supply chain. We represent specialists in manufacturing (OEMs, switchgear, cabling), wholesale distribution networks, electrical design specification, and large-scale contractor installation.
+                  </p>
+                  <p>
+                    From branch directors to product development engineers, we identify the top 1% of passive talent currently delivering margin protection and operational scale.
+                  </p>
+                </>
+              )}
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="https://powercrm-daa67.web.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:shadow-md transition-all inline-flex items-center gap-2"
+              >
+                Hire Sector Talent
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </a>
+              <Link
+                to="/contact"
+                className="border border-slate-300 text-navy-deep px-6 py-3 rounded-sm font-bold text-xs uppercase tracking-[0.15em] hover:bg-white hover:border-primary transition-all inline-flex items-center gap-2"
+              >
+                Discovery Call
+                <span className="material-symbols-outlined text-sm">arrow_forward</span>
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

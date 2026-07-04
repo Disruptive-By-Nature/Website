@@ -12,7 +12,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([
     { 
       role: 'model', 
-      text: "Welcome to Power-Up Talent. We help UK electrical wholesalers hire better through specialist recruitment, proactive headhunting, and search-led hiring support. How can we help today?" 
+      text: "Welcome to Power-Up Talent. We specialise in construction, engineering, and electrical sector recruitment. How can we help with your hiring today?" 
     }
   ]);
   const [input, setInput] = useState('');
@@ -47,12 +47,12 @@ const Chatbot: React.FC = () => {
       chatInstance.current = ai.chats.create({
         model: 'gemini-2.5-flash',
         config: {
-          systemInstruction: `You are the lead developer and brand strategist for Power-Up Talent. Your core identity is a "Strategic Partner" for the UK electrical sector, spanning manufacturing, distribution, design & specification, and installation/contracting.
+          systemInstruction: `You are the lead developer and brand strategist for Power-Up Talent. Your core identity is a "Strategic Partner" for the UK construction, engineering, and electrical sectors.
 
 STRICT GUIDELINES:
 1. Use UK English ONLY (specialise, organisation, programme, modelling, behavioural).
-2. NEVER use Americanisms or generic recruitment waffle (e.g., "talent pool," "hiring pipeline").
-3. Use professional sector terms: "OEM Manufacturers," "Specification Managers," "Contracts Managers," "Design Engineers," "Branch Managers," "Regional Directors," "Market Mapping," and "Operational Alignment."
+2. NEVER use Americanisms or generic recruitment waffle.
+3. Use professional sector terms: "Commercial Directors," "Project Managers," "Estimating Leads," "Design Engineers," "R&D Specialists," "Specification Managers," "Contracts Managers," "Branch Managers," "Market Mapping," and "Operational Alignment."
 4. Tone must be authoritative, discreet, and consultative.
 5. Emphasise "Quality Over Volume" and "Headhunting-First" methodologies.
 6. Design and copy must be clean, professional, and high-impact.
