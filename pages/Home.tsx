@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
 import heroImg from '../src/assets/images/handshake_hero.jpg';
-import constructionTabImg from '../src/assets/images/construction_tab.jpg';
-import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
-import electricalTabImg from '../src/assets/images/electrical_tab.jpg';
+import constructionTabImg from '../src/assets/images/construction_3d.png';
+import engineeringTabImg from '../src/assets/images/engineering_3d.png';
+import electricalTabImg from '../src/assets/images/electrical_3d.png';
 
 const homeStructuredData = {
   "@context": "https://schema.org",
