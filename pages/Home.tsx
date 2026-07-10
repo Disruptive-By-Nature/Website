@@ -202,19 +202,25 @@ const Home: React.FC = () => {
                 id: "construction",
                 icon: constructionIcon3dRealOrange,
                 title: "CONSTRUCTION",
-                desc: "Delivering senior project managers, commercial directors, quantity surveyors, and estimators for major builds."
+                desc: "Delivering senior project managers, commercial directors, quantity surveyors, and estimators for major builds.",
+                // Float and sway animation
+                anim: { animate: { y: [0, -6, 0], rotate: [-2, 2, -2] }, transition: { repeat: Infinity, duration: 5, ease: "easeInOut" } }
               },
               {
                 id: "engineering",
                 icon: engineeringIcon3dRealSilver,
                 title: "ENGINEERING",
-                desc: "Sourcing structural, electrical, and mechanical design specialists, R&D engineering leads, and technical directors."
+                desc: "Sourcing structural, electrical, and mechanical design specialists, R&D engineering leads, and technical directors.",
+                // Realistic gear spin
+                anim: { animate: { rotate: 360 }, transition: { repeat: Infinity, duration: 20, ease: "linear" } }
               },
               {
                 id: "electrical",
                 icon: electricalIcon3dRealYellow,
                 title: "ELECTRICAL",
-                desc: "Covering OEM manufacturing, switchgear, wholesale distribution, specification, and contracting installation."
+                desc: "Covering OEM manufacturing, switchgear, wholesale distribution, specification, and contracting installation.",
+                // Energetic scale pulse & wiggle
+                anim: { animate: { scale: [1, 1.05, 1], rotate: [-3, 3, -3] }, transition: { repeat: Infinity, duration: 4, ease: "easeInOut" } }
               }
             ].map((spec) => {
               const isActive = activeSpecialism === spec.id;
@@ -229,13 +235,12 @@ const Home: React.FC = () => {
                   }`}
                 >
                   <div>
-                    <div className="w-20 h-20 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md overflow-hidden bg-navy-deep p-2 border border-white/10" style={{ perspective: 1000 }}>
+                    <div className="w-20 h-20 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md overflow-hidden bg-navy-deep p-2 border border-white/10">
                       <motion.img 
                         src={spec.icon} 
                         alt={spec.title} 
                         className="w-full h-full object-contain" 
-                        animate={{ rotateY: 360 }}
-                        transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                        {...spec.anim}
                       />
                     </div>
                     <h3 className="font-display font-bold text-base text-navy-deep uppercase tracking-wider mb-4">{spec.title}</h3>
@@ -258,13 +263,23 @@ const Home: React.FC = () => {
               {/* Text content - 7 cols */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-full overflow-hidden bg-navy-deep flex items-center justify-center p-2 border border-white/5" style={{ perspective: 1000 }}>
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-navy-deep flex items-center justify-center p-2 border border-white/5">
                     <motion.img 
-                      src={activeSpecialism === 'construction' ? constructionIcon3dRealOrange : activeSpecialism === 'engineering' ? engineeringIcon3dRealSilver : electricalIcon3dRealYellow} 
+                      src={
+                        activeSpecialism === 'construction' 
+                          ? constructionIcon3dRealOrange 
+                          : activeSpecialism === 'engineering' 
+                          ? engineeringIcon3dRealSilver 
+                          : electricalIcon3dRealYellow
+                      } 
                       alt={activeSpecialism} 
                       className="w-full h-full object-contain" 
-                      animate={{ rotateY: 360 }}
-                      transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
+                      {...(activeSpecialism === 'construction'
+                        ? { animate: { y: [0, -4, 0], rotate: [-2, 2, -2] }, transition: { repeat: Infinity, duration: 5, ease: "easeInOut" } }
+                        : activeSpecialism === 'engineering'
+                        ? { animate: { rotate: 360 }, transition: { repeat: Infinity, duration: 20, ease: "linear" } }
+                        : { animate: { scale: [1, 1.05, 1], rotate: [-3, 3, -3] }, transition: { repeat: Infinity, duration: 4, ease: "easeInOut" } }
+                      )}
                     />
                   </div>
                   <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
