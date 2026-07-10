@@ -6,9 +6,9 @@ import heroImg from '../src/assets/images/handshake_hero.jpg';
 import constructionTabImg from '../src/assets/images/construction_tab.jpg';
 import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
 import electricalTabImg from '../src/assets/images/electrical_tab.jpg';
-import constructionIcon3dReal from '../src/assets/images/construction_icon_3d_real.png';
-import engineeringIcon3dReal from '../src/assets/images/engineering_icon_3d_real.png';
-import electricalIcon3dReal from '../src/assets/images/electrical_icon_3d_real.png';
+import constructionIcon3dRealOrange from '../src/assets/images/construction_icon_3d_real_orange.png';
+import engineeringIcon3dRealSilver from '../src/assets/images/engineering_icon_3d_real_silver.png';
+import electricalIcon3dRealYellow from '../src/assets/images/electrical_icon_3d_real_yellow.png';
 
 const homeStructuredData = {
   "@context": "https://schema.org",
@@ -200,19 +200,19 @@ const Home: React.FC = () => {
             {[
               {
                 id: "construction",
-                icon: constructionIcon3dReal,
+                icon: constructionIcon3dRealOrange,
                 title: "CONSTRUCTION",
                 desc: "Delivering senior project managers, commercial directors, quantity surveyors, and estimators for major builds."
               },
               {
                 id: "engineering",
-                icon: engineeringIcon3dReal,
+                icon: engineeringIcon3dRealSilver,
                 title: "ENGINEERING",
                 desc: "Sourcing structural, electrical, and mechanical design specialists, R&D engineering leads, and technical directors."
               },
               {
                 id: "electrical",
-                icon: electricalIcon3dReal,
+                icon: electricalIcon3dRealYellow,
                 title: "ELECTRICAL",
                 desc: "Covering OEM manufacturing, switchgear, wholesale distribution, specification, and contracting installation."
               }
@@ -229,13 +229,13 @@ const Home: React.FC = () => {
                   }`}
                 >
                   <div>
-                    <div className="w-16 h-16 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md overflow-hidden bg-navy-deep p-2 border border-white/10">
+                    <div className="w-20 h-20 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md overflow-hidden bg-navy-deep p-2 border border-white/10" style={{ perspective: 1000 }}>
                       <motion.img 
                         src={spec.icon} 
                         alt={spec.title} 
                         className="w-full h-full object-contain" 
-                        animate={{ rotate: 360 }}
-                        transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                        animate={{ rotateY: 360 }}
+                        transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
                       />
                     </div>
                     <h3 className="font-display font-bold text-base text-navy-deep uppercase tracking-wider mb-4">{spec.title}</h3>
@@ -258,13 +258,13 @@ const Home: React.FC = () => {
               {/* Text content - 7 cols */}
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden bg-navy-deep flex items-center justify-center p-2 border border-white/5">
+                  <div className="w-16 h-16 rounded-full overflow-hidden bg-navy-deep flex items-center justify-center p-2 border border-white/5" style={{ perspective: 1000 }}>
                     <motion.img 
-                      src={activeSpecialism === 'construction' ? constructionIcon3dReal : activeSpecialism === 'engineering' ? engineeringIcon3dReal : electricalIcon3dReal} 
+                      src={activeSpecialism === 'construction' ? constructionIcon3dRealOrange : activeSpecialism === 'engineering' ? engineeringIcon3dRealSilver : electricalIcon3dRealYellow} 
                       alt={activeSpecialism} 
                       className="w-full h-full object-contain" 
-                      animate={{ rotate: 360 }}
-                      transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                      animate={{ rotateY: 360 }}
+                      transition={{ repeat: Infinity, duration: 15, ease: "linear" }}
                     />
                   </div>
                   <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
