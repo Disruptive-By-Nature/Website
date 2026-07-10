@@ -6,9 +6,9 @@ import heroImg from '../src/assets/images/handshake_hero.jpg';
 import constructionTabImg from '../src/assets/images/construction_tab.jpg';
 import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
 import electricalTabImg from '../src/assets/images/electrical_tab.jpg';
-import constructionIcon3d from '../src/assets/images/construction_icon_3d.png';
-import engineeringIcon3d from '../src/assets/images/engineering_icon_3d.png';
-import electricalIcon3d from '../src/assets/images/electrical_icon_3d.png';
+import constructionIcon3dReal from '../src/assets/images/construction_icon_3d_real.png';
+import engineeringIcon3dReal from '../src/assets/images/engineering_icon_3d_real.png';
+import electricalIcon3dReal from '../src/assets/images/electrical_icon_3d_real.png';
 
 const homeStructuredData = {
   "@context": "https://schema.org",
@@ -200,19 +200,19 @@ const Home: React.FC = () => {
             {[
               {
                 id: "construction",
-                icon: constructionIcon3d,
+                icon: constructionIcon3dReal,
                 title: "CONSTRUCTION",
                 desc: "Delivering senior project managers, commercial directors, quantity surveyors, and estimators for major builds."
               },
               {
                 id: "engineering",
-                icon: engineeringIcon3d,
+                icon: engineeringIcon3dReal,
                 title: "ENGINEERING",
                 desc: "Sourcing structural, electrical, and mechanical design specialists, R&D engineering leads, and technical directors."
               },
               {
                 id: "electrical",
-                icon: electricalIcon3d,
+                icon: electricalIcon3dReal,
                 title: "ELECTRICAL",
                 desc: "Covering OEM manufacturing, switchgear, wholesale distribution, specification, and contracting installation."
               }
@@ -230,7 +230,13 @@ const Home: React.FC = () => {
                 >
                   <div>
                     <div className="w-16 h-16 mx-auto rounded-xl flex items-center justify-center mb-8 shadow-md overflow-hidden bg-navy-deep p-2 border border-white/10">
-                      <img src={spec.icon} alt={spec.title} className="w-full h-full object-contain" />
+                      <motion.img 
+                        src={spec.icon} 
+                        alt={spec.title} 
+                        className="w-full h-full object-contain" 
+                        animate={{ rotate: 360 }}
+                        transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
+                      />
                     </div>
                     <h3 className="font-display font-bold text-base text-navy-deep uppercase tracking-wider mb-4">{spec.title}</h3>
                     <p className="text-slate-600 text-sm leading-relaxed font-light">{spec.desc}</p>
@@ -253,10 +259,12 @@ const Home: React.FC = () => {
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full overflow-hidden bg-navy-deep flex items-center justify-center p-2 border border-white/5">
-                    <img 
-                      src={activeSpecialism === 'construction' ? constructionIcon3d : activeSpecialism === 'engineering' ? engineeringIcon3d : electricalIcon3d} 
+                    <motion.img 
+                      src={activeSpecialism === 'construction' ? constructionIcon3dReal : activeSpecialism === 'engineering' ? engineeringIcon3dReal : electricalIcon3dReal} 
                       alt={activeSpecialism} 
                       className="w-full h-full object-contain" 
+                      animate={{ rotate: 360 }}
+                      transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
                     />
                   </div>
                   <h3 className="font-display font-black text-2xl text-navy-deep uppercase tracking-tight">
