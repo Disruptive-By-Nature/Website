@@ -43,14 +43,14 @@ const ServiceDetail: React.FC = () => {
   const serviceStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://poweruptalent.co.uk/services/${service.id}#service`,
+    "@id": `https://power-uptalent.co.uk/services/${service.id}#service`,
     "name": service.name,
     "description": service.description,
     "provider": {
       "@type": "Organization",
-      "@id": "https://poweruptalent.co.uk/#organization",
+      "@id": "https://power-uptalent.co.uk/#organization",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk"
+      "url": "https://power-uptalent.co.uk"
     },
     "areaServed": "GB",
     "serviceType": "Recruitment"
@@ -62,7 +62,7 @@ const ServiceDetail: React.FC = () => {
         title={`${service.name} | Specialist Electrical Wholesale Headhunting`}
         description={`${service.description} Discover why Power-Up Talent is the UK's leading talent partner for the electrical wholesale sector.`}
         keywords={`electrical wholesale, headhunting, executive search, recruitment, ${service.name.toLowerCase()}`}
-        canonical={`https://poweruptalent.co.uk/services/${service.id}`}
+        canonical={`https://power-uptalent.co.uk/services/${service.id}`}
         structuredData={serviceStructuredData}
       />
 

@@ -10,15 +10,15 @@ const contactStructuredData = {
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://poweruptalent.co.uk/contact#webpage",
-      "url": "https://poweruptalent.co.uk/contact",
+      "@id": "https://power-uptalent.co.uk/contact#webpage",
+      "url": "https://power-uptalent.co.uk/contact",
       "name": "Contact Power-Up Talent",
       "description": "Brief Power-Up Talent on your next executive or technical hire. UK's specialist headhunters for the electrical industry. Confidential, fast, and precise.",
       "contactPoint": [
         {
           "@type": "ContactPoint",
           "telephone": "+44-20-8123-4567",
-          "email": "poweruptalent@gmail.com",
+          "email": "info@power-uptalent.co.uk",
           "contactType": "customer service",
           "areaServed": "GB"
         }
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
         title="Contact Us | Brief Power-Up Talent | UK Electrical Sector Headhunters"
         description="Brief Power-Up Talent on your next hire. UK's specialist headhunters for the electrical industry — manufacturing, distribution, design, and installation. Confidential, fast, and precise."
         keywords="Contact Power-Up Talent, Electrical Recruitment Brief, Headhunter Enquiry UK"
-        canonical="https://poweruptalent.co.uk/contact"
+        canonical="https://power-uptalent.co.uk/contact"
         structuredData={contactStructuredData}
       />
 
@@ -102,7 +102,7 @@ const Contact: React.FC = () => {
                   <TypebotEmbed typebot="powerup-employer-brief" height="500px" />
                 ) : (
                   <form
-                    action="mailto:poweruptalent@gmail.com"
+                    action="mailto:info@power-uptalent.co.uk"
                     method="get"
                     encType="text/plain"
                     className="space-y-6"
@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs uppercase tracking-[0.2em] font-semibold mb-1">Email</p>
-                    <a href="mailto:poweruptalent@gmail.com" className="text-white text-sm hover:text-primary transition-colors">poweruptalent@gmail.com</a>
+                    <a href="mailto:info@power-uptalent.co.uk" className="text-white text-sm hover:text-primary transition-colors">info@power-uptalent.co.uk</a>
                   </div>
                 </div>
 

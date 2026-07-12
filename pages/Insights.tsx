@@ -25,7 +25,7 @@ const Insights: React.FC = () => {
   const featured = filtered[0] || null;
   const grid = filtered.slice(1);
 
-  const mailtoNewsletter = `mailto:poweruptalent@gmail.com?subject=Newsletter Signup&body=${encodeURIComponent(`Please add me to the Power-Up Talent newsletter.\n\nEmail: ${newsletterEmail}`)}`;
+  const mailtoNewsletter = `mailto:info@power-uptalent.co.uk?subject=Newsletter Signup&body=${encodeURIComponent(`Please add me to the Power-Up Talent newsletter.\n\nEmail: ${newsletterEmail}`)}`;
 
   return (
     <>
@@ -33,7 +33,7 @@ const Insights: React.FC = () => {
         title="Information Hub | Sector Sourcing Intelligence"
         description="Access modern sector commentary on UK electrical industry talent strategies, engineering compliance, and design guides."
         keywords="electrical industry information, electrical recruitment guides, design engineering compliance, contractor recruitment sourcing"
-        canonical="https://poweruptalent.co.uk/insights"
+        canonical="https://power-uptalent.co.uk/insights"
       />
 
       {/* HERO SECTION */}

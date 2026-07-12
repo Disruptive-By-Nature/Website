@@ -8,7 +8,7 @@ const Privacy: React.FC = () => {
         title="Privacy Policy | Power-Up Talent"
         description="Read Power-Up Talent's privacy policy regarding data collection and usage."
         keywords="Privacy Policy, Power-Up Talent Privacy, Data Protection"
-        canonical="https://poweruptalent.co.uk/privacy"
+        canonical="https://power-uptalent.co.uk/privacy"
       />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-12 tracking-tight">Privacy <span className="text-primary italic">Policy.</span></h1>
@@ -27,7 +27,7 @@ const Privacy: React.FC = () => {
           </section>
           <section>
             <h2 className="text-2xl font-display font-bold text-white mb-4">4. Your Rights</h2>
-            <p>You have the right to access, rectify, or erase your personal data at any time. For any data-related enquiries, please contact our data protection lead at <span className="text-primary">poweruptalent@gmail.com</span>.</p>
+            <p>You have the right to access, rectify, or erase your personal data at any time. For any data-related enquiries, please contact our data protection lead at <span className="text-primary">info@power-uptalent.co.uk</span>.</p>
           </section>
         </div>
       </div>

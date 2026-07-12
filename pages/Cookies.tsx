@@ -8,7 +8,7 @@ const Cookies: React.FC = () => {
         title="Cookie Policy | Power-Up Talent"
         description="Learn about how Power-Up Talent uses cookies to improve your browsing experience."
         keywords="Cookie Policy, Power-Up Talent Cookies, Privacy"
-        canonical="https://poweruptalent.co.uk/cookies"
+        canonical="https://power-uptalent.co.uk/cookies"
       />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-12 tracking-tight">Cookie <span className="text-primary italic">Settings.</span></h1>

@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "power-up-talent",
+    "site": "power-web-auth",
     "public": "dist",
     "ignore": [
       "firebase.json",

@@ -149,11 +149,11 @@ const Navbar: React.FC = () => {
       {/* ── top utility strip (email only) ── */}
       <div className="hidden lg:flex max-w-screen-xl mx-auto px-6 h-7 items-center justify-end gap-4 border-b border-white/5 text-[10px]">
         <a
-          href="mailto:poweruptalent@gmail.com"
+          href="mailto:info@power-uptalent.co.uk"
           className="flex items-center gap-1 text-slate-500 hover:text-primary transition-colors"
         >
           <span className="material-symbols-outlined text-[13px]">mail</span>
-          poweruptalent@gmail.com
+          info@power-uptalent.co.uk
         </a>
       </div>
 
@@ -229,7 +229,7 @@ const Navbar: React.FC = () => {
 
           {/* Email icon */}
           <a
-            href="mailto:poweruptalent@gmail.com"
+            href="mailto:info@power-uptalent.co.uk"
             className="text-slate-400 hover:text-primary transition-colors"
             aria-label="Email us"
           >
@@ -238,24 +238,24 @@ const Navbar: React.FC = () => {
 
           {/* CTA */}
           <a
-            href="https://powercrm-daa67.web.app/"
+            href="https://sg-alpha-9941.web.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-black px-6 py-2.5 rounded-sm font-bold text-[11px] uppercase tracking-[0.12em] hover:bg-white hover:shadow-[0_0_30px_rgba(255,193,7,0.3)] transition-all duration-300 shadow-lg whitespace-nowrap"
           >
-            Book A Call
+            CRM Login
           </a>
         </div>
 
         {/* MOBILE RIGHT */}
         <div className="flex lg:hidden items-center gap-3">
           <a
-            href="https://powercrm-daa67.web.app/"
+            href="https://sg-alpha-9941.web.app/"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-primary text-black px-4 py-2 rounded-sm font-bold text-[10px] uppercase tracking-[0.1em] hover:bg-white transition-all"
           >
-            Book A Call
+            CRM Login
           </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -308,11 +308,11 @@ const Navbar: React.FC = () => {
             {/* footer strip */}
             <div className="pt-4 border-t border-white/5 mt-2 flex items-center justify-between">
               <a
-                href="mailto:poweruptalent@gmail.com"
+                href="mailto:info@power-uptalent.co.uk"
                 className="text-slate-400 hover:text-primary text-xs transition-colors flex items-center gap-1"
               >
                 <span className="material-symbols-outlined text-[14px]">mail</span>
-                poweruptalent@gmail.com
+                info@power-uptalent.co.uk
               </a>
             </div>
           </div>

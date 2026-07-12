@@ -15,35 +15,35 @@ const homeStructuredData = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://poweruptalent.co.uk/#website",
-      "url": "https://poweruptalent.co.uk/",
+      "@id": "https://power-uptalent.co.uk/#website",
+      "url": "https://power-uptalent.co.uk/",
       "name": "Power-Up Talent",
       "description": "Elite headhunters and recruitment specialists for the UK electrical industry — manufacturing, distribution, design, and installation."
     },
     {
       "@type": "Organization",
-      "@id": "https://poweruptalent.co.uk/#organization",
+      "@id": "https://power-uptalent.co.uk/#organization",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk/",
+      "url": "https://power-uptalent.co.uk/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://poweruptalent.co.uk/src/assets/images/logo.jpg"
+        "url": "https://power-uptalent.co.uk/src/assets/images/logo.jpg"
       },
       "sameAs": [
         "https://www.linkedin.com/company/power-up-talent"
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "email": "poweruptalent@gmail.com",
+        "email": "info@power-uptalent.co.uk",
         "contactType": "customer service"
       }
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://poweruptalent.co.uk/#service",
+      "@id": "https://power-uptalent.co.uk/#service",
       "name": "Power-Up Talent",
-      "image": "https://poweruptalent.co.uk/src/assets/images/logo.jpg",
-      "url": "https://poweruptalent.co.uk/",
+      "image": "https://power-uptalent.co.uk/src/assets/images/logo.jpg",
+      "url": "https://power-uptalent.co.uk/",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -94,7 +94,7 @@ const Home: React.FC = () => {
         title="Elite Headhunters for the UK Electrical Sector | Power-Up Talent"
         description="The UK's #1 headhunters for the electrical industry. We connect elite sales, engineering, and leadership talent with ambitious businesses across manufacturing, distribution, design, and installation."
         keywords="electrical industry headhunter, uk electrical recruitment, manufacturing recruitment, specification design engineering, electrical contractor recruiter, headhunting"
-        canonical="https://poweruptalent.co.uk/"
+        canonical="https://power-uptalent.co.uk/"
         structuredData={homeStructuredData}
       />
 

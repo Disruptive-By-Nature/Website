@@ -10,7 +10,7 @@ const Story: React.FC = () => {
         title="Our Story | Power-Up Talent"
         description="Learn about the story behind Power-Up Talent and our mission in the UK electrical sector."
         keywords="Our Story, Power-Up Talent, Electrical Sector Recruitment Story"
-        canonical="https://poweruptalent.co.uk/story"
+        canonical="https://power-uptalent.co.uk/story"
       />
       {/* 1. Hero Header - Clean */}
       <section className="max-w-screen-xl mx-auto px-4 md:px-6 mb-20 md:mb-32 text-center">

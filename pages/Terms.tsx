@@ -8,7 +8,7 @@ const Terms: React.FC = () => {
         title="Terms of Service | Power-Up Talent"
         description="Read Power-Up Talent's terms of service."
         keywords="Terms of Service, Power-Up Talent Terms, Legal"
-        canonical="https://poweruptalent.co.uk/terms"
+        canonical="https://power-uptalent.co.uk/terms"
       />
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-12 tracking-tight">Terms of <span className="text-primary italic">Service.</span></h1>

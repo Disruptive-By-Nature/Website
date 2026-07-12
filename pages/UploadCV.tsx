@@ -9,13 +9,13 @@ const uploadCVStructuredData = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://poweruptalent.co.uk/#organization",
+      "@id": "https://power-uptalent.co.uk/#organization",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk"
+      "url": "https://power-uptalent.co.uk"
     },
     {
       "@type": "FAQPage",
-      "@id": "https://poweruptalent.co.uk/upload-cv#faq",
+      "@id": "https://power-uptalent.co.uk/upload-cv#faq",
       "mainEntity": [
         {
           "@type": "Question",
@@ -79,7 +79,7 @@ const UploadCV: React.FC = () => {
         title="Submit Your CV | Join the Power-Up Talent Network | Electrical Sector"
         description="Join the Power-Up Talent passive candidate network. We represent senior electrical sector professionals — across engineering, design, manufacturing, distribution, and contracting — discreetly to the right employers."
         keywords="Upload CV Electrical Sector, Electrical Engineering Jobs UK, Specification Designer Headhunted, Passive Candidate Network"
-        canonical="https://poweruptalent.co.uk/upload-cv"
+        canonical="https://power-uptalent.co.uk/upload-cv"
         structuredData={uploadCVStructuredData}
       />
 
@@ -137,7 +137,7 @@ const UploadCV: React.FC = () => {
                 {useConversational ? (
                   <TypebotEmbed typebot="powerup-candidate-intake" height="550px" />
                 ) : (
-                  <form action="mailto:poweruptalent@gmail.com" method="get" encType="text/plain" className="space-y-6">
+                  <form action="mailto:info@power-uptalent.co.uk" method="get" encType="text/plain" className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.3em]">Full Name *</label>

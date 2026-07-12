@@ -10,7 +10,7 @@ const WhyUs: React.FC = () => {
         title="Why Choose Power-Up Talent? | UK Electrical Sector Recruitment"
         description="Discover why Power-Up Talent is the UK's premier strategic talent partner for the electrical industry. Our operational grit, sector literacy, and strategic alignment set us apart."
         keywords="Why Choose Power-Up Talent, Electrical Recruitment Advantages, UK Electrical Sector Expertise, Operational Grit Recruitment"
-        canonical="https://poweruptalent.co.uk/why-us"
+        canonical="https://power-uptalent.co.uk/why-us"
       />
       {/* 1. Hero - Sector Intelligence Focus */}
       <header className="relative py-40 md:py-60 px-6 text-center overflow-hidden border-b border-white/5 bg-navy-deep">

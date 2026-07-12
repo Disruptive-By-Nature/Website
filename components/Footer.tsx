@@ -85,11 +85,11 @@ const Footer: React.FC = () => {
             <FooterHeading>Get In Touch</FooterHeading>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:poweruptalent@gmail.com"
+                href="mailto:info@power-uptalent.co.uk"
                 className="flex items-start gap-2.5 text-slate-300 hover:text-primary text-sm font-light transition-all duration-200 group break-all"
               >
                 <span className="material-symbols-outlined text-primary/80 text-[18px] mt-0.5 group-hover:text-primary transition-colors">mail</span>
-                <span>poweruptalent@gmail.com</span>
+                <span>info@power-uptalent.co.uk</span>
               </a>
               <div className="flex items-start gap-2.5 text-slate-300 text-sm font-light">
                 <span className="material-symbols-outlined text-primary/80 text-[18px] mt-0.5">schedule</span>

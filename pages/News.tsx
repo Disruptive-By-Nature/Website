@@ -87,7 +87,7 @@ const News: React.FC = () => {
         title="Industry News | UK Electrical Sector News | Power-Up Talent"
         description="Stay updated with the latest UK electrical industry news, manufacturing updates, distribution trends, and contracting regulations."
         keywords="Electrical Industry News, UK Electrical Sector Updates, Electrical Contracting News, Manufacturing Distribution Trends"
-        canonical="https://poweruptalent.co.uk/news"
+        canonical="https://power-uptalent.co.uk/news"
       />
       <section className="bg-navy-deep py-24 md:py-48 border-b border-white/5 relative overflow-hidden">
         {/* Background Hero Image */}

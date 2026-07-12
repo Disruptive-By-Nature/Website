@@ -12,10 +12,10 @@ const servicesStructuredData = {
   "@graph": [
     {
       "@type": "ProfessionalService",
-      "@id": "https://poweruptalent.co.uk/#service-provider",
+      "@id": "https://power-uptalent.co.uk/#service-provider",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk",
-      "logo": "https://poweruptalent.co.uk/assets/images/logo.jpg",
+      "url": "https://power-uptalent.co.uk",
+      "logo": "https://power-uptalent.co.uk/assets/images/logo.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "GB"
@@ -23,30 +23,30 @@ const servicesStructuredData = {
     },
     {
       "@type": "Service",
-      "@id": "https://poweruptalent.co.uk/services#recruitment",
+      "@id": "https://power-uptalent.co.uk/services#recruitment",
       "name": "Elite Recruitment",
       "provider": {
-        "@id": "https://poweruptalent.co.uk/#service-provider"
+        "@id": "https://power-uptalent.co.uk/#service-provider"
       },
       "description": "Our core headhunting service specialising in identifying and securing the top 1% of passive talent currently delivering results for competitors.",
       "areaServed": "GB"
     },
     {
       "@type": "Service",
-      "@id": "https://poweruptalent.co.uk/services#executive-search",
+      "@id": "https://power-uptalent.co.uk/services#executive-search",
       "name": "Strategic Recruitment / Executive Search",
       "provider": {
-        "@id": "https://poweruptalent.co.uk/#service-provider"
+        "@id": "https://power-uptalent.co.uk/#service-provider"
       },
       "description": "Executive search specifically for commercial leaders, engineers, and project managers who possess the acumen to drive your bottom line.",
       "areaServed": "GB"
     },
     {
       "@type": "Service",
-      "@id": "https://poweruptalent.co.uk/services#partnerships",
+      "@id": "https://power-uptalent.co.uk/services#partnerships",
       "name": "Growth Partnerships",
       "provider": {
-        "@id": "https://poweruptalent.co.uk/#service-provider"
+        "@id": "https://power-uptalent.co.uk/#service-provider"
       },
       "description": "Long-term collaboration for sector businesses undergoing rapid scale, project mobilisations, or national restructuring across key UK regions.",
       "areaServed": "GB"
@@ -68,7 +68,7 @@ const Services: React.FC = () => {
         title="Recruitment Services for the Electrical Sector | Power-Up Talent"
         description="Elite recruitment, strategic search and growth partnerships for the UK electrical industry. Specialist headhunting across manufacturing, distribution, design, and contracting."
         keywords="electrical industry recruitment, headhunting services, executive search, manufacturing recruitment, engineering specification design, electrical contractor recruitment"
-        canonical="https://poweruptalent.co.uk/services"
+        canonical="https://power-uptalent.co.uk/services"
         structuredData={servicesStructuredData}
       />
 

@@ -80,14 +80,14 @@ const SpecialismDetail: React.FC = () => {
   const specialismStructuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `https://poweruptalent.co.uk/specialisms/${specialism.id}#specialism`,
+    "@id": `https://power-uptalent.co.uk/specialisms/${specialism.id}#specialism`,
     "name": `${specialism.name} Recruitment`,
     "description": specialism.intro,
     "provider": {
       "@type": "Organization",
-      "@id": "https://poweruptalent.co.uk/#organization",
+      "@id": "https://power-uptalent.co.uk/#organization",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk"
+      "url": "https://power-uptalent.co.uk"
     },
     "areaServed": "GB",
     "serviceType": "Recruitment"
@@ -99,7 +99,7 @@ const SpecialismDetail: React.FC = () => {
         title={`${specialism.name} Recruitment & Headhunting | Power-Up Talent`}
         description={specialism.intro}
         keywords={`${specialism.name.toLowerCase()} recruitment, headhunting, executive search, active project sourcing`}
-        canonical={`https://poweruptalent.co.uk/specialisms/${specialism.id}`}
+        canonical={`https://power-uptalent.co.uk/specialisms/${specialism.id}`}
         structuredData={specialismStructuredData}
       />
 

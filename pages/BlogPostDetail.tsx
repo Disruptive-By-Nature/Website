@@ -22,7 +22,7 @@ const BlogPostDetail: React.FC = () => {
   const blogPostStructuredData = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "@id": `https://poweruptalent.co.uk/insights/${post.id}#blogpost`,
+    "@id": `https://power-uptalent.co.uk/insights/${post.id}#blogpost`,
     "headline": post.title,
     "description": post.excerpt,
     "datePublished": "2026-06-21",
@@ -33,13 +33,13 @@ const BlogPostDetail: React.FC = () => {
     },
     "publisher": {
       "@type": "Organization",
-      "@id": "https://poweruptalent.co.uk/#organization",
+      "@id": "https://power-uptalent.co.uk/#organization",
       "name": "Power-Up Talent",
-      "url": "https://poweruptalent.co.uk"
+      "url": "https://power-uptalent.co.uk"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://poweruptalent.co.uk/insights/${post.id}`
+      "@id": `https://power-uptalent.co.uk/insights/${post.id}`
     }
   };
 
@@ -49,7 +49,7 @@ const BlogPostDetail: React.FC = () => {
         title={`${post.title} | Power-Up Talent Insights`}
         description={post.excerpt}
         keywords={`${post.category}, electrical sector, recruitment, talent strategy, ${post.title}`}
-        canonical={`https://poweruptalent.co.uk/insights/${post.id}`}
+        canonical={`https://power-uptalent.co.uk/insights/${post.id}`}
         structuredData={blogPostStructuredData}
       />
       <div className="max-w-screen-xl mx-auto px-6">

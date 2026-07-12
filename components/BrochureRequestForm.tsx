@@ -228,7 +228,7 @@ What's Inside:
 3. Market benchmarks: Relevant wage, allowance, and growth metrics tailored for operations directors, project heads, and HR talent.
 
 You can download your high-resolution copy of our services briefing sheet here:
-https://poweruptalent.co.uk/brochure
+https://power-uptalent.co.uk/brochure
 
 If you have any operational executive search challenges, please reply directly to this email to sync with our specialist consultants.
 

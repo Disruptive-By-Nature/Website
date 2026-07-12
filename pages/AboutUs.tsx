@@ -18,19 +18,19 @@ const aboutStructuredData = {
   "@graph": [
     {
       "@type": "AboutPage",
-      "@id": "https://poweruptalent.co.uk/about#webpage",
-      "url": "https://poweruptalent.co.uk/about",
+      "@id": "https://power-uptalent.co.uk/about#webpage",
+      "url": "https://power-uptalent.co.uk/about",
       "name": "About Power-Up Talent",
       "description": "We are the UK's leading headhunters and recruitment specialists for the electrical industry, spanning manufacturing, distribution, specification, and installation.",
       "publisher": {
         "@type": "Organization",
-        "@id": "https://poweruptalent.co.uk/#organization",
+        "@id": "https://power-uptalent.co.uk/#organization",
         "name": "Power-Up Talent",
-        "url": "https://poweruptalent.co.uk"
+        "url": "https://power-uptalent.co.uk"
       },
       "about": {
         "@type": "Organization",
-        "@id": "https://poweruptalent.co.uk/#organization"
+        "@id": "https://power-uptalent.co.uk/#organization"
       }
     }
   ]
@@ -72,7 +72,7 @@ const AboutUs: React.FC = () => {
         title="About Us | Power-Up Talent"
         description="We are the UK's leading headhunters and recruitment specialists for the electrical industry, spanning manufacturing, distribution, design, and installation."
         keywords="about power-up talent, electrical industry recruiter, uk recruitment engineering, headhunters electrical"
-        canonical="https://poweruptalent.co.uk/about"
+        canonical="https://power-uptalent.co.uk/about"
         structuredData={aboutStructuredData}
       />
 
