@@ -66,10 +66,7 @@ const BlogPostDetail: React.FC = () => {
             {post.title}
           </h1>
           <div className="flex flex-wrap items-center gap-8 text-slate-400 text-sm uppercase tracking-widest font-bold">
-            <div className="flex items-center gap-3">
-              <span className="material-symbols-outlined text-primary">person</span>
-              {post.author}
-            </div>
+
             <div className="flex items-center gap-3">
               <span className="material-symbols-outlined text-primary">calendar_today</span>
               {post.date}

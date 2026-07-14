@@ -116,10 +116,7 @@ const Insights: React.FC = () => {
                         {featured.excerpt}
                       </p>
                       <div className="flex items-center gap-4 text-white/40 text-xs mb-6">
-                        <span className="flex items-center gap-1">
-                          <span className="material-symbols-outlined text-xs">person</span>
-                          {featured.author}
-                        </span>
+
                         <span className="flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">calendar_today</span>
                           {featured.date}
@@ -165,10 +162,7 @@ const Insights: React.FC = () => {
                         {post.excerpt}
                       </p>
                       <div className="flex items-center justify-between text-white/35 text-xs pt-4 border-t border-white/10">
-                        <span className="flex items-center gap-1">
-                          <span className="material-symbols-outlined text-xs">person</span>
-                          {post.author}
-                        </span>
+
                         <span className="flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">schedule</span>
                           {post.readTime}
