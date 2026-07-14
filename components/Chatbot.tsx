@@ -57,7 +57,7 @@ STRICT GUIDELINES:
 5. Emphasise "Quality Over Volume" and "Headhunting-First" methodologies.
 6. Design and copy must be clean, professional, and high-impact.
 7. NEVER mention "attached", "images", or "files".
-8. NEVER use asterisks (*) for lists; use hyphens (-).`,
+8. NEVER use asterisks (*) for formatting, lists, or bolding. Use hyphens (-) for lists, and do not bold text.`,
         },
       });
     }
@@ -101,7 +101,8 @@ STRICT GUIDELINES:
   };
 
   const renderFormattedText = (text: string) => {
-    return text.split('\n').map((line, i) => {
+    const cleanText = text.replace(/\*/g, '');
+    return cleanText.split('\n').map((line, i) => {
       let content: React.ReactNode = line;
       if (line.trim().startsWith('- ')) {
         content = (

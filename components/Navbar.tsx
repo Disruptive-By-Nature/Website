@@ -236,27 +236,12 @@ const Navbar: React.FC = () => {
             <span className="material-symbols-outlined text-[18px]">mail</span>
           </a>
 
-          {/* CTA */}
-          <a
-            href="https://sg-alpha-9941.web.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-black px-6 py-2.5 rounded-sm font-bold text-[11px] uppercase tracking-[0.12em] hover:bg-white hover:shadow-[0_0_30px_rgba(255,193,7,0.3)] transition-all duration-300 shadow-lg whitespace-nowrap"
-          >
-            CRM Login
-          </a>
+
         </div>
 
         {/* MOBILE RIGHT */}
         <div className="flex lg:hidden items-center gap-3">
-          <a
-            href="https://sg-alpha-9941.web.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary text-black px-4 py-2 rounded-sm font-bold text-[10px] uppercase tracking-[0.1em] hover:bg-white transition-all"
-          >
-            CRM Login
-          </a>
+
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-white p-2 hover:text-primary transition-colors cursor-pointer"
