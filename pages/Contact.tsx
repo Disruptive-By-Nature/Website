@@ -30,6 +30,8 @@ const contactStructuredData = {
 const Contact: React.FC = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [useConversational, setUseConversational] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
 
   const faqs = [
     { q: "How quickly can you start?", a: "We begin market mapping within 48 hours of receiving your brief. You will have an initial shortlist within 28 days." },
@@ -37,29 +39,39 @@ const Contact: React.FC = () => {
     { q: "Is my enquiry confidential?", a: "Absolutely. We operate under strict NDA for all client briefs and candidate searches. Discretion is the foundation of everything we do." },
   ];
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setIsSuccess(false);
+
     const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "df3ac53d-919b-4c7d-863e-17373b225d8a");
+
     const name = formData.get("name") || "";
     const company = formData.get("company") || "";
-    const role = formData.get("role") || "";
-    const location = formData.get("location") || "";
-    const brief = formData.get("brief") || "";
-    const email = formData.get("email") || "";
-    const phone = formData.get("phone") || "";
+    formData.append("subject", `New Employer Brief from ${name} at ${company}`);
+    // Web3forms will automatically map the "email" field to the Reply-To header
+    
+    // Add a custom bot honeypot to prevent spam
+    formData.append("botcheck", "");
 
-    const subject = encodeURIComponent(`New Employer Brief from ${name} at ${company}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\n` +
-      `Company: ${company}\n` +
-      `Email: ${email}\n` +
-      `Phone: ${phone}\n\n` +
-      `Role Required: ${role}\n` +
-      `Location: ${location}\n\n` +
-      `Brief:\n${brief}`
-    );
-
-    window.location.href = `mailto:info@power-uptalent.co.uk?subject=${subject}&body=${body}`;
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      
+      if (res.ok) {
+        setIsSuccess(true);
+        (e.target as HTMLFormElement).reset();
+        setTimeout(() => setIsSuccess(false), 5000); // hide success message after 5 seconds
+      } else {
+        alert("Something went wrong while sending your brief. Please try again.");
+      }
+    } catch (error) {
+      alert("Network error. Please try again.");
+    }
+    setIsSubmitting(false);
   };
 
   return (
@@ -169,11 +181,20 @@ const Contact: React.FC = () => {
                   </div>
 
                   <div className="pt-2">
-                    <button type="submit" className="w-full bg-primary text-navy-deep py-4 rounded-sm font-bold text-sm uppercase tracking-[0.2em] shadow-[0_12px_30px_rgba(255,193,7,0.2)] hover:bg-white transition-all flex items-center justify-center gap-3 group active:scale-[0.98]">
-                      Send Your Brief
-                      <span className="material-symbols-outlined text-lg group-hover:rotate-12 transition-transform">bolt</span>
+                    <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+                    <button disabled={isSubmitting} type="submit" className="w-full bg-primary text-navy-deep py-4 rounded-sm font-bold text-sm uppercase tracking-[0.2em] shadow-[0_12px_30px_rgba(255,193,7,0.2)] hover:bg-white transition-all flex items-center justify-center gap-3 group active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed">
+                      {isSubmitting ? 'Sending...' : (isSuccess ? 'Brief Sent!' : 'Send Your Brief')}
+                      {!isSubmitting && !isSuccess && <span className="material-symbols-outlined text-lg group-hover:rotate-12 transition-transform">bolt</span>}
+                      {isSuccess && <span className="material-symbols-outlined text-lg">check_circle</span>}
                     </button>
-                    <p className="text-slate-600 text-xs font-light text-center mt-4">All enquiries are treated with strict confidentiality. We operate under NDA.</p>
+                    {isSuccess && (
+                      <div className="mt-4 p-4 bg-green-500/10 border border-green-500/20 text-green-400 rounded-sm text-center text-sm font-semibold">
+                        Thank you! Your brief has been securely sent. We will be in touch shortly.
+                      </div>
+                    )}
+                    {!isSuccess && (
+                      <p className="text-slate-600 text-xs font-light text-center mt-4">All enquiries are treated with strict confidentiality. We operate under NDA.</p>
+                    )}
                   </div>
                   </form>
                 )}
