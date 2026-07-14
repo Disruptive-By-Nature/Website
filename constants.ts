@@ -15,6 +15,9 @@ import warehouseForkliftImg from './src/assets/images/warehouse_forklift.jpg';
 import tradeCounterPhotoImg from './src/assets/images/trade_counter.jpg';
 import laptopWarehouseImg from './src/assets/images/laptop_warehouse.jpg';
 import officeCollaborationImg from './src/assets/images/office_collaboration.jpg';
+import constructionBlogSkillsImg from './src/assets/images/construction_blog_skills.jpg';
+import engineeringBlogBimImg from './src/assets/images/engineering_blog_bim.jpg';
+import complianceBlogSafetyImg from './src/assets/images/compliance_blog_safety.jpg';
 
 export const ROLES_PLACED: string[] = [
   "Branch Manager",
@@ -387,6 +390,51 @@ Looking out to 2028, market reports emphasise that while volume growth may be mo
     author: "Sector Specialist",
     category: "Market Trends",
     image: buildingComplianceDocsImg,
+    readTime: "6 min read"
+  },
+  {
+    id: "building-the-future-sourcing-uk-construction-leaders",
+    title: "Building the Future: Sourcing Strategic Leaders in UK Construction",
+    excerpt: "As infrastructure projects scale across the UK, securing high-calibre Site Managers, Quantity Surveyors, and Project Directors requires a proactive approach to passive talent.",
+    content: `The UK construction sector is undergoing a period of significant change, driven by major infrastructure projects, residential developments, and commercial upgrades. However, the single greatest constraint on delivery is not material supply or planning permission — it is the acute shortage of leadership talent. Securing experienced Site Managers, Quantity Surveyors, and Project Directors is increasingly difficult, and traditional recruitment methods are falling short.
+
+In a highly competitive market, the most capable professionals are rarely active on job boards. They are already delivering successful projects, managing budgets, and leading teams. To attract these high-calibre individuals, construction firms must shift from a reactive hiring model to a proactive, headhunting-led talent strategy. This involves mapping the market, identifying passive high-performers, and presenting compelling propositions that align with their career ambitions.
+
+Furthermore, leadership in modern construction requires more than technical competency. Leaders must navigate complex supply chains, manage multi-disciplinary teams, and implement sustainable building practices. By investing in strategic talent partnerships, construction companies can build robust pipelines of leaders who are equipped to drive operational excellence and protect project margins in a volatile environment.`,
+    date: "July 14, 2026",
+    author: "Sector Specialist",
+    category: "Talent Strategy",
+    image: constructionBlogSkillsImg,
+    readTime: "5 min read"
+  },
+  {
+    id: "next-generation-bim-structural-engineering",
+    title: "Next-Generation BIM: Sourcing Technical Talent to Lead the Digital Evolution",
+    excerpt: "Building Information Modelling (BIM) is transforming structural engineering. Finding the design engineers who can merge technical grit with digital sophistication is key.",
+    content: `Building Information Modelling (BIM) is no longer a futuristic concept in structural and civil engineering; it is the industry standard. The integration of 3D modeling, real-time collaboration, and data-rich design tools has transformed how engineering projects are planned, designed, and executed in the UK. This digital shift has created a surge in demand for engineering talent who are fluent in advanced BIM environments.
+
+The challenge for engineering consultancies and contractors is that the skills required are highly specialized. A next-generation structural engineer must combine traditional design calculations and "technical grit" with a deep understanding of BIM workflows, software integration, and digital twin technology. Sourcing these hybrid professionals requires a headhunting approach that targets passive candidates within competing firms.
+
+As projects become more complex and client requirements expand, the ability to lead digital design processes is a significant competitive differentiator. Consultancies that proactively build relationships with high-calibre BIM design leads, structural engineers, and technical directors will be best positioned to win major contracts and deliver high-impact engineering projects.`,
+    date: "July 14, 2026",
+    author: "Sector Specialist",
+    category: "Market Trends",
+    image: engineeringBlogBimImg,
+    readTime: "5 min read"
+  },
+  {
+    id: "navigating-building-safety-act-compliance",
+    title: "Navigating the Building Safety Act: Competence and Compliance in Engineering Design",
+    excerpt: "The UK Building Safety Act has introduced strict requirements for technical competence. We examine how engineering firms are adjusting their hiring criteria.",
+    content: `The UK Building Safety Act represents the most significant reform of building safety regulation in a generation. For engineering design practices, the Act introduces clear duties, rigorous gateways, and strict requirements for demonstrating competence at every stage of a project. Sourcing and verifying this technical competence has become a critical focus for leadership teams.
+
+Under the new regime, dutyholders—including Principal Designers and Lead Structural Engineers—must demonstrate they possess the skills, knowledge, experience, and behaviours necessary to fulfill their roles safely and compliantly. This shift has changed the recruitment landscape. It is no longer enough to hire based on project portfolios alone; firms must rigorously verify a candidate's understanding of the new regulatory frameworks, safety cases, and structural integrity compliance.
+
+Engineering firms are adjusting their talent strategies to focus on technical vetting and rigorous qualification. Partnering with specialist headhunters who understand the specific requirements of the Building Safety Act ensures that firms can identify, attract, and secure leaders who possess the precise competence credentials needed to protect project safety, manage regulatory risk, and ensure compliance.`,
+    date: "July 14, 2026",
+    author: "Sector Specialist",
+    category: "Compliance",
+    image: complianceBlogSafetyImg,
     readTime: "6 min read"
   }
 ];
