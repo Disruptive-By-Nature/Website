@@ -37,6 +37,31 @@ const Contact: React.FC = () => {
     { q: "Is my enquiry confidential?", a: "Absolutely. We operate under strict NDA for all client briefs and candidate searches. Discretion is the foundation of everything we do." },
   ];
 
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") || "";
+    const company = formData.get("company") || "";
+    const role = formData.get("role") || "";
+    const location = formData.get("location") || "";
+    const brief = formData.get("brief") || "";
+    const email = formData.get("email") || "";
+    const phone = formData.get("phone") || "";
+
+    const subject = encodeURIComponent(`New Employer Brief from ${name} at ${company}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\n` +
+      `Company: ${company}\n` +
+      `Email: ${email}\n` +
+      `Phone: ${phone}\n\n` +
+      `Role Required: ${role}\n` +
+      `Location: ${location}\n\n` +
+      `Brief:\n${brief}`
+    );
+
+    window.location.href = `mailto:info@power-uptalent.co.uk?subject=${subject}&body=${body}`;
+  };
+
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white">
       <SEO
@@ -101,10 +126,8 @@ const Contact: React.FC = () => {
                 {useConversational ? (
                   <TypebotEmbed typebot="powerup-employer-brief" height="500px" />
                 ) : (
-                  <form
-                    action="mailto:info@power-uptalent.co.uk"
-                    method="get"
-                    encType="text/plain"
+                <form
+                    onSubmit={handleFormSubmit}
                     className="space-y-6"
                   >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
