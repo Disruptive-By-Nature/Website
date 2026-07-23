@@ -1,39 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://power-up-talent-web.web.app/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://power-up-talent-web.web.app/#/about</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://power-up-talent-web.web.app/#/services</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/services</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://power-up-talent-web.web.app/#/upload-cv</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://power-up-talent-web.web.app/#/contact</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/upload-cv</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://power-up-talent-web.web.app/#/insights</loc>
-    <lastmod>2026-06-18</lastmod>
+    <loc>https://power-uptalent.co.uk/insights</loc>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/services/elite-recruitment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/services/strategic-recruitment</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/services/growth-partnerships</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/specialisms/electrical</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/specialisms/construction</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/specialisms/engineering</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/insights/wholesale-salary-report</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/insights/branch-leadership</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://power-uptalent.co.uk/insights/ev-skills-scarcity</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

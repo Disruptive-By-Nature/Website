@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import constructionTabImg from '../src/assets/images/construction_tab.jpg';
 import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
 import electricalTabImg from '../src/assets/images/electrical_tab.jpg';
@@ -125,6 +126,15 @@ const SpecialismDetail: React.FC = () => {
                 <span className="material-symbols-outlined text-[3rem] font-bold drop-shadow-md">{specialism.icon}</span>
               </div>
             </div>
+
+            <div className="flex justify-center mb-6">
+              <Breadcrumbs items={[
+                { label: 'Home', path: '/' },
+                { label: 'Specialisms', path: '/#specialisms' },
+                { label: specialism.name }
+              ]} />
+            </div>
+
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-primary border border-primary/30 rounded-full bg-primary/10">
               Sector Specialism
             </span>

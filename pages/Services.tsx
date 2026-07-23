@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import ElectricalTalentCalibrationTool from '../components/ElectricalTalentCalibrationTool';
 import heroImg from '../src/assets/images/hero_services.png';
 import heroMainImg from '../src/assets/images/hero_main.png';
 import heroTeamImg from '../src/assets/images/hero_team.png';
@@ -367,6 +368,15 @@ const Services: React.FC = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════════════
+          CALIBRATION TOOL SECTION
+      ══════════════════════════════════════════════════════════ */}
+      <section className="bg-navy-deep py-16 border-t border-white/5">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <ElectricalTalentCalibrationTool />
         </div>
       </section>
 

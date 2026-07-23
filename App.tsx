@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
 import Services from './pages/Services';
@@ -13,6 +13,9 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import Insights from './pages/Insights';
 import BlogPostDetail from './pages/BlogPostDetail';
+import WholesaleSalaryReport from './pages/insight-wholesale-salary-report';
+import BranchLeadershipReport from './pages/insight-branch-leadership';
+import EVSkillsScarcityReport from './pages/insight-ev-skills-scarcity';
 import SpecialismDetail from './pages/SpecialismDetail';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -36,6 +39,9 @@ const App: React.FC = () => {
             <Route path="/upload-cv" element={<UploadCV />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/insights" element={<Insights />} />
+            <Route path="/insights/wholesale-salary-report" element={<WholesaleSalaryReport />} />
+            <Route path="/insights/branch-leadership" element={<BranchLeadershipReport />} />
+            <Route path="/insights/ev-skills-scarcity" element={<EVSkillsScarcityReport />} />
             <Route path="/insights/:id" element={<BlogPostDetail />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />

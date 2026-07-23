@@ -66,6 +66,57 @@ const Insights: React.FC = () => {
       <section className="bg-background-dark py-24 border-b border-white/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-primary">Intelligence Briefings</span>
+            <h2 className="font-display font-black text-3xl md:text-5xl text-white uppercase mt-2">Featured Reports</h2>
+            <p className="text-slate-400 text-sm md:text-base font-light mt-4 max-w-2xl mx-auto">
+              Deep-dive technical analysis and market reports for the UK electrical wholesale sector.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-24">
+            {[
+              {
+                title: "UK Electrical Wholesale Salary & Margin Preservation Report 2026",
+                desc: "Deep-dive technical article on salary benchmarks, trade counter margin protection, bonus structures, and executive retention.",
+                link: "/insights/wholesale-salary-report",
+                cat: "Market Trends"
+              },
+              {
+                title: "Scaling Independent Trade Counters: Branch Leadership",
+                desc: "Technical analysis of branch manager sourcing, trade customer relationship retention, stock turn management, and headhunting.",
+                link: "/insights/branch-leadership",
+                cat: "Operational Excellence"
+              },
+              {
+                title: "Part L & Net-Zero EV Infrastructure Skills Scarcity",
+                desc: "Technical analysis of EV charging infrastructure, solar PV distribution, renewable electrical products, and talent scarcity.",
+                link: "/insights/ev-skills-scarcity",
+                cat: "Compliance"
+              }
+            ].map((report, i) => (
+              <Link key={i} to={report.link} className="group block">
+                <article className="bg-navy-deep border border-white/10 rounded-2xl p-8 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 h-full flex flex-col justify-between">
+                  <div>
+                    <span className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold border mb-6 ${CATEGORY_COLORS[report.cat] || 'bg-white/10 text-white/70 border-white/20'}`}>
+                      {report.cat}
+                    </span>
+                    <h3 className="text-xl font-bold text-white mb-4 group-hover:text-primary transition-colors leading-snug">
+                      {report.title}
+                    </h3>
+                    <p className="text-slate-400 text-sm font-light leading-relaxed mb-6">
+                      {report.desc}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider group-hover:gap-3 transition-all">
+                    Read Report
+                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mb-16 border-t border-white/10 pt-16">
             <span className="text-xs font-bold uppercase tracking-widest text-primary">Market Insights</span>
             <h2 className="font-display font-black text-3xl md:text-5xl text-white uppercase mt-2">Industry Articles</h2>
             <p className="text-slate-400 text-sm md:text-base font-light mt-4 max-w-2xl mx-auto">

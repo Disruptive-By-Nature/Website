@@ -9,7 +9,7 @@ interface SEOProps {
   structuredData?: object;
 }
 
-const SEO: React.FC<SEOProps> = ({ title, description, keywords, canonical, structuredData }) => {
+const SEO: React.FC<SEOProps> = ({ title, description, keywords, canonical = 'https://power-uptalent.co.uk', structuredData }) => {
   return (
     <Helmet>
       <title>{title}</title>

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://power-up-talent-web.web.app/sitemap.xml
+Sitemap: https://power-uptalent.co.uk/sitemap.xml

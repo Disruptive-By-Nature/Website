@@ -3,6 +3,7 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { SERVICES } from '../constants';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import manufacturingImg from '../src/assets/images/fuse_board.png';
 import distributionImg from '../src/assets/images/warehouse_forklift.jpg';
 import designImg from '../src/assets/images/building_compliance_docs.png';
@@ -88,6 +89,15 @@ const ServiceDetail: React.FC = () => {
                 <span className="material-symbols-outlined text-[3rem] font-bold drop-shadow-md">{service.icon}</span>
               </div>
             </div>
+            
+            <div className="flex justify-center mb-6">
+              <Breadcrumbs items={[
+                { label: 'Home', path: '/' },
+                { label: 'Services', path: '/services' },
+                { label: service.name }
+              ]} />
+            </div>
+
             <span className="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest uppercase text-primary border border-primary/30 rounded-full bg-primary/10">
               Strategic Service Pillar
             </span>

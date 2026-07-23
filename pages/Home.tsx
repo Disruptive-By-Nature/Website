@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import SEO from '../components/SEO';
+import ElectricalTalentCalibrationTool from '../components/ElectricalTalentCalibrationTool';
 import heroImg from '../src/assets/images/handshake_hero.jpg';
 import constructionTabImg from '../src/assets/images/construction_tab.jpg';
 import engineeringTabImg from '../src/assets/images/engineering_tab.jpg';
@@ -57,6 +58,51 @@ const homeStructuredData = {
         "Design & Specification",
         "M&E Contracting & Installation",
         "Headhunting"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do you map and target passive competitor talent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We utilise AI-driven market mapping combined with deep industry networks to identify top performers across competitors. We then confidentially approach these individuals, focusing on their career aspirations rather than just pitching a job."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you recruit for buying groups and wholesale networks?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our team has extensive experience sourcing leadership and commercial talent specifically within independent and national buying groups, understanding the unique dynamics and margin pressures involved."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is confidentiality maintained during a senior search?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Discretion is our absolute priority. We use NDA-protected outreach and mask client details until a candidate has been fully vetted and mutual interest is confirmed, protecting your strategic moves from competitors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the typical time to hire for an executive role?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our targeted approach usually yields a fully vetted, highly qualified shortlist within 14-21 days, with average placements completed in 28 days, minimising disruption to your business."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you operate as an RPO for volume branch rollouts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Our Growth Partnerships (RPO) model acts as an extension of your internal team, seamlessly handling the entire recruitment lifecycle for multi-site branch expansions or national restructures."
+          }
+        }
       ]
     }
   ]
@@ -330,6 +376,15 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* ══════════════════════════════════════════════════════════
+          CALIBRATION TOOL SECTION
+      ══════════════════════════════════════════════════════════ */}
+      <section className="bg-background-dark py-16 border-y border-white/5">
+        <div className="max-w-screen-xl mx-auto px-6">
+          <ElectricalTalentCalibrationTool />
+        </div>
+      </section>
+
 {/* ══════════════════════════════════════════════════════════
           3. STRATEGIC PILLARS (Enlarged Stand-out Dark Section)
       ══════════════════════════════════════════════════════════ */}
@@ -519,6 +574,70 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+
+      {/* ══════════════════════════════════════════════════════════
+          7. FREQUENTLY ASKED QUESTIONS (FAQ)
+      ══════════════════════════════════════════════════════════ */}
+      <section className="bg-slate-50 py-24 border-b border-slate-200">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-[10px] uppercase tracking-[0.25em] text-primary font-bold mb-4">Clarity & Confidence</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy-deep leading-tight mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-slate-500 font-light text-base md:text-lg">
+              Insights into our headhunting process and strategic search methodologies.
+            </p>
+          </motion.div>
+
+          <div className="space-y-6">
+            {[
+              {
+                q: "How do you map and target passive competitor talent?",
+                a: "We utilise AI-driven market mapping combined with deep industry networks to identify top performers across competitors. We then confidentially approach these individuals, focusing on their career aspirations rather than just pitching a job."
+              },
+              {
+                q: "Do you recruit for buying groups and wholesale networks?",
+                a: "Yes. Our team has extensive experience sourcing leadership and commercial talent specifically within independent and national buying groups, understanding the unique dynamics and margin pressures involved."
+              },
+              {
+                q: "How is confidentiality maintained during a senior search?",
+                a: "Discretion is our absolute priority. We use NDA-protected outreach and mask client details until a candidate has been fully vetted and mutual interest is confirmed, protecting your strategic moves from competitors."
+              },
+              {
+                q: "What is the typical time to hire for an executive role?",
+                a: "Our targeted approach usually yields a fully vetted, highly qualified shortlist within 14-21 days, with average placements completed in 28 days, minimising disruption to your business."
+              },
+              {
+                q: "Can you operate as an RPO for volume branch rollouts?",
+                a: "Absolutely. Our Growth Partnerships (RPO) model acts as an extension of your internal team, seamlessly handling the entire recruitment lifecycle for multi-site branch expansions or national restructures."
+              }
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white border border-slate-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <h3 className="font-display font-bold text-lg text-navy-deep mb-3 flex items-start gap-3">
+                  <span className="material-symbols-outlined text-primary shrink-0 mt-0.5">help</span>
+                  {faq.q}
+                </h3>
+                <p className="text-slate-600 font-light pl-9 leading-relaxed">
+                  {faq.a}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="bg-background-dark py-24">
         <div className="max-w-screen-xl mx-auto px-6">
