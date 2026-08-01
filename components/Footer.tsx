@@ -73,7 +73,6 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-2">
             <FooterHeading>Company</FooterHeading>
             <nav className="flex flex-col gap-0.5">
-              <FooterLink to="/founding-partner">Founding Partner</FooterLink>
               <FooterLink to="/about">About Us</FooterLink>
               <FooterLink to="/insights">Information</FooterLink>
               <FooterLink to="/contact">Contact Us</FooterLink>
