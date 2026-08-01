@@ -81,12 +81,12 @@ const WhyUs: React.FC = () => {
                 </div>
              </div>
              <div className="space-y-12 order-1 lg:order-2">
-                <span className="text-primary font-bold text-[11px] uppercase tracking-[0.5em] block">Operational ROI</span>
+                <span className="text-primary font-bold text-[11px] uppercase tracking-[0.5em] block">Operational ROI & Sector Exclusivity</span>
                 <h2 className="text-4xl md:text-7xl font-display font-bold text-slate-900 tracking-tight uppercase leading-none">
                    Strategic <br/>Operational <br/><span className="italic">Alignment.</span>
                 </h2>
                 <p className="text-slate-600 text-xl font-light leading-relaxed">
-                   We ensure that every candidate identified aligns with your specific commercial objectives, ensuring a measurable return on your talent investment.
+                   We ensure that every candidate identified aligns with your specific commercial objectives. We work with one organisation per sector at a time — choosing Power-Up Talent means your competitors cannot.
                 </p>
              </div>
           </div>

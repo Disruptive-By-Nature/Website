@@ -12,44 +12,61 @@ const servicesStructuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
+      "@type": "EmploymentAgency",
       "@id": "https://power-uptalent.co.uk/#service-provider",
       "name": "Power-Up Talent",
       "url": "https://power-uptalent.co.uk",
-      "logo": "https://power-uptalent.co.uk/assets/images/logo.jpg",
+      "logo": "https://power-uptalent.co.uk/src/assets/images/logo.jpg",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "GB"
       }
     },
     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://power-uptalent.co.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Search Services",
+          "item": "https://power-uptalent.co.uk/services"
+        }
+      ]
+    },
+    {
       "@type": "Service",
-      "@id": "https://power-uptalent.co.uk/services#recruitment",
-      "name": "Elite Recruitment",
+      "@id": "https://power-uptalent.co.uk/services#elite-recruitment",
+      "name": "Elite Headhunting",
       "provider": {
         "@id": "https://power-uptalent.co.uk/#service-provider"
       },
-      "description": "Our core headhunting service specialising in identifying and securing the top 1% of passive talent currently delivering results for competitors.",
+      "description": "Direct, confidential headhunting targeting top 1% passive talent with guaranteed sector exclusivity.",
       "areaServed": "GB"
     },
     {
       "@type": "Service",
-      "@id": "https://power-uptalent.co.uk/services#executive-search",
-      "name": "Strategic Recruitment / Executive Search",
+      "@id": "https://power-uptalent.co.uk/services#strategic-recruitment",
+      "name": "Strategic Recruitment & Market Mapping",
       "provider": {
         "@id": "https://power-uptalent.co.uk/#service-provider"
       },
-      "description": "Executive search specifically for commercial leaders, engineers, and project managers who possess the acumen to drive your bottom line.",
+      "description": "Comprehensive local competitor mapping and active sourcing across all technical and commercial tiers.",
       "areaServed": "GB"
     },
     {
       "@type": "Service",
-      "@id": "https://power-uptalent.co.uk/services#partnerships",
-      "name": "Growth Partnerships",
+      "@id": "https://power-uptalent.co.uk/services#growth-partnerships",
+      "name": "Growth Partnerships (RPO)",
       "provider": {
         "@id": "https://power-uptalent.co.uk/#service-provider"
       },
-      "description": "Long-term collaboration for sector businesses undergoing rapid scale, project mobilisations, or national restructuring across key UK regions.",
+      "description": "Recruitment Process Outsourcing for branch expansions, multi-site rollouts, and volume hiring.",
       "areaServed": "GB"
     }
   ]

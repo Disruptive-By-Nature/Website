@@ -17,6 +17,7 @@ import WholesaleSalaryReport from './pages/insight-wholesale-salary-report';
 import BranchLeadershipReport from './pages/insight-branch-leadership';
 import EVSkillsScarcityReport from './pages/insight-ev-skills-scarcity';
 import SpecialismDetail from './pages/SpecialismDetail';
+import FoundingPartner from './pages/FoundingPartner';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
@@ -31,6 +32,7 @@ const App: React.FC = () => {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/founding-partner" element={<FoundingPartner />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:id" element={<ServiceDetail />} />
             <Route path="/specialisms/:id" element={<SpecialismDetail />} />

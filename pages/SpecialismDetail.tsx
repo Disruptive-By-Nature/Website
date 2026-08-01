@@ -80,26 +80,47 @@ const SpecialismDetail: React.FC = () => {
 
   const specialismStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `https://power-uptalent.co.uk/specialisms/${specialism.id}#specialism`,
-    "name": `${specialism.name} Recruitment`,
-    "description": specialism.intro,
-    "provider": {
-      "@type": "Organization",
-      "@id": "https://power-uptalent.co.uk/#organization",
-      "name": "Power-Up Talent",
-      "url": "https://power-uptalent.co.uk"
-    },
-    "areaServed": "GB",
-    "serviceType": "Recruitment"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `https://power-uptalent.co.uk/specialisms/${specialism.id}#specialism`,
+        "name": `${specialism.name} Headhunting & Executive Search`,
+        "description": specialism.intro,
+        "provider": {
+          "@type": "EmploymentAgency",
+          "@id": "https://power-uptalent.co.uk/#organization",
+          "name": "Power-Up Talent",
+          "url": "https://power-uptalent.co.uk"
+        },
+        "areaServed": "GB",
+        "serviceType": "Executive Search & Headhunting"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://power-uptalent.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": `${specialism.name} Specialism`,
+            "item": `https://power-uptalent.co.uk/specialisms/${specialism.id}`
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white overflow-x-hidden">
       <SEO
-        title={`${specialism.name} Recruitment & Headhunting | Power-Up Talent`}
-        description={specialism.intro}
-        keywords={`${specialism.name.toLowerCase()} recruitment, headhunting, executive search, active project sourcing`}
+        title={`${specialism.name} Headhunting & Search | Power-Up Talent`}
+        description={`${specialism.intro} We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot.`}
+        keywords={`headhunting, executive search, recruitment, ${specialism.name.toLowerCase()} recruitment, uk ${specialism.name.toLowerCase()} talent`}
         canonical={`https://power-uptalent.co.uk/specialisms/${specialism.id}`}
         structuredData={specialismStructuredData}
       />

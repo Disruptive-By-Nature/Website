@@ -19,7 +19,7 @@ const homeStructuredData = {
       "@id": "https://power-uptalent.co.uk/#website",
       "url": "https://power-uptalent.co.uk/",
       "name": "Power-Up Talent",
-      "description": "Elite headhunters and recruitment specialists for the UK electrical industry — manufacturing, distribution, design, and installation."
+      "description": "Elite headhunters and recruitment specialists for the UK Construction, Engineering, and Electrical sectors."
     },
     {
       "@type": "Organization",
@@ -40,8 +40,8 @@ const homeStructuredData = {
       }
     },
     {
-      "@type": "ProfessionalService",
-      "@id": "https://power-uptalent.co.uk/#service",
+      "@type": "EmploymentAgency",
+      "@id": "https://power-uptalent.co.uk/#agency",
       "name": "Power-Up Talent",
       "image": "https://power-uptalent.co.uk/src/assets/images/logo.jpg",
       "url": "https://power-uptalent.co.uk/",
@@ -52,17 +52,56 @@ const homeStructuredData = {
       },
       "areaServed": "GB",
       "knowsAbout": [
-        "Electrical Industry Sourcing",
-        "OEM Manufacturing",
-        "Wholesale Distribution",
-        "Design & Specification",
+        "Electrical Industry Headhunting",
+        "OEM Manufacturing & Switchgear",
+        "Wholesale Distribution & Branch Networks",
         "M&E Contracting & Installation",
-        "Headhunting"
-      ]
+        "Construction & Engineering Executive Search",
+        "Passive Candidate Mapping",
+        "Sector Exclusivity Guarantee"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Search & Headhunting Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Elite Headhunting",
+              "description": "Direct, confidential headhunting targeting the top 1% of passive candidates."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Strategic Sector Recruitment",
+              "description": "Local competitor mapping and all-tier active sourcing with sector exclusivity."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Growth Partnerships (RPO)",
+              "description": "Recruitment Process Outsourcing for branch rollouts and volume hiring."
+            }
+          }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you offer sector exclusivity for client partnerships?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot access our headhunting and passive talent pipeline in your domain."
+          }
+        },
         {
           "@type": "Question",
           "name": "How do you map and target passive competitor talent?",
@@ -171,9 +210,21 @@ const Home: React.FC = () => {
               <span className="text-gradient">Sector</span> Specialists.
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-10">
+            <p className="text-lg md:text-xl text-slate-300 font-light leading-relaxed max-w-2xl mb-8">
               We headhunt high-performing talent for ambitious employers across Construction, Engineering and Electrical
             </p>
+
+            <div className="mb-10 p-5 rounded-lg bg-navy-deep/80 border-l-4 border-primary border-y border-r border-white/10 backdrop-blur-md max-w-2xl shadow-xl">
+              <div className="flex items-start gap-3.5">
+                <span className="material-symbols-outlined text-primary text-2xl shrink-0 mt-0.5">verified_user</span>
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-primary font-bold mb-1">Strategic Sector Difference</p>
+                  <p className="text-white font-medium text-sm md:text-base leading-relaxed">
+                    We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div className="flex flex-wrap gap-4">
               <a
@@ -542,16 +593,16 @@ const Home: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                title: 'HEADHUNTING-FIRST',
-                desc: 'Operating on a methodology of market mapping and absolute discretion. We understand that the elite 1% of the workforce is rarely "looking" for work; they are busy delivering results for your competitors.',
+                title: 'HEADHUNTING & PASSIVE CANDIDATES',
+                desc: 'We combine direct headhunting with proactive passive talent mapping under absolute discretion. We target the top 1% of high-performers currently delivering results for your competitors. We work with one organisation per sector at a time — choosing Power-Up Talent means your competitors cannot.',
               },
               {
                 title: 'SECTOR LITERACY',
                 desc: 'Our consultants are sector specialists with deep operational backgrounds. We speak the language of engineering design, manufacturing supply chains, distribution networks, and contracting delivery, ensuring a peer-level vetting process.',
               },
               {
-                title: 'PASSIVE TALENT NETWORK',
-                desc: 'We have spent years building a deeply mapped network of high-performers who are not visible on job boards. Our relationships run deep — enabling us to make discreet approaches that generate genuine results.',
+                title: 'SECTOR EXCLUSIVITY GUARANTEE',
+                desc: 'We operate a strict single-client policy per sector mandate. When you retain Power-Up Talent, we block out your direct market competitors, ensuring zero conflict of interest and total dedication to securing your market lead.',
               },
               {
                 title: 'TAILORED TO YOUR BRIEF',
@@ -597,6 +648,10 @@ const Home: React.FC = () => {
 
           <div className="space-y-6">
             {[
+              {
+                q: "Do you offer sector exclusivity for client partnerships?",
+                a: "Yes. We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot access our headhunting and passive talent pipeline in your sector."
+              },
               {
                 q: "How do you map and target passive competitor talent?",
                 a: "We utilise AI-driven market mapping combined with deep industry networks to identify top performers across competitors. We then confidentially approach these individuals, focusing on their career aspirations rather than just pitching a job."

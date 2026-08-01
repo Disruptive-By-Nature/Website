@@ -224,6 +224,19 @@ const Navbar: React.FC = () => {
             Contact
           </Link>
 
+          {/* Founding Partner */}
+          <Link
+            to="/founding-partner"
+            className={`text-[10px] uppercase tracking-[0.14em] font-bold py-1.5 px-3 rounded border transition-all duration-200 flex items-center gap-1.5 ${
+              isActive("/founding-partner")
+                ? "bg-primary text-navy-deep border-primary"
+                : "text-primary border-primary/40 hover:bg-primary/10 hover:border-primary"
+            }`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+            Founding Partner
+          </Link>
+
           {/* divider */}
           <div className="w-px h-5 bg-white/10" />
 
@@ -289,6 +302,18 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
+
+            {/* Founding Partner Mobile */}
+            <Link
+              to="/founding-partner"
+              onClick={() => setIsOpen(false)}
+              className={`text-sm uppercase tracking-[0.12em] font-bold py-3 px-4 rounded-sm transition-all border border-primary/40 flex items-center justify-between mt-1 ${
+                isActive("/founding-partner") ? "bg-primary text-navy-deep" : "text-primary bg-primary/10"
+              }`}
+            >
+              <span>Founding Partner Launch</span>
+              <span className="text-[10px] px-2 py-0.5 rounded bg-primary/20 text-primary border border-primary/30">3 Spots Left</span>
+            </Link>
 
             {/* footer strip */}
             <div className="pt-4 border-t border-white/5 mt-2 flex items-center justify-between">

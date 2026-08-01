@@ -21,26 +21,53 @@ const BlogPostDetail: React.FC = () => {
 
   const blogPostStructuredData = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "@id": `https://power-uptalent.co.uk/insights/${post.id}#blogpost`,
-    "headline": post.title,
-    "description": post.excerpt,
-    "datePublished": "2026-06-21",
-    "dateModified": "2026-06-23",
-    "author": {
-      "@type": "Person",
-      "name": post.author
-    },
-    "publisher": {
-      "@type": "Organization",
-      "@id": "https://power-uptalent.co.uk/#organization",
-      "name": "Power-Up Talent",
-      "url": "https://power-uptalent.co.uk"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://power-uptalent.co.uk/insights/${post.id}`
-    }
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `https://power-uptalent.co.uk/insights/${post.id}#blogpost`,
+        "headline": post.title,
+        "description": post.excerpt,
+        "datePublished": "2026-06-21",
+        "dateModified": "2026-07-26",
+        "author": {
+          "@type": "Organization",
+          "name": "Power-Up Talent Research"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://power-uptalent.co.uk/#organization",
+          "name": "Power-Up Talent",
+          "url": "https://power-uptalent.co.uk"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://power-uptalent.co.uk/insights/${post.id}`
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://power-uptalent.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Market Insights",
+            "item": "https://power-uptalent.co.uk/insights"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `https://power-uptalent.co.uk/insights/${post.id}`
+          }
+        ]
+      }
+    ]
   };
 
   return (

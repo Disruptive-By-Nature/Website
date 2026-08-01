@@ -98,9 +98,17 @@ const Contact: React.FC = () => {
           <h1 className="text-4xl sm:text-5xl md:text-8xl font-display font-black text-white mb-8 tracking-tight leading-none uppercase text-glow">
             Start a<br /><span className="text-gradient">Conversation.</span>
           </h1>
-          <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto">
+          <p className="text-slate-400 text-lg md:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-6">
             Brief us on your requirement or submit your CV. We respond to every enquiry within 24 hours.
           </p>
+
+          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-lg bg-navy-deep/90 border border-primary/40 text-left max-w-xl mx-auto shadow-lg">
+            <span className="material-symbols-outlined text-primary text-xl shrink-0">lock</span>
+            <p className="text-xs text-slate-200 font-medium leading-relaxed">
+              <strong className="text-primary uppercase tracking-wider block text-[10px] mb-0.5">Sector Exclusivity Guarantee</strong>
+              We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot.
+            </p>
+          </div>
         </div>
       </header>
 

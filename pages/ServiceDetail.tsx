@@ -43,26 +43,53 @@ const ServiceDetail: React.FC = () => {
 
   const serviceStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `https://power-uptalent.co.uk/services/${service.id}#service`,
-    "name": service.name,
-    "description": service.description,
-    "provider": {
-      "@type": "Organization",
-      "@id": "https://power-uptalent.co.uk/#organization",
-      "name": "Power-Up Talent",
-      "url": "https://power-uptalent.co.uk"
-    },
-    "areaServed": "GB",
-    "serviceType": "Recruitment"
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `https://power-uptalent.co.uk/services/${service.id}#service`,
+        "name": `${service.name} — UK Construction, Engineering & Electrical Search`,
+        "description": service.description,
+        "provider": {
+          "@type": "EmploymentAgency",
+          "@id": "https://power-uptalent.co.uk/#organization",
+          "name": "Power-Up Talent",
+          "url": "https://power-uptalent.co.uk"
+        },
+        "areaServed": "GB",
+        "serviceType": "Executive Search & Headhunting"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://power-uptalent.co.uk/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://power-uptalent.co.uk/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": service.name,
+            "item": `https://power-uptalent.co.uk/services/${service.id}`
+          }
+        ]
+      }
+    ]
   };
 
   return (
     <div className="pt-20 bg-background-dark min-h-screen text-white overflow-x-hidden">
       <SEO
-        title={`${service.name} | Specialist Electrical Wholesale Headhunting`}
-        description={`${service.description} Discover why Power-Up Talent is the UK's leading talent partner for the electrical wholesale sector.`}
-        keywords={`electrical wholesale, headhunting, executive search, recruitment, ${service.name.toLowerCase()}`}
+        title={`${service.name} | Power-Up Talent | UK Search Specialists`}
+        description={`${service.description} We work with one organisation per sector at a time. Choosing Power-Up Talent means your competitors cannot.`}
+        keywords={`headhunting, executive search, recruitment, ${service.name.toLowerCase()}, construction search, engineering search, electrical search`}
         canonical={`https://power-uptalent.co.uk/services/${service.id}`}
         structuredData={serviceStructuredData}
       />

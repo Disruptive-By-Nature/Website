@@ -20,18 +20,68 @@ const aboutStructuredData = {
       "@type": "AboutPage",
       "@id": "https://power-uptalent.co.uk/about#webpage",
       "url": "https://power-uptalent.co.uk/about",
-      "name": "About Power-Up Talent",
-      "description": "We are the UK's leading headhunters and recruitment specialists for the electrical industry, spanning manufacturing, distribution, specification, and installation.",
+      "name": "About Power-Up Talent | UK Construction, Engineering & Electrical Search Specialists",
+      "description": "We are the UK's leading headhunters and recruitment specialists for Construction, Engineering, and Electrical sectors, delivering sector exclusivity and passive talent search.",
       "publisher": {
         "@type": "Organization",
         "@id": "https://power-uptalent.co.uk/#organization",
         "name": "Power-Up Talent",
         "url": "https://power-uptalent.co.uk"
-      },
-      "about": {
-        "@type": "Organization",
-        "@id": "https://power-uptalent.co.uk/#organization"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://power-uptalent.co.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About Us",
+          "item": "https://power-uptalent.co.uk/about"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What sets Power-Up Talent apart from other UK recruiters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Unlike generalist agencies, we offer sector exclusivity — working with one organisation per sector at a time so your competitors cannot access our search pipeline. Our consultants speak the language of engineering design, manufacturing supply chains, distribution networks, and contracting delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you source passive candidates who aren't active on job boards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "80% of top-performing project managers, engineers, and sales executives never apply for jobs. We utilise AI-driven market mapping and discreet outreach protocols to engage high-performers currently delivering for competitors."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What specific roles do you recruit for the electrical sector?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We recruit across all management and technical tiers: Product Design & Specification Engineers, Manufacturing Operations Directors, Procurement & Estimating Leads, Branch Managers, Project Contracts Managers, and C-suite Executive leadership."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your placement retention rate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We maintain a 98% placement retention rate over 12 months. Because we vet candidates for commercial alignment, regional understanding, and cultural fit, our placements deliver sustained long-term value."
+          }
+        }
+      ]
     }
   ]
 };
