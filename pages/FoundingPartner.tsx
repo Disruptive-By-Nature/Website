@@ -165,17 +165,15 @@ const FoundingPartner: React.FC = () => {
 
           {/* REQUIREMENT 4: LIVE DEMO CTA BUTTON */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="https://power-up-crm-portal.web.app"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-md bg-gradient-to-r from-primary to-amber-400 text-navy-deep font-bold text-sm uppercase tracking-[0.15em] shadow-[0_10px_30px_rgba(255,193,7,0.3)] hover:shadow-[0_15px_40px_rgba(255,193,7,0.5)] hover:scale-[1.02] transition-all duration-300 cursor-pointer group"
             >
-              <span>Explore Live Portal Demo</span>
+              <span>Book a Private Demo Walkthrough</span>
               <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">
-                open_in_new
+                arrow_forward
               </span>
-            </a>
+            </Link>
 
             <a
               href="#founding-form"
@@ -325,15 +323,13 @@ const FoundingPartner: React.FC = () => {
               </p>
 
               <div className="pt-4 border-t border-white/10 flex justify-center">
-                <a
-                  href="https://power-up-crm-portal.web.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-navy-deep font-bold text-xs uppercase tracking-wider hover:bg-primary-dark transition-colors"
                 >
-                  <span>Launch Live Portal Demo Now</span>
-                  <span className="material-symbols-outlined text-sm">open_in_new</span>
-                </a>
+                  <span>Request a Private Walkthrough</span>
+                  <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                </Link>
               </div>
             </div>
           ) : (
