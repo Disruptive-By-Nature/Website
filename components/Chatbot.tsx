@@ -43,7 +43,7 @@ const Chatbot: React.FC = () => {
 
   const initChat = () => {
     if (!chatInstance.current) {
-      const ai = new GoogleGenAI({ apiKey: "AQ.Ab8RN6LKH8PUuMjsoSdk3BsEwIx9GkaSzRW9Vbeh5yM3W1NNUA" });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY || "" });
       chatInstance.current = ai.chats.create({
         model: 'gemini-2.5-flash',
         config: {
